@@ -72,5 +72,6 @@ modules:[
 {id:"m6",n:6,title:"Circulation and transport",summary:"Cortisol travels mostly bound to cortisol-binding globulin and albumin; only the free fraction is active. Aldosterone is weakly bound."},
 {id:"m7",n:7,title:"Metabolism and inactivation",summary:"Liver reduces and conjugates steroids for urinary excretion; 11-beta-hydroxysteroid dehydrogenase enzymes switch cortisol on and off in tissues."},
 {id:"m8",n:8,title:"Regulation: hypothalamic-pituitary-adrenal axis",summary:"Corticotropin-releasing hormone → adrenocorticotropic hormone → cortisol, with negative feedback, a morning peak and a stress response."},
-{id:"m9",n:9,title:"Glucocorticoid actions, therapy and side effects",summary:"Metabolic, anti-inflammatory and immune effects; therapeutic steroids and their side effects (Cushingoid features, adrenal suppression)."}
+{id:"m9",n:9,title:"Glucocorticoid actions, therapy and side effects",summary:"Metabolic, anti-inflammatory and immune effects; therapeutic steroids and their side effects (Cushingoid features, adrenal suppression)."},
+{id:"cbl5",n:"CBL 5",title:"Case: Adrenal insufficiency (Schmidt syndrome)",grp:"Case-based learning",lec:"CBL 5: 53-year-old woman with abdominal pain, low blood pressure and low sodium",teacher:"Prof. Dr. Ionela Pascanu · UMCH 2026",pages:"35 slides",built:true}
 ]};

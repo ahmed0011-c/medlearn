@@ -16,6 +16,10 @@ GitHub Pages deploys the `main` branch from the repository root. An empty `.noje
 - `image-requests.md` — prompts for Module 5 illustrations
 - `.nojekyll` — disables Jekyll processing on GitHub Pages
 
+## Modules
+
+- **CBL 5. Case: Adrenal insufficiency (Schmidt syndrome)** — case-based module (`src/cbl5_glossary.js`, `src/cbl5_steps1.js`, `src/cbl5_steps2.js`, `src/cbl5_data.js`, `src/cbl5_widgets.js`)
+
 ## Add a module
 
 1. Add a module data object in `src/`, in the same shape as `M5` in `src/lesson5.js`.
