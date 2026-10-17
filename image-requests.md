@@ -37,12 +37,12 @@ Every image is an atlas-style realistic medical illustration. Do not put text, l
 
 Same rules: atlas-style realistic medical illustration, no text, letters, numbers, captions, logos or watermarks anywhere in the image. Save each to the given filename, then tick its box.
 
-- [ ] **id:** `cbl5-hyperpigmentation`
+- [x] **id:** `cbl5-hyperpigmentation`
   - **Save as:** `images/cbl5-hyperpigmentation.png`
   - **Used in:** CBL 5, step 2 (examination): the hyperpigmentation sign of primary adrenal insufficiency.
   - **Prompt:** Atlas-style realistic clinical illustration, three panels side by side on a neutral background, of a fair-skinned woman in her 50s with Addison disease: (1) open palm showing darkened palmar creases, (2) knuckles of the hand with brownish darkening over the joints, (3) inside of the cheek (buccal mucosa) with patchy blue-grey to brown pigmentation, mouth gently held open by a gloved finger. Natural skin tones, clinical photography lighting, no text or labels.
 
-- [ ] **id:** `cbl5-autoimmune-adrenalitis`
+- [x] **id:** `cbl5-autoimmune-adrenalitis`
   - **Save as:** `images/cbl5-autoimmune-adrenalitis.png`
   - **Used in:** CBL 5, step 5 (Schmidt syndrome): why the adrenal fails in autoimmune adrenalitis.
   - **Prompt:** Atlas-style realistic medical illustration comparing two human adrenal glands side by side on a plain background, no text: left, a normal adrenal gland on top of a kidney with a normal-thickness yellow cortex in cut section; right, a shrunken, thin atrophic adrenal gland in cut section with a very thin cortex densely infiltrated by small dark lymphocytes, medulla preserved. A magnified circular inset on the right shows lymphocytes surrounding and destroying adrenal cortex cells. Textbook accuracy, restrained colour.
@@ -52,17 +52,17 @@ Same rules: atlas-style realistic medical illustration, no text, letters, number
   - **Used in:** CBL 5, step 5: the organs hit in autoimmune polyglandular syndrome type 2 in this patient.
   - **Prompt:** Atlas-style realistic medical illustration of a semi-transparent adult female torso and neck (front view, modest, no nipples or genitalia detailed) on a plain light background, with these organs drawn anatomically and highlighted with a soft warm glow: the thyroid gland in the neck, both adrenal glands on top of the kidneys, and both ovaries in the pelvis. Other organs faint and grey. No text, numbers or labels.
 
-- [ ] **id:** `cbl5-adrenal-crisis`
+- [x] **id:** `cbl5-adrenal-crisis`
   - **Save as:** `images/cbl5-adrenal-crisis.png`
   - **Used in:** CBL 5, step 6 (adrenal crisis: treat first, confirm later).
   - **Prompt:** Atlas-style realistic clinical illustration of an emergency department scene: a pale, sweaty, exhausted woman in her 50s lying on a trolley, looking unwell with hyperpigmented skin; a nurse running a bag of clear saline through an intravenous cannula in her forearm while a doctor gives an intravenous injection from a syringe into the line. A monitor shows only abstract unreadable waveforms. No letters, numbers, drug labels or text anywhere. Respectful, realistic, not graphic.
 
-- [ ] **id:** `cbl5-sick-day`
+- [x] **id:** `cbl5-sick-day`
   - **Save as:** `images/cbl5-sick-day.png`
   - **Used in:** CBL 5, step 7 (going home): sick-day rules and emergency self-injection.
   - **Prompt:** Atlas-style realistic illustration on a kitchen table, top-down view: a blister strip of small white tablets, a glass of water, a thermometer, a medical-alert bracelet with a plain blank (no text) metal plate, and an emergency injection kit (glass vial, syringe, needle, alcohol swab) laid out neatly. No writing, letters, numbers or logos on any item. Soft natural light, clean realistic style.
 
-- [ ] **id:** `cbl5-adrenal-haemorrhage`
+- [x] **id:** `cbl5-adrenal-haemorrhage`
   - **Save as:** `images/cbl5-adrenal-haemorrhage.png`
   - **Used in:** CBL 5, bonus practice case: bilateral adrenal haemorrhage in meningococcal sepsis (Waterhouse-Friderichsen syndrome).
   - **Prompt:** Atlas-style realistic medical illustration, plain background, no text: both adrenal glands with kidneys shown from the front, each adrenal swollen and dark red-purple from haemorrhage, one cut open to show blood filling and destroying the gland. A small inset shows the lower legs of a young adult with a non-blanching purple purpuric rash. Textbook accuracy, not gory.
