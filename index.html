@@ -1,8 +1,8 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MedLearn – Endocrinology: Steroid synthesis</title>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MedLearn – Endocrinology</title>
 <style>:root{--bg:#f7f6f2;--panel:#fff;--ink:#1f2328;--mute:#5d6470;--line:#e3e1da;--acc:#2f6fdb;--ok:#1f9d55;--bad:#d64545;
---c-enzyme:#7b3fc4;--c-hormone:#0f8b8d;--c-cell:#d9730d;--c-disease:#c62828;--c-drug:#1f5fd1;--c-concept:#7a5c1e}
+--c-enzyme:#7b3fc4;--c-hormone:#0f8b8d;--c-cell:#d9730d;--c-disease:#c62828;--c-drug:#1f5fd1;--c-concept:#7a5c1e;--c-test:#b0287a}
 body.dark{--bg:#14161a;--panel:#1d2026;--ink:#e8e6e1;--mute:#a3a9b3;--line:#30343c;--acc:#6ea0ff;
---c-enzyme:#b88cff;--c-hormone:#35c2c4;--c-cell:#ffa451;--c-disease:#ff6b6b;--c-drug:#74a6ff;--c-concept:#d9b56b}
+--c-enzyme:#b88cff;--c-hormone:#35c2c4;--c-cell:#ffa451;--c-disease:#ff6b6b;--c-drug:#74a6ff;--c-concept:#d9b56b;--c-test:#ff7fc8}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:"Atkinson Hyperlegible","Inter","Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;font-size:17px;line-height:1.7;transition:background .3s}
 #app{display:flex;min-height:100vh}
@@ -60,7 +60,17 @@ table{border-collapse:collapse;width:100%;font-size:15px}td,th{border-bottom:1px
 #toast.show{transform:translateX(-50%) translateY(0)}
 svg text{font-family:inherit}
 .pw-edge{cursor:pointer}.pw-node rect{transition:all .3s}
-@media(max-width:860px){nav{display:none}#app{display:block}main{padding:12px}}
+#modsel{display:none;font:inherit;font-size:14px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:6px 8px;max-width:100%}
+@media(max-width:860px){nav{display:none}#app{display:block}main{padding:12px}#modsel{display:block;flex-basis:100%}}
+.t-test{color:var(--c-test)}
+.obj{background:color-mix(in srgb,var(--acc) 7%,transparent);border-radius:10px;padding:6px 16px;margin:10px 0;font-size:15px}.obj ul{margin:4px 0;padding-left:20px}
+.ctrl button.clue.flag-red{border-color:var(--bad)}.ctrl button.clue.flag-grey{border-color:var(--mute)}.ctrl button.clue.on{background:var(--acc);color:#fff}
+.labt tr.lr{cursor:pointer;transition:background .2s}.labt tr.lr:hover{background:var(--bg)}.labt tr.lr.sel{background:color-mix(in srgb,var(--acc) 14%,transparent)}.labt tr.lr.seen td:first-child::before{content:"✓ ";color:var(--ok)}
+.labt tr.fH td:nth-child(2){color:var(--bad)}.labt tr.fL td:nth-child(2){color:var(--acc)}
+.fl{font-size:12px;border-radius:6px;padding:1px 7px;background:var(--bg);color:var(--mute);white-space:nowrap}.fl.fh{background:color-mix(in srgb,var(--bad) 18%,transparent);color:var(--bad);font-weight:700}.fl.flo{background:color-mix(in srgb,var(--acc) 18%,transparent);color:var(--acc);font-weight:700}
+.ladder{display:flex;flex-direction:column-reverse;gap:6px;margin:8px 0;border-left:6px double var(--line);border-right:6px double var(--line);padding:6px 10px}
+.ladder button{text-align:left;display:flex;align-items:center;gap:10px}.ladder button.on{background:var(--acc);color:#fff}.ladder button.seen:not(.on){border-color:var(--ok)}
+.ladder .rung{display:inline-flex;width:26px;height:26px;border-radius:50%;background:var(--bg);color:var(--ink);align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0}
 </style></head><body><noscript><div style="padding:40px;font:18px sans-serif">This page needs JavaScript. Please download the file and open it in Chrome, Edge, Safari or Firefox.</div></noscript>
 <script>window.__err=[];window.onerror=(m,s,l)=>{window.__err.push(m+" @"+l);document.documentElement.setAttribute("data-err",window.__err.join(" | "))};</script>
 <div id="app"><nav></nav><main><div class="top"><div class="bar" id="bar"><i></i></div><span class="pill" id="prog"></span><span class="pill" id="xp"></span><span class="pill" id="streak"></span><button id="focus" title="Dim everything except the current card">🎯 Focus mode</button><button id="dark">🌓 Dark / light</button></div><div id="content"></div></main></div>
@@ -140,7 +150,8 @@ modules:[
 {id:"m6",n:6,title:"Circulation and transport",summary:"Cortisol travels mostly bound to cortisol-binding globulin and albumin; only the free fraction is active. Aldosterone is weakly bound."},
 {id:"m7",n:7,title:"Metabolism and inactivation",summary:"Liver reduces and conjugates steroids for urinary excretion; 11-beta-hydroxysteroid dehydrogenase enzymes switch cortisol on and off in tissues."},
 {id:"m8",n:8,title:"Regulation: hypothalamic-pituitary-adrenal axis",summary:"Corticotropin-releasing hormone → adrenocorticotropic hormone → cortisol, with negative feedback, a morning peak and a stress response."},
-{id:"m9",n:9,title:"Glucocorticoid actions, therapy and side effects",summary:"Metabolic, anti-inflammatory and immune effects; therapeutic steroids and their side effects (Cushingoid features, adrenal suppression)."}
+{id:"m9",n:9,title:"Glucocorticoid actions, therapy and side effects",summary:"Metabolic, anti-inflammatory and immune effects; therapeutic steroids and their side effects (Cushingoid features, adrenal suppression)."},
+{id:"cbl5",n:"CBL 5",title:"Case: Adrenal insufficiency (Schmidt syndrome)",grp:"Case-based learning",lec:"CBL 5: 53-year-old woman with abdominal pain, low blood pressure and low sodium",teacher:"Prof. Dr. Ionela Pascanu · UMCH 2026",pages:"35 slides",built:true}
 ]};
 
 const M5={
@@ -291,6 +302,7 @@ exam:[
 var LS=(function(){var m={};try{var t="__t";window.localStorage.setItem(t,"1");window.localStorage.removeItem(t);return window.localStorage}catch(e){return{getItem:function(k){return k in m?m[k]:null},setItem:function(k,v){m[k]=String(v)},removeItem:function(k){delete m[k]}}}})();
 /* ===== state ===== */
 const KEY="medlearn_v1";
+const LESSONS={m5:M5};let L=M5,CUR="m5";
 let S=JSON.parse(LS.getItem(KEY)||"{}");S.done=S.done||{};S.xp=S.xp||0;S.days=S.days||[];S.ans=S.ans||{};
 const today=new Date().toISOString().slice(0,10);if(!S.days.includes(today))S.days.push(today);
 function save(){LS.setItem(KEY,JSON.stringify(S));updTop()}
@@ -300,11 +312,11 @@ function esc(s){return s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;
 /* term markup [[key]] or [[key|label]] */
 function T(html){return html.replace(/\[\[(\w+)(?:\|([^\]]+))?\]\]/g,(m,k,l)=>{const g=GLOSSARY[k];if(!g){console.warn("missing term",k);return l||k}
 return `<span class="term t-${g.c}" data-k="${k}" tabindex="0">${l||g.l}</span>${g.k&&!l?`<span class="code">${g.k}</span>`:""}`})}
-const UNITS=()=>[...M5.cards.map(c=>c.id),...M5.cards.length?M5.cases.map(c=>c.id):[],"match"];
+const UNITS=()=>[...L.cards.map(c=>c.id),...L.cases.map(c=>c.id),...(L.match?["match"]:[])];
 function updTop(){const u=UNITS(),d=u.filter(x=>S.done[x]).length;$("#bar i").style.width=(100*d/u.length)+"%";
 $("#prog").textContent=`${d}/${u.length} steps`;$("#xp").textContent=`⭐ ${S.xp} XP`;$("#streak").textContent=`🔥 ${streak()} day streak`;
-M5.cards.forEach(c=>{const b=$("#badge-"+c.id);if(b)b.textContent=S.done[c.id]?"✅ done":""});
-$$(".goals li").forEach((li,i)=>{const c=M5.cards.find(c=>c.goal===i);li.classList.toggle("got",!!(c&&S.done[c.id]))});renderSummary()}
+L.cards.forEach(c=>{const b=$("#badge-"+c.id);if(b)b.textContent=S.done[c.id]?"✅ done":""});
+$$(".goals li").forEach((li,i)=>{const c=L.cards.find(c=>c.goal===i);li.classList.toggle("got",!!(c&&S.done[c.id]))});renderSummary()}
 function award(x,msg){S.xp+=x;save();toast(msg||`+${x} XP`)}
 function complete(id,x,msg){if(S.done[id])return;S.done[id]=1;award(x,msg);confetti()}
 function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("show");clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove("show"),1800)}
@@ -422,8 +434,8 @@ el.querySelectorAll(".pw-node").forEach(g=>{const r=g.querySelector("rect"),a=sc
 const info=el.querySelector("#pw-info");if(curEnz){const k=curEnz=="periph"?null:curEnz,g=GLOSSARY[k];info.innerHTML=g?`<b class="t-enzyme">${g.l}</b> ${g.k?`<span class="code">${g.k}</span>`:""}: ${g.d}<br><b>If blocked:</b> ${BLK[curEnz]}`:BLK.periph}
 else info.innerHTML=curScen=="none"?"Normal flow. Choose a deficiency or drug above, or click an enzyme label.":`<b>${sc.l}:</b> ${sc.t}<br><span style="color:#c62828">Red ✕ = blocked</span> · <span style="color:#d9730d">bold orange = shunted flow / glowing box = precursor piles up</span>`}
 
-W.match=el=>{const P=M5.match;const L=P.map((p,i)=>[i,p[0]]),R=P.map((p,i)=>[i,p[1]]).sort(()=>Math.random()-.5);let sel=null,ok=0;
-el.innerHTML=`<div class="match"><div>${L.map(([i,t])=>`<button data-l="${i}">${t}</button>`).join("")}</div><div>${R.map(([i,t])=>`<button data-r="${i}">${t}</button>`).join("")}</div></div><div class="info" id="m-info">Pick an enzyme on the left.</div>`;
+W.match=el=>{const P=L.match;const LL=P.map((p,i)=>[i,p[0]]),R=P.map((p,i)=>[i,p[1]]).sort(()=>Math.random()-.5);let sel=null,ok=0;
+el.innerHTML=`<div class="match"><div>${LL.map(([i,t])=>`<button data-l="${i}">${t}</button>`).join("")}</div><div>${R.map(([i,t])=>`<button data-r="${i}">${t}</button>`).join("")}</div></div><div class="info" id="m-info">Pick an enzyme on the left.</div>`;
 const info=el.querySelector("#m-info");
 el.querySelectorAll("[data-l]").forEach(b=>b.onclick=()=>{el.querySelectorAll("[data-l]").forEach(x=>x.classList.remove("sel"));b.classList.add("sel");sel=b.dataset.l;info.textContent="Now pick its step on the right."});
 el.querySelectorAll("[data-r]").forEach(b=>b.onclick=()=>{if(sel==null){info.textContent="Pick an enzyme first.";return}
@@ -436,39 +448,411 @@ ${d.map((t,i)=>`<g><circle cx="${40+i*128}" cy="37" r="15" fill="#fff" stroke="#
 <figcaption>Schematic Prader scale (text only, no anatomical images – deliberately). Grades 0 → 5 = increasing virilisation of a genetically female newborn.</figcaption></figure>`};
 
 /* ===== render ===== */
-function render(){const nav=$("nav");nav.innerHTML=`<h1>🩺 MedLearn</h1><div class="sub">Samy's exam and clinic companion</div><div class="grp">${COURSE.area}</div><div class="lec">${COURSE.lecture}<br><span style="font-weight:400;color:var(--mute);font-size:13px">${COURSE.teacher}</span></div>`+
-COURSE.modules.map(m=>`<a data-m="${m.id}" class="${m.built?"on":""}">${m.n}. ${m.title} ${m.built?"⭐":`<span class="soon">· coming soon</span>`}</a>`).join("")+
-`<div class="grp">Inside module 5</div>${M5.cards.map((c,i)=>`<a onclick="go('${c.id}')">${i+1}. ${c.title}</a>`).join("")}<a onclick="go('cases')">🏥 Clinical cases</a><a onclick="go('flash')">🃏 Flashcards</a><a onclick="go('final')">🎯 What I got from this</a>`;
-nav.querySelectorAll("[data-m]").forEach(a=>a.onclick=()=>showModule(a.dataset.m));showModule("m5")}
-function showModule(id){$$("nav [data-m]").forEach(a=>a.classList.toggle("on",a.dataset.m==id));const m=COURSE.modules.find(x=>x.id==id);const c=$("#content");
-if(!m.built){c.innerHTML=`<div class="card soon-card"><div class="meta">${COURSE.area} › Lecture 7 › Subsection ${m.n}</div><h2>${m.n}. ${m.title}</h2><p>${m.summary}</p><p>🚧 <b>Coming soon.</b> This module will follow the same format as module 5: goals, micro-steps, quick checks, cases and flashcards.</p><button class="pri" onclick="showModule('m5')">← Back to the demo module 5</button></div>`;scrollTo(0,0);return}
+function render(){const nav=$("nav");const groups=[];COURSE.modules.forEach(m=>{const g=m.grp||"";let G=groups.find(x=>x.g==g);if(!G)groups.push(G={g,ms:[]});G.ms.push(m)});
+nav.innerHTML=`<h1>🩺 MedLearn</h1><div class="sub">Samy's exam and clinic companion</div><div class="grp">${COURSE.area}</div>`+
+groups.map(G=>(G.g?`<div class="grp">${G.g}</div><div class="lec">${G.ms[0].lec||""}<br><span style="font-weight:400;color:var(--mute);font-size:13px">${G.ms[0].teacher||""}</span></div>`:`<div class="lec">${COURSE.lecture}<br><span style="font-weight:400;color:var(--mute);font-size:13px">${COURSE.teacher}</span></div>`)+
+G.ms.map(m=>`<a data-m="${m.id}" class="${m.built?"on":""}">${m.n}. ${m.title} ${m.built?"⭐":`<span class="soon">· coming soon</span>`}</a>`).join("")).join("")+`<div id="inside"></div>`;
+nav.querySelectorAll("[data-m]").forEach(a=>a.onclick=()=>showModule(a.dataset.m));
+if(!$("#modsel")){const sel=document.createElement("select");sel.id="modsel";sel.title="Choose module";sel.innerHTML=COURSE.modules.filter(m=>m.built).map(m=>`<option value="${m.id}">${m.n}. ${m.title}</option>`).join("");sel.onchange=()=>showModule(sel.value);$(".top").prepend(sel)}
+const hm=location.hash.match(/mod=(\w+)/),saved=LS.getItem("ml_mod");showModule(hm&&LESSONS[hm[1]]?hm[1]:saved&&LESSONS[saved]?saved:"m5")}
+function showModule(id){const m=COURSE.modules.find(x=>x.id==id);if(!m)return showModule("m5");$$("nav [data-m]").forEach(a=>a.classList.toggle("on",a.dataset.m==id));const c=$("#content");
+if(!m.built||!LESSONS[id]){c.innerHTML=`<div class="card soon-card"><div class="meta">${COURSE.area} › Lecture 7 › Subsection ${m.n}</div><h2>${m.n}. ${m.title}</h2><p>${m.summary}</p><p>🚧 <b>Coming soon.</b> This module will follow the same format as module 5: goals, micro-steps, quick checks, cases and flashcards.</p><button class="pri" onclick="showModule('m5')">← Back to the demo module 5</button></div>`;scrollTo(0,0);return}
+L=LESSONS[id];CUR=id;if($("#modsel"))$("#modsel").value=id;LS.setItem("ml_mod",id);document.title=`MedLearn – ${COURSE.area}: ${m.title}`;
+$("#inside").innerHTML=`<div class="grp">Inside this module</div>${L.cards.map((c,i)=>`<a onclick="go('${c.id}')">${i+1}. ${c.title}</a>`).join("")}<a onclick="go('cases')">${L.casesHead||"🏥 Clinical cases"}</a><a onclick="go('flash')">🃏 Flashcards</a><a onclick="go('final')">🎯 What I got from this</a>`;
 const legend=Object.entries(CATS).map(([k,v])=>`<span class="t-${k}" style="font-weight:700">● ${v}</span>`).join("");
-c.innerHTML=`<div class="card" id="intro"><div class="meta">${COURSE.area} › Lecture 7 › Subsection 5 · lecture ${m.pages} · ⏱ about 25 minutes in 7 bite-sized steps</div>
-<h2>5. ${m.title}</h2><p><b>🎯 By the end you will be able to…</b></p><ol class="goals">${M5.goals.map(g=>`<li>${g}</li>`).join("")}</ol>
-<p style="font-size:15px;color:var(--mute)">Each step takes 2–4 minutes and ends with a quick check. Finish one, get XP and a ✅. That's it – one small win at a time.</p>
+const meta=L.meta||`${COURSE.area} › Lecture 7 › Subsection ${m.n} · lecture ${m.pages} · ⏱ about 25 minutes in ${L.cards.length} bite-sized steps`;
+c.innerHTML=`<div class="card" id="intro"><div class="meta">${meta}</div>
+<h2>${m.n}. ${m.title}</h2>${L.intro?T(L.intro):""}<p><b>🎯 By the end you will be able to…</b></p><ol class="goals">${L.goals.map(g=>`<li>${g}</li>`).join("")}</ol>
+<p style="font-size:15px;color:var(--mute)">Each step takes 2–5 minutes and ends with a quick check. Finish one, get XP and a ✅. That's it – one small win at a time.</p>
 <div class="legend"><b>Colour key (click any coloured word):</b> ${legend}</div></div>`+
-M5.cards.map((cd,i)=>`<div class="card" id="${cd.id}"><span class="done-badge" id="badge-${cd.id}"></span><div class="meta">Step ${i+1} of ${M5.cards.length} · ⏱ ${cd.min} min · 🎯 Goal: ${M5.goals[cd.goal]}</div><h2>${cd.title}</h2>${T(cd.html)}${cd.id=="c5"?ADRENAL_FIG:""}${quizHTML(cd.id,cd.quiz)}
-<div class="recap" id="recap-${cd.id}"><b>🧠 What did I just learn?</b><ul>${cd.recap.map(r=>`<li>${r}</li>`).join("")}</ul></div></div>`).join("")+
-`<div class="card" id="cases"><h2>🏥 Case-based learning</h2><p>Work through each case. Answer to reveal the next part.</p>${M5.cases.map(k=>`<div class="case" id="${k.id}"><h3>${k.title}</h3>${k.steps.map((s,i)=>`<div class="step ${i==0?"show":""}" data-i="${i}">${T(s.t)}${s.q?quizHTML(k.id+"s"+i,[s]):`<p><button class="nxt">Continue →</button></p>`}</div>`).join("")}<div class="step take"><div class="exam" style="border-color:var(--ok)"><b>🏁 Take-home points</b><ul>${k.take.map(t=>`<li>${t}</li>`).join("")}</ul></div></div></div>`).join("<hr>")}</div>
+L.cards.map((cd,i)=>`<div class="card" id="${cd.id}"><span class="done-badge" id="badge-${cd.id}"></span><div class="meta">Step ${i+1} of ${L.cards.length} · ⏱ ${cd.min} min · 🎯 Goal: ${L.goals[cd.goal]}</div><h2>${cd.title}</h2>${cd.obj?`<div class="obj"><b>🎯 In this step you will:</b><ul>${cd.obj.map(o=>`<li>${o}</li>`).join("")}</ul></div>`:""}${T(cd.html)}${L===M5&&cd.id=="c5"?ADRENAL_FIG:""}${quizHTML(cd.id,cd.quiz)}
+<div class="recap" id="recap-${cd.id}"><b>🧠 What did I get from this?</b><ul>${cd.recap.map(r=>`<li>${r}</li>`).join("")}</ul></div></div>`).join("")+
+`<div class="card" id="cases"><h2>${L.casesHead||"🏥 Case-based learning"}</h2><p>${L.casesIntro||"Work through each case. Answer to reveal the next part."}</p>${L.cases.map(k=>`<div class="case" id="${k.id}"><h3>${k.title}</h3>${k.steps.map((s,i)=>`<div class="step ${i==0?"show":""}" data-i="${i}">${T(s.t)}${s.q?quizHTML(k.id+"s"+i,[s]):`<p><button class="nxt">Continue →</button></p>`}</div>`).join("")}<div class="step take"><div class="exam" style="border-color:var(--ok)"><b>🏁 Take-home points</b><ul>${k.take.map(t=>`<li>${t}</li>`).join("")}</ul></div></div></div>`).join("<hr>")}</div>
 <div class="card" id="flash"><h2>🃏 Flashcards</h2><p>Click the card to flip. Use the buttons to move on.</p><div class="fc" id="fcard"><div class="in"><div class="f"></div><div class="b"></div></div></div><div class="ctrl"><button id="fprev">← Previous</button><button id="fshuf">🔀 Shuffle</button><button class="pri" id="fnext">Next →</button><span class="pill" id="fcount"></span></div></div>
-<div class="card" id="final"><h2>🎯 What I got from this</h2><div id="summary"></div><div class="exam"><b>📘 For exams</b><ul>${M5.exam.map(e=>`<li>${e}</li>`).join("")}</ul></div>
-<p style="font-size:14px;color:var(--mute)">Sources: Lecture 7 (Prof. Ionela Pascanu), pages 17–22 and their figures (Barrett Medical Physiology; Berne and Levy Physiology), extended with standard textbook endocrinology. No statistics beyond those in the lecture figures.</p><button onclick="if(confirm('Reset all progress?')){LS.removeItem(KEY);location.reload()}">Reset progress</button></div>`;
+<div class="card" id="final"><h2>🎯 What I got from this</h2><div id="summary"></div><div class="exam"><b>📘 For exams</b><ul>${L.exam.map(e=>`<li>${e}</li>`).join("")}</ul></div>
+<p style="font-size:14px;color:var(--mute)">${L.sources||"Sources: Lecture 7 (Prof. Ionela Pascanu), pages 17–22 and their figures (Barrett Medical Physiology; Berne and Levy Physiology), extended with standard textbook endocrinology. No statistics beyond those in the lecture figures."}</p><button onclick="if(confirm('Reset all progress?')){LS.removeItem(KEY);location.reload()}">Reset progress</button></div>`;
 c.querySelectorAll("[data-widget]").forEach(w=>W[w.dataset.widget](w));
-M5.cards.forEach(cd=>{const el=$("#"+cd.id);if(S.done[cd.id])$("#recap-"+cd.id).classList.add("show");bindQuiz(el,cd.id,cd.quiz,()=>{$("#recap-"+cd.id).classList.add("show");complete(cd.id,20,`✅ Step complete! +20 XP`)})});
-M5.cases.forEach(k=>{const el=$("#"+k.id),st=el.querySelectorAll(".step");const next=i=>{st[i+1].classList.add("show");if(i+1==st.length-1)complete(k.id,30,"🏥 Case solved! +30 XP")};
+L.cards.forEach(cd=>{const el=$("#"+cd.id);if(S.done[cd.id])$("#recap-"+cd.id).classList.add("show");bindQuiz(el,cd.id,cd.quiz,()=>{$("#recap-"+cd.id).classList.add("show");complete(cd.id,20,`✅ Step complete! +20 XP`)})});
+L.cases.forEach(k=>{const el=$("#"+k.id),st=el.querySelectorAll(".step");const next=i=>{st[i+1].classList.add("show");if(i+1==st.length-1)complete(k.id,30,"🏥 Case solved! +30 XP")};
 k.steps.forEach((s,i)=>{if(s.q)bindQuiz(st[i],k.id+"s"+i,[s],()=>next(i));else st[i].querySelector(".nxt").onclick=()=>next(i)});
 el.querySelectorAll("[data-widget]").forEach(w=>{if(!w.innerHTML)W[w.dataset.widget](w)})});
-let fi=0,F=[...M5.flash];const fc=$("#fcard"),showF=()=>{fc.classList.remove("flip");setTimeout(()=>{fc.querySelector(".f").textContent=F[fi][0];fc.querySelector(".b").textContent=F[fi][1];$("#fcount").textContent=`${fi+1} / ${F.length}`},150)};
+let fi=0,F=[...L.flash];const fc=$("#fcard"),showF=()=>{fc.classList.remove("flip");setTimeout(()=>{fc.querySelector(".f").textContent=F[fi][0];fc.querySelector(".b").textContent=F[fi][1];$("#fcount").textContent=`${fi+1} / ${F.length}`},150)};
 fc.onclick=()=>fc.classList.toggle("flip");$("#fnext").onclick=()=>{fi=(fi+1)%F.length;showF()};$("#fprev").onclick=()=>{fi=(fi-1+F.length)%F.length;showF()};$("#fshuf").onclick=()=>{F.sort(()=>Math.random()-.5);fi=0;showF()};showF();
 observe();updTop();scrollTo(0,0)}
-function renderSummary(){const el=$("#summary");if(!el)return;const got=M5.cards.filter(c=>S.done[c.id]);
-el.innerHTML=`<p>You have completed <b>${got.length} of ${M5.cards.length}</b> steps, <b>${M5.cases.filter(k=>S.done[k.id]).length} of ${M5.cases.length}</b> cases and earned <b>${S.xp} XP</b>.</p><ul>${M5.goals.map((g,i)=>{const c=M5.cards.find(c=>c.goal==i);return `<li>${c&&S.done[c.id]?"✅":"⬜"} ${g}</li>`}).join("")}</ul>${got.length==M5.cards.length?"<p>🎉 <b>Module mastered.</b> Come back tomorrow for the flashcards to keep your streak!</p>":"<p>Keep going – the next step is only a few minutes.</p>"}`}
+function renderSummary(){const el=$("#summary");if(!el)return;const got=L.cards.filter(c=>S.done[c.id]);
+el.innerHTML=`<p>You have completed <b>${got.length} of ${L.cards.length}</b> steps, <b>${L.cases.filter(k=>S.done[k.id]).length} of ${L.cases.length}</b> cases and earned <b>${S.xp} XP</b> in total.</p><ul>${L.goals.map((g,i)=>{const c=L.cards.find(c=>c.goal==i);return `<li>${c&&S.done[c.id]?"✅":"⬜"} ${g}</li>`}).join("")}</ul>${got.length==L.cards.length?"<p>🎉 <b>Module mastered.</b> Come back tomorrow for the flashcards to keep your streak!</p>":"<p>Keep going – the next step is only a few minutes.</p>"}`}
 function go(id){const e=document.getElementById(id);if(e)e.scrollIntoView({behavior:"smooth",block:"start"})}
 function observe(){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){$$(".card").forEach(c=>c.classList.remove("active"));e.target.classList.add("active")}}),{rootMargin:"-40% 0px -50% 0px"});$$(".card").forEach(c=>io.observe(c))}
 /* ===== boot ===== */
 window.addEventListener("DOMContentLoaded",()=>{if(LS.getItem("ml_dark")==="1"||location.hash.includes("dark"))document.body.classList.add("dark");render();
 $("#dark").onclick=()=>{document.body.classList.toggle("dark");LS.setItem("ml_dark",document.body.classList.contains("dark")?"1":"0")};
 $("#focus").onclick=e=>{document.body.classList.toggle("focus");e.target.classList.toggle("pri")};
-const h=location.hash.replace("#","").split("&")[0];const so=location.hash.match(/solo=(\w+)/);if(so){$$(".card").forEach(c=>{if(c.id!=so[1])c.style.display="none"});const sc=location.hash.match(/scen=(\w+)/);if(sc){const b=document.querySelector(`[data-s="${sc[1]}"]`);b&&b.click()}}if(h&&h!="dark")setTimeout(()=>{const e=document.getElementById(h);if(e){e.scrollIntoView();scrollBy(0,-60)}},50);
+const h=location.hash.replace("#","").split("&")[0].replace(/^mod=\w+$/,"");const so=location.hash.match(/solo=(\w+)/);if(so){$$(".card").forEach(c=>{if(c.id!=so[1])c.style.display="none"});const sc=location.hash.match(/scen=(\w+)/);if(sc){const b=document.querySelector(`[data-s="${sc[1]}"]`);b&&b.click()}}if(h&&h!="dark")setTimeout(()=>{const e=document.getElementById(h);if(e){e.scrollIntoView();scrollBy(0,-60)}},50);
 document.body.dataset.ok="1"});
+
+/* ===== CBL 5: Adrenal insufficiency case (Schmidt syndrome) – glossary additions ===== */
+Object.assign(CATS,{test:"Tests and investigations"});
+Object.assign(GLOSSARY,{
+addison:{l:"Addison disease",c:"disease",d:"Chronic primary adrenal insufficiency: the adrenal cortex itself is destroyed (most often by the immune system), so cortisol AND aldosterone are missing.",w:"Dark skin, salt craving, low sodium, high potassium. Lifelong replacement and a steroid emergency card."},
+pai:{l:"primary adrenal insufficiency",c:"disease",d:"The adrenal gland itself fails. Cortisol, aldosterone and adrenal androgens all fall; the pituitary answers with very high adrenocorticotropic hormone.",w:"High adrenocorticotropic hormone → dark skin. No aldosterone → high potassium."},
+sai:{l:"secondary adrenal insufficiency",c:"disease",d:"The pituitary does not make enough adrenocorticotropic hormone, so the adrenal is under-stimulated. Cortisol falls; aldosterone stays normal because the renin–angiotensin system still controls it.",w:"Most common cause: stopping long-term steroid tablets. Pale skin, normal potassium."},
+tai:{l:"tertiary adrenal insufficiency",c:"disease",d:"The hypothalamus does not make enough corticotropin-releasing hormone, so pituitary and adrenal are both under-stimulated.",w:"Looks like secondary at the bedside. Long-term steroid therapy suppresses both hypothalamus and pituitary."},
+crisis:{l:"adrenal crisis",c:"disease",d:"Acute, life-threatening lack of cortisol (often with lack of aldosterone): shock, vomiting, abdominal pain, confusion, low sodium, high potassium, low glucose.",w:"Treat immediately with hydrocortisone and saline. Never wait for test results."},
+hpa:{l:"hypothalamic–pituitary–adrenal axis",c:"concept",d:"The hormone chain: hypothalamus (corticotropin-releasing hormone) → pituitary (adrenocorticotropic hormone) → adrenal cortex (cortisol). Cortisol switches the top two off (negative feedback).",w:"Where the chain breaks tells you whether the insufficiency is primary, secondary or tertiary."},
+crh:{l:"corticotropin-releasing hormone",c:"hormone",d:"Hypothalamic hormone that tells the pituitary to release adrenocorticotropic hormone.",w:"Rises when cortisol is low, unless the hypothalamus itself is the broken part."},
+pomc:{l:"proopiomelanocortin",c:"hormone",d:"A large precursor protein in the pituitary that is cut into adrenocorticotropic hormone and melanocyte-stimulating hormone.",w:"Lots of adrenocorticotropic hormone also means lots of melanocyte stimulation, so the skin darkens."},
+hyperpig:{l:"hyperpigmentation",c:"concept",d:"Darkening of skin and mucosa, typically in palm creases, knuckles, scars, gums and the inside of the cheeks.",w:"Points to PRIMARY adrenal insufficiency (very high adrenocorticotropic hormone). Secondary = pale."},
+renin:{l:"renin",c:"enzyme",d:"Kidney enzyme released when blood volume or pressure falls; starts the renin–angiotensin–aldosterone chain. Measured as plasma renin activity or concentration.",w:"High renin with low aldosterone means the adrenal cannot answer: primary insufficiency."},
+hyponat:{l:"hyponatraemia",c:"concept",d:"Low blood sodium (below 136 mmol/L in this laboratory).",w:"In adrenal insufficiency: salt loss (no aldosterone) plus water retention (lack of cortisol raises antidiuretic hormone)."},
+hyperkal:{l:"hyperkalaemia",c:"concept",d:"High blood potassium (above 5.1 mmol/L in this laboratory).",w:"Needs missing aldosterone, so it is typical of primary, not secondary, insufficiency. Dangerous for heart rhythm."},
+hypogly:{l:"hypoglycaemia",c:"concept",d:"Low blood glucose.",w:"Cortisol keeps glucose up between meals by making new glucose in the liver (gluconeogenesis). Without cortisol, glucose falls."},
+osm:{l:"serum osmolality",c:"test",d:"Concentration of dissolved particles in blood (285–295 milliosmoles per kilogram in this laboratory).",w:"Low osmolality proves the low sodium is true dilution (hypotonic hyponatraemia), not a laboratory artefact."},
+adh:{l:"antidiuretic hormone",c:"hormone",d:"Also called vasopressin: a pituitary hormone that makes the kidney keep water (abbreviation: ADH).",w:"Cortisol normally restrains it. Lack of cortisol → more antidiuretic hormone → water retention → lower sodium, even in secondary insufficiency."},
+eos:{l:"eosinophilia",c:"concept",d:"Too many eosinophils (a type of white blood cell) in blood.",w:"Cortisol normally lowers eosinophils, so their rise is a classic clue to cortisol deficiency."},
+basalcort:{l:"morning (basal) cortisol",c:"test",d:"Blood cortisol taken around 8 a.m., when it should be near its daily peak.",w:"Slides: below 3 µg/dl = insufficiency very likely; above 14 µg/dl = axis intact; in between = do a stimulation test."},
+synacthen:{l:"tetracosactide",c:"drug",d:"Synthetic adrenocorticotropic hormone (its first 24 amino acids). Brand names: Synacthen (Europe), Cortrosyn, also called cosyntropin (United States).",w:"Used for the stimulation tests: a healthy adrenal answers with a cortisol rise."},
+sst:{l:"short adrenocorticotropic hormone stimulation test",c:"test",d:"Give 250 µg tetracosactide into a vein or muscle; measure cortisol at 0, 30 and 60 minutes. A low-dose 1 µg version also exists.",w:"First-line test to confirm adrenal insufficiency. Normal peak above 18–20 µg/dl (about 500–550 nmol/L) in the slides; cut-offs depend on the laboratory method."},
+lst:{l:"long (depot) stimulation test",c:"test",d:"Long-acting tetracosactide is given; cortisol is measured repeatedly over 48 hours.",w:"No rise = Addison disease. Late rise = secondary insufficiency (a 'sleepy' but healthy gland waking up)."},
+itt:{l:"insulin tolerance test",c:"test",d:"Insulin is injected into a vein to cause controlled hypoglycaemia. The stress should make cortisol rise.",w:"Gold standard for the WHOLE axis (hypothalamus, pituitary and adrenal). Dangerous in heart disease, epilepsy, or a patient who is already hypoglycaemic."},
+ab21:{l:"21-hydroxylase antibodies",c:"test",d:"Autoantibodies against the adrenal enzyme 21-hydroxylase.",w:"Positive = autoimmune adrenalitis, the most common cause of Addison disease in Europe."},
+ct:{l:"adrenal computed tomography",c:"test",d:"Cross-sectional X-ray imaging of the adrenals.",w:"Shows bleeding, metastases, infection (such as tuberculosis, often calcified) or a normal or small gland in autoimmune disease. Less important in primary insufficiency."},
+aps:{l:"autoimmune polyglandular syndrome",c:"disease",d:"Two or more endocrine glands attacked by the immune system in the same person; four types.",w:"When you find one autoimmune endocrine disease, look for the others."},
+aps2:{l:"autoimmune polyglandular syndrome type 2",c:"disease",d:"Autoimmune adrenal insufficiency (always present) plus autoimmune thyroid disease and/or type 1 diabetes. Eponym: Schmidt syndrome.",w:"Adult onset, more common in women, linked to the tissue types human leukocyte antigen DR3 and DR4. Our patient's diagnosis."},
+aps1:{l:"autoimmune polyglandular syndrome type 1",c:"disease",d:"Rare inherited (autosomal recessive) syndrome caused by mutations in the autoimmune regulator gene (abbreviation: AIRE). Classic triad: chronic mucocutaneous candidiasis, hypoparathyroidism, Addison disease (at least two needed).",w:"Starts in childhood, usually with candidiasis first."},
+schmidt:{l:"Schmidt syndrome",c:"disease",d:"Addison disease plus autoimmune thyroid disease. When type 1 diabetes is also present, some books call it Carpenter syndrome.",w:"Older name for autoimmune polyglandular syndrome type 2."},
+thyroiditis:{l:"autoimmune thyroiditis",c:"disease",d:"Immune attack on the thyroid (Hashimoto thyroiditis). It may cause a goitre and, later, hypothyroidism.",w:"Can stay euthyroid for years, so thyroid function needs regular checks."},
+euthy:{l:"euthyroidism",c:"concept",d:"Normal thyroid hormone levels (normal thyroid-stimulating hormone and free thyroxine).",w:"Our patient has a goitre and antibodies, but normal hormones, so no thyroxine is needed yet."},
+antitg:{l:"anti-thyroglobulin antibodies",c:"test",d:"Antibodies against thyroglobulin, the storage protein of the thyroid.",w:"Positive in our patient: 24.3 units/ml (normal up to 4.1)."},
+antitpo:{l:"anti-thyroid peroxidase antibodies",c:"test",d:"Antibodies against thyroid peroxidase, the enzyme that makes thyroid hormone.",w:"The most sensitive marker of autoimmune thyroiditis. Negative in our patient (0.37), which is less typical."},
+tsh:{l:"thyroid-stimulating hormone",c:"hormone",d:"Pituitary hormone that drives the thyroid; the best screening test of thyroid function.",w:"Normal in our patient (0.94 micro-units/ml)."},
+goitre:{l:"goitre grade Ib",c:"concept",d:"Enlarged thyroid. In the World Health Organization grading, grade Ib = palpable, and visible only when the neck is extended.",w:"The thyroid clue in our patient: think autoimmune thyroiditis."},
+poi:{l:"primary ovarian insufficiency",c:"disease",d:"The ovaries stop working before age 40 (menopause before 40).",w:"Can be autoimmune and travels with Addison disease in autoimmune polyglandular syndrome type 2. Our patient: menopause at 38."},
+shpt:{l:"secondary hyperparathyroidism",c:"disease",d:"The parathyroid glands make more parathyroid hormone in response to a problem elsewhere (here low vitamin D), which keeps calcium normal.",w:"Parathyroid hormone high, calcium normal or low, vitamin D low. Treat the vitamin D."},
+pth:{l:"parathyroid hormone",c:"hormone",d:"Hormone that raises blood calcium.",w:"72 pg/ml in our patient (normal 12–65)."},
+vitd:{l:"25-hydroxyvitamin D",c:"test",d:"The storage form of vitamin D measured in blood.",w:"18 ng/ml in our patient (normal range in the slides 30–100)."},
+cholestasis:{l:"cholestasis",c:"disease",d:"Bile flow is blocked or reduced, so conjugated (direct) bilirubin and gamma-glutamyl transferase rise.",w:"Yellow eyes and pain under the right ribs. Here probably from gallstones: a second problem next to the adrenal one."},
+ggt:{l:"gamma-glutamyl transferase",c:"enzyme",d:"Liver and bile-duct enzyme; rises in cholestasis and with alcohol or some drugs.",w:"101 units/L in our patient (normal 9–36)."},
+dexa:{l:"dexamethasone",c:"drug",d:"Very potent, long-acting synthetic glucocorticoid with practically no mineralocorticoid (salt-retaining) effect.",w:"Not first choice in adrenal crisis or for routine Addison replacement."},
+pred:{l:"prednisolone",c:"drug",d:"Intermediate-acting synthetic glucocorticoid (prednisone is converted into prednisolone in the liver).",w:"Long-term use suppresses the axis: secondary insufficiency if it is stopped suddenly."},
+sickday:{l:"sick-day rules",c:"concept",d:"Rules for raising the glucocorticoid dose during illness: fever above 38 °C → double; above 39 °C → triple; cannot keep tablets down → injection.",w:"The most important teaching to prevent adrenal crisis."},
+card:{l:"steroid emergency card",c:"concept",d:"A card the patient carries stating that they depend on steroids and need hydrocortisone in an emergency.",w:"Tells emergency staff to give hydrocortisone immediately."},
+kit:{l:"hydrocortisone emergency injection kit",c:"drug",d:"100 mg hydrocortisone for injection into a muscle by the patient or family.",w:"For vomiting or collapse, followed by going to hospital."},
+wfs:{l:"Waterhouse–Friderichsen syndrome",c:"disease",d:"Bleeding into both adrenal glands during severe sepsis, classically meningococcal.",w:"Sudden adrenal crisis with a purple (purpuric) rash and shock."},
+gcsup:{l:"glucocorticoid-induced adrenal suppression",c:"disease",d:"Long-term steroid tablets (or other forms) switch off corticotropin-releasing hormone and adrenocorticotropic hormone, and the adrenal shrinks from disuse.",w:"Stopping suddenly causes secondary or tertiary insufficiency. Steroids must be tapered."}
+});
+
+/* ===== CBL 5 lesson: header + steps 1–4 ===== */
+const CBL5={
+meta:"Endocrinology › Case-based learning 5 · Prof. Dr. Ionela Pascanu, UMCH 2026 · 35 slides · ⏱ about 30 minutes in 7 bite-sized steps",
+intro:`<div class="scene"><b>The scene:</b> M.T., a 53-year-old woman, is sent up from the emergency department with pain under her right ribs, nausea, vomiting, exhaustion, low blood pressure and a low sodium. Everyone is thinking "gallbladder". You are going to follow her case slide by slide, and find out what is really going on.</div>
+<p>This whole module is <b>one patient</b>. Each step reveals the next part of her story: you decide, get feedback, collect XP.</p>`,
+goals:[
+"Spot the history clues that point to adrenal insufficiency",
+"Link each examination finding to its hormone cause and build a presumptive diagnosis",
+"Explain every abnormal routine lab value in adrenal insufficiency",
+"Climb the diagnostic ladder and tell primary from secondary insufficiency",
+"Put the final diagnosis together and classify autoimmune polyglandular syndromes",
+"Treat an adrenal crisis safely, before the diagnosis is confirmed",
+"Plan chronic replacement, sick-day rules and monitoring"],
+cards:[
+{id:"a1",title:"Meet M.T.: what is suspicious?",min:3,goal:0,obj:["Read a case file like a detective: separate red flags from background noise","Recognise that adrenal insufficiency can look like a stomach or gallbladder problem","Notice the autoimmune clue hidden in the history"],html:`
+<div class="scene"><b>The scene:</b> Emergency department. M.T., 53, female. She has pain under the right ribs (right hypochondrium), nausea and vomiting, and has felt exhausted for weeks. Blood pressure is low and her sodium is 130 mmol/L. She takes <b>no medication</b>.</div>
+<table><tr><th>Case file (slides 2–3)</th><th></th></tr>
+<tr><td>Reasons for admission</td><td>Right hypochondrium pain, nausea, vomiting, fatigue, low blood pressure, [[hyponat]] (sodium 130 mmol/L, emergency department)</td></tr>
+<tr><td>Past history</td><td>At 45: hiatal hernia, fatty liver disease. Toxic hepatitis. Gallstones (cholelithiasis)</td></tr>
+<tr><td>Gynaecology</td><td>First period at 14, <b>menopause at 38</b>, no births</td></tr>
+<tr><td>Medication</td><td>None</td></tr></table>
+<p>👉 <b>Click each clue</b> to decide why it matters:</p>
+<div data-widget="clues"></div>
+<p><b>The big lesson:</b> [[crisis|Adrenal insufficiency]] is a great <b>mimic</b>. Nausea, vomiting and abdominal pain are common in adrenal insufficiency, so a patient can end up on a surgical ward. Low blood pressure plus low sodium in someone who is vomiting should always make you ask: <i>"Could this be the adrenals?"</i></p>
+<div class="hint">💡 <b>"Vomiting + low pressure + low sodium = think adrenal before you blame the gallbladder."</b> And: menopause before 40 = premature. Ask yourself: <i>"What else could be autoimmune here?"</i></div>`,
+recap:["Abdominal pain, nausea, vomiting, fatigue, low blood pressure and low sodium together suggest adrenal insufficiency.","Menopause at 38 = primary ovarian insufficiency, a possible autoimmune clue.","'No medication' matters: it makes steroid withdrawal (secondary insufficiency) unlikely."],
+quiz:[{q:"Which detail in M.T.'s history best hints that more than one gland may be under immune attack?",o:["Hiatal hernia at 45","Menopause at 38","Gallstones"],a:1,e:"Menopause before 40 is premature (primary ovarian insufficiency). Ovarian failure can be autoimmune and is associated with autoimmune adrenal disease."},
+{q:"Why is 'no medication' an important negative?",o:["It excludes stopping long-term steroid tablets, the most common cause of secondary adrenal insufficiency","It proves she is healthy","It rules out gallstones"],a:0,e:"Steroid tablets suppress the hypothalamic–pituitary–adrenal axis. If someone stops them, secondary insufficiency follows. No steroid use makes that cause unlikely."}]},
+
+{id:"a2",title:"Examination and presumptive diagnosis",min:4,goal:1,obj:["Explain why the skin darkens in primary adrenal insufficiency","Link low blood pressure and loss of body hair to the missing hormones","Write a problem list (presumptive diagnosis) like the slide"],html:`
+<div class="scene"><b>The scene:</b> You examine M.T. Her skin is dry and darker than you expected. Her armpits are hairless. Her eyes are slightly yellow. Blood pressure 90/60 mmHg, pulse 80 per minute.</div>
+<table><tr><th>Finding (slides 4–5)</th><th>What it tells you</th></tr>
+<tr><td>[[hyperpig|Hyperpigmentation]], dry skin</td><td>Low cortisol → no feedback → the pituitary makes huge amounts of [[acth]] from [[pomc]], which also stimulates melanocytes. <b>Dark skin = primary.</b></td></tr>
+<tr><td>Blood pressure 90/60 mmHg</td><td>Cortisol keeps blood vessels responsive to adrenaline and noradrenaline; [[aldo|aldosterone]] keeps salt and water in. Both are missing.</td></tr>
+<tr><td>Loss of axillary and pubic hair</td><td>In women, body hair depends on adrenal androgens ([[dhea]]). Adrenal failure removes them (and her ovaries have also stopped).</td></tr>
+<tr><td>[[goitre|Goitre grade Ib]], elastic, painless</td><td>Thyroid clue → think [[thyroiditis]]. Is she hypothyroid?</td></tr>
+<tr><td>Yellow sclerae, right hypochondrium pain</td><td>Bile problem ([[cholestasis]]?) with known gallstones.</td></tr>
+<tr><td>Negative Giordano sign</td><td>No pain when the kidney area is tapped → kidney infection or stone less likely.</td></tr>
+<tr><td>Body mass index 26 kg/m²</td><td>Slightly overweight: adrenal insufficiency does not always make people thin.</td></tr>
+<tr><td>Pituitary: no headache, no visual field problems</td><td>No sign of a pituitary tumour, so a pituitary (secondary) cause is less likely.</td></tr></table>
+<h3>Presumptive diagnosis (slide 7)</h3>
+<p>• Early menopause &nbsp;• <b>Adrenal insufficiency suspected</b> &nbsp;• Goitre grade Ib: hypothyroidism? &nbsp;• Gallstones? &nbsp;• Cholestatic syndrome?</p>
+<div class="hint">💡 <b>"Primary = Pigmented, Potassium high."</b> Both come from the adrenal itself failing: high adrenocorticotropic hormone darkens the skin; missing aldosterone raises potassium. <br>Fun fact: the man in the photo on slide 24 is United States president John F. Kennedy, who had Addison disease. His year-round "tan" is often linked to it.</div>`,
+recap:["Dark skin = high adrenocorticotropic hormone from proopiomelanocortin = primary insufficiency.","Low blood pressure: no cortisol (vessel tone) and no aldosterone (volume).","Loss of axillary and pubic hair in women = loss of adrenal androgens."],
+quiz:[{q:"Which examination finding best separates primary from secondary adrenal insufficiency?",o:["Fatigue","Hyperpigmentation","Low blood pressure"],a:1,e:"Only primary insufficiency has very high adrenocorticotropic hormone, which darkens the skin. Fatigue and low blood pressure occur in both."},
+{q:"Why has M.T. lost her axillary and pubic hair?",o:["Lack of adrenal androgens such as dehydroepiandrosterone","Lack of aldosterone","Too much cortisol"],a:0,e:"In women, adrenal androgens drive axillary and pubic hair. Adrenal failure (in both primary and secondary insufficiency) removes them."}]},
+
+{id:"a3",title:"Routine labs: read the blood like a story",min:4,goal:2,obj:["Explain low sodium, high potassium and low glucose in adrenal insufficiency","Use serum osmolality to confirm true hyponatraemia","Separate adrenal findings from the second problem (the bile ducts)"],html:`
+<div class="scene"><b>The scene:</b> The first blood results arrive. The registrar circles four values in red and says: "Explain each one and you have the diagnosis."</div>
+<p>👉 <b>Click any value</b> (red = high, blue = low) to see why it happens. Explain every abnormal value for a bonus.</p>
+<div data-widget="labs"></div>
+<p><b>The adrenal pattern (slide 13):</b> [[hyponat]], [[hyperkal]], sometimes high calcium, raised urea from dehydration, anaemia and [[eos]]. Plus [[hypogly]]. M.T. has the core four: <b>low sodium, high potassium, low glucose, low [[osm|osmolality]]</b>.</p>
+<p><b>Why sodium falls twice over:</b> no aldosterone → salt is lost in the urine; no cortisol → the brake on [[adh]] is released → water is kept and sodium is diluted.</p>
+<div class="hint">💡 <b>"Salt goes, potassium stays, sugar drops."</b> No aldosterone → sodium is lost and potassium is kept. No cortisol → glucose falls.</div>
+<div class="corr">📝 <b>Slide check (slides 9 and 13):</b><br>• Albumin is written as "40, range 38–54 <b>mg/dl</b>". That must be <b>g/L</b> (40 g/L = 4.0 g/dl). 40 mg/dl would be incompatible with life.<br>• Creatine kinase has the same reference range as lactate dehydrogenase (125–220 U/L), probably copied by mistake. Low values of both have no clinical meaning here.<br>• Slide 13 lists raised urea (azotaemia), high calcium and eosinophilia as typical. M.T. actually has <b>low</b> urea and <b>normal</b> calcium, and no white cell differential is given, so we cannot judge eosinophils. Textbook lists are possibilities, not guarantees.</div>`,
+recap:["Low sodium: aldosterone loss (salt wasting) plus antidiuretic hormone excess from cortisol lack.","High potassium: no aldosterone, so it points to primary insufficiency.","Low glucose: no cortisol for gluconeogenesis. Raised bilirubin and gamma-glutamyl transferase = cholestasis, a separate problem."],
+quiz:[{q:"Which electrolyte finding points specifically to PRIMARY rather than secondary insufficiency?",o:["Low sodium","High potassium","Low glucose"],a:1,e:"Potassium rises only when aldosterone is missing, and aldosterone is lost only when the adrenal itself fails. Low sodium and low glucose can occur in secondary insufficiency too."},
+{q:"Why can sodium be low even in SECONDARY insufficiency, where aldosterone is normal?",o:["Cortisol lack increases antidiuretic hormone → water retention dilutes sodium","Renin is very high","The kidney loses potassium"],a:0,e:"Cortisol normally restrains antidiuretic hormone (vasopressin). Without cortisol the body keeps water, so sodium is diluted."}]},
+
+{id:"a4",title:"The diagnostic ladder: confirm it and find the level",min:5,goal:3,obj:["Interpret a morning cortisol using the slide thresholds","Choose and read the short and long stimulation tests","Know when the insulin tolerance test is the gold standard, and when it is not needed or dangerous","Tell primary from secondary using adrenocorticotropic hormone, renin and aldosterone"],html:`
+<div class="scene"><b>The scene:</b> You suspect adrenal insufficiency. The consultant asks two questions: <b>"Is the cortisol really too low?"</b> and <b>"Where is the chain broken: adrenal, pituitary or hypothalamus?"</b></div>
+<p>Remember the [[hpa]]: [[crh]] → adrenocorticotropic hormone → cortisol. Click the levels to see what happens to each hormone:</p>
+<div data-widget="hpa"></div>
+<h3>🪜 Climb the ladder (click each rung)</h3>
+<p>Tools on the ladder: [[basalcort]], [[renin]], [[sst]] with [[synacthen]], [[lst]], [[itt]], [[ab21]] and [[ct]].</p>
+<div data-widget="ladder"></div>
+<h3>Primary versus secondary at a glance (slide 24, extended)</h3>
+<table><tr><th></th><th>[[pai|Primary]] (adrenal)</th><th>[[sai|Secondary]] (pituitary)</th></tr>
+<tr><td>Skin and mucosa</td><td><b>Dark</b></td><td>Pale</td></tr>
+<tr><td>Potassium</td><td><b>High</b></td><td>Normal</td></tr>
+<tr><td>Sodium</td><td>Low</td><td>Normal or low</td></tr>
+<tr><td>Adrenocorticotropic hormone</td><td><b>Very high</b></td><td>Low or inappropriately normal</td></tr>
+<tr><td>Renin / aldosterone</td><td>Renin high, aldosterone low</td><td>Normal (intact renin–angiotensin–aldosterone system)</td></tr>
+<tr><td>Associated diseases</td><td>Primary hypothyroidism, type 1 diabetes, vitiligo, neurological deficit (adrenoleukodystrophy, males only)</td><td>Low sex hormones or low thyroid from the pituitary, growth hormone deficiency, diabetes insipidus, headaches, visual field problems</td></tr></table>
+<p>The third level, [[tai]], behaves like secondary at the bedside.</p>
+<div class="hint">💡 <b>"Low cortisol? Ask the boss."</b> If adrenocorticotropic hormone (the boss) is shouting (very high), the worker (adrenal) is broken = primary. If the boss is silent (low), the boss is the problem = secondary.</div>
+<div class="corr">📝 <b>Slide check:</b><br>• <b>Slide 16, "Cortrosyn 250/5/1 µg":</b> ambiguous. The standard tests are the <b>250 µg</b> (high-dose, standard) and the <b>1 µg</b> (low-dose) test. A 5 µg dose is not a standard test.<br>• <b>Normal response "above 18–20 µg/dl"</b> (about 500–550 nmol/L) is the classic cut-off. Newer, more specific cortisol assays use lower cut-offs, so always use your laboratory's value.<br>• <b>Slide 21, insulin tolerance test "gold standard":</b> true for testing the <i>whole</i> axis (especially suspected pituitary or hypothalamic disease). For suspected primary insufficiency the short stimulation test is the recommended first-line test (Endocrine Society guideline, 2016). For M.T. the insulin test would be <b>dangerous</b>: she is already hypoglycaemic (59 mg/dl) and hypotensive.<br>• <b>Slide 12:</b> 14 µg/dl × 27.59 = 386 nmol/L. The slide rounds this to 400 nmol/L, so treat both as approximate.<br>• Conversion used in this module: cortisol µg/dl × 27.59 = nmol/L.</div>`,
+recap:["Morning cortisol: below 3 µg/dl = insufficiency very likely, above 14 µg/dl = intact. M.T.: 4.8 µg/dl (about 132 nmol/L), grey zone → test.","Short stimulation test (250 µg): M.T. peaked at 7.2 µg/dl (normal above 18–20) = adrenal insufficiency confirmed.","Adrenocorticotropic hormone 701.9 pg/ml (about 11 times the upper limit) = PRIMARY. Insulin test = whole-axis gold standard, but not needed or not safe here."],
+quiz:[{q:"M.T.'s 8 a.m. cortisol is 4.8 µg/dl (about 132 nmol/L). Using the slides, what next?",o:["Nothing: adrenal insufficiency is excluded","Do a stimulation test: the value is between 3 and 14 µg/dl","Insulin tolerance test immediately"],a:1,e:"Above 14 µg/dl excludes insufficiency and below 3 µg/dl makes it very likely. 4.8 µg/dl is in between and very suspicious, so do a stimulation test. The insulin test is unsafe in a hypoglycaemic, hypotensive patient."},
+{q:"After 250 µg tetracosactide her cortisol is 7.2 µg/dl at 30 minutes and 6.4 µg/dl at 60 minutes; adrenocorticotropic hormone is 701.9 pg/ml. Diagnosis?",o:["Secondary adrenal insufficiency","Primary adrenal insufficiency","Normal adrenal function"],a:1,e:"No cortisol rise (normal above 18–20 µg/dl) = adrenal insufficiency. Very high adrenocorticotropic hormone = the pituitary is shouting at a broken adrenal = primary."}]}
+]};
+
+/* ===== CBL 5 lesson: steps 5–7 ===== */
+CBL5.cards.push(
+{id:"a5",title:"Putting it together: Schmidt syndrome",min:4,goal:4,obj:["Match each part of the final diagnosis to its evidence","Define autoimmune polyglandular syndromes types 1 to 4","Compare type 1 and type 2","Know what to screen for, and the 'hydrocortisone before thyroxine' rule"],html:`
+<div class="scene"><b>The scene:</b> The remaining results come back (slide 20). [[tsh]] 0.94 and free thyroxine 0.96: normal. [[antitg]] 24.3 (normal up to 4.1): <b>positive</b>. [[antitpo]] 0.37: negative. [[pth|Parathyroid hormone]] 72 pg/ml (high), corrected calcium 8.9 mg/dl (normal), phosphorus normal, [[vitd]] 18 ng/ml (low). Abdominal computed tomography: adrenal glands normal (slide 27).</div>
+<h3>Final diagnosis (slide 28) and the evidence</h3>
+<table><tr><th>Diagnosis</th><th>Evidence</th></tr>
+<tr><td><b>[[schmidt]] / [[aps2]]</b></td><td>Autoimmune adrenal failure + autoimmune thyroid disease (+ ovarian failure)</td></tr>
+<tr><td>[[pai|Primary adrenal insufficiency]], acute adrenal failure</td><td>Cortisol 4.8 µg/dl, no response to stimulation, adrenocorticotropic hormone 701.9 pg/ml, high potassium, low sodium, low glucose, dark skin</td></tr>
+<tr><td>Goitre grade Ib, [[thyroiditis]], [[euthy]]</td><td>Goitre, anti-thyroglobulin positive, normal thyroid hormones</td></tr>
+<tr><td>[[poi|Primary ovarian failure]]</td><td>Menopause at 38</td></tr>
+<tr><td>[[shpt]] due to vitamin D deficiency</td><td>Parathyroid hormone high, calcium normal, vitamin D low</td></tr>
+<tr><td>Hiatal hernia, gallstones, [[cholestasis|cholestatic syndrome]], fatty liver, overweight</td><td>History, yellow sclerae, high direct bilirubin and [[ggt]], body mass index 26</td></tr></table>
+<div class="corr">📝 <b>Thyroid note:</b> M.T. is <b>anti-thyroglobulin positive but anti-thyroid peroxidase negative</b>. Most people with autoimmune thyroiditis are thyroid peroxidase positive, so this pattern is less typical. Positive thyroglobulin antibodies with a goitre still support autoimmune thyroiditis. Also, slide 7 asked "hypothyroidism?": the answer is <b>no</b>, she is euthyroid. The ultrasound on slide 26 is a reference picture from Radiopaedia, not necessarily M.T.'s scan.</div>
+<h3>[[aps|Autoimmune polyglandular syndromes]] (slide 29)</h3>
+<table><tr><th>Type</th><th>Definition</th></tr>
+<tr><td>Type 1</td><td>Chronic candidiasis, hypoparathyroidism, autoimmune adrenal insufficiency (at least two)</td></tr>
+<tr><td><b>Type 2 (Schmidt)</b></td><td>Autoimmune adrenal insufficiency (<b>must always be present</b>) + autoimmune thyroid disease and/or type 1 diabetes</td></tr>
+<tr><td>Type 3</td><td>Autoimmune thyroid disease + other autoimmune diseases (excluding adrenal insufficiency, hypoparathyroidism, chronic candidiasis)</td></tr>
+<tr><td>Type 4</td><td>Two or more organ-specific autoimmune diseases that do not fit types 1–3</td></tr></table>
+<h3>Type 1 versus type 2</h3>
+<table><tr><th></th><th>[[aps1|Type 1]]</th><th>[[aps2|Type 2]]</th></tr>
+<tr><td>Cause</td><td>One gene: autoimmune regulator gene, autosomal recessive</td><td>Many genes, linked to human leukocyte antigen DR3 / DR4</td></tr>
+<tr><td>Onset</td><td>Childhood</td><td>Adulthood</td></tr>
+<tr><td>Sex</td><td>Both sexes equally</td><td>More often women</td></tr>
+<tr><td>Core diseases</td><td>Candidiasis, hypoparathyroidism, Addison disease</td><td>Addison disease + thyroid disease and/or type 1 diabetes. Also possible: ovarian failure, vitiligo, coeliac disease, pernicious anaemia</td></tr></table>
+<p><b>Clinical consequences:</b> screen M.T. regularly for thyroid function, diabetes (glucose), vitamin B12 deficiency and coeliac disease, and tell first-degree relatives about the risk. [[ab21]] confirm the autoimmune cause. [[ct|Imaging]] matters less in primary insufficiency (take-home message); it is needed when antibodies are negative, to look for bleeding, metastases or tuberculosis (slide 19).</p>
+<div class="hint">💡 <b>"Two = Thyroid (or Type 1 diabetes) Together with the adrenal."</b> And the safety rule: <b>"Steroids before thyroxine."</b> If adrenal insufficiency and hypothyroidism coexist, start hydrocortisone first. Thyroxine speeds up cortisol breakdown and can trigger a crisis.</div>`,
+recap:["Final diagnosis: autoimmune polyglandular syndrome type 2 (Schmidt) = autoimmune Addison disease + autoimmune thyroiditis (+ primary ovarian failure).","Type 2: adrenal always present; adult women; human leukocyte antigen-linked. Type 1: autoimmune regulator gene, childhood, candidiasis + hypoparathyroidism + Addison disease.","Secondary hyperparathyroidism here is from low vitamin D, not autoimmune. Start hydrocortisone before thyroxine."],
+quiz:[{q:"Which component MUST be present for autoimmune polyglandular syndrome type 2?",o:["Type 1 diabetes","Autoimmune adrenal insufficiency","Hypoparathyroidism"],a:1,e:"Type 2 = autoimmune adrenal insufficiency (always) + autoimmune thyroid disease and/or type 1 diabetes. Hypoparathyroidism belongs to type 1."},
+{q:"A new patient has untreated adrenal insufficiency AND untreated hypothyroidism. What do you start first?",o:["Thyroxine first","Hydrocortisone first, then thyroxine","It does not matter"],a:1,e:"Thyroxine increases cortisol clearance. Giving it first to someone with untreated adrenal insufficiency can precipitate an adrenal crisis."}]},
+
+{id:"a6",title:"Adrenal crisis: treat first, confirm later",min:4,goal:5,obj:["Recognise an adrenal crisis","Give the correct first-hour treatment (hydrocortisone, saline, glucose)","Explain why hydrocortisone beats dexamethasone","Know when fludrocortisone is (not) needed acutely"],html:`
+<div class="scene"><b>The scene:</b> Back to admission day. M.T. is vomiting, her blood pressure is 90/60 mmHg, sodium 126, potassium 6.21, glucose 59 mg/dl. The cortisol result will not be ready until tomorrow. Do you wait?</div>
+<p><b>No.</b> First take-home message (slide 35): <b>if you clinically suspect acute adrenal insufficiency ([[crisis]]), start emergency treatment before the diagnosis is confirmed.</b> Take blood for cortisol and adrenocorticotropic hormone first if it costs no time, then treat.</p>
+<p>👉 Click each box in the flow:</p>
+<div data-widget="crisis"></div>
+<p><b>Why [[hydrocortisone]]?</b> At high doses, hydrocortisone also acts on the mineralocorticoid receptor, so it replaces cortisol <i>and</i> covers the missing aldosterone. [[dexa]] has no salt-retaining effect at all.</p>
+<p><b>Why no [[fludro|fludrocortisone]] at first?</b> While hydrocortisone is 50 mg per day or more, its own mineralocorticoid effect is enough. Fludrocortisone is started when the dose is lowered below that.</p>
+<div class="hint">💡 <b>The 5 S of adrenal crisis:</b> <b>S</b>alt (0.9 % saline), <b>S</b>ugar (glucose), <b>S</b>teroid (hydrocortisone), <b>S</b>upport (monitoring, intensive care if needed), <b>S</b>earch for the trigger (infection, vomiting, surgery, stopped tablets).</div>
+<div class="corr">📝 <b>Slide check (slide 30): handle with care</b><br>• <b>"IV hydrocortisone 100 mg or DXM 4 mg every 6 hours":</b> dexamethasone 4 mg every 6 hours is <b>not</b> standard crisis treatment. Hydrocortisone is preferred because it also has a mineralocorticoid effect. If dexamethasone is used at all (for example while a stimulation test is still planned, because it does not interfere with the cortisol assay), it is usually given as <b>one 4 mg dose</b>, repeated at most once every 24 hours, and switched to hydrocortisone as soon as possible. Treatment must never be delayed for testing.<br>• <b>Hydrocortisone dosing</b> on the slide is ambiguous. Standard regimen (Endocrine Society guideline, 2016): <b>100 mg into a vein (or muscle) immediately</b>, then <b>200 mg per 24 hours</b> (50 mg every 6 hours, or as a continuous infusion), then taper to oral doses over 1–3 days once the trigger has resolved. The slide's "50 mg every 6 hours, then oral in 4–5 days" fits this maintenance part.<br>• <b>Fluids:</b> "1–3 litres per day" understates the first hour. Give <b>1 litre of 0.9 % saline within the first hour</b>, then adjust to circulation and blood results.<br>• <b>Fludrocortisone 0.1 mg</b> is not needed while hydrocortisone is 50 mg per day or more.<br>• <b>"Large needle (19G)":</b> resuscitation usually uses a large-bore cannula (18 gauge or wider). 19 gauge is not usually called large-bore.<br>• "HHS" on the slide = hydrocortisone hemisuccinate (the injectable form).</div>`,
+recap:["Suspected adrenal crisis → treat immediately; never wait for cortisol results.","Hydrocortisone 100 mg into a vein or muscle, then 200 mg per 24 hours; 1 litre 0.9 % saline in the first hour; glucose if low; treat the trigger.","Hydrocortisone beats dexamethasone (mineralocorticoid effect). Fludrocortisone only once hydrocortisone is below 50 mg per day."],
+quiz:[{q:"M.T. is hypotensive and vomiting; the cortisol result is pending until tomorrow. What do you do?",o:["Wait for the cortisol before giving steroids","Take blood, then give hydrocortisone 100 mg into a vein and start 0.9 % saline now","Give fludrocortisone tablets"],a:1,e:"Adrenal crisis is lethal if untreated. Take blood for cortisol and adrenocorticotropic hormone (no delay), then give hydrocortisone and saline immediately. She is vomiting, so tablets will not work."},
+{q:"Why is hydrocortisone preferred to dexamethasone in adrenal crisis?",o:["It is cheaper","At high doses it also activates the mineralocorticoid receptor, replacing aldosterone","Dexamethasone does not work on the glucocorticoid receptor"],a:1,e:"Dexamethasone is a pure, potent glucocorticoid with practically no salt-retaining effect. High-dose hydrocortisone covers both deficits."}]},
+
+{id:"a7",title:"Going home: replacement, sick-day rules, monitoring",min:5,goal:6,obj:["Prescribe physiological replacement for primary insufficiency","Teach sick-day rules and the emergency injection","Monitor glucocorticoid and mineralocorticoid replacement correctly","Recall the take-home messages"],html:`
+<div class="scene"><b>The scene:</b> M.T. is stable and eating again. Before discharge she asks: "Do I need these tablets forever? And what if I get the flu?"</div>
+<h3>M.T.'s discharge plan (slide 31)</h3>
+<p>• Correct volume, dehydration and low glucose; salt-rich diet.<br>
+• [[hydrocortisone|Hydrocortisone]] 10 mg tablets: 1½ – ½ – 0 = <b>15 mg on waking + 5 mg at midday = 20 mg per day</b> (largest dose in the morning, mimicking the natural morning peak).<br>
+• [[fludro|Fludrocortisone]] 0.1 mg once in the morning.<br>
+• Calcium 1500 mg per day + vitamin D3 2000 units, 2 tablets a day for 1 month, then 1 a day (for the low vitamin D and secondary hyperparathyroidism).<br>
+• Silymarin (milk thistle) 1–1–1 for the liver, plus surgical and gastroenterology review for the gallstones and cholestasis.</p>
+<h3>Chronic treatment options (slide 32)</h3>
+<table><tr><th>Medicine</th><th>Dose</th><th>Monitoring</th></tr>
+<tr><td>[[hydrocortisone|Hydrocortisone]]</td><td>15–25 mg per day in 2–3 doses</td><td rowspan="3">Symptoms of under- or over-replacement (see below)</td></tr>
+<tr><td>[[pred|Prednisone]] (alternative)</td><td>3–5 mg once daily</td></tr>
+<tr><td>[[dexa|Dexamethasone]]</td><td>0.5 mg once daily (slide; see check below)</td></tr>
+<tr><td>[[fludro|Fludrocortisone]]</td><td>0.05–0.2 mg once daily; may need more in summer (salt lost in sweat)</td><td>Blood pressure, sodium, potassium, renin in the upper normal range</td></tr>
+<tr><td>[[dhea|Dehydroepiandrosterone]]</td><td>25–50 mg once daily</td><td>Libido, mood, sense of well-being (women)</td></tr></table>
+<h3>⚠️ [[sickday|Sick-day rules]] (slide 34): the lifesaver</h3>
+<table><tr><th>Situation</th><th>Action</th></tr>
+<tr><td>Fever above 38 °C</td><td><b>Double</b> the usual daily hydrocortisone dose</td></tr>
+<tr><td>Fever above 39 °C</td><td><b>Triple</b> the usual daily dose</td></tr>
+<tr><td>Cannot keep tablets down (repeated vomiting, severe diarrhoea, collapse)</td><td><b>100 mg hydrocortisone into a muscle</b> immediately + emergency care</td></tr></table>
+<p>The slide also quotes the National Institute for Health and Care Excellence (2024): during major physical stress, at least 40 mg per day in 2–4 divided doses, continued until recovery (often 2–3 days). And always: <b>never stop glucocorticoids</b>, carry a [[card]], keep a [[kit]], and train patient and family.</p>
+<h3>Monitoring (slide 33)</h3>
+<table><tr><th>Hydrocortisone (glucocorticoid)</th><th>Fludrocortisone (mineralocorticoid)</th></tr>
+<tr><td>Symptoms: fatigue, weakness, appetite, nausea<br>Energy, weight, muscle strength<br>Blood pressure, dizziness on standing<br><b>Too little:</b> ongoing symptoms, weight loss, low pressure<br><b>Too much:</b> weight gain, hypertension, glucose rise, Cushing-like features</td>
+<td>Sodium and potassium<br>Blood pressure, including standing<br>Salt craving and hydration<br>Swelling (oedema)<br><b>Too little:</b> salt craving, low sodium, high potassium, high renin<br><b>Too much:</b> hypertension, oedema, suppressed renin</td></tr></table>
+<p><b>Key rule:</b> replacement is adjusted <b>clinically</b>. Chasing cortisol levels is not the standard way to adjust it.</p>
+<div class="corr">📝 <b>Slide check (slide 32):</b><br>• <b>Dexamethasone 0.5 mg daily</b> appears in the American table, but current guidance (Endocrine Society, 2016) advises <b>against</b> dexamethasone for routine Addison replacement: it is long-acting, hard to dose finely, and carries a high risk of Cushing-like side effects. Hydrocortisone is first choice.<br>• "Low to normal plasma adrenocorticotropic hormone indicates over-replacement": in primary insufficiency adrenocorticotropic hormone is high before the morning dose anyway, and guidelines advise against using it to adjust the dose. Slide 33 agrees: adjust by symptoms and signs.</div>
+<div class="exam" style="border-color:var(--ok)"><b>🏁 Take-home messages (slide 35)</b><ul>
+<li>Clinical suspicion of acute adrenal insufficiency → start emergency treatment <b>before</b> diagnostic confirmation.</li>
+<li>Primary insufficiency → replace glucocorticoid <b>and</b> mineralocorticoid at physiological doses.</li>
+<li>Monitor clinically: symptoms, blood pressure, electrolytes, glucose.</li>
+<li>Autoimmune cause → often associated with other autoimmune diseases.</li>
+<li>Imaging is less important in primary adrenal insufficiency.</li></ul></div>
+<div class="hint">💡 <b>"38 double, 39 triple, vomit = needle."</b></div>`,
+recap:["Primary insufficiency: hydrocortisone 15–25 mg per day in 2–3 doses (biggest dose on waking) + fludrocortisone 0.05–0.2 mg per day.","Sick-day rules: above 38 °C double, above 39 °C triple, vomiting → 100 mg hydrocortisone into a muscle and go to hospital.","Monitor clinically; fludrocortisone by blood pressure, sodium, potassium and renin."],
+quiz:[{q:"M.T. (hydrocortisone 20 mg per day) has the flu with a temperature of 38.5 °C and is eating and drinking. What should she take?",o:["Her usual 20 mg","40 mg per day (double)","100 mg into a muscle"],a:1,e:"Fever above 38 °C → double the usual daily dose while she can keep tablets down. Above 39 °C → triple."},
+{q:"Two days later she vomits repeatedly and cannot keep tablets down. Correct action?",o:["Triple the oral dose","Inject 100 mg hydrocortisone into a muscle and seek emergency care","Skip the tablets until the vomiting stops"],a:1,e:"If tablets are not absorbed, oral dosing fails. Inject 100 mg hydrocortisone into a muscle immediately and go to hospital."},
+{q:"Which is the best way to check that her fludrocortisone dose is right?",o:["Morning cortisol","Blood pressure (lying and standing), sodium, potassium and renin","Thyroid-stimulating hormone"],a:1,e:"Mineralocorticoid replacement is judged by volume status and electrolytes, with renin in the upper normal range."}]}
+);
+
+/* ===== CBL 5 lesson: widget data, mini-cases, flashcards, exam box ===== */
+Object.assign(CBL5,{
+clues:[["Right hypochondrium pain, nausea, vomiting","Could be her gallbladder (known gallstones). But gut symptoms are also very common in adrenal insufficiency and in adrenal crisis. Keep both in mind.","red"],
+["Fatigue for weeks","Nonspecific, but chronic fatigue and weakness are the most common symptoms of cortisol deficiency.","red"],
+["Low blood pressure","Cortisol and aldosterone both support blood pressure. In a vomiting patient this is a red flag for adrenal crisis.","red"],
+["Sodium 130 mmol/L","Low sodium: salt loss from missing aldosterone and water retention from missing cortisol. A classic adrenal clue.","red"],
+["Menopause at 38","Premature (before 40) = primary ovarian insufficiency. Often autoimmune, and it travels with autoimmune adrenal disease.","red"],
+["No medication","An important NEGATIVE: no steroid tablets, so steroid withdrawal (secondary insufficiency) is unlikely. Also no diuretics to explain the low sodium.","red"],
+["Hiatal hernia, fatty liver, toxic hepatitis, gallstones","Background problems that can explain some symptoms (pain, liver tests). They are real, but they do not explain low pressure + low sodium. Do not let them stop your thinking.","grey"],
+["No births","Not specific. It may fit long-standing ovarian problems, but we have no details. Note it and move on.","grey"]],
+labs:[["Sodium","126","mmol/L","136–145","L","No aldosterone → the kidney loses sodium. No cortisol → more antidiuretic hormone → water retained → sodium diluted. Low osmolality (below) confirms true dilution."],
+["Potassium","6.21","mmol/L","3.5–5.1","H","No aldosterone → the kidney cannot excrete potassium. This is the key sign of PRIMARY insufficiency (aldosterone is normal in secondary)."],
+["Glucose","59 (about 3.3 mmol/L)","mg/dl","70–110","L","Cortisol drives gluconeogenesis and opposes insulin. Without it, fasting glucose falls, worse with vomiting and poor intake."],
+["Serum osmolality","268","mOsm/kg","285–295","L","Low osmolality = hypotonic hyponatraemia: the low sodium is real water excess, not an artefact from high lipids or protein."],
+["Haemoglobin","11.23","g/dl","11.5–15","L","Mild anaemia is common in adrenal insufficiency (cortisol and androgens support red cell production). Her low iron adds to it. Dehydration can hide anaemia, so the real value may be even lower."],
+["Haematocrit","32.55","%","35–45","L","Goes with the low haemoglobin (anaemia)."],
+["Iron","27","µg/dl","50–170","L","Iron deficiency in a woman after menopause: look for blood loss from the gut (she has a hiatal hernia). Inflammation also lowers iron."],
+["White cells","12.09","× 1000/µl","4–9","H","Mildly raised: look for infection. Infection is the most common trigger of adrenal crisis, and inflamed gallstones are possible. (Cortisol lack classically raises eosinophils and lymphocytes, but no differential count is given.)"],
+["Erythrocyte sedimentation rate","18","mm/h","2–13","H","Mild, nonspecific inflammation: infection, gallbladder or autoimmune activity."],
+["Urea","18","mg/dl","20.97–43","L","Textbooks expect HIGH urea (dehydration lowers kidney blood flow). Here it is low, perhaps from poor food intake and dilution. Not every textbook sign appears."],
+["Creatinine","0.43","mg/dl","0–1","N","Normal kidney function."],
+["Total bilirubin","1.6","mg/dl","0.2–1.2","H","Raised, mostly direct (conjugated) bilirubin → bile flow problem (cholestasis), fitting her gallstones and yellow sclerae. Not caused by the adrenal disease."],
+["Direct bilirubin","1.04","mg/dl","0–0.5","H","Conjugated bilirubin backs up when bile cannot drain: cholestasis."],
+["Gamma-glutamyl transferase","101","U/L","9–36","H","Bile-duct enzyme: confirms cholestasis (also raised with fatty liver)."],
+["Liver transaminases (aspartate / alanine)","21 / 32","U/L","5–34 / 0–55","N","Normal: no active liver-cell damage now."],
+["Calcium (corrected)","8.9","mg/dl","8.8–10.5","N","Normal. High calcium can occur in adrenal insufficiency, but not here. Parathyroid hormone turns out high because vitamin D is low (step 5)."],
+["Albumin","40","g/L (slide says mg/dl)","38–54","N","Normal. The slide unit 'mg/dl' is a typing error: it must be g/L."],
+["Cholesterol / triglycerides","127 / 133","mg/dl","below 200 / below 150","N","Normal."]],
+ladder:[["1. Morning (basal) cortisol","Blood at about 8 a.m.","Above 14 µg/dl (about 386–400 nmol/L) → axis intact (slide 12). Below 3 µg/dl (about 83 nmol/L) → insufficiency very likely; no stimulation test needed (slide 18). In between → stimulation test.","4.8 µg/dl (about 132 nmol/L; laboratory range 5–25) → grey zone and very suspicious → next rung."],
+["2. Plasma adrenocorticotropic hormone","Same morning sample (before any steroid)","High → primary (adrenal). Low or inappropriately normal → secondary or tertiary.","701.9 pg/ml (range 7.2–63.3), about 11 times the upper limit → PRIMARY."],
+["3. Renin and aldosterone (mineralocorticoid status)","Plasma renin activity and aldosterone","Primary: renin high, aldosterone low. Secondary: intact renin–angiotensin–aldosterone system (slide 14).","Not shown in the slides, but potassium 6.21 and sodium 126 fit low aldosterone."],
+["4. Short stimulation test","250 µg tetracosactide into a vein or muscle; cortisol at 0, 30, 60 minutes (slide 16)","Normal: peak cortisol above 18–20 µg/dl (about 500–550 nmol/L). No rise → adrenal insufficiency.","30 min: 7.2 µg/dl (about 199 nmol/L); 60 min: 6.4 µg/dl (about 177 nmol/L) → FAILED → adrenal insufficiency confirmed."],
+["5. Long (depot) stimulation test","Depot tetracosactide, cortisol over 48 hours (slide 17)","No rise → Addison disease. Normal peak → no insufficiency. Late peak → secondary insufficiency (the sleepy gland wakes up).","Not needed: already clear."],
+["6. Insulin tolerance test","Insulin 0.05–0.15 units/kg into a vein; glucose and cortisol every 30 minutes for 2 hours. Valid only if glucose falls to 40 mg/dl (2.2 mmol/L) or lower (slide 18)","Normal: cortisol above 18–20 µg/dl. Gold standard for the WHOLE axis. Not needed if basal cortisol is below 3 µg/dl. Avoid in heart disease, epilepsy, or existing hypoglycaemia.","NOT appropriate: she is already hypoglycaemic and hypotensive, and the diagnosis is already made."],
+["7. Find the cause","21-hydroxylase antibodies; adrenal computed tomography (slide 19)","Antibodies positive → autoimmune. Computed tomography: bleeding (both sides), metastases, tuberculosis, or a normal or small gland in autoimmune disease.","Computed tomography: normal adrenals (slide 27) → fits autoimmune adrenalitis. Antibody result not given in the slides."]],
+crisis:[["1. SUSPECT","Shock or low blood pressure, vomiting, abdominal pain, confusion, fever; low sodium, high potassium, low glucose. Known Addison disease or steroid use? Dark skin?","#c62828"],
+["2. BLOOD, but do not wait","Draw cortisol and adrenocorticotropic hormone (plus electrolytes, glucose, blood count, cultures) while placing a large-bore cannula. Never delay treatment for results.","#c62828"],
+["3. HYDROCORTISONE 100 mg NOW","Into a vein (or into a muscle if there is no access). This is the single most important step.","#c62828"],
+["4. FLUIDS + GLUCOSE","0.9 % saline: 1 litre within the first hour, then guided by blood pressure, urine output and electrolytes. Add glucose (dextrose) if glucose is low. Monitor potassium.","#d9730d"],
+["5. CONTINUE + FIND THE TRIGGER","Hydrocortisone 200 mg per 24 hours (50 mg every 6 hours or as an infusion). Look for and treat the trigger: infection (antibiotics if fever persists), vomiting illness, surgery, stopped tablets.","#d9730d"],
+["6. TAPER","When stable and eating: taper to oral hydrocortisone over 1–3 days. Start fludrocortisone (primary insufficiency) once hydrocortisone is below 50 mg per day.","#1f9d55"],
+["7. CONFIRM + EDUCATE","Complete the diagnostic workup (stimulation test, antibodies), chronic replacement, sick-day rules, steroid emergency card, injection kit.","#1f9d55"]],
+cases:[
+{id:"x1",title:"Mini-case 1: The gardener who ran out of prednisolone",steps:[
+{t:`<b>The scene:</b> A 70-year-old retired gardener has taken [[pred]] for polymyalgia rheumatica for many months. He ran out of tablets on holiday and stopped them suddenly 5 days ago. Now he is weak, nauseous and dizzy when standing. Blood pressure 95/60 mmHg. Sodium 131 mmol/L, <b>potassium 4.2 mmol/L</b>, glucose low-normal. His skin is pale.`,q:"Most likely diagnosis?",o:["Primary adrenal insufficiency (Addison disease)","Secondary or tertiary adrenal insufficiency from glucocorticoid suppression","Primary aldosterone excess"],a:1,e:"Months of prednisolone switched off corticotropin-releasing hormone and adrenocorticotropic hormone (glucocorticoid-induced adrenal suppression). Sudden stopping leaves a shrunken, sleepy adrenal without cortisol."},
+{t:`Look at the clues again: potassium normal, skin pale. This is [[gcsup]].`,q:"Why is potassium normal?",o:["Aldosterone is controlled by the renin–angiotensin system, which still works","Prednisolone has strong salt-retaining effects","He has kidney failure"],a:0,e:"In secondary insufficiency only the adrenocorticotropic hormone drive is missing. The glomerulosa still answers to angiotensin II and potassium, so aldosterone and potassium stay normal. The low sodium comes from antidiuretic hormone excess."},
+{t:`He is unwell but not shocked.`,q:"Best management?",o:["Restart glucocorticoid (stress dose while unwell), then taper slowly later; no fludrocortisone needed","Hydrocortisone plus fludrocortisone for life","Wait for a stimulation test before any steroid"],a:0,e:"Replace glucocorticoid now (higher dose while ill), then plan a slow taper so the axis can recover. Aldosterone is intact, so fludrocortisone is not needed. If he were shocked: treat as an adrenal crisis."}],
+take:["The most common cause of adrenal insufficiency in practice is stopping long-term steroids.","Secondary: pale skin, normal potassium, low or normal adrenocorticotropic hormone.","Taper steroids after long-term use; teach sick-day rules to everyone on long-term steroids."]},
+{id:"x2",title:"Mini-case 2: Addison disease meets a stomach bug",steps:[
+{t:`<b>The scene:</b> A 34-year-old woman with known [[addison]] takes hydrocortisone 20 mg per day and fludrocortisone 0.1 mg. Since last night she has had vomiting and diarrhoea and cannot keep her tablets down. Her partner calls you: she is dizzy and getting confused.`,q:"What should the partner do right now?",o:["Give her double the oral dose","Inject 100 mg hydrocortisone into a muscle from her emergency kit and call emergency services","Wait until morning and see the family doctor"],a:1,e:"Vomiting means tablets are not absorbed. Sick-day rule: 100 mg hydrocortisone into a muscle immediately, then emergency care. Confusion is a warning sign of adrenal crisis."},
+{t:`In the emergency department: blood pressure 80/50 mmHg, sodium 128, potassium 5.9, glucose 3.1 mmol/L. This is an [[crisis]].`,q:"First-hour treatment?",o:["Hydrocortisone 100 mg into a vein, 1 litre 0.9 % saline within the hour, glucose; then 200 mg per 24 hours","Fludrocortisone 0.2 mg by mouth","Dexamethasone 4 mg every 6 hours alone"],a:0,e:"Classic adrenal crisis: hydrocortisone, salt (saline), sugar (glucose), support, search for the trigger (here gastroenteritis). Fludrocortisone is unnecessary while hydrocortisone is high and cannot be swallowed anyway."},
+{t:`She recovers in 2 days.`,q:"What matters most before discharge?",o:["Stop fludrocortisone","Review sick-day rules, check the injection kit and steroid emergency card, and train her partner","Halve her usual hydrocortisone"],a:1,e:"Most crises are preventable. Education (sick-day rules, injection kit, emergency card, family training) is the most effective prevention."}],
+take:["Vomiting or diarrhoea in Addison disease = high crisis risk; oral tablets fail.","Home: 100 mg hydrocortisone into a muscle + emergency services.","Hospital: hydrocortisone + saline + glucose; then education."]},
+{id:"x3",title:"Mini-case 3 (bonus): Fever, purple rash, collapse",steps:[
+{t:`<b>The scene:</b> A 19-year-old student has fever, a rapidly spreading purple rash and shock that does not respond to fluids. Blood cultures later grow meningococci. Computed tomography shows bleeding in <b>both</b> adrenal glands (like the left picture on slide 19).`,q:"Which syndrome, and what extra drug does he need besides antibiotics?",o:["Waterhouse–Friderichsen syndrome: hydrocortisone","Cushing syndrome: metyrapone","Conn syndrome: spironolactone"],a:0,e:"Waterhouse–Friderichsen syndrome: bilateral adrenal haemorrhage in severe sepsis causes acute primary adrenal insufficiency. Give stress-dose hydrocortisone along with antibiotics and resuscitation."},
+{t:`Read more: [[wfs]]. Bleeding into both adrenals destroys the cortex within hours, so it behaves like a sudden primary insufficiency.`}],
+take:["Bilateral adrenal bleeding (sepsis, anticoagulants) → sudden primary adrenal crisis.","Shock not responding to fluids in sepsis → think adrenal and give hydrocortisone.","Imaging matters in non-autoimmune causes: bleeding, metastases, tuberculosis."]}
+],
+flash:[["Skin colour: primary versus secondary adrenal insufficiency","Primary: dark (very high adrenocorticotropic hormone). Secondary: pale."],
+["Which electrolyte separates primary from secondary?","Potassium: high only in primary (aldosterone missing)."],
+["Why is sodium low even in secondary insufficiency?","Cortisol lack → more antidiuretic hormone → water retention → dilution."],
+["Morning cortisol thresholds (slides)","Above 14 µg/dl: axis intact. Below 3 µg/dl: insufficiency very likely. In between: stimulation test."],
+["Short stimulation test","250 µg tetracosactide; cortisol at 0, 30, 60 min; normal peak above 18–20 µg/dl (about 500–550 nmol/L)."],
+["Long (depot) stimulation test: three results","No rise = Addison disease; late peak = secondary; normal peak = no insufficiency."],
+["Gold standard test of the whole axis","Insulin tolerance test (glucose must fall to 40 mg/dl or lower). Not if basal cortisol is below 3 µg/dl, or in heart disease, epilepsy or hypoglycaemia."],
+["Autoimmune polyglandular syndrome type 2 (Schmidt)","Autoimmune adrenal insufficiency (always) + autoimmune thyroid disease and/or type 1 diabetes. Adults, more often women."],
+["Autoimmune polyglandular syndrome type 1","Autoimmune regulator gene, childhood: chronic mucocutaneous candidiasis + hypoparathyroidism + Addison disease (at least two)."],
+["Adrenal crisis: first steps","Blood (no delay) → hydrocortisone 100 mg into a vein or muscle → 1 litre 0.9 % saline in the first hour → glucose if low → 200 mg per 24 hours → treat the trigger."],
+["Chronic replacement in primary insufficiency","Hydrocortisone 15–25 mg per day in 2–3 doses (biggest on waking) + fludrocortisone 0.05–0.2 mg once daily."],
+["Sick-day rules","Fever above 38 °C: double. Above 39 °C: triple. Cannot keep tablets down: 100 mg hydrocortisone into a muscle + emergency care."],
+["Adrenal insufficiency + hypothyroidism: which first?","Hydrocortisone first, then thyroxine (thyroxine speeds cortisol breakdown and can trigger a crisis)."],
+["How do you monitor fludrocortisone?","Blood pressure (lying and standing), sodium, potassium, renin (aim for the upper normal range)."]],
+exam:[
+"<b>Primary = Pigmented + Potassium high</b> (high adrenocorticotropic hormone, no aldosterone). Secondary = pale, normal potassium, aldosterone intact.",
+"Routine labs: low sodium, high potassium, low glucose, low osmolality; sometimes high calcium, raised urea, anaemia, eosinophilia.",
+"Morning cortisol: below 3 µg/dl very likely insufficiency; above 14 µg/dl intact. Confirm with the 250 µg short stimulation test (normal peak above 18–20 µg/dl, about 500–550 nmol/L).",
+"Adrenocorticotropic hormone high = primary; low or normal = secondary or tertiary. Renin high + aldosterone low = primary.",
+"Insulin tolerance test = gold standard for the whole axis, but not first-line for primary, not needed if cortisol is below 3 µg/dl, and dangerous in hypoglycaemia, heart disease or epilepsy.",
+"Most common cause of Addison disease in Europe: autoimmune (21-hydroxylase antibodies). Imaging matters less in primary insufficiency.",
+"Autoimmune polyglandular syndrome type 2 (Schmidt) = Addison disease (always) + thyroid disease and/or type 1 diabetes. Type 1 = autoimmune regulator gene, candidiasis + hypoparathyroidism + Addison disease.",
+"<b>Adrenal crisis: treat before confirming.</b> Hydrocortisone 100 mg, then 200 mg per 24 hours; 1 litre 0.9 % saline in the first hour; glucose; treat the trigger.",
+"Chronic: hydrocortisone 15–25 mg per day in 2–3 doses + fludrocortisone 0.05–0.2 mg; sick-day rules (38 °C double, 39 °C triple, vomiting = injection); emergency card; monitor clinically.",
+"Start hydrocortisone before thyroxine."],
+sources:"Sources: CBL 5 (Prof. Dr. Ionela Pascanu, UMCH 2026), slides 1–35 and the references cited on them (Hahner et al., Nature Reviews Disease Primers 2021; Charmandari et al., Lancet 2014; Michels and Michels, American Family Physician 2014; Ferri; Weiler et al. 2012). Crisis dosing and the slide checks follow the Endocrine Society guideline on primary adrenal insufficiency (Bornstein et al., 2016). M.T.'s values are taken from the slides; the mini-cases are invented teaching examples. Conversions: cortisol µg/dl × 27.59 = nmol/L; glucose mg/dl ÷ 18 = mmol/L.",
+casesHead:"🔁 Transfer mini-cases",casesIntro:"Same disease, new patients. Answer to reveal the next part."
+});
+LESSONS.cbl5=CBL5;
+
+/* ===== CBL 5 widgets (use the current lesson L) ===== */
+W.clues=el=>{const C=L.clues,seen=new Set();
+el.innerHTML=`<div class="ctrl">${C.map((c,i)=>`<button class="clue" data-i="${i}">🔎 ${c[0]}</button>`).join("")}</div><div class="info" id="cl-info">Pick a clue. (${C.length} to check)</div>`;
+el.querySelectorAll(".clue").forEach(b=>b.onclick=()=>{const c=C[b.dataset.i];seen.add(b.dataset.i);el.querySelectorAll(".clue").forEach(x=>x.classList.toggle("on",x==b));b.classList.add(c[2]=="red"?"flag-red":"flag-grey");
+el.querySelector("#cl-info").innerHTML=`${c[2]=="red"?"🚩 <b>Red flag</b>":"⚪ <b>Background</b>"}: <b>${c[0]}</b><br>${c[1]}<br><span style="color:var(--mute);font-size:13px">${seen.size}/${C.length} clues checked</span>`;
+if(seen.size==C.length)complete("a1-clues",10,"🔎 All clues checked! +10 XP")})};
+
+W.labs=el=>{const R=L.labs,ab=R.map((r,i)=>r[4]!="N"?i:null).filter(x=>x!=null),seen=new Set();
+el.innerHTML=`<div class="ctrl"><button id="lb-ab">Show abnormal only</button><span class="pill" id="lb-c">0/${ab.length} abnormal explained</span></div>
+<div class="svgwrap"><table class="labt"><tr><th>Test</th><th>M.T.</th><th>Unit</th><th>Normal range</th><th></th></tr>${R.map((r,i)=>`<tr data-i="${i}" class="lr f${r[4]}"><td>${r[0]}</td><td><b>${r[1]}</b></td><td>${r[2]}</td><td>${r[3]}</td><td>${r[4]=="H"?'<span class="fl fh">▲ high</span>':r[4]=="L"?'<span class="fl flo">▼ low</span>':'<span class="fl">normal</span>'}</td></tr>`).join("")}</table></div>
+<div class="info" id="lb-info">Click a row.</div><figcaption>Values from slides 9–10 (units as on the slides; glucose conversion added).</figcaption>`;
+let only=false;el.querySelector("#lb-ab").onclick=e=>{only=!only;e.target.classList.toggle("on",only);el.querySelectorAll("tr.fN").forEach(t=>t.style.display=only?"none":"")};
+el.querySelectorAll("tr.lr").forEach(t=>t.onclick=()=>{const i=+t.dataset.i,r=R[i];el.querySelectorAll("tr.lr").forEach(x=>x.classList.toggle("sel",x==t));t.classList.add("seen");
+if(r[4]!="N")seen.add(i);el.querySelector("#lb-c").textContent=`${seen.size}/${ab.length} abnormal explained`;
+el.querySelector("#lb-info").innerHTML=`<b>${r[0]}: ${r[1]} ${r[2]}</b> (normal ${r[3]})<br>${r[5]}`;
+if(seen.size==ab.length)complete("a3-labs",15,"🧪 Every abnormal value explained! +15 XP")})};
+
+W.ladder=el=>{const R=L.ladder,seen=new Set();
+el.innerHTML=`<div class="ladder">${R.map((r,i)=>`<button data-i="${i}"><span class="rung">${i+1}</span>${r[0].replace(/^\d+\.\s*/,"")}</button>`).join("")}</div><div class="info" id="ld-info">Start at rung 1.</div>`;
+el.querySelectorAll("button").forEach(b=>b.onclick=()=>{const r=R[b.dataset.i];seen.add(b.dataset.i);el.querySelectorAll("button").forEach(x=>x.classList.toggle("on",x==b));b.classList.add("seen");
+el.querySelector("#ld-info").innerHTML=`<b>${r[0]}</b><br><b>How:</b> ${r[1]}<br><b>Read it:</b> ${r[2]}<br><b>🩺 M.T.:</b> ${r[3]}`;
+if(seen.size==R.length)complete("a4-ladder",10,"🪜 Top of the ladder! +10 XP")})};
+
+const HPAS={
+normal:{l:"Normal",x:null,v:{crh:"=",acth:"=",cort:"=",dhea:"=",renin:"=",aldo:"="},skin:"#e2b48f",sk:"normal skin",k:"normal potassium",t:"Hypothalamus → corticotropin-releasing hormone → pituitary → adrenocorticotropic hormone → cortisol, which switches the top two off (dashed red feedback). Aldosterone is mainly run by the kidney: renin → angiotensin II."},
+primary:{l:"Primary (adrenal fails)",x:"adr",v:{crh:"↑",acth:"↑↑",cort:"↓",dhea:"↓",renin:"↑",aldo:"↓"},skin:"#7a4a2c",sk:"DARK skin",k:"HIGH potassium",t:"The adrenal is destroyed: cortisol, aldosterone and adrenal androgens fall. No feedback → corticotropin-releasing hormone and adrenocorticotropic hormone rise steeply (dark skin). Low volume → renin rises, but the adrenal cannot answer → aldosterone stays low → high potassium."},
+secondary:{l:"Secondary (pituitary fails)",x:"pit",v:{crh:"↑",acth:"↓",cort:"↓",dhea:"↓",renin:"=",aldo:"="},skin:"#f6e0cf",sk:"PALE skin",k:"normal potassium",t:"The pituitary makes too little adrenocorticotropic hormone: cortisol and adrenal androgens fall. Aldosterone is normal because renin → angiotensin II still drives the glomerulosa. Pale skin."},
+tertiary:{l:"Tertiary (hypothalamus fails)",x:"hyp",v:{crh:"↓",acth:"↓",cort:"↓",dhea:"↓",renin:"=",aldo:"="},skin:"#f6e0cf",sk:"PALE skin",k:"normal potassium",t:"Too little corticotropin-releasing hormone, so everything below is under-driven. Long-term steroid treatment suppresses both hypothalamus and pituitary (glucocorticoid-induced suppression)."},
+mt:{l:"🩺 M.T.",x:"adr",v:{crh:"↑",acth:"↑↑",cort:"↓",dhea:"↓",renin:"↑",aldo:"↓"},skin:"#7a4a2c",sk:"DARK skin",k:"potassium 6.21 mmol/L",t:"M.T.: cortisol 4.8 µg/dl with no response to stimulation, adrenocorticotropic hormone 701.9 pg/ml, potassium 6.21 mmol/L, dark skin → PRIMARY adrenal insufficiency. (Renin and aldosterone values are not shown in the slides; arrows show the expected pattern.)"}};
+W.hpa=el=>{const box=(x,y,w,h,f,s,t)=>`<g><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="12" fill="${f}" stroke="${s}" stroke-width="2.5"/><text x="${x+w/2}" y="${y+h/2+6}" text-anchor="middle" font-size="16" font-weight="700" fill="#222">${t}</text></g>`;
+const st=(id,x,y,lab)=>`<text x="${x}" y="${y}" font-size="13" fill="#333">${lab}</text><text id="hs-${id}" x="${x}" y="${y+22}" font-size="18" font-weight="900"></text>`;
+const X=(id,x,y)=>`<text id="hx-${id}" x="${x}" y="${y}" font-size="40" font-weight="900" fill="#c62828" opacity="0">✕</text>`;
+const svg=`<svg viewBox="0 0 720 420" style="width:100%"><defs><marker id="ha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#555"/></marker><marker id="hr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#c62828"/></marker></defs>
+${box(130,20,200,46,"#f3ecff","#7b3fc4","Hypothalamus")}${box(130,135,200,46,"#e3f1ff","#2f6fdb","Pituitary")}${box(470,135,200,46,"#e6f6ee","#1f9d55","Kidney (renin)")}
+<rect x="100" y="255" width="590" height="62" rx="14" fill="#fff3d6" stroke="#d9730d" stroke-width="2.5"/><text x="395" y="248" text-anchor="middle" font-size="14" font-weight="700" fill="#d9730d">ADRENAL CORTEX</text>
+<text x="250" y="292" text-anchor="middle" font-size="14" fill="#222">fasciculata / reticularis</text><text x="570" y="292" text-anchor="middle" font-size="14" fill="#222">glomerulosa</text>
+<line x1="230" y1="66" x2="230" y2="133" stroke="#555" stroke-width="3" marker-end="url(#ha)"/>${st("crh",240,90,"corticotropin-releasing hormone")}
+<line x1="230" y1="181" x2="230" y2="253" stroke="#555" stroke-width="3" marker-end="url(#ha)"/>${st("acth",240,205,"adrenocorticotropic hormone")}
+<line x1="570" y1="181" x2="570" y2="253" stroke="#555" stroke-width="3" marker-end="url(#ha)"/>${st("renin",580,205,"angiotensin II")}
+<line x1="200" y1="317" x2="200" y2="350" stroke="#555" stroke-width="3" marker-end="url(#ha)"/>${st("cort",160,372,"cortisol")}
+<line x1="320" y1="317" x2="320" y2="350" stroke="#555" stroke-width="3" marker-end="url(#ha)"/>${st("dhea",270,372,"adrenal androgens")}
+<line x1="570" y1="317" x2="570" y2="350" stroke="#555" stroke-width="3" marker-end="url(#ha)"/>${st("aldo",545,372,"aldosterone")}
+<path d="M150 360 Q60 330 60 220 Q60 60 128 43" fill="none" stroke="#c62828" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#hr)"/><path d="M60 158 L128 158" fill="none" stroke="#c62828" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#hr)"/><text x="40" y="300" font-size="12" fill="#c62828" transform="rotate(-90 40 300)">negative feedback</text>
+${X("hyp",290,60)}${X("pit",290,175)}${X("adr",108,302)}
+<circle id="h-skin" cx="440" cy="392" r="18" stroke="#555" stroke-width="1.5"/><text id="h-skt" x="466" y="389" font-size="13" font-weight="700" fill="#333"></text><text id="h-k" x="466" y="406" font-size="13" fill="#333"></text>
+</svg>`;
+el.innerHTML=`<div class="ctrl">${Object.entries(HPAS).map(([k,v])=>`<button data-h="${k}">${v.l}</button>`).join("")}</div><figure>${svg}<figcaption>Hypothalamic–pituitary–adrenal axis drawn in code (schematic). ↑ = up, ↓ = down, "= normal" = unchanged. Red ✕ = the broken level. Based on slide 11 (Hahner et al., 2021).</figcaption></figure><div class="info" id="h-info"></div>`;
+const set=k=>{const s=HPAS[k];el.querySelectorAll("[data-h]").forEach(b=>b.classList.toggle("on",b.dataset.h==k));
+for(const h in s.v){const t=el.querySelector("#hs-"+h);t.textContent=s.v[h]=="="?"= normal":s.v[h];t.setAttribute("fill",s.v[h].includes("↑")?"#c62828":s.v[h].includes("↓")?"#2f6fdb":"#1f9d55")}
+["hyp","pit","adr"].forEach(x=>el.querySelector("#hx-"+x).setAttribute("opacity",s.x==x?1:0));
+el.querySelector("#h-skin").setAttribute("fill",s.skin);el.querySelector("#h-skt").textContent=s.sk;el.querySelector("#h-k").textContent=s.k;el.querySelector("#h-info").innerHTML=`<b>${s.l}:</b> ${s.t}`};
+el.querySelectorAll("[data-h]").forEach(b=>b.onclick=()=>set(b.dataset.h));set("normal")};
+
+W.crisis=el=>{const C=L.crisis,h=48,g=20;
+const svg=`<svg viewBox="0 0 700 ${C.length*(h+g)}" style="width:100%"><defs><marker id="ca" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#777"/></marker></defs>
+${C.map((c,i)=>{const y=i*(h+g)+4;return `<g class="cr-box" data-i="${i}" style="cursor:pointer"><rect x="90" y="${y}" width="520" height="${h}" rx="12" fill="${c[2]}" fill-opacity=".12" stroke="${c[2]}" stroke-width="2.5"/><text x="350" y="${y+h/2+6}" text-anchor="middle" font-size="17" font-weight="800" fill="${c[2]}">${c[0]}</text></g>${i<C.length-1?`<line x1="350" y1="${y+h}" x2="350" y2="${y+h+g-2}" stroke="#777" stroke-width="2.5" marker-end="url(#ca)"/>`:""}`}).join("")}
+<text x="45" y="105" font-size="13" font-weight="700" fill="#c62828" text-anchor="middle" transform="rotate(-90 45 105)">FIRST MINUTES</text><text x="655" y="390" font-size="13" font-weight="700" fill="#1f9d55" text-anchor="middle" transform="rotate(90 655 390)">DAYS</text></svg>`;
+el.innerHTML=`<figure>${svg}<figcaption>Adrenal crisis flow drawn in code. Red = immediately; orange = first hours; green = days. Doses follow the Endocrine Society guideline (2016) and slide 30, corrected (see Slide check).</figcaption></figure><div class="info" id="cr-info">Click a box.</div>`;
+el.querySelectorAll(".cr-box").forEach(b=>b.onclick=()=>{const c=C[b.dataset.i];el.querySelectorAll(".cr-box rect").forEach(r=>r.setAttribute("fill-opacity",".12"));b.querySelector("rect").setAttribute("fill-opacity",".3");
+el.querySelector("#cr-info").innerHTML=`<b style="color:${c[2]}">${c[0]}</b><br>${c[1]}`})};
 </script></body></html>

@@ -1,6 +1,7 @@
 var LS=(function(){var m={};try{var t="__t";window.localStorage.setItem(t,"1");window.localStorage.removeItem(t);return window.localStorage}catch(e){return{getItem:function(k){return k in m?m[k]:null},setItem:function(k,v){m[k]=String(v)},removeItem:function(k){delete m[k]}}}})();
 /* ===== state ===== */
 const KEY="medlearn_v1";
+const LESSONS={m5:M5};let L=M5,CUR="m5";
 let S=JSON.parse(LS.getItem(KEY)||"{}");S.done=S.done||{};S.xp=S.xp||0;S.days=S.days||[];S.ans=S.ans||{};
 const today=new Date().toISOString().slice(0,10);if(!S.days.includes(today))S.days.push(today);
 function save(){LS.setItem(KEY,JSON.stringify(S));updTop()}
@@ -10,11 +11,11 @@ function esc(s){return s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;
 /* term markup [[key]] or [[key|label]] */
 function T(html){return html.replace(/\[\[(\w+)(?:\|([^\]]+))?\]\]/g,(m,k,l)=>{const g=GLOSSARY[k];if(!g){console.warn("missing term",k);return l||k}
 return `<span class="term t-${g.c}" data-k="${k}" tabindex="0">${l||g.l}</span>${g.k&&!l?`<span class="code">${g.k}</span>`:""}`})}
-const UNITS=()=>[...M5.cards.map(c=>c.id),...M5.cards.length?M5.cases.map(c=>c.id):[],"match"];
+const UNITS=()=>[...L.cards.map(c=>c.id),...L.cases.map(c=>c.id),...(L.match?["match"]:[])];
 function updTop(){const u=UNITS(),d=u.filter(x=>S.done[x]).length;$("#bar i").style.width=(100*d/u.length)+"%";
 $("#prog").textContent=`${d}/${u.length} steps`;$("#xp").textContent=`⭐ ${S.xp} XP`;$("#streak").textContent=`🔥 ${streak()} day streak`;
-M5.cards.forEach(c=>{const b=$("#badge-"+c.id);if(b)b.textContent=S.done[c.id]?"✅ done":""});
-$$(".goals li").forEach((li,i)=>{const c=M5.cards.find(c=>c.goal===i);li.classList.toggle("got",!!(c&&S.done[c.id]))});renderSummary()}
+L.cards.forEach(c=>{const b=$("#badge-"+c.id);if(b)b.textContent=S.done[c.id]?"✅ done":""});
+$$(".goals li").forEach((li,i)=>{const c=L.cards.find(c=>c.goal===i);li.classList.toggle("got",!!(c&&S.done[c.id]))});renderSummary()}
 function award(x,msg){S.xp+=x;save();toast(msg||`+${x} XP`)}
 function complete(id,x,msg){if(S.done[id])return;S.done[id]=1;award(x,msg);confetti()}
 function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("show");clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove("show"),1800)}
@@ -132,8 +133,8 @@ el.querySelectorAll(".pw-node").forEach(g=>{const r=g.querySelector("rect"),a=sc
 const info=el.querySelector("#pw-info");if(curEnz){const k=curEnz=="periph"?null:curEnz,g=GLOSSARY[k];info.innerHTML=g?`<b class="t-enzyme">${g.l}</b> ${g.k?`<span class="code">${g.k}</span>`:""}: ${g.d}<br><b>If blocked:</b> ${BLK[curEnz]}`:BLK.periph}
 else info.innerHTML=curScen=="none"?"Normal flow. Choose a deficiency or drug above, or click an enzyme label.":`<b>${sc.l}:</b> ${sc.t}<br><span style="color:#c62828">Red ✕ = blocked</span> · <span style="color:#d9730d">bold orange = shunted flow / glowing box = precursor piles up</span>`}
 
-W.match=el=>{const P=M5.match;const L=P.map((p,i)=>[i,p[0]]),R=P.map((p,i)=>[i,p[1]]).sort(()=>Math.random()-.5);let sel=null,ok=0;
-el.innerHTML=`<div class="match"><div>${L.map(([i,t])=>`<button data-l="${i}">${t}</button>`).join("")}</div><div>${R.map(([i,t])=>`<button data-r="${i}">${t}</button>`).join("")}</div></div><div class="info" id="m-info">Pick an enzyme on the left.</div>`;
+W.match=el=>{const P=L.match;const LL=P.map((p,i)=>[i,p[0]]),R=P.map((p,i)=>[i,p[1]]).sort(()=>Math.random()-.5);let sel=null,ok=0;
+el.innerHTML=`<div class="match"><div>${LL.map(([i,t])=>`<button data-l="${i}">${t}</button>`).join("")}</div><div>${R.map(([i,t])=>`<button data-r="${i}">${t}</button>`).join("")}</div></div><div class="info" id="m-info">Pick an enzyme on the left.</div>`;
 const info=el.querySelector("#m-info");
 el.querySelectorAll("[data-l]").forEach(b=>b.onclick=()=>{el.querySelectorAll("[data-l]").forEach(x=>x.classList.remove("sel"));b.classList.add("sel");sel=b.dataset.l;info.textContent="Now pick its step on the right."});
 el.querySelectorAll("[data-r]").forEach(b=>b.onclick=()=>{if(sel==null){info.textContent="Pick an enzyme first.";return}
@@ -146,38 +147,44 @@ ${d.map((t,i)=>`<g><circle cx="${40+i*128}" cy="37" r="15" fill="#fff" stroke="#
 <figcaption>Schematic Prader scale (text only, no anatomical images – deliberately). Grades 0 → 5 = increasing virilisation of a genetically female newborn.</figcaption></figure>`};
 
 /* ===== render ===== */
-function render(){const nav=$("nav");nav.innerHTML=`<h1>🩺 MedLearn</h1><div class="sub">Samy's exam and clinic companion</div><div class="grp">${COURSE.area}</div><div class="lec">${COURSE.lecture}<br><span style="font-weight:400;color:var(--mute);font-size:13px">${COURSE.teacher}</span></div>`+
-COURSE.modules.map(m=>`<a data-m="${m.id}" class="${m.built?"on":""}">${m.n}. ${m.title} ${m.built?"⭐":`<span class="soon">· coming soon</span>`}</a>`).join("")+
-`<div class="grp">Inside module 5</div>${M5.cards.map((c,i)=>`<a onclick="go('${c.id}')">${i+1}. ${c.title}</a>`).join("")}<a onclick="go('cases')">🏥 Clinical cases</a><a onclick="go('flash')">🃏 Flashcards</a><a onclick="go('final')">🎯 What I got from this</a>`;
-nav.querySelectorAll("[data-m]").forEach(a=>a.onclick=()=>showModule(a.dataset.m));showModule("m5")}
-function showModule(id){$$("nav [data-m]").forEach(a=>a.classList.toggle("on",a.dataset.m==id));const m=COURSE.modules.find(x=>x.id==id);const c=$("#content");
-if(!m.built){c.innerHTML=`<div class="card soon-card"><div class="meta">${COURSE.area} › Lecture 7 › Subsection ${m.n}</div><h2>${m.n}. ${m.title}</h2><p>${m.summary}</p><p>🚧 <b>Coming soon.</b> This module will follow the same format as module 5: goals, micro-steps, quick checks, cases and flashcards.</p><button class="pri" onclick="showModule('m5')">← Back to the demo module 5</button></div>`;scrollTo(0,0);return}
+function render(){const nav=$("nav");const groups=[];COURSE.modules.forEach(m=>{const g=m.grp||"";let G=groups.find(x=>x.g==g);if(!G)groups.push(G={g,ms:[]});G.ms.push(m)});
+nav.innerHTML=`<h1>🩺 MedLearn</h1><div class="sub">Samy's exam and clinic companion</div><div class="grp">${COURSE.area}</div>`+
+groups.map(G=>(G.g?`<div class="grp">${G.g}</div><div class="lec">${G.ms[0].lec||""}<br><span style="font-weight:400;color:var(--mute);font-size:13px">${G.ms[0].teacher||""}</span></div>`:`<div class="lec">${COURSE.lecture}<br><span style="font-weight:400;color:var(--mute);font-size:13px">${COURSE.teacher}</span></div>`)+
+G.ms.map(m=>`<a data-m="${m.id}" class="${m.built?"on":""}">${m.n}. ${m.title} ${m.built?"⭐":`<span class="soon">· coming soon</span>`}</a>`).join("")).join("")+`<div id="inside"></div>`;
+nav.querySelectorAll("[data-m]").forEach(a=>a.onclick=()=>showModule(a.dataset.m));
+if(!$("#modsel")){const sel=document.createElement("select");sel.id="modsel";sel.title="Choose module";sel.innerHTML=COURSE.modules.filter(m=>m.built).map(m=>`<option value="${m.id}">${m.n}. ${m.title}</option>`).join("");sel.onchange=()=>showModule(sel.value);$(".top").prepend(sel)}
+const hm=location.hash.match(/mod=(\w+)/),saved=LS.getItem("ml_mod");showModule(hm&&LESSONS[hm[1]]?hm[1]:saved&&LESSONS[saved]?saved:"m5")}
+function showModule(id){const m=COURSE.modules.find(x=>x.id==id);if(!m)return showModule("m5");$$("nav [data-m]").forEach(a=>a.classList.toggle("on",a.dataset.m==id));const c=$("#content");
+if(!m.built||!LESSONS[id]){c.innerHTML=`<div class="card soon-card"><div class="meta">${COURSE.area} › Lecture 7 › Subsection ${m.n}</div><h2>${m.n}. ${m.title}</h2><p>${m.summary}</p><p>🚧 <b>Coming soon.</b> This module will follow the same format as module 5: goals, micro-steps, quick checks, cases and flashcards.</p><button class="pri" onclick="showModule('m5')">← Back to the demo module 5</button></div>`;scrollTo(0,0);return}
+L=LESSONS[id];CUR=id;if($("#modsel"))$("#modsel").value=id;LS.setItem("ml_mod",id);document.title=`MedLearn – ${COURSE.area}: ${m.title}`;
+$("#inside").innerHTML=`<div class="grp">Inside this module</div>${L.cards.map((c,i)=>`<a onclick="go('${c.id}')">${i+1}. ${c.title}</a>`).join("")}<a onclick="go('cases')">${L.casesHead||"🏥 Clinical cases"}</a><a onclick="go('flash')">🃏 Flashcards</a><a onclick="go('final')">🎯 What I got from this</a>`;
 const legend=Object.entries(CATS).map(([k,v])=>`<span class="t-${k}" style="font-weight:700">● ${v}</span>`).join("");
-c.innerHTML=`<div class="card" id="intro"><div class="meta">${COURSE.area} › Lecture 7 › Subsection 5 · lecture ${m.pages} · ⏱ about 25 minutes in 7 bite-sized steps</div>
-<h2>5. ${m.title}</h2><p><b>🎯 By the end you will be able to…</b></p><ol class="goals">${M5.goals.map(g=>`<li>${g}</li>`).join("")}</ol>
-<p style="font-size:15px;color:var(--mute)">Each step takes 2–4 minutes and ends with a quick check. Finish one, get XP and a ✅. That's it – one small win at a time.</p>
+const meta=L.meta||`${COURSE.area} › Lecture 7 › Subsection ${m.n} · lecture ${m.pages} · ⏱ about 25 minutes in ${L.cards.length} bite-sized steps`;
+c.innerHTML=`<div class="card" id="intro"><div class="meta">${meta}</div>
+<h2>${m.n}. ${m.title}</h2>${L.intro?T(L.intro):""}<p><b>🎯 By the end you will be able to…</b></p><ol class="goals">${L.goals.map(g=>`<li>${g}</li>`).join("")}</ol>
+<p style="font-size:15px;color:var(--mute)">Each step takes 2–5 minutes and ends with a quick check. Finish one, get XP and a ✅. That's it – one small win at a time.</p>
 <div class="legend"><b>Colour key (click any coloured word):</b> ${legend}</div></div>`+
-M5.cards.map((cd,i)=>`<div class="card" id="${cd.id}"><span class="done-badge" id="badge-${cd.id}"></span><div class="meta">Step ${i+1} of ${M5.cards.length} · ⏱ ${cd.min} min · 🎯 Goal: ${M5.goals[cd.goal]}</div><h2>${cd.title}</h2>${T(cd.html)}${cd.id=="c5"?ADRENAL_FIG:""}${quizHTML(cd.id,cd.quiz)}
-<div class="recap" id="recap-${cd.id}"><b>🧠 What did I just learn?</b><ul>${cd.recap.map(r=>`<li>${r}</li>`).join("")}</ul></div></div>`).join("")+
-`<div class="card" id="cases"><h2>🏥 Case-based learning</h2><p>Work through each case. Answer to reveal the next part.</p>${M5.cases.map(k=>`<div class="case" id="${k.id}"><h3>${k.title}</h3>${k.steps.map((s,i)=>`<div class="step ${i==0?"show":""}" data-i="${i}">${T(s.t)}${s.q?quizHTML(k.id+"s"+i,[s]):`<p><button class="nxt">Continue →</button></p>`}</div>`).join("")}<div class="step take"><div class="exam" style="border-color:var(--ok)"><b>🏁 Take-home points</b><ul>${k.take.map(t=>`<li>${t}</li>`).join("")}</ul></div></div></div>`).join("<hr>")}</div>
+L.cards.map((cd,i)=>`<div class="card" id="${cd.id}"><span class="done-badge" id="badge-${cd.id}"></span><div class="meta">Step ${i+1} of ${L.cards.length} · ⏱ ${cd.min} min · 🎯 Goal: ${L.goals[cd.goal]}</div><h2>${cd.title}</h2>${cd.obj?`<div class="obj"><b>🎯 In this step you will:</b><ul>${cd.obj.map(o=>`<li>${o}</li>`).join("")}</ul></div>`:""}${T(cd.html)}${L===M5&&cd.id=="c5"?ADRENAL_FIG:""}${quizHTML(cd.id,cd.quiz)}
+<div class="recap" id="recap-${cd.id}"><b>🧠 What did I get from this?</b><ul>${cd.recap.map(r=>`<li>${r}</li>`).join("")}</ul></div></div>`).join("")+
+`<div class="card" id="cases"><h2>${L.casesHead||"🏥 Case-based learning"}</h2><p>${L.casesIntro||"Work through each case. Answer to reveal the next part."}</p>${L.cases.map(k=>`<div class="case" id="${k.id}"><h3>${k.title}</h3>${k.steps.map((s,i)=>`<div class="step ${i==0?"show":""}" data-i="${i}">${T(s.t)}${s.q?quizHTML(k.id+"s"+i,[s]):`<p><button class="nxt">Continue →</button></p>`}</div>`).join("")}<div class="step take"><div class="exam" style="border-color:var(--ok)"><b>🏁 Take-home points</b><ul>${k.take.map(t=>`<li>${t}</li>`).join("")}</ul></div></div></div>`).join("<hr>")}</div>
 <div class="card" id="flash"><h2>🃏 Flashcards</h2><p>Click the card to flip. Use the buttons to move on.</p><div class="fc" id="fcard"><div class="in"><div class="f"></div><div class="b"></div></div></div><div class="ctrl"><button id="fprev">← Previous</button><button id="fshuf">🔀 Shuffle</button><button class="pri" id="fnext">Next →</button><span class="pill" id="fcount"></span></div></div>
-<div class="card" id="final"><h2>🎯 What I got from this</h2><div id="summary"></div><div class="exam"><b>📘 For exams</b><ul>${M5.exam.map(e=>`<li>${e}</li>`).join("")}</ul></div>
-<p style="font-size:14px;color:var(--mute)">Sources: Lecture 7 (Prof. Ionela Pascanu), pages 17–22 and their figures (Barrett Medical Physiology; Berne and Levy Physiology), extended with standard textbook endocrinology. No statistics beyond those in the lecture figures.</p><button onclick="if(confirm('Reset all progress?')){LS.removeItem(KEY);location.reload()}">Reset progress</button></div>`;
+<div class="card" id="final"><h2>🎯 What I got from this</h2><div id="summary"></div><div class="exam"><b>📘 For exams</b><ul>${L.exam.map(e=>`<li>${e}</li>`).join("")}</ul></div>
+<p style="font-size:14px;color:var(--mute)">${L.sources||"Sources: Lecture 7 (Prof. Ionela Pascanu), pages 17–22 and their figures (Barrett Medical Physiology; Berne and Levy Physiology), extended with standard textbook endocrinology. No statistics beyond those in the lecture figures."}</p><button onclick="if(confirm('Reset all progress?')){LS.removeItem(KEY);location.reload()}">Reset progress</button></div>`;
 c.querySelectorAll("[data-widget]").forEach(w=>W[w.dataset.widget](w));
-M5.cards.forEach(cd=>{const el=$("#"+cd.id);if(S.done[cd.id])$("#recap-"+cd.id).classList.add("show");bindQuiz(el,cd.id,cd.quiz,()=>{$("#recap-"+cd.id).classList.add("show");complete(cd.id,20,`✅ Step complete! +20 XP`)})});
-M5.cases.forEach(k=>{const el=$("#"+k.id),st=el.querySelectorAll(".step");const next=i=>{st[i+1].classList.add("show");if(i+1==st.length-1)complete(k.id,30,"🏥 Case solved! +30 XP")};
+L.cards.forEach(cd=>{const el=$("#"+cd.id);if(S.done[cd.id])$("#recap-"+cd.id).classList.add("show");bindQuiz(el,cd.id,cd.quiz,()=>{$("#recap-"+cd.id).classList.add("show");complete(cd.id,20,`✅ Step complete! +20 XP`)})});
+L.cases.forEach(k=>{const el=$("#"+k.id),st=el.querySelectorAll(".step");const next=i=>{st[i+1].classList.add("show");if(i+1==st.length-1)complete(k.id,30,"🏥 Case solved! +30 XP")};
 k.steps.forEach((s,i)=>{if(s.q)bindQuiz(st[i],k.id+"s"+i,[s],()=>next(i));else st[i].querySelector(".nxt").onclick=()=>next(i)});
 el.querySelectorAll("[data-widget]").forEach(w=>{if(!w.innerHTML)W[w.dataset.widget](w)})});
-let fi=0,F=[...M5.flash];const fc=$("#fcard"),showF=()=>{fc.classList.remove("flip");setTimeout(()=>{fc.querySelector(".f").textContent=F[fi][0];fc.querySelector(".b").textContent=F[fi][1];$("#fcount").textContent=`${fi+1} / ${F.length}`},150)};
+let fi=0,F=[...L.flash];const fc=$("#fcard"),showF=()=>{fc.classList.remove("flip");setTimeout(()=>{fc.querySelector(".f").textContent=F[fi][0];fc.querySelector(".b").textContent=F[fi][1];$("#fcount").textContent=`${fi+1} / ${F.length}`},150)};
 fc.onclick=()=>fc.classList.toggle("flip");$("#fnext").onclick=()=>{fi=(fi+1)%F.length;showF()};$("#fprev").onclick=()=>{fi=(fi-1+F.length)%F.length;showF()};$("#fshuf").onclick=()=>{F.sort(()=>Math.random()-.5);fi=0;showF()};showF();
 observe();updTop();scrollTo(0,0)}
-function renderSummary(){const el=$("#summary");if(!el)return;const got=M5.cards.filter(c=>S.done[c.id]);
-el.innerHTML=`<p>You have completed <b>${got.length} of ${M5.cards.length}</b> steps, <b>${M5.cases.filter(k=>S.done[k.id]).length} of ${M5.cases.length}</b> cases and earned <b>${S.xp} XP</b>.</p><ul>${M5.goals.map((g,i)=>{const c=M5.cards.find(c=>c.goal==i);return `<li>${c&&S.done[c.id]?"✅":"⬜"} ${g}</li>`}).join("")}</ul>${got.length==M5.cards.length?"<p>🎉 <b>Module mastered.</b> Come back tomorrow for the flashcards to keep your streak!</p>":"<p>Keep going – the next step is only a few minutes.</p>"}`}
+function renderSummary(){const el=$("#summary");if(!el)return;const got=L.cards.filter(c=>S.done[c.id]);
+el.innerHTML=`<p>You have completed <b>${got.length} of ${L.cards.length}</b> steps, <b>${L.cases.filter(k=>S.done[k.id]).length} of ${L.cases.length}</b> cases and earned <b>${S.xp} XP</b> in total.</p><ul>${L.goals.map((g,i)=>{const c=L.cards.find(c=>c.goal==i);return `<li>${c&&S.done[c.id]?"✅":"⬜"} ${g}</li>`}).join("")}</ul>${got.length==L.cards.length?"<p>🎉 <b>Module mastered.</b> Come back tomorrow for the flashcards to keep your streak!</p>":"<p>Keep going – the next step is only a few minutes.</p>"}`}
 function go(id){const e=document.getElementById(id);if(e)e.scrollIntoView({behavior:"smooth",block:"start"})}
 function observe(){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){$$(".card").forEach(c=>c.classList.remove("active"));e.target.classList.add("active")}}),{rootMargin:"-40% 0px -50% 0px"});$$(".card").forEach(c=>io.observe(c))}
 /* ===== boot ===== */
 window.addEventListener("DOMContentLoaded",()=>{if(LS.getItem("ml_dark")==="1"||location.hash.includes("dark"))document.body.classList.add("dark");render();
 $("#dark").onclick=()=>{document.body.classList.toggle("dark");LS.setItem("ml_dark",document.body.classList.contains("dark")?"1":"0")};
 $("#focus").onclick=e=>{document.body.classList.toggle("focus");e.target.classList.toggle("pri")};
-const h=location.hash.replace("#","").split("&")[0];const so=location.hash.match(/solo=(\w+)/);if(so){$$(".card").forEach(c=>{if(c.id!=so[1])c.style.display="none"});const sc=location.hash.match(/scen=(\w+)/);if(sc){const b=document.querySelector(`[data-s="${sc[1]}"]`);b&&b.click()}}if(h&&h!="dark")setTimeout(()=>{const e=document.getElementById(h);if(e){e.scrollIntoView();scrollBy(0,-60)}},50);
+const h=location.hash.replace("#","").split("&")[0].replace(/^mod=\w+$/,"");const so=location.hash.match(/solo=(\w+)/);if(so){$$(".card").forEach(c=>{if(c.id!=so[1])c.style.display="none"});const sc=location.hash.match(/scen=(\w+)/);if(sc){const b=document.querySelector(`[data-s="${sc[1]}"]`);b&&b.click()}}if(h&&h!="dark")setTimeout(()=>{const e=document.getElementById(h);if(e){e.scrollIntoView();scrollBy(0,-60)}},50);
 document.body.dataset.ok="1"});
