@@ -11,6 +11,7 @@ CBL5.cards.push(
 <tr><td>[[shpt]] due to vitamin D deficiency</td><td>Parathyroid hormone high, calcium normal, vitamin D low</td></tr>
 <tr><td>Hiatal hernia, gallstones, [[cholestasis|cholestatic syndrome]], fatty liver, overweight</td><td>History, yellow sclerae, high direct bilirubin and [[ggt]], body mass index 26</td></tr></table>
 <div class="corr">📝 <b>Thyroid note:</b> M.T. is <b>anti-thyroglobulin positive but anti-thyroid peroxidase negative</b>. Most people with autoimmune thyroiditis are thyroid peroxidase positive, so this pattern is less typical. Positive thyroglobulin antibodies with a goitre still support autoimmune thyroiditis. Also, slide 7 asked "hypothyroidism?": the answer is <b>no</b>, she is euthyroid. The ultrasound on slide 26 is a reference picture from Radiopaedia, not necessarily M.T.'s scan.</div>
+${FIG("adrenalitis","This is what is happening in M.T.'s adrenals.")}
 <h3>[[aps|Autoimmune polyglandular syndromes]] (slide 29)</h3>
 <table><tr><th>Type</th><th>Definition</th></tr>
 <tr><td>Type 1</td><td>Chronic candidiasis, hypoparathyroidism, autoimmune adrenal insufficiency (at least two)</td></tr>
@@ -33,6 +34,7 @@ quiz:[{q:"Which component MUST be present for autoimmune polyglandular syndrome 
 <div class="scene"><b>The scene:</b> Back to admission day. M.T. is vomiting, her blood pressure is 90/60 mmHg, sodium 126, potassium 6.21, glucose 59 mg/dl. The cortisol result will not be ready until tomorrow. Do you wait?</div>
 <p><b>No.</b> First take-home message (slide 35): <b>if you clinically suspect acute adrenal insufficiency ([[crisis]]), start emergency treatment before the diagnosis is confirmed.</b> Take blood for cortisol and adrenocorticotropic hormone first if it costs no time, then treat.</p>
 <p>👉 Click each box in the flow:</p>
+${FIG("crisis")}
 <div data-widget="crisis"></div>
 <p><b>Why [[hydrocortisone]]?</b> At high doses, hydrocortisone also acts on the mineralocorticoid receptor, so it replaces cortisol <i>and</i> covers the missing aldosterone. [[dexa]] has no salt-retaining effect at all.</p>
 <p><b>Why no [[fludro|fludrocortisone]] at first?</b> While hydrocortisone is 50 mg per day or more, its own mineralocorticoid effect is enough. Fludrocortisone is started when the dose is lowered below that.</p>
@@ -63,6 +65,7 @@ quiz:[{q:"M.T. is hypotensive and vomiting; the cortisol result is pending until
 <tr><td>Fever above 39 °C</td><td><b>Triple</b> the usual daily dose</td></tr>
 <tr><td>Cannot keep tablets down (repeated vomiting, severe diarrhoea, collapse)</td><td><b>100 mg hydrocortisone into a muscle</b> immediately + emergency care</td></tr></table>
 <p>The slide also quotes the National Institute for Health and Care Excellence (2024): during major physical stress, at least 40 mg per day in 2–4 divided doses, continued until recovery (often 2–3 days). And always: <b>never stop glucocorticoids</b>, carry a [[card]], keep a [[kit]], and train patient and family.</p>
+${FIG("sickday")}
 <h3>Monitoring (slide 33)</h3>
 <table><tr><th>Hydrocortisone (glucocorticoid)</th><th>Fludrocortisone (mineralocorticoid)</th></tr>
 <tr><td>Symptoms: fatigue, weakness, appetite, nausea<br>Energy, weight, muscle strength<br>Blood pressure, dizziness on standing<br><b>Too little:</b> ongoing symptoms, weight loss, low pressure<br><b>Too much:</b> weight gain, hypertension, glucose rise, Cushing-like features</td>

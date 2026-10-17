@@ -37,33 +37,33 @@ Every image is an atlas-style realistic medical illustration. Do not put text, l
 
 Same rules: atlas-style realistic medical illustration, no text, letters, numbers, captions, logos or watermarks anywhere in the image. Save each to the given filename, then tick its box.
 
-- [ ] **id:** `cbl5-hyperpigmentation`
+- [x] **id:** `cbl5-hyperpigmentation`
   - **Save as:** `images/cbl5-hyperpigmentation.png`
   - **Used in:** CBL 5, step 2 (examination): the darkened skin sign of primary adrenal insufficiency.
   - **Prompt:** Calm atlas-style clinical illustration, two panels side by side on a neutral background, showing the hands of a fair-skinned woman in her 50s: (1) an open palm with clearly darkened palm creases, (2) the back of the hand with brownish darkening over the knuckles. Natural skin tones, soft clinical lighting, sleeves visible at the wrists. No mouth or face shown, no gloves, no instruments, no text, letters, numbers or labels.
   - **Note:** the mouth (cheek lining) panel was removed because a gloved finger in the mouth is often refused. The cheek-lining pigmentation stays described in the text of step 2.
 
-- [ ] **id:** `cbl5-autoimmune-adrenalitis`
+- [x] **id:** `cbl5-autoimmune-adrenalitis`
   - **Save as:** `images/cbl5-autoimmune-adrenalitis.png`
   - **Used in:** CBL 5, step 5 (Schmidt syndrome): why the adrenal fails in autoimmune adrenalitis.
   - **Prompt:** Atlas-style realistic medical illustration comparing two human adrenal glands side by side on a plain background, no text: left, a normal adrenal gland on top of a kidney with a normal-thickness yellow cortex in cut section; right, a shrunken, thin atrophic adrenal gland in cut section with a very thin cortex densely infiltrated by small dark lymphocytes, medulla preserved. A magnified circular inset on the right shows lymphocytes surrounding and destroying adrenal cortex cells. Textbook accuracy, restrained colour.
 
 - [ ] **id:** `cbl5-aps2-organs`
   - **Save as:** `images/cbl5-aps2-organs.png`
-  - **Used in:** CBL 5, step 5: the organs hit in autoimmune polyglandular syndrome type 2 in this patient.
-  - **Prompt:** Atlas-style realistic medical illustration of a semi-transparent adult female torso and neck (front view, modest, no nipples or genitalia detailed) on a plain light background, with these organs drawn anatomically and highlighted with a soft warm glow: the thyroid gland in the neck, both adrenal glands on top of the kidneys, and both ovaries in the pelvis. Other organs faint and grey. No text, numbers or labels.
+  - **Used in:** CBL 5, step 5: the organs hit in autoimmune polyglandular syndrome type 2 in this patient (thyroid, both adrenal glands, both ovaries).
+  - **Prompt:** Clean, flat medical diagram in a modern textbook infographic style, on a plain white background. A simple, smooth, gender-neutral mannequin silhouette (head, neck and trunk, front view), drawn as a pale grey semi-transparent outline with no facial features, no body details, no skin texture, no chest or genital anatomy, like a shop-window dummy or a diagram icon. Inside the outline, only four organs are drawn, small and anatomically placed, each with a soft warm orange glow: the butterfly-shaped thyroid gland at the front of the neck; two small triangular adrenal glands, each sitting on top of a faint pale-grey kidney outline; and two small oval ovaries low in the pelvis, beside a faint pale-grey outline of the womb. No other organs, no skeleton, no blood vessels. Even, soft lighting, calm colours. No text, letters, numbers, arrows or labels anywhere.
 
-- [ ] **id:** `cbl5-adrenal-crisis`
+- [x] **id:** `cbl5-adrenal-crisis`
   - **Save as:** `images/cbl5-adrenal-crisis.png`
   - **Used in:** CBL 5, step 6 (adrenal crisis: treat first, confirm later).
   - **Prompt:** Calm, atlas-style clinical illustration of a hospital bay. A tired, pale woman in her 50s with slightly tanned-looking (hyperpigmented) skin rests on a hospital bed under a blanket, wearing a hospital gown, eyes half open, looking weak but calm. A drip bag of clear fluid hangs on a stand, with a thin tube running to a small, neatly taped line on her forearm. A nurse stands beside the bed adjusting the drip and talking kindly to her. Soft, even lighting, muted colours, quiet atmosphere. No screens or monitors, no syringes or needles visible, no blood, no rushing staff, no emergency drama. No text, letters, numbers or labels anywhere, including on the drip bag.
 
-- [ ] **id:** `cbl5-sick-day`
+- [x] **id:** `cbl5-sick-day`
   - **Save as:** `images/cbl5-sick-day.png`
   - **Used in:** CBL 5, step 7 (going home): sick-day rules and emergency self-injection.
   - **Prompt:** Atlas-style realistic illustration on a kitchen table, top-down view: a blister strip of small white tablets, a glass of water, a thermometer, a medical-alert bracelet with a plain blank (no text) metal plate, and an emergency injection kit (glass vial, syringe, needle, alcohol swab) laid out neatly. No writing, letters, numbers or logos on any item. Soft natural light, clean realistic style.
 
-- [ ] **id:** `cbl5-adrenal-haemorrhage`
+- [x] **id:** `cbl5-adrenal-haemorrhage`
   - **Save as:** `images/cbl5-adrenal-haemorrhage.png`
   - **Used in:** CBL 5, bonus practice case: bleeding into both adrenal glands in severe meningococcal infection (Waterhouse-Friderichsen syndrome).
   - **Prompt:** Clean textbook anatomical illustration, medical-atlas drawing style, on a plain off-white background. Front view of both kidneys with an adrenal gland sitting on top of each. Both adrenal glands are enlarged and evenly coloured a deep dark red-purple to show bleeding inside the gland; one gland is drawn in a neat, smooth cut section showing the dark red colour filling the gland in place of the normal yellow cortex. Simple, schematic and calm: no liquid blood, no drips, no surgical instruments, no gore. Small separate inset: a plain square of skin texture only (no body part identifiable) with a few small, flat purple pinpoint spots. Restrained colours, soft even lighting. No text, letters, numbers or labels anywhere.

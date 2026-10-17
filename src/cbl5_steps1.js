@@ -38,6 +38,7 @@ quiz:[{q:"Which detail in M.T.'s history best hints that more than one gland may
 <tr><td>Negative Giordano sign</td><td>No pain when the kidney area is tapped → kidney infection or stone less likely.</td></tr>
 <tr><td>Body mass index 26 kg/m²</td><td>Slightly overweight: adrenal insufficiency does not always make people thin.</td></tr>
 <tr><td>Pituitary: no headache, no visual field problems</td><td>No sign of a pituitary tumour, so a pituitary (secondary) cause is less likely.</td></tr></table>
+${FIG("hyper","M.T. shows the same pattern: darker skin than expected for her.")}
 <h3>Presumptive diagnosis (slide 7)</h3>
 <p>• Early menopause &nbsp;• <b>Adrenal insufficiency suspected</b> &nbsp;• Goitre grade Ib: hypothyroidism? &nbsp;• Gallstones? &nbsp;• Cholestatic syndrome?</p>
 <div class="hint">💡 <b>"Primary = Pigmented, Potassium high."</b> Both come from the adrenal itself failing: high adrenocorticotropic hormone darkens the skin; missing aldosterone raises potassium. <br>Fun fact: the man in the photo on slide 24 is United States president John F. Kennedy, who had Addison disease. His year-round "tan" is often linked to it.</div>`,

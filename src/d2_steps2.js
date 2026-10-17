@@ -5,6 +5,7 @@ D2.cards.push(
 <p>An [[crisis]] is a medical emergency: <b>shock</b> (often not responding to fluids alone), vomiting, abdominal pain (it can mimic an acute abdomen), fever, confusion or reduced consciousness, plus low sodium, high potassium (primary) and low glucose.</p>
 <p><b>Typical triggers:</b> infections (especially gastroenteritis, because tablets are vomited), surgery or trauma, missed or stopped tablets, starting thyroxine before hydrocortisone, and starting [[inducer|enzyme-inducing drugs]]. It can also be the first presentation of undiagnosed insufficiency, or of [[adrhaem]].</p>
 <p>👉 Click through the emergency flow:</p>
+${FIG("crisis")}
 <div data-widget="crisis"></div>
 <p><b>The golden rule (Endocrine Society guideline, 2016):</b> if you suspect it, <b>take blood for cortisol and adrenocorticotropic hormone if it costs no time, then give [[hydrocortisone]] immediately.</b> A missed crisis can kill; one unnecessary dose of hydrocortisone almost never harms.</p>
 <table><tr><th>Treatment</th><th>Dose (adults)</th></tr>
@@ -55,6 +56,7 @@ quiz:[{q:"A man with secondary adrenal insufficiency after pituitary surgery ask
 • A [[kit]] at home, at work and when travelling, plus spare tablets.<br>
 • Patient <b>and family</b> trained to give the injection (into the outer thigh muscle).<br>
 • Never stop glucocorticoids suddenly.</p>
+${FIG("sickday")}
 <h3>[[stressdose|Surgery, labour and procedures]] (typical approach; follow the local protocol)</h3>
 <table><tr><th>Situation</th><th>Approach</th></tr>
 <tr><td>Major surgery, labour, intensive care</td><td>Hydrocortisone 100 mg into a vein or muscle at the start, then 200 mg per 24 hours until eating and drinking, then about double the usual oral dose for a few days before returning to normal</td></tr>
