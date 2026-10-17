@@ -18,8 +18,8 @@ if(seen.size==ab.length)complete("a3-labs",15,"🧪 Every abnormal value explain
 W.ladder=el=>{const R=L.ladder,seen=new Set();
 el.innerHTML=`<div class="ladder">${R.map((r,i)=>`<button data-i="${i}"><span class="rung">${i+1}</span>${r[0].replace(/^\d+\.\s*/,"")}</button>`).join("")}</div><div class="info" id="ld-info">Start at rung 1.</div>`;
 el.querySelectorAll("button").forEach(b=>b.onclick=()=>{const r=R[b.dataset.i];seen.add(b.dataset.i);el.querySelectorAll("button").forEach(x=>x.classList.toggle("on",x==b));b.classList.add("seen");
-el.querySelector("#ld-info").innerHTML=`<b>${r[0]}</b><br><b>How:</b> ${r[1]}<br><b>Read it:</b> ${r[2]}<br><b>🩺 M.T.:</b> ${r[3]}`;
-if(seen.size==R.length)complete("a4-ladder",10,"🪜 Top of the ladder! +10 XP")})};
+el.querySelector("#ld-info").innerHTML=`<b>${r[0]}</b><br><b>How:</b> ${r[1]}<br><b>Read it:</b> ${r[2]}${r[3]?`<br><b>${L.ladderLabel||"🩺 M.T."}:</b> ${r[3]}`:""}`;
+if(seen.size==R.length)complete(L.ladderId||"a4-ladder",10,"🪜 Top of the ladder! +10 XP")})};
 
 const HPAS={
 normal:{l:"Normal",x:null,v:{crh:"=",acth:"=",cort:"=",dhea:"=",renin:"=",aldo:"="},skin:"#e2b48f",sk:"normal skin",k:"normal potassium",t:"Hypothalamus → corticotropin-releasing hormone → pituitary → adrenocorticotropic hormone → cortisol, which switches the top two off (dashed red feedback). Aldosterone is mainly run by the kidney: renin → angiotensin II."},
@@ -44,7 +44,7 @@ ${box(130,20,200,46,"#f3ecff","#7b3fc4","Hypothalamus")}${box(130,135,200,46,"#e
 ${X("hyp",290,60)}${X("pit",290,175)}${X("adr",108,302)}
 <circle id="h-skin" cx="440" cy="392" r="18" stroke="#555" stroke-width="1.5"/><text id="h-skt" x="466" y="389" font-size="13" font-weight="700" fill="#333"></text><text id="h-k" x="466" y="406" font-size="13" fill="#333"></text>
 </svg>`;
-el.innerHTML=`<div class="ctrl">${Object.entries(HPAS).map(([k,v])=>`<button data-h="${k}">${v.l}</button>`).join("")}</div><figure>${svg}<figcaption>Hypothalamic–pituitary–adrenal axis drawn in code (schematic). ↑ = up, ↓ = down, "= normal" = unchanged. Red ✕ = the broken level. Based on slide 11 (Hahner et al., 2021).</figcaption></figure><div class="info" id="h-info"></div>`;
+el.innerHTML=`<div class="ctrl">${Object.entries(HPAS).filter(([k])=>k!="mt"||L.hpaPatient).map(([k,v])=>`<button data-h="${k}">${v.l}</button>`).join("")}</div><figure>${svg}<figcaption>Hypothalamic–pituitary–adrenal axis drawn in code (schematic). ↑ = up, ↓ = down, "= normal" = unchanged. Red ✕ = the broken level. Based on Hahner et al., Nature Reviews Disease Primers 2021 (CBL 5 slide 11).</figcaption></figure><div class="info" id="h-info"></div>`;
 const set=k=>{const s=HPAS[k];el.querySelectorAll("[data-h]").forEach(b=>b.classList.toggle("on",b.dataset.h==k));
 for(const h in s.v){const t=el.querySelector("#hs-"+h);t.textContent=s.v[h]=="="?"= normal":s.v[h];t.setAttribute("fill",s.v[h].includes("↑")?"#c62828":s.v[h].includes("↓")?"#2f6fdb":"#1f9d55")}
 ["hyp","pit","adr"].forEach(x=>el.querySelector("#hx-"+x).setAttribute("opacity",s.x==x?1:0));

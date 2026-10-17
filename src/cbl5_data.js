@@ -82,6 +82,6 @@ exam:[
 "Chronic: hydrocortisone 15–25 mg per day in 2–3 doses + fludrocortisone 0.05–0.2 mg; sick-day rules (38 °C double, 39 °C triple, vomiting = injection); emergency card; monitor clinically.",
 "Start hydrocortisone before thyroxine."],
 sources:"Sources: CBL 5 (Prof. Dr. Ionela Pascanu, UMCH 2026), slides 1–35 and the references cited on them (Hahner et al., Nature Reviews Disease Primers 2021; Charmandari et al., Lancet 2014; Michels and Michels, American Family Physician 2014; Ferri; Weiler et al. 2012). Crisis dosing and the slide checks follow the Endocrine Society guideline on primary adrenal insufficiency (Bornstein et al., 2016). M.T.'s values are taken from the slides; the mini-cases are invented teaching examples. Conversions: cortisol µg/dl × 27.59 = nmol/L; glucose mg/dl ÷ 18 = mmol/L.",
-casesHead:"🔁 Transfer mini-cases",casesIntro:"Same disease, new patients. Answer to reveal the next part."
+hpaPatient:true,casesHead:"🔁 Transfer mini-cases",casesIntro:"Same disease, new patients. Answer to reveal the next part."
 });
 LESSONS.cbl5=CBL5;
