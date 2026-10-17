@@ -1,9 +1,9 @@
 /* ===== Subsection 7: widget data, cases, flashcards, exam ===== */
 Object.assign(M7,{
 sort3:{id:"e5-sort",labels:["Falsely high","Falsely low","No effect"],items:[
-["Drinking more than about 5 litres of fluid a day",0,"High urine flow increases cortisol filtration a little; mildly raised results are common."],
+["Passing more than about 5 litres of urine a day (drinking a lot)",0,"Very high urine volume falsely raises urinary free cortisol. Ask the patient to keep a normal fluid intake during the collection."],
 ["Missing several urine samples during the collection",1,"Some of the day's cortisol is simply not in the bottle. Check urine creatinine."],
-["Severe chronic kidney disease",1,"Less cortisol is filtered, so production is underestimated."],
+["Reduced kidney function (creatinine clearance below about 60 mL/min)",1,"Less cortisol is filtered, so production is underestimated."],
 ["Taking the combined oestrogen pill",2,"The pill raises cortisol-binding globulin, but urine only contains free cortisol."],
 ["Severe depression or heavy alcohol use",0,"Pseudo-Cushing states activate the axis and can raise urinary free cortisol mildly."],
 ["Taking prednisolone tablets (older immunoassay)",0,"Prednisolone can cross-react with some cortisol immunoassays; mass-spectrometry assays avoid this."]]},
@@ -19,7 +19,7 @@ take:["Cytochrome P450 3A4 inhibitors (ritonavir, cobicistat, azoles) turn 'loca
 take:["Enzyme inducers (rifampicin, phenytoin, carbamazepine) increase steroid needs.","Review steroid dose whenever an interacting drug starts or stops.","Under-replacement looks like insufficiency: fatigue, nausea, postural dizziness."]},
 {id:"p3",title:"Case 3 (bonus): High cortisol, but only on paper",steps:[
 {t:`<b>The scene:</b> A 26-year-old woman taking the combined pill had a morning serum cortisol measured "for tiredness". It is above the reference range. She has no features of Cushing syndrome. Her 24-hour urinary free cortisol is normal (two collections).`,q:"What explains the high serum value?",o:["Oestrogen raises cortisol-binding globulin, so total (bound + free) cortisol rises","Early Cushing disease","Liquorice"],a:0,e:"Total cortisol rises with cortisol-binding globulin, but the free fraction (and urinary free cortisol) stays normal."},
-{t:`Her doctor now wants a 1 mg overnight dexamethasone test.`,q:"What should be done about the pill?",o:["Nothing","Stop oestrogen-containing medicines about 6 weeks before the test, or use urinary or salivary tests instead","Double the pill dose"],a:1,e:"Raised cortisol-binding globulin can make the dexamethasone test look 'not suppressed' (falsely positive). Guidelines advise stopping oestrogens about 6 weeks before testing, if possible."}],
+{t:`Her doctor now wants a 1 mg overnight dexamethasone test.`,q:"What should be done about the pill?",o:["Nothing","Stop oral oestrogen about 6 weeks before the test, or use late-night saliva cortisol or 24-hour urine free cortisol instead","Double the pill dose"],a:1,e:"Raised cortisol-binding globulin can make the dexamethasone test look 'not suppressed' (falsely positive). Guidelines advise stopping oral oestrogen about 6 weeks before testing (Nieman and colleagues, 2008). Patches, gels and progestogen-only methods barely change cortisol-binding globulin."}],
 take:["Total cortisol depends on cortisol-binding globulin; free cortisol does not.","Urinary free cortisol and salivary cortisol are unaffected by the pill.","The pill can make the dexamethasone test falsely positive."]}
 ],
 flash:[["Plasma half-life of cortisol","Roughly 1 to 1.5 hours."],

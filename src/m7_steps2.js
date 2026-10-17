@@ -25,6 +25,7 @@ quiz:[{q:"High blood pressure, potassium 2.9 mmol/L, renin low, aldosterone low.
 <p>No. Cortisol is pulsatile and has a strong daily rhythm (Module 8), so one random value says little. To screen for [[cushsyn]] we use tests that look at the <b>whole day</b> or at the <b>midnight low</b>: [[ufc]], [[lnsc]] and the 1 mg overnight [[dst]].</p>
 <p><b>Why urine works:</b> only <b>free</b> cortisol is filtered by the kidney. When cortisol rises, cortisol-binding globulin becomes saturated, the free part rises steeply, and so does urinary free cortisol. It is <b>not affected by cortisol-binding globulin</b> (for example the pill).</p>
 <p><b>How to collect:</b> discard the first urine on waking on day 1, then collect <b>every</b> drop for 24 hours, including the first urine on waking on day 2. Usually <b>two</b> collections are done; urine creatinine checks completeness.</p>
+<p><b>Pitfalls:</b> more than about <b>5 litres of urine a day</b> falsely raises the result, so keep a normal fluid intake; reduced kidney function (creatinine clearance below about 60 mL/min) can make it <b>falsely low</b>.</p>
 <p>👉 Sort these: does each one make urinary free cortisol falsely high, falsely low, or neither?</p>
 <div data-widget="sort3"></div>
 <div class="hint">💡 <b>"Urine tells the 24-hour story; blood tells one moment."</b> Always ask: was the collection complete, and does the patient drink litres of water?</div>
