@@ -19,6 +19,7 @@ GitHub Pages deploys the `main` branch from the repository root. An empty `.noje
 ## Modules
 
 - **CBL 5. Case: Adrenal insufficiency (Schmidt syndrome)** — case-based module (`src/cbl5_glossary.js`, `src/cbl5_steps1.js`, `src/cbl5_steps2.js`, `src/cbl5_data.js`, `src/cbl5_widgets.js`)
+- **2.2 Adrenal insufficiency** — theory module in the Adrenal disorders chapter (`src/d2_glossary.js`, `src/d2_steps1.js`, `src/d2_steps2.js`, `src/d2_data.js`, `src/d2_widgets.js`)
 
 ## Add a module
 

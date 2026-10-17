@@ -70,3 +70,19 @@ svg text{font-family:inherit}
 .ladder{display:flex;flex-direction:column-reverse;gap:6px;margin:8px 0;border-left:6px double var(--line);border-right:6px double var(--line);padding:6px 10px}
 .ladder button{text-align:left;display:flex;align-items:center;gap:10px}.ladder button.on{background:var(--acc);color:#fff}.ladder button.seen:not(.on){border-color:var(--ok)}
 .ladder .rung{display:inline-flex;width:26px;height:26px;border-radius:50%;background:var(--bg);color:var(--ink);align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0}
+nav .area2{font-weight:700;font-size:15px;margin:2px 0 6px}
+.sortrow{border-bottom:1px solid var(--line);padding:6px 0;display:flex;flex-wrap:wrap;align-items:center;gap:8px}.sortrow .st{flex:1;min-width:220px;font-size:15px}.sortrow .sb{display:flex;gap:6px}.sortrow .sb button{font-size:14px;padding:4px 10px}
+.sortrow button.right{background:color-mix(in srgb,var(--ok) 20%,var(--panel));border-color:var(--ok)}.sortrow button.wrong{background:color-mix(in srgb,var(--bad) 18%,var(--panel));border-color:var(--bad)}.sortrow .sfb{flex-basis:100%;font-size:14px;color:var(--mute)}
+
+.mlfig .zoombtn{display:block;padding:0;border:0;background:none;cursor:zoom-in;width:100%;text-align:left}
+.mlfig img{display:block;width:100%;height:auto}
+.mlfig .imgcheck{display:inline-block;margin-top:4px;background:#fff7e0;color:#5a4300;border-left:3px solid #e0a800;padding:3px 7px;border-radius:4px}
+body.dark .mlfig .imgcheck{background:#3a3220;color:#f3e3b5}
+.mlfig .credit{font-size:12px;opacity:.8}
+.lightbox{position:fixed;inset:0;z-index:9999;background:rgba(10,10,12,.96);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:12px;overflow:auto;cursor:zoom-out}
+.lightbox img{max-width:100%;max-height:78vh;object-fit:contain;background:#fff;border-radius:8px}
+.lightbox .lbcap{color:#eee;background:#111;padding:8px 12px;border-radius:8px;font-size:14px;max-width:1000px;margin-top:8px;cursor:default}
+.lightbox .lbcap .imgcheck{background:#3a3220;color:#f3e3b5}
+.lightbox .lbclose{position:absolute;top:10px;right:14px;font-size:22px;background:#fff;color:#111;border:0;border-radius:50%;width:40px;height:40px;cursor:pointer}
+/* mobile overflow fix (wide tables kept the page wider than the phone screen) */
+@media(max-width:700px){.card table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}}

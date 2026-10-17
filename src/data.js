@@ -62,7 +62,7 @@ prader:{l:"Prader scale",c:"concept",d:"A 0–5 grading of how virilised externa
 const CATS={enzyme:"Enzymes",hormone:"Hormones and steroid molecules",cell:"Cell parts, receptors, transport proteins",disease:"Diseases",drug:"Drugs and substances",concept:"Key concepts"};
 
 /* ===== MODULE TEMPLATE: add new modules as objects here ===== */
-const COURSE={area:"Endocrinology",lecture:"Lecture 7: Regulation of the secretion of the adrenal cortex hormones",teacher:"Prof. Ionela Pascanu",
+const COURSE={area:"Endocrinology",lectureGroup:"Lecture 7: Normal adrenal cortex",lecture:"Lecture 7: Regulation of the secretion of the adrenal cortex hormones",teacher:"Prof. Ionela Pascanu",
 modules:[
 {id:"m1",n:1,title:"Embryology",summary:"Cortex comes from mesoderm (coelomic epithelium); medulla from neural crest cells that migrate into it. Explains why cortex makes steroids and medulla makes catecholamines."},
 {id:"m2",n:2,title:"Fetal steroids",summary:"The large fetal zone makes dehydroepiandrosterone sulfate, which the placenta turns into oestrogens (the feto-placental unit). The fetal zone shrinks after birth."},
@@ -73,5 +73,14 @@ modules:[
 {id:"m7",n:7,title:"Metabolism and inactivation",summary:"Liver reduces and conjugates steroids for urinary excretion; 11-beta-hydroxysteroid dehydrogenase enzymes switch cortisol on and off in tissues."},
 {id:"m8",n:8,title:"Regulation: hypothalamic-pituitary-adrenal axis",summary:"Corticotropin-releasing hormone → adrenocorticotropic hormone → cortisol, with negative feedback, a morning peak and a stress response."},
 {id:"m9",n:9,title:"Glucocorticoid actions, therapy and side effects",summary:"Metabolic, anti-inflammatory and immune effects; therapeutic steroids and their side effects (Cushingoid features, adrenal suppression)."},
+{id:"d1",n:"2.1",grp:"Adrenal disorders",lec:"Theory modules: diseases of the adrenal gland",teacher:"Built from standard textbooks and guidelines",title:"Approach to the adrenal patient",summary:"Too much or too little? Which hormone, which zone, which test: screening tests first, then confirmation, then localisation."},
+{id:"d2",n:"2.2",grp:"Adrenal disorders",title:"Adrenal insufficiency: primary, secondary, tertiary and adrenal crisis",built:true},
+{id:"d3",n:"2.3",grp:"Adrenal disorders",title:"Cushing syndrome",summary:"Too much cortisol: causes (steroid tablets, pituitary, adrenal, ectopic), screening tests and treatment."},
+{id:"d4",n:"2.4",grp:"Adrenal disorders",title:"Primary hyperaldosteronism (Conn syndrome)",summary:"Too much aldosterone: hypertension, sometimes low potassium; aldosterone-to-renin ratio, confirmation, adrenal vein sampling."},
+{id:"d5",n:"2.5",grp:"Adrenal disorders",title:"Congenital adrenal hyperplasia",summary:"Inherited enzyme defects (mostly 21-hydroxylase): salt wasting, virilisation, newborn screening and treatment."},
+{id:"d6",n:"2.6",grp:"Adrenal disorders",title:"Adrenal medulla: phaeochromocytoma",summary:"Catecholamine-secreting tumour: attacks of headache, sweating, palpitations; metanephrine tests; alpha-blockade before surgery."},
+{id:"d7",n:"2.7",grp:"Adrenal disorders",title:"Adrenal masses: incidentaloma, carcinoma, metastases",summary:"The lump found by chance: is it functioning, is it malignant? Imaging features and hormone work-up."},
+{id:"d8",n:"2.8",grp:"Adrenal disorders",title:"Autoimmune polyglandular syndromes",summary:"Types 1 to 4: which glands travel together, genetics, and what to screen for."},
+{id:"d9",n:"2.9",grp:"Adrenal disorders",title:"Steroid therapy: side effects, withdrawal, sick-day rules",summary:"Therapeutic glucocorticoids: side effects, axis suppression, safe tapering and steroid safety rules."},
 {id:"cbl5",n:"CBL 5",title:"Case: Adrenal insufficiency (Schmidt syndrome)",grp:"Case-based learning",lec:"CBL 5: 53-year-old woman with abdominal pain, low blood pressure and low sodium",teacher:"Prof. Dr. Ionela Pascanu · UMCH 2026",pages:"35 slides",built:true}
 ]};

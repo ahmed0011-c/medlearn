@@ -73,7 +73,7 @@ ${[[420,170],[450,280],[110,170],[380,60],[560,160],[230,290],[60,250],[600,90]]
 <text x="560" y="205" text-anchor="end">lipid droplets (cholesteryl esters) – yellow</text>
 <text x="20" y="130">mitochondria – bubbly (tubulovesicular) cristae</text>
 <text x="390" y="215">smooth endoplasmic reticulum – teal</text></g></svg>
-<figcaption>Schematic "clear cell" of zona fasciculata, drawn in code (not to scale). An AI atlas-style version was generated but could not be embedded in this offline file – see the report.</figcaption></figure>`};
+<figcaption>Schematic "clear cell" of zona fasciculata, drawn in code (not to scale). The labelled AI illustrations below show the same structures in more detail.</figcaption></figure>`};
 
 W.pingpong=el=>{const steps=[["M",130,"Cholesterol → pregnenolone","Mitochondria (inner membrane): cholesterol side-chain cleavage enzyme cuts the side chain."],
 ["S",470,"Pregnenolone → progesterone","Smooth endoplasmic reticulum: 3-beta-hydroxysteroid dehydrogenase."],
@@ -147,28 +147,29 @@ ${d.map((t,i)=>`<g><circle cx="${40+i*128}" cy="37" r="15" fill="#fff" stroke="#
 <figcaption>Schematic Prader scale (text only, no anatomical images – deliberately). Grades 0 → 5 = increasing virilisation of a genetically female newborn.</figcaption></figure>`};
 
 /* ===== render ===== */
+const LAB=m=>String(m.n).includes(".")?m.n+" ":m.n+". ";
 function render(){const nav=$("nav");const groups=[];COURSE.modules.forEach(m=>{const g=m.grp||"";let G=groups.find(x=>x.g==g);if(!G)groups.push(G={g,ms:[]});G.ms.push(m)});
-nav.innerHTML=`<h1>🩺 MedLearn</h1><div class="sub">Samy's exam and clinic companion</div><div class="grp">${COURSE.area}</div>`+
-groups.map(G=>(G.g?`<div class="grp">${G.g}</div><div class="lec">${G.ms[0].lec||""}<br><span style="font-weight:400;color:var(--mute);font-size:13px">${G.ms[0].teacher||""}</span></div>`:`<div class="lec">${COURSE.lecture}<br><span style="font-weight:400;color:var(--mute);font-size:13px">${COURSE.teacher}</span></div>`)+
-G.ms.map(m=>`<a data-m="${m.id}" class="${m.built?"on":""}">${m.n}. ${m.title} ${m.built?"⭐":`<span class="soon">· coming soon</span>`}</a>`).join("")).join("")+`<div id="inside"></div>`;
+nav.innerHTML=`<h1>🩺 MedLearn</h1><div class="sub">Samy's exam and clinic companion</div><div class="grp">${COURSE.area}</div><div class="area2">🫘 Adrenal gland</div>`+
+groups.map(G=>(G.g?`<div class="grp">${G.g}</div><div class="lec">${G.ms[0].lec||""}<br><span style="font-weight:400;color:var(--mute);font-size:13px">${G.ms[0].teacher||""}</span></div>`:`<div class="grp">${COURSE.lectureGroup||"Lecture"}</div><div class="lec">${COURSE.lecture}<br><span style="font-weight:400;color:var(--mute);font-size:13px">${COURSE.teacher}</span></div>`)+
+G.ms.map(m=>`<a data-m="${m.id}" class="${m.built?"on":""}">${LAB(m)}${m.title} ${m.built?"⭐":`<span class="soon">· coming soon</span>`}</a>`).join("")).join("")+`<div id="inside"></div>`;
 nav.querySelectorAll("[data-m]").forEach(a=>a.onclick=()=>showModule(a.dataset.m));
-if(!$("#modsel")){const sel=document.createElement("select");sel.id="modsel";sel.title="Choose module";sel.innerHTML=COURSE.modules.filter(m=>m.built).map(m=>`<option value="${m.id}">${m.n}. ${m.title}</option>`).join("");sel.onchange=()=>showModule(sel.value);$(".top").prepend(sel)}
+if(!$("#modsel")){const sel=document.createElement("select");sel.id="modsel";sel.title="Choose module";sel.innerHTML=COURSE.modules.filter(m=>m.built).map(m=>`<option value="${m.id}">${LAB(m)}${m.title}</option>`).join("");sel.onchange=()=>showModule(sel.value);$(".top").prepend(sel)}
 const hm=location.hash.match(/mod=(\w+)/),saved=LS.getItem("ml_mod");showModule(hm&&LESSONS[hm[1]]?hm[1]:saved&&LESSONS[saved]?saved:"m5")}
 function showModule(id){const m=COURSE.modules.find(x=>x.id==id);if(!m)return showModule("m5");$$("nav [data-m]").forEach(a=>a.classList.toggle("on",a.dataset.m==id));const c=$("#content");
-if(!m.built||!LESSONS[id]){c.innerHTML=`<div class="card soon-card"><div class="meta">${COURSE.area} › Lecture 7 › Subsection ${m.n}</div><h2>${m.n}. ${m.title}</h2><p>${m.summary}</p><p>🚧 <b>Coming soon.</b> This module will follow the same format as module 5: goals, micro-steps, quick checks, cases and flashcards.</p><button class="pri" onclick="showModule('m5')">← Back to the demo module 5</button></div>`;scrollTo(0,0);return}
+if(!m.built||!LESSONS[id]){c.innerHTML=`<div class="card soon-card"><div class="meta">${COURSE.area} › ${m.grp||COURSE.lectureGroup} › ${m.n}</div><h2>${LAB(m)}${m.title}</h2><p>${m.summary}</p><p>🚧 <b>Coming soon.</b> This module will follow the same format as the built modules: goals, micro-steps, quick checks, cases and flashcards.</p>${m.grp?`<button class="pri" onclick="showModule('d2')">→ Open the built module 2.2</button> `:""}<button class="pri" onclick="showModule('m5')">← Back to the demo module 5</button></div>`;scrollTo(0,0);return}
 L=LESSONS[id];CUR=id;if($("#modsel"))$("#modsel").value=id;LS.setItem("ml_mod",id);document.title=`MedLearn – ${COURSE.area}: ${m.title}`;
 $("#inside").innerHTML=`<div class="grp">Inside this module</div>${L.cards.map((c,i)=>`<a onclick="go('${c.id}')">${i+1}. ${c.title}</a>`).join("")}<a onclick="go('cases')">${L.casesHead||"🏥 Clinical cases"}</a><a onclick="go('flash')">🃏 Flashcards</a><a onclick="go('final')">🎯 What I got from this</a>`;
 const legend=Object.entries(CATS).map(([k,v])=>`<span class="t-${k}" style="font-weight:700">● ${v}</span>`).join("");
 const meta=L.meta||`${COURSE.area} › Lecture 7 › Subsection ${m.n} · lecture ${m.pages} · ⏱ about 25 minutes in ${L.cards.length} bite-sized steps`;
 c.innerHTML=`<div class="card" id="intro"><div class="meta">${meta}</div>
-<h2>${m.n}. ${m.title}</h2>${L.intro?T(L.intro):""}<p><b>🎯 By the end you will be able to…</b></p><ol class="goals">${L.goals.map(g=>`<li>${g}</li>`).join("")}</ol>
+<h2>${LAB(m)}${m.title}</h2>${L.intro?T(L.intro):""}<p><b>🎯 By the end you will be able to…</b></p><ol class="goals">${L.goals.map(g=>`<li>${g}</li>`).join("")}</ol>
 <p style="font-size:15px;color:var(--mute)">Each step takes 2–5 minutes and ends with a quick check. Finish one, get XP and a ✅. That's it – one small win at a time.</p>
 <div class="legend"><b>Colour key (click any coloured word):</b> ${legend}</div></div>`+
 L.cards.map((cd,i)=>`<div class="card" id="${cd.id}"><span class="done-badge" id="badge-${cd.id}"></span><div class="meta">Step ${i+1} of ${L.cards.length} · ⏱ ${cd.min} min · 🎯 Goal: ${L.goals[cd.goal]}</div><h2>${cd.title}</h2>${cd.obj?`<div class="obj"><b>🎯 In this step you will:</b><ul>${cd.obj.map(o=>`<li>${o}</li>`).join("")}</ul></div>`:""}${T(cd.html)}${L===M5&&cd.id=="c5"?ADRENAL_FIG:""}${quizHTML(cd.id,cd.quiz)}
 <div class="recap" id="recap-${cd.id}"><b>🧠 What did I get from this?</b><ul>${cd.recap.map(r=>`<li>${r}</li>`).join("")}</ul></div></div>`).join("")+
 `<div class="card" id="cases"><h2>${L.casesHead||"🏥 Case-based learning"}</h2><p>${L.casesIntro||"Work through each case. Answer to reveal the next part."}</p>${L.cases.map(k=>`<div class="case" id="${k.id}"><h3>${k.title}</h3>${k.steps.map((s,i)=>`<div class="step ${i==0?"show":""}" data-i="${i}">${T(s.t)}${s.q?quizHTML(k.id+"s"+i,[s]):`<p><button class="nxt">Continue →</button></p>`}</div>`).join("")}<div class="step take"><div class="exam" style="border-color:var(--ok)"><b>🏁 Take-home points</b><ul>${k.take.map(t=>`<li>${t}</li>`).join("")}</ul></div></div></div>`).join("<hr>")}</div>
 <div class="card" id="flash"><h2>🃏 Flashcards</h2><p>Click the card to flip. Use the buttons to move on.</p><div class="fc" id="fcard"><div class="in"><div class="f"></div><div class="b"></div></div></div><div class="ctrl"><button id="fprev">← Previous</button><button id="fshuf">🔀 Shuffle</button><button class="pri" id="fnext">Next →</button><span class="pill" id="fcount"></span></div></div>
-<div class="card" id="final"><h2>🎯 What I got from this</h2><div id="summary"></div><div class="exam"><b>📘 For exams</b><ul>${L.exam.map(e=>`<li>${e}</li>`).join("")}</ul></div>
+<div class="card" id="final"><h2>🎯 What I got from this</h2><div id="summary"></div><div class="exam"><b>📘 For exams</b><ul>${L.exam.map(e=>`<li>${e}</li>`).join("")}</ul></div>${L.finalHtml?T(L.finalHtml):""}
 <p style="font-size:14px;color:var(--mute)">${L.sources||"Sources: Lecture 7 (Prof. Ionela Pascanu), pages 17–22 and their figures (Barrett Medical Physiology; Berne and Levy Physiology), extended with standard textbook endocrinology. No statistics beyond those in the lecture figures."}</p><button onclick="if(confirm('Reset all progress?')){LS.removeItem(KEY);location.reload()}">Reset progress</button></div>`;
 c.querySelectorAll("[data-widget]").forEach(w=>W[w.dataset.widget](w));
 L.cards.forEach(cd=>{const el=$("#"+cd.id);if(S.done[cd.id])$("#recap-"+cd.id).classList.add("show");bindQuiz(el,cd.id,cd.quiz,()=>{$("#recap-"+cd.id).classList.add("show");complete(cd.id,20,`✅ Step complete! +20 XP`)})});
@@ -188,3 +189,8 @@ $("#dark").onclick=()=>{document.body.classList.toggle("dark");LS.setItem("ml_da
 $("#focus").onclick=e=>{document.body.classList.toggle("focus");e.target.classList.toggle("pri")};
 const h=location.hash.replace("#","").split("&")[0].replace(/^mod=\w+$/,"");const so=location.hash.match(/solo=(\w+)/);if(so){$$(".card").forEach(c=>{if(c.id!=so[1])c.style.display="none"});const sc=location.hash.match(/scen=(\w+)/);if(sc){const b=document.querySelector(`[data-s="${sc[1]}"]`);b&&b.click()}}if(h&&h!="dark")setTimeout(()=>{const e=document.getElementById(h);if(e){e.scrollIntoView();scrollBy(0,-60)}},50);
 document.body.dataset.ok="1"});
+
+/* lightbox for .mlfig figures */
+document.addEventListener("click",e=>{const b=e.target.closest&&e.target.closest(".zoombtn");if(b){const im=b.querySelector("img");const cap=b.parentNode.querySelector("figcaption");const o=document.createElement("div");o.className="lightbox";o.setAttribute("role","dialog");o.setAttribute("aria-label","Enlarged figure");o.innerHTML=`<button class="lbclose" type="button" aria-label="Close">✕</button><img src="${im.getAttribute("src")}" alt="${im.alt}"><div class="lbcap">${cap?cap.innerHTML.replace(/<i>Tap or click to enlarge\.<\/i>/,""):""}</div>`;document.body.appendChild(o);document.body.style.overflow="hidden";o.querySelector(".lbclose").focus();return}
+const lb=e.target.closest&&e.target.closest(".lightbox");if(lb&&(e.target===lb||e.target.closest(".lbclose")||e.target.tagName==="IMG")){lb.remove();document.body.style.overflow=""}});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){const lb=document.querySelector(".lightbox");if(lb){lb.remove();document.body.style.overflow=""}}});

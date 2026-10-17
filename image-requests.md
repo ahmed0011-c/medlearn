@@ -23,13 +23,13 @@ Every image is an atlas-style realistic medical illustration. Do not put text, l
 
 - [ ] **id:** `m5-salt-wasting-newborn`
   - **Save as:** `images/m5-salt-wasting-newborn.png`
-  - **Used in:** Module 5, case 1 `k1` (“The newborn who crashed on day 10”), the day-10 salt-wasting scene (poor feeding, vomiting, lethargy, low sodium, high potassium). This is a clinical scene only. Do not illustrate the Prader scale or external genitalia; that widget stays text-only.
-  - **Prompt:** Atlas-style realistic clinical illustration of a term newborn, about one to two weeks old, in a neonatal intensive-care bassinet during a salt-wasting crisis. The infant is lethargic and dehydrated: sunken fontanelle, sunken eyes, dry lips, poor skin turgor on the arm or abdomen, cool mottled hands and feet, and an intravenous cannula with clear fluid running. Monitoring leads are in place. Any monitor shows only abstract unreadable waveforms, with no letters and no numbers. Do not show genitalia, the diaper region, or ambiguous genitalia; keep the lower body covered by a blanket. No names, no written charts, no text anywhere. Respectful textbook clinical scene, not graphic.
+  - **Used in:** Module 5, case 1 `k1` ("The newborn who crashed on day 10"): the salt-wasting newborn (poor feeding, sleepiness, dehydration). Do not illustrate the Prader scale or the genitalia; that widget stays text-only.
+  - **Prompt:** Calm, gentle, atlas-style medical illustration of a sleepy newborn baby, about ten days old, swaddled snugly in a soft pale blanket and lying in a clear hospital cot. Close focus on the baby's face and upper body: eyes slightly sunken, lips a little dry, and the soft spot on top of the head gently sunken. The baby is resting quietly, not crying. One tiny hand rests outside the blanket with a small, neat intravenous line taped to the back of the hand, and a thin clear tube leads out of frame. A parent's hand rests softly beside the baby on the blanket. Warm, soft daylight, peaceful hospital room, muted colours. No monitors, no screens, no medical crisis, no tears, no distress, no visible needle tip. Body fully covered by the swaddle from the chest down. No text, letters or numbers anywhere.
 
 - [ ] **id:** `m5-cushingoid`
   - **Save as:** `images/m5-cushingoid-patient.png`
-  - **Used in:** Module 5 clinical link for long-term glucocorticoid excess: the Cushingoid phenotype that step 7 (card `c7`) connects to cortisol-lowering drugs, and the side-effect picture named for glucocorticoid therapy (moon face, central obesity, striae).
-  - **Prompt:** Atlas-style realistic clinical illustration of an adult on long-term glucocorticoid treatment, standing in a plain clinic room, modestly clothed. No text, letters, numbers, drug names, charts, or labels. Show a rounded moon face with facial fullness and mild facial plethora, supraclavicular fat pads, a dorsocervical fat pad, marked central truncal obesity with a prominent abdomen, comparatively thin arms and legs, and several wide purple-red abdominal striae. Skin looks thin. The expression is neutral and dignified, not a caricature. Genitalia are not shown. Even lighting, medical-textbook realism, no words in the image.
+  - **Used in:** Module 5 clinical link for long-term glucocorticoid excess: the Cushing-like body shape that step 7 (card `c7`) links to cortisol-lowering drugs, and the side-effect picture of glucocorticoid therapy (round face, central weight gain, stretch marks).
+  - **Prompt:** Textbook anatomical illustration, clean medical-atlas drawing style, not a photograph. Two panels on a plain off-white background. Main panel: a fully clothed adult in a plain fitted t-shirt and long trousers, standing in side view (profile), neutral calm expression, drawn respectfully and not as a caricature. Show a round, full face; a soft fat pad at the base of the back of the neck (upper back) clearly visible in profile; fullness above the collarbones; central fullness of the abdomen under the t-shirt; and comparatively thin arms and legs. Small separate panel: a close-up square of skin texture only (no body parts identifiable) showing a few wide purple-red stretch marks on thin skin. Soft even lighting, restrained natural colours. No bare torso, no underwear, no text, letters, numbers or labels anywhere.
 
 ---
 
@@ -39,8 +39,9 @@ Same rules: atlas-style realistic medical illustration, no text, letters, number
 
 - [ ] **id:** `cbl5-hyperpigmentation`
   - **Save as:** `images/cbl5-hyperpigmentation.png`
-  - **Used in:** CBL 5, step 2 (examination): the hyperpigmentation sign of primary adrenal insufficiency.
-  - **Prompt:** Atlas-style realistic clinical illustration, three panels side by side on a neutral background, of a fair-skinned woman in her 50s with Addison disease: (1) open palm showing darkened palmar creases, (2) knuckles of the hand with brownish darkening over the joints, (3) inside of the cheek (buccal mucosa) with patchy blue-grey to brown pigmentation, mouth gently held open by a gloved finger. Natural skin tones, clinical photography lighting, no text or labels.
+  - **Used in:** CBL 5, step 2 (examination): the darkened skin sign of primary adrenal insufficiency.
+  - **Prompt:** Calm atlas-style clinical illustration, two panels side by side on a neutral background, showing the hands of a fair-skinned woman in her 50s: (1) an open palm with clearly darkened palm creases, (2) the back of the hand with brownish darkening over the knuckles. Natural skin tones, soft clinical lighting, sleeves visible at the wrists. No mouth or face shown, no gloves, no instruments, no text, letters, numbers or labels.
+  - **Note:** the mouth (cheek lining) panel was removed because a gloved finger in the mouth is often refused. The cheek-lining pigmentation stays described in the text of step 2.
 
 - [ ] **id:** `cbl5-autoimmune-adrenalitis`
   - **Save as:** `images/cbl5-autoimmune-adrenalitis.png`
@@ -55,7 +56,7 @@ Same rules: atlas-style realistic medical illustration, no text, letters, number
 - [ ] **id:** `cbl5-adrenal-crisis`
   - **Save as:** `images/cbl5-adrenal-crisis.png`
   - **Used in:** CBL 5, step 6 (adrenal crisis: treat first, confirm later).
-  - **Prompt:** Atlas-style realistic clinical illustration of an emergency department scene: a pale, sweaty, exhausted woman in her 50s lying on a trolley, looking unwell with hyperpigmented skin; a nurse running a bag of clear saline through an intravenous cannula in her forearm while a doctor gives an intravenous injection from a syringe into the line. A monitor shows only abstract unreadable waveforms. No letters, numbers, drug labels or text anywhere. Respectful, realistic, not graphic.
+  - **Prompt:** Calm, atlas-style clinical illustration of a hospital bay. A tired, pale woman in her 50s with slightly tanned-looking (hyperpigmented) skin rests on a hospital bed under a blanket, wearing a hospital gown, eyes half open, looking weak but calm. A drip bag of clear fluid hangs on a stand, with a thin tube running to a small, neatly taped line on her forearm. A nurse stands beside the bed adjusting the drip and talking kindly to her. Soft, even lighting, muted colours, quiet atmosphere. No screens or monitors, no syringes or needles visible, no blood, no rushing staff, no emergency drama. No text, letters, numbers or labels anywhere, including on the drip bag.
 
 - [ ] **id:** `cbl5-sick-day`
   - **Save as:** `images/cbl5-sick-day.png`
@@ -64,5 +65,5 @@ Same rules: atlas-style realistic medical illustration, no text, letters, number
 
 - [ ] **id:** `cbl5-adrenal-haemorrhage`
   - **Save as:** `images/cbl5-adrenal-haemorrhage.png`
-  - **Used in:** CBL 5, bonus practice case: bilateral adrenal haemorrhage in meningococcal sepsis (Waterhouse-Friderichsen syndrome).
-  - **Prompt:** Atlas-style realistic medical illustration, plain background, no text: both adrenal glands with kidneys shown from the front, each adrenal swollen and dark red-purple from haemorrhage, one cut open to show blood filling and destroying the gland. A small inset shows the lower legs of a young adult with a non-blanching purple purpuric rash. Textbook accuracy, not gory.
+  - **Used in:** CBL 5, bonus practice case: bleeding into both adrenal glands in severe meningococcal infection (Waterhouse-Friderichsen syndrome).
+  - **Prompt:** Clean textbook anatomical illustration, medical-atlas drawing style, on a plain off-white background. Front view of both kidneys with an adrenal gland sitting on top of each. Both adrenal glands are enlarged and evenly coloured a deep dark red-purple to show bleeding inside the gland; one gland is drawn in a neat, smooth cut section showing the dark red colour filling the gland in place of the normal yellow cortex. Simple, schematic and calm: no liquid blood, no drips, no surgical instruments, no gore. Small separate inset: a plain square of skin texture only (no body part identifiable) with a few small, flat purple pinpoint spots. Restrained colours, soft even lighting. No text, letters, numbers or labels anywhere.
