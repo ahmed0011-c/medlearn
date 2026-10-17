@@ -87,6 +87,25 @@ body.dark .mlfig .imgcheck{background:#3a3220;color:#f3e3b5}
 .lightbox .lbclose{position:absolute;top:10px;right:14px;font-size:22px;background:#fff;color:#111;border:0;border-radius:50%;width:40px;height:40px;cursor:pointer}
 /* mobile overflow fix (wide tables kept the page wider than the phone screen) */
 @media(max-width:700px){.card table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}}
+/* Subsections 7–9 */
+details.chk{border:2px dashed var(--acc);border-radius:12px;padding:8px 12px;margin:14px 0;background:color-mix(in srgb,var(--acc) 6%,var(--panel))}details.chk summary{cursor:pointer;font-weight:700}details.chk p{margin:8px 0 2px}
+.tblwrap{overflow-x:auto;-webkit-overflow-scrolling:touch}.ptab small{color:var(--mute)}.ptab td,.ptab th{font-size:14px}
+.pbar{display:block;height:7px;background:var(--line);border-radius:4px;margin-top:4px;min-width:60px}.pbar i{display:block;height:100%;border-radius:4px}
+.mtiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin:10px 0}
+.mtile{display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px;border:2px solid var(--line);border-radius:12px;background:var(--panel);color:var(--ink);cursor:pointer;text-align:center;min-height:70px}
+.mtile .ml{font-size:28px;font-weight:900;color:var(--acc)}.mtile.open{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 10%,var(--panel))}.mtile .mt{font-size:13px;line-height:1.35}
+.info table td,.info table th{font-size:14px}
+body.dark details.chk{background:color-mix(in srgb,var(--acc) 10%,var(--panel))}
+.xgame{border:2px solid var(--line);border-radius:14px;padding:12px;margin:16px 0;background:color-mix(in srgb,var(--acc) 4%,var(--panel))}
+.xord{margin:8px 0;padding-left:22px}.xord li{padding:4px 0;color:var(--ok);font-weight:600}
+.xchips{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}.xchip,.xstate{min-height:44px;text-align:left;font-size:15px}
+.xstate{display:block;width:100%;margin:6px 0}.xstate.ok{border-color:var(--ok);opacity:.7}.xstate.bad{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 15%,var(--panel))}
+.xreset{margin-top:6px}.shake{animation:xsh .35s}@keyframes xsh{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.xcard{display:flex;align-items:center;justify-content:center;width:100%;min-height:120px;margin:8px 0;padding:14px;border:2px dashed var(--acc);border-radius:14px;background:var(--panel);color:var(--ink);font-size:18px;cursor:pointer;text-align:center}.xcard.back{border-style:solid;font-size:15px}
+.xscen{font-size:16px;margin:8px 0}
+.swipe{display:none;font-size:13px;color:var(--mute);margin:4px 0}
+@media(max-width:700px){.swipe{display:block}[data-widget] .ctrl button,[data-widget] .sb button,.xchip{min-height:44px}[data-widget] .ctrl{gap:8px}}
+.match{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.match button{white-space:normal;overflow-wrap:anywhere}
 </style></head><body><noscript><div style="padding:40px;font:18px sans-serif">This page needs JavaScript. Please download the file and open it in Chrome, Edge, Safari or Firefox.</div></noscript>
 <script>window.__err=[];window.onerror=(m,s,l)=>{window.__err.push(m+" @"+l);document.documentElement.setAttribute("data-err",window.__err.join(" | "))};</script>
 <div id="app"><nav></nav><main><div class="top"><div class="bar" id="bar"><i></i></div><span class="pill" id="prog"></span><span class="pill" id="xp"></span><span class="pill" id="streak"></span><button id="focus" title="Dim everything except the current card">🎯 Focus mode</button><button id="dark">🌓 Dark / light</button></div><div id="content"></div></main></div>
@@ -164,9 +183,9 @@ modules:[
 {id:"m4",n:4,title:"Zones and histology (triple S)",summary:"Glomerulosa = Salt (aldosterone), Fasciculata = Sugar (cortisol), Reticularis = Sex (androgens). Fasciculata cells are 'clear cells' full of lipid."},
 {id:"m5",n:5,title:"Steroid synthesis: chemistry, enzymes and regulation",pages:"pages 17–22",built:true},
 {id:"m6",n:6,title:"Circulation and transport",summary:"Cortisol travels mostly bound to cortisol-binding globulin and albumin; only the free fraction is active. Aldosterone is weakly bound."},
-{id:"m7",n:7,title:"Metabolism and inactivation",summary:"Liver reduces and conjugates steroids for urinary excretion; 11-beta-hydroxysteroid dehydrogenase enzymes switch cortisol on and off in tissues."},
-{id:"m8",n:8,title:"Regulation: hypothalamic-pituitary-adrenal axis",summary:"Corticotropin-releasing hormone → adrenocorticotropic hormone → cortisol, with negative feedback, a morning peak and a stress response."},
-{id:"m9",n:9,title:"Glucocorticoid actions, therapy and side effects",summary:"Metabolic, anti-inflammatory and immune effects; therapeutic steroids and their side effects (Cushingoid features, adrenal suppression)."},
+{id:"m7",n:7,title:"Metabolism and inactivation",summary:"Liver reduces and conjugates steroids for urinary excretion; 11-beta-hydroxysteroid dehydrogenase enzymes switch cortisol on and off in tissues.",pages:"pages 24–25",built:true},
+{id:"m8",n:8,title:"Regulation: hypothalamic-pituitary-adrenal axis",summary:"Corticotropin-releasing hormone → adrenocorticotropic hormone → cortisol, with negative feedback, a morning peak and a stress response.",pages:"page 26",built:true},
+{id:"m9",n:9,title:"Glucocorticoid actions, therapy and side effects",summary:"Metabolic, anti-inflammatory and immune effects; therapeutic steroids and their side effects (Cushingoid features, adrenal suppression).",pages:"pages 27–29",built:true},
 {id:"d1",n:"2.1",grp:"Adrenal disorders",lec:"Theory modules: diseases of the adrenal gland",teacher:"Built from standard textbooks and guidelines",title:"Approach to the adrenal patient",summary:"Too much or too little? Which hormone, which zone, which test: screening tests first, then confirmation, then localisation."},
 {id:"d2",n:"2.2",grp:"Adrenal disorders",title:"Adrenal insufficiency: primary, secondary, tertiary and adrenal crisis",built:true},
 {id:"d3",n:"2.3",grp:"Adrenal disorders",title:"Cushing syndrome",summary:"Too much cortisol: causes (steroid tablets, pituitary, adrenal, ectopic), screening tests and treatment."},
@@ -1185,4 +1204,821 @@ el.querySelectorAll(".sortrow").forEach(row=>row.querySelectorAll("button").forE
 if(b.dataset.a==it[1]){row.querySelectorAll("button").forEach(x=>x.disabled=true);b.classList.add("right");row.classList.add("ok");fb.innerHTML="✅ "+it[2];if(!done.has(i)){done.add(i);ok++}}
 else{b.classList.add("wrong");fb.innerHTML="❌ Not quite – think: is the adrenal itself damaged, or is the signal from above missing?"}
 el.querySelector("#so-info").textContent=`${ok}/${I.length} sorted correctly.`;if(ok==I.length){el.querySelector("#so-info").textContent="🏆 All sorted!";complete("b2-sort",15,"🧩 Sorting game complete! +15 XP")}}))};
+
+/* ===== Lecture 7 subsections 7, 8, 9 – new glossary terms (existing ones are reused) ===== */
+Object.assign(GLOSSARY,{
+halflife:{l:"half-life",c:"concept",d:"The time it takes for the amount of a substance in blood to fall by half. Plasma half-life = how fast it leaves the blood; biological half-life = how long its effect lasts.",w:"Explains how often a steroid must be given and why long-acting steroids suppress the axis more."},
+aring:{l:"A-ring reduction",c:"concept",d:"The liver adds hydrogen to the double bond and the oxygen group in ring A of cortisol. The product (tetrahydrocortisol) no longer binds the receptor.",w:"The MAIN way the liver switches cortisol off – more important than hydroxylation."},
+red5:{l:"5-alpha- and 5-beta-reductase",c:"enzyme",d:"Liver enzymes that reduce the double bond in ring A of steroids (the first step of A-ring reduction).",w:"5-alpha-reductase also turns testosterone into dihydrotestosterone in the skin and prostate."},
+hsd3a:{l:"3-alpha-hydroxysteroid dehydrogenase",c:"enzyme",d:"Liver enzyme that finishes A-ring reduction by turning the oxygen group on carbon 3 into a hydroxyl group.",w:"Together with the reductases it makes the inactive tetrahydro metabolites."},
+thf:{l:"tetrahydrocortisol",c:"hormone",d:"Inactive cortisol metabolite made by A-ring reduction (cortisone gives tetrahydrocortisone).",w:"Main cortisol breakdown products in urine; their ratio to cortisone metabolites shows 11-beta-hydroxysteroid dehydrogenase activity."},
+glucur:{l:"conjugation with glucuronic acid",c:"concept",d:"The liver attaches a water-loving sugar acid (glucuronic acid, sometimes sulfate) to the inactive steroid.",w:"Makes fat-soluble steroids water-soluble so the kidney can excrete them in urine."},
+cyp3a4:{l:"cytochrome P450 3A4",c:"enzyme",d:"Main drug-metabolising liver enzyme. For cortisol it performs 6-beta-hydroxylation (a minor route); for synthetic steroids such as dexamethasone, budesonide and fluticasone it is a major route.",w:"Inducers and inhibitors of this enzyme cause important steroid drug interactions."},
+ufc:{l:"24-hour urinary free cortisol",c:"test",d:"All urine for 24 hours is collected and the unbound (free) cortisol in it is measured.",w:"Screening test for Cushing syndrome; integrates the whole day and is not affected by cortisol-binding globulin."},
+lnsc:{l:"late-night salivary cortisol",c:"test",d:"Saliva collected at about 11 p.m. at home; saliva contains only free cortisol.",w:"Screening test for Cushing syndrome: the normal midnight low is lost early in the disease."},
+cortisone:{l:"cortisone",c:"hormone",d:"Inactive form of cortisol (oxygen instead of a hydroxyl group on carbon 11). It does not bind the receptors.",w:"Can be turned back into cortisol by 11-beta-hydroxysteroid dehydrogenase type 1 – the cortisol–cortisone shuttle."},
+mr:{l:"mineralocorticoid receptor",c:"cell",d:"Nuclear receptor in the kidney collecting duct, colon, heart and brain that makes cells keep sodium and lose potassium.",w:"Binds cortisol as strongly as aldosterone; only 11-beta-hydroxysteroid dehydrogenase type 2 keeps cortisol away from it."},
+prednisone:{l:"prednisone",c:"drug",d:"Inactive prodrug (like cortisone) that the liver activates to prednisolone using 11-beta-hydroxysteroid dehydrogenase type 1.",w:"Common in some countries; equal to prednisolone milligram for milligram when the liver works normally."},
+ritonavir:{l:"ritonavir and cobicistat",c:"drug",d:"'Booster' drugs used in human immunodeficiency virus treatment; they strongly block cytochrome P450 3A4.",w:"With inhaled fluticasone or budesonide, or steroid joint injections, they can cause Cushing syndrome and later adrenal insufficiency."},
+fluticasone:{l:"fluticasone",c:"drug",d:"Potent inhaled or nasal steroid, normally almost completely broken down by cytochrome P450 3A4 in the liver.",w:"Classic culprit in drug-interaction Cushing syndrome."},
+rifampicin:{l:"rifampicin",c:"drug",d:"Antibiotic for tuberculosis; a very strong inducer of liver enzymes.",w:"Speeds up steroid breakdown: patients on replacement usually need a higher hydrocortisone dose."},
+placbar:{l:"placental steroid barrier",c:"concept",d:"11-beta-hydroxysteroid dehydrogenase type 2 in the placenta turns most maternal cortisol (and much prednisolone) into inactive forms before they reach the fetus.",w:"Prednisolone treats the mother; dexamethasone and betamethasone pass through and are used to mature the baby's lungs."},
+thaldo:{l:"tetrahydroaldosterone",c:"hormone",d:"Inactive aldosterone metabolite made in the liver and excreted as a glucuronide; the kidney also makes aldosterone 18-glucuronide.",w:"Aldosterone is cleared very fast (half-life about 15–20 minutes), so its level follows renin and potassium closely."},
+liddle:{l:"Liddle syndrome",c:"disease",d:"Inherited overactivity of the kidney's epithelial sodium channel: the kidney keeps salt without any hormone.",w:"Same 'low renin, low aldosterone, low potassium, high blood pressure' pattern as liquorice; treated with amiloride."},
+spiro:{l:"spironolactone and eplerenone",c:"drug",d:"Mineralocorticoid receptor blockers.",w:"Treat hypertension and low potassium from aldosterone excess or from cortisol acting on the receptor."},
+pvn:{l:"paraventricular nucleus",c:"cell",d:"Group of nerve cells in the hypothalamus that make corticotropin-releasing hormone (and vasopressin).",w:"The 'top' of the stress axis; it receives signals from the body clock, the limbic system and the immune system."},
+portal:{l:"hypophyseal portal vessels",c:"cell",d:"Small veins that carry blood directly from the hypothalamus to the anterior pituitary.",w:"Releasing hormones arrive at high concentration without being diluted in the whole circulation."},
+corticotroph:{l:"corticotroph cells",c:"cell",d:"Cells of the anterior pituitary that make proopiomelanocortin and cut it into adrenocorticotropic hormone.",w:"A tumour of these cells causes Cushing disease."},
+negfb:{l:"negative feedback",c:"concept",d:"The end product (cortisol) inhibits the levels above it (hypothalamus and pituitary), keeping the level stable.",w:"The key to every endocrine puzzle: look at the hormone one level up to find where the problem is."},
+circadian:{l:"circadian rhythm",c:"concept",d:"About-24-hour rhythm: cortisol rises in the second half of the night, peaks around waking and is lowest around midnight.",w:"Decides when to test (morning for too little, late night for too much) and when to give tablets."},
+scn:{l:"suprachiasmatic nucleus",c:"cell",d:"The master body clock in the hypothalamus, reset every day by light falling on the eyes.",w:"Drives the daily rhythm of the hypothalamic–pituitary–adrenal axis."},
+pulsatile:{l:"pulsatile secretion",c:"concept",d:"Adrenocorticotropic hormone is released in bursts, each followed by a pulse of cortisol.",w:"A single random cortisol value can be misleading."},
+cytok:{l:"inflammatory cytokines",c:"hormone",d:"Signal proteins of the immune system such as interleukin-1, interleukin-6 and tumour necrosis factor.",w:"They switch on the stress axis in infection and injury; cortisol in turn damps their production."},
+dst:{l:"dexamethasone suppression test",c:"test",d:"Dexamethasone is given and the patient's own cortisol is measured. Dexamethasone acts on the pituitary but is not measured in most cortisol assays.",w:"Healthy people suppress cortisol; people with Cushing syndrome do not."},
+hddst:{l:"high-dose dexamethasone suppression test",c:"test",d:"8 mg dexamethasone (overnight or over 48 hours). Pituitary adenomas usually still partly suppress; ectopic and adrenal tumours do not.",w:"Classic exam logic; today largely replaced by corticotropin-releasing hormone testing, pituitary imaging and inferior petrosal sinus sampling."},
+ipss:{l:"inferior petrosal sinus sampling",c:"test",d:"Catheters sample blood draining the pituitary and compare its adrenocorticotropic hormone with peripheral blood, usually after corticotropin-releasing hormone.",w:"Best test to prove that adrenocorticotropic hormone comes from the pituitary rather than an ectopic tumour."},
+cushsyn:{l:"Cushing syndrome",c:"disease",d:"The clinical picture of too much glucocorticoid, from any cause.",w:"The most common cause overall is glucocorticoid medicine."},
+cushdis:{l:"Cushing disease",c:"disease",d:"Cushing syndrome caused by an adrenocorticotropic hormone-secreting pituitary adenoma.",w:"The most common cause of endogenous Cushing syndrome; partial feedback is kept."},
+ectopic:{l:"ectopic adrenocorticotropic hormone syndrome",c:"disease",d:"A tumour outside the pituitary (for example small cell lung cancer or a carcinoid tumour) makes adrenocorticotropic hormone.",w:"Very high cortisol, often with severe low potassium, muscle weakness and rapid onset; no feedback at all."},
+adrad:{l:"cortisol-secreting adrenal adenoma",c:"disease",d:"A benign adrenal tumour that makes cortisol on its own.",w:"Adrenocorticotropic hormone is suppressed (low), and the other adrenal shrinks."},
+pseudocush:{l:"pseudo-Cushing states",c:"disease",d:"Conditions that activate the axis without a tumour: severe depression, alcohol excess, severe obesity, poorly controlled diabetes, severe illness.",w:"Common cause of mildly abnormal screening tests."},
+gr:{l:"glucocorticoid receptor",c:"cell",d:"Receptor inside the cytoplasm of almost every cell; after binding cortisol it moves into the nucleus and changes gene activity.",w:"Target of all anti-inflammatory steroid drugs."},
+hsp:{l:"heat-shock proteins",c:"cell",d:"Helper proteins that hold the unbound glucocorticoid receptor in the cytoplasm and are released when the hormone binds.",w:"Their release lets the receptor move into the nucleus."},
+gre:{l:"glucocorticoid response elements",c:"cell",d:"Short DNA sequences that the activated glucocorticoid receptor binds to switch genes on (or off).",w:"Explain the delay of hours: new messenger RNA and proteins must be made."},
+nfkb:{l:"nuclear factor kappa B",c:"cell",d:"Transcription factor that switches on many inflammatory genes (cytokines, adhesion molecules, cyclo-oxygenase 2).",w:"Glucocorticoids block it – the main anti-inflammatory mechanism."},
+ap1:{l:"activator protein 1",c:"cell",d:"A second inflammatory transcription factor blocked by the glucocorticoid receptor.",w:"Part of the transrepression mechanism."},
+transact:{l:"transactivation",c:"concept",d:"The receptor switches genes ON (anti-inflammatory proteins, and metabolic enzymes such as those of gluconeogenesis).",w:"Responsible for many metabolic side effects (high glucose)."},
+transrep:{l:"transrepression",c:"concept",d:"The receptor switches inflammatory genes OFF by blocking nuclear factor kappa B and activator protein 1.",w:"Responsible for most of the wanted anti-inflammatory effect."},
+annexin:{l:"annexin A1",c:"cell",d:"Anti-inflammatory protein (formerly called lipocortin) made more under glucocorticoids; it reduces production of inflammatory lipid mediators.",w:"Classic example of a gene switched on by glucocorticoids."},
+gneo:{l:"gluconeogenesis",c:"concept",d:"Making new glucose in the liver from amino acids, lactate and glycerol.",w:"Cortisol drives it: helpful in fasting and stress, harmful as steroid-induced diabetes."},
+permis:{l:"permissive effect",c:"concept",d:"Cortisol does not raise blood pressure much on its own, but it lets blood vessels respond fully to adrenaline and noradrenaline.",w:"Without cortisol, shock does not respond well to fluids and vasopressors."},
+iatro:{l:"glucocorticoid-induced (exogenous) Cushing syndrome",c:"disease",d:"Cushing syndrome caused by steroid medicines (tablets, injections, inhalers, creams).",w:"The most common cause of Cushing syndrome; the patient's own adrenocorticotropic hormone and cortisol are low."},
+avn:{l:"avascular necrosis of bone",c:"disease",d:"Bone dies because its blood supply fails; classically the head of the femur.",w:"New hip or groin pain in a patient on steroids needs imaging."},
+myop:{l:"steroid myopathy",c:"disease",d:"Weakness of the proximal muscles (thighs, shoulders) from muscle protein breakdown.",w:"Patient struggles to stand up from a chair or climb stairs."},
+gio:{l:"glucocorticoid-induced osteoporosis",c:"disease",d:"Bone loss because glucocorticoids slow bone-building cells and reduce calcium absorption.",w:"The most common secondary cause of osteoporosis; fracture risk rises within months."},
+bisphos:{l:"bisphosphonates",c:"drug",d:"Drugs such as alendronic acid that slow bone breakdown.",w:"Bone protection for many patients on long-term steroids."},
+mtx:{l:"methotrexate",c:"drug",d:"Disease-modifying drug used in rheumatoid arthritis, polymyalgia rheumatica and other inflammatory diseases.",w:"A 'steroid-sparing' drug: it allows a lower steroid dose."},
+gws:{l:"glucocorticoid withdrawal syndrome",c:"disease",d:"Fatigue, aches, low mood and loss of appetite when the dose is lowered, even though cortisol is enough – the tissues got used to high doses.",w:"Can be confused with adrenal insufficiency or a disease flare."},
+mpred:{l:"methylprednisolone",c:"drug",d:"Intermediate-acting steroid, about 5 times as potent as hydrocortisone, often given as high-dose intravenous 'pulses'.",w:"Used for severe flares: multiple sclerosis relapse, vasculitis, transplant rejection."},
+betameth:{l:"betamethasone",c:"drug",d:"Long-acting steroid similar to dexamethasone; it crosses the placenta.",w:"Given to the mother before an expected preterm birth to mature the baby's lungs."},
+budes:{l:"budesonide",c:"drug",d:"Steroid with high first-pass breakdown in the liver (by cytochrome P450 3A4); used inhaled, and orally for the gut.",w:"Usually few systemic effects – unless cytochrome P450 3A4 is blocked."},
+physdose:{l:"physiological dose",c:"concept",d:"The dose that replaces normal daily cortisol production: about hydrocortisone 15–25 mg or prednisolone 4–5 mg per day.",w:"Below this the axis must work on its own; above it, the axis is suppressed."},
+equiv:{l:"equivalent dose",c:"concept",d:"Doses with the same glucocorticoid (anti-inflammatory) effect: hydrocortisone 20 mg ≈ prednisolone 5 mg ≈ methylprednisolone 4 mg ≈ dexamethasone 0.75 mg.",w:"Needed to switch between steroids and to judge suppression risk."},
+spare:{l:"steroid-sparing drugs",c:"drug",d:"Drugs that control the disease so the steroid dose can be lowered (for example methotrexate, azathioprine, biologic drugs).",w:"The best way to prevent long-term side effects."},
+taper:{l:"tapering",c:"concept",d:"Lowering the steroid dose step by step instead of stopping suddenly.",w:"Protects against disease flare and gives the suppressed axis time to recover."}
+});
+
+/* ===== Lecture 7 subsection 7: Metabolism and inactivation – header + steps 1–3 ===== */
+const M7={
+meta:"Endocrinology › Lecture 7 › Subsection 7 · lecture pages 24–25 · ⏱ about 25 minutes in 6 bite-sized steps",
+intro:`<p>Cortisol is made on demand and cannot be stored, so its level depends just as much on how fast it is <b>switched off</b> as on how fast it is made. In this module you follow cortisol (and its siblings aldosterone and the adrenal androgens) to the liver, into tissues that switch it on and off, and finally into the urine, where we can measure it.</p>`,
+goals:[
+"Explain how long cortisol lasts in blood and why the liver is the main place where it is switched off",
+"Describe the two liver steps (A-ring reduction and conjugation) and what ends up in the urine",
+"Explain how 11-beta-hydroxysteroid dehydrogenase types 1 and 2 switch cortisol on and off inside tissues",
+"Explain how liquorice (and very high cortisol) causes apparent mineralocorticoid excess",
+"Use 24-hour urinary free cortisol correctly and know its pitfalls",
+"Predict how drugs, thyroid status and liver or kidney disease change steroid breakdown"],
+cards:[
+
+{id:"e1",title:"Where does cortisol go? Half-life and the liver",min:3,goal:0,obj:["Give the approximate plasma half-life of cortisol","Explain why bound cortisol is protected from breakdown","Tell plasma half-life from biological half-life"],html:`
+<div class="scene"><b>The scene:</b> In theatre a surgeon asks you: "We gave 100 mg hydrocortisone at induction. Why does the anaesthetist want to give more in a few hours, or run it as an infusion?"</div>
+<p>Cortisol has a short plasma [[halflife]]: roughly <b>1 to 1.5 hours</b>. Every hour a large part of it is cleared, mainly by the <b>liver</b>; the kidney then excretes the products.</p>
+<ol><li>About 9 in 10 cortisol molecules ride on [[cbg]] or albumin (Module 6). <b>Bound cortisol is protected</b>: enzymes in the liver only reach the free fraction.</li>
+<li>Free cortisol enters liver cells, is made inactive and water-soluble (step 2), and leaves via the kidney.</li>
+<li>A very small part reaches the urine <b>unchanged</b>, as [[ufc]] (step 5).</li></ol>
+<p><b>Plasma versus biological half-life.</b> Cortisol leaves the blood within hours, but the genes it switched on stay active longer. Hydrocortisone therefore acts for about <b>8–12 hours</b> (its biological half-life). That is why replacement is given 2–3 times a day, and why stress doses are repeated every 6 hours or given as a continuous infusion.</p>
+<div class="hint">💡 <b>"The blood forgets fast, the genes remember longer."</b> Plasma half-life tells you when the hormone has left the blood; biological half-life tells you when the effect ends.</div>
+<details class="chk"><summary>✋ Checkpoint: why does a woman on the oestrogen pill have a higher TOTAL cortisol but normal cortisol effects?</summary><p>Oestrogen makes the liver produce more cortisol-binding globulin. More cortisol is bound (and protected), so total cortisol rises, but the free, active part stays normal.</p></details>`,
+recap:["Cortisol plasma half-life ≈ 1–1.5 hours; the liver is the main site of inactivation.","Only free cortisol is broken down; bound cortisol is protected.","Biological effect (about 8–12 hours for hydrocortisone) outlasts the blood level."],
+quiz:[{q:"Which fraction of cortisol can liver enzymes break down?",o:["Only cortisol bound to cortisol-binding globulin","Only free cortisol","Both equally"],a:1,e:"Bound cortisol is protected; only the free fraction enters liver cells and is inactivated."},
+{q:"Why is hydrocortisone replacement split into 2–3 doses per day?",o:["Because its effect lasts only about 8–12 hours","Because it is not absorbed in the evening","Because the liver stores it"],a:0,e:"Short plasma half-life and a biological effect of about 8–12 hours mean a single dose cannot cover 24 hours."}]},
+
+{id:"e2",title:"The liver's clean-up: reduce first, then attach a sugar acid",min:4,goal:1,obj:["Name the two liver steps that inactivate cortisol","Name the minor hydroxylation route and why it matters for drugs","Describe what happens to adrenal androgens and aldosterone"],html:`
+<div class="scene"><b>The scene:</b> A chemistry student asks you: "Cortisol is fat-soluble. How can the body get rid of it in watery urine?"</div>
+<p>The liver works in <b>two steps</b>:</p>
+<ol><li><b>Switch it off:</b> [[aring]]. The enzymes [[red5]] and [[hsd3a]] add hydrogen to ring A. The result, [[thf]] (and tetrahydrocortisone from cortisone), cannot bind the receptor any more.</li>
+<li><b>Make it water-soluble:</b> [[glucur]]. A sugar acid is attached; the kidney filters the conjugate into the urine.</li></ol>
+<p><b>Minor route:</b> [[cyp3a4]] adds a hydroxyl group at carbon 6 (6-beta-hydroxycortisol). Small for natural cortisol, but this enzyme is the main route for many <b>synthetic</b> steroids, which is why drug interactions matter (step 6).</p>
+<p>👉 Click through the route:</p>
+<div data-widget="liver"></div>
+<h3>The other adrenal steroids</h3>
+<table><tr><th>Steroid</th><th>What happens</th></tr>
+<tr><td>[[dhea|Dehydroepiandrosterone]]</td><td>Sulfated to dehydroepiandrosterone sulfate in the adrenal itself, the liver and the kidney (a long-lived storage form in blood).</td></tr>
+<tr><td>[[andro|Androstenedione]]</td><td>In peripheral tissues: → testosterone (17-beta-hydroxysteroid dehydrogenase) → dihydrotestosterone (5-alpha-reductase); or → oestrone ([[aromatase]], for example in fat tissue).</td></tr>
+<tr><td>[[aldo|Aldosterone]]</td><td>Liver: → [[thaldo]] (conjugated). Kidney: → aldosterone 18-glucuronide. Half-life only about <b>15–20 minutes</b> (slide 24).</td></tr></table>
+<div class="corr">📝 <b>Slide check (page 24):</b><br>• "Cortisol: inactivation by hydroxilation" (spelling: <i>hydroxylation</i>) is a simplification. The <b>main</b> inactivation step in the liver is <b>A-ring reduction</b> (5-alpha-/5-beta-reductase plus 3-alpha-hydroxysteroid dehydrogenase), followed by conjugation with glucuronic acid or sulfate. Hydroxylation (6-beta, by cytochrome P450 3A4) is a minor route for cortisol, although it matters for drug interactions.<br>• "Androstenedione → testosterone / DHT": dihydrotestosterone is made from <b>testosterone</b> by 5-alpha-reductase, not directly from androstenedione in the classic pathway. So the order is androstenedione → testosterone → dihydrotestosterone.</div>
+<div class="hint">💡 <b>"Laundry rule": soften, then tag.</b> The liver first <b>reduces</b> ring A (cortisol is switched off), then sews on a water-soluble <b>glucuronic acid tag</b> so the kidney can wash it out.</div>
+<details class="chk"><summary>✋ Checkpoint: which of the two liver steps actually makes cortisol inactive?</summary><p>Step 1, A-ring reduction. Conjugation (step 2) only makes the already inactive metabolite water-soluble.</p></details>`,
+recap:["Main inactivation: A-ring reduction → tetrahydrocortisol (inactive).","Then conjugation with glucuronic acid or sulfate → water-soluble → urine.","6-beta-hydroxylation by cytochrome P450 3A4 is minor for cortisol but major for many synthetic steroids.","Aldosterone half-life ≈ 15–20 minutes; dehydroepiandrosterone is stored as its sulfate."],
+quiz:[{q:"What is the MAIN inactivating step for cortisol in the liver?",o:["6-beta-hydroxylation","A-ring reduction","Sulfation in the adrenal"],a:1,e:"Reduction of ring A by 5-alpha-/5-beta-reductase and 3-alpha-hydroxysteroid dehydrogenase makes tetrahydro metabolites that no longer bind the receptor."},
+{q:"Dihydrotestosterone is made directly from…",o:["Androstenedione","Testosterone","Dehydroepiandrosterone sulfate"],a:1,e:"5-alpha-reductase converts testosterone to dihydrotestosterone (for example in the skin and prostate)."}]},
+
+{id:"e3",title:"The on/off switch: 11-beta-hydroxysteroid dehydrogenase types 1 and 2",min:5,goal:2,obj:["State where each type works and in which direction","Explain how type 2 protects the mineralocorticoid receptor","Apply the shuttle to prednisone and to pregnancy"],html:`
+<div class="scene"><b>The scene:</b> The kidney's [[mr]] binds cortisol just as strongly as aldosterone, and blood contains roughly 100 to 1000 times more cortisol than aldosterone. So why doesn't everybody retain salt as if they had an aldosterone tumour?</div>
+<p>Because tissues can switch cortisol off and on locally with two enzymes. Together they form the <b>cortisol–cortisone shuttle</b>:</p>
+<table><tr><th></th><th>[[hsd11b2|Type 2]]: switches OFF</th><th>[[hsd11b1|Type 1]]: switches ON</th></tr>
+<tr><td>Reaction</td><td>Cortisol → [[cortisone]] (inactive)</td><td>Cortisone → cortisol (active)</td></tr>
+<tr><td>Where</td><td>Kidney (collecting duct), colon, salivary and sweat glands, <b>placenta</b></td><td>Liver, fat tissue, brain, skin, bone</td></tr>
+<tr><td>Why</td><td>Guards the mineralocorticoid receptor so that only aldosterone controls salt; protects the fetus</td><td>Raises cortisol locally; activates tablets such as cortisone and [[prednisone]]</td></tr></table>
+<p>👉 Try each situation in the diagram:</p>
+<div data-widget="shuttle"></div>
+<p><b>Pregnancy:</b> the [[placbar]] (type 2) inactivates most maternal cortisol and much of the prednisolone. So prednisolone is a good choice to treat the <b>mother</b> (for example asthma), while [[dexa]] and [[betameth]] are poor substrates, pass through, and are used to mature the <b>baby's</b> lungs before a preterm birth.</p>
+<div class="corr">📝 <b>Slide check (page 25, Guyton and Hall figure):</b> the placenta appears on both sides of the diagram. Placental tissue can express both enzymes, but its key job as a <b>barrier</b> between mother and fetus is done by <b>type 2</b> (inactivation). For exams: "placenta = type 2 barrier".</div>
+<div class="hint">💡 <b>"Type ONE turns it ON; type TWO says NO."</b> Type 2 says no to cortisol at the kidney's salt receptor and at the placenta.</div>
+<details class="chk"><summary>✋ Checkpoint: a patient with severe liver failure is given prednisone tablets. Why may they work poorly?</summary><p>Prednisone is inactive and needs liver 11-beta-hydroxysteroid dehydrogenase type 1 to become prednisolone. Give prednisolone directly instead.</p></details>`,
+recap:["Type 2 (kidney, colon, salivary and sweat glands, placenta): cortisol → inactive cortisone.","Type 1 (liver, fat, brain, skin, bone): cortisone → active cortisol; also prednisone → prednisolone.","Type 2 keeps cortisol off the mineralocorticoid receptor and forms the placental barrier."],
+quiz:[{q:"Which enzyme activates prednisone to prednisolone?",o:["11-beta-hydroxysteroid dehydrogenase type 1 in the liver","11-beta-hydroxysteroid dehydrogenase type 2 in the kidney","11-beta-hydroxylase in the adrenal"],a:0,e:"Prednisone, like cortisone, is a prodrug reactivated by type 1 (mainly in the liver)."},
+{q:"Which steroid is given to the mother to mature the lungs of a baby expected to be born preterm?",o:["Prednisolone","Hydrocortisone","Dexamethasone or betamethasone"],a:2,e:"These are poor substrates for placental type 2, so they reach the fetus. Prednisolone and cortisol are largely inactivated by the placenta."}]}
+]};
+
+/* ===== Subsection 7: steps 4–6 ===== */
+M7.cards.push(
+{id:"e4",title:"Liquorice: when the guard falls asleep",min:4,goal:3,obj:["Explain apparent mineralocorticoid excess step by step","Predict renin, aldosterone and potassium","List other causes of the same 'low–low' pattern"],html:`
+<div class="scene"><b>The scene:</b> A 47-year-old woman has new high blood pressure, muscle cramps and a potassium of 2.9 mmol/L. Renin and aldosterone are both <b>low</b>. On direct questioning she drinks several cups of liquorice tea a day "for her stomach".</div>
+<p><b>Step by step:</b></p>
+<ol><li>Glycyrrhetinic acid from [[liquorice]] blocks [[hsd11b2]] in the kidney.</li>
+<li>Cortisol is no longer switched off and occupies the [[mr]].</li>
+<li>The kidney keeps sodium and water and loses potassium (and acid) → high blood pressure, low potassium.</li>
+<li>Volume expansion switches off [[renin]] → aldosterone falls. This is [[ame]]: the effect of aldosterone without aldosterone.</li></ol>
+<table><tr><th>Pattern (high blood pressure + low potassium)</th><th>Renin</th><th>Aldosterone</th></tr>
+<tr><td>Primary hyperaldosteronism (Conn syndrome)</td><td>Low</td><td><b>High</b></td></tr>
+<tr><td>Renal artery stenosis, diuretics</td><td>High</td><td>High</td></tr>
+<tr><td>Liquorice, inherited type 2 deficiency, cortisol flood in [[ectopic]], [[liddle]]</td><td>Low</td><td><b>Low</b></td></tr></table>
+<p><b>Why the cortisol flood?</b> In ectopic adrenocorticotropic hormone syndrome cortisol rises so high that type 2 is saturated; the excess spills onto the mineralocorticoid receptor. That is why very low potassium is typical of the ectopic form of Cushing syndrome.</p>
+<p><b>Treatment:</b> stop liquorice (blood pressure and potassium recover over weeks), replace potassium, and use [[spiro]] if needed. Liquorice is in sweets, teas, herbal remedies and some chewing tobacco.</p>
+<div class="hint">💡 <b>"Low–low with low potassium? Someone else is sitting in aldosterone's chair."</b> Ask about liquorice first: it is cheap to stop and easy to miss.</div>
+<details class="chk"><summary>✋ Checkpoint: would spironolactone help a liquorice patient?</summary><p>Yes. The problem is cortisol acting on the mineralocorticoid receptor, and spironolactone blocks that receptor whatever the hormone sitting on it.</p></details>
+<p>Revisit the liquorice lover in <a onclick="showModule('m5');setTimeout(()=>go('k2'),300)" style="cursor:pointer;color:var(--acc);font-weight:700">Module 5, case 2</a>.</p>`,
+recap:["Liquorice blocks 11-beta-hydroxysteroid dehydrogenase type 2 → cortisol acts on the mineralocorticoid receptor.","Result: high blood pressure, low potassium, LOW renin and LOW aldosterone.","Same pattern: inherited type 2 deficiency, cortisol flood (ectopic adrenocorticotropic hormone), Liddle syndrome."],
+quiz:[{q:"High blood pressure, potassium 2.9 mmol/L, renin low, aldosterone low. Which cause fits?",o:["Primary hyperaldosteronism","Renal artery stenosis","Daily liquorice"],a:2,e:"Low renin AND low aldosterone with mineralocorticoid effects means something other than aldosterone is acting: liquorice (cortisol on the receptor)."},
+{q:"Why is low potassium especially common in ectopic adrenocorticotropic hormone syndrome?",o:["Cortisol saturates 11-beta-hydroxysteroid dehydrogenase type 2 and acts on the mineralocorticoid receptor","Adrenocorticotropic hormone blocks the kidney's potassium channels","The tumour secretes renin"],a:0,e:"Very high cortisol overwhelms the type 2 'guard', so cortisol has an aldosterone-like effect."}]},
+
+{id:"e5",title:"Measuring the output: 24-hour urinary free cortisol",min:4,goal:4,obj:["Explain what urinary free cortisol reflects","Collect it correctly","Recognise false highs and false lows"],html:`
+<div class="scene"><b>The scene:</b> A general practitioner refers a woman with weight gain, new diabetes and bruising. A single afternoon blood cortisol was "normal". Is that reassuring?</div>
+<p>No. Cortisol is pulsatile and has a strong daily rhythm (Module 8), so one random value says little. To screen for [[cushsyn]] we use tests that look at the <b>whole day</b> or at the <b>midnight low</b>: [[ufc]], [[lnsc]] and the 1 mg overnight [[dst]].</p>
+<p><b>Why urine works:</b> only <b>free</b> cortisol is filtered by the kidney. When cortisol rises, cortisol-binding globulin becomes saturated, the free part rises steeply, and so does urinary free cortisol. It is <b>not affected by cortisol-binding globulin</b> (for example the pill).</p>
+<p><b>How to collect:</b> discard the first urine on waking on day 1, then collect <b>every</b> drop for 24 hours, including the first urine on waking on day 2. Usually <b>two</b> collections are done; urine creatinine checks completeness.</p>
+<p>👉 Sort these: does each one make urinary free cortisol falsely high, falsely low, or neither?</p>
+<div data-widget="sort3"></div>
+<div class="hint">💡 <b>"Urine tells the 24-hour story; blood tells one moment."</b> Always ask: was the collection complete, and does the patient drink litres of water?</div>
+<details class="chk"><summary>✋ Checkpoint: why can urinary free cortisol be falsely LOW in severe kidney disease?</summary><p>Less cortisol is filtered into the urine, so a truly high production can look normal.</p></details>`,
+recap:["Random cortisol is useless for Cushing screening; use urinary free cortisol, late-night salivary cortisol or the 1 mg dexamethasone test.","Urinary free cortisol = filtered free cortisol over 24 hours, unaffected by cortisol-binding globulin.","Pitfalls: incomplete collection, very high fluid intake, kidney failure, pseudo-Cushing states, some interfering drugs."],
+quiz:[{q:"A woman on the combined pill has a high total blood cortisol. Which test is NOT distorted by her raised cortisol-binding globulin?",o:["Morning total serum cortisol","24-hour urinary free cortisol","Both are distorted equally"],a:1,e:"Urine contains only filtered free cortisol, so changes in cortisol-binding globulin do not affect it."},
+{q:"Which finding suggests an INCOMPLETE 24-hour urine collection?",o:["Unusually low urine creatinine","High urine volume","Normal urine sodium"],a:0,e:"Creatinine excretion per day is fairly constant for a person; a low value means urine was missed."}]},
+
+{id:"e6",title:"Speed-up and slow-down: drugs, thyroid, liver and kidney",min:4,goal:5,obj:["Predict the effect of enzyme inducers and inhibitors on steroid dosing","Explain 'steroids before thyroxine'","Describe how liver and kidney disease change steroid handling"],html:`
+<div class="scene"><b>The scene:</b> A man with Addison disease starts treatment for tuberculosis. Two weeks later he is exhausted and dizzy, although he never missed a hydrocortisone tablet.</div>
+<table><tr><th>Situation</th><th>Effect on steroid breakdown</th><th>What to do</th></tr>
+<tr><td>[[inducer|Enzyme inducers]]: [[rifampicin]], phenytoin, carbamazepine, phenobarbital, St John's wort</td><td><b>Faster</b> (more [[cyp3a4]]); dexamethasone and prednisolone strongly affected, hydrocortisone too</td><td>Higher dose (often double hydrocortisone); reduce again when the drug stops</td></tr>
+<tr><td>[[inhib|Enzyme inhibitors]]: [[ritonavir]], itraconazole, ketoconazole, clarithromycin</td><td><b>Slower</b>; even inhaled [[fluticasone]] or [[budes]] and joint injections build up</td><td>Choose a steroid less dependent on this enzyme (for example beclometasone inhaler), or change the interacting drug</td></tr>
+<tr><td>Overactive thyroid</td><td>Faster cortisol clearance</td><td>Higher replacement needs until the thyroid is controlled</td></tr>
+<tr><td>Underactive thyroid</td><td>Slower clearance</td><td><b>Steroids before thyroxine</b>: thyroxine speeds clearance and can trigger a crisis in untreated adrenal insufficiency</td></tr>
+<tr><td>Liver cirrhosis</td><td>Slower clearance; less cortisol-binding globulin and albumin; slower aldosterone clearance</td><td>Interpret total cortisol with care; prefer prednisolone over prednisone</td></tr>
+<tr><td>Kidney failure</td><td>Metabolites build up; urinary free cortisol falsely low</td><td>Use blood or saliva tests instead</td></tr></table>
+<div class="hint">💡 <b>"INducers INcrease the dose you need; INhibitors INflate the steroid effect."</b></div>
+<details class="chk"><summary>✋ Checkpoint: a patient on ritonavir uses a fluticasone nasal spray and develops a round face. What happens if you simply stop the spray?</summary><p>The axis is suppressed, so stopping suddenly can cause adrenal insufficiency. Switch carefully, and cover with hydrocortisone and test the axis if needed.</p></details>`,
+recap:["Inducers (rifampicin, antiepileptics) speed up steroid breakdown → higher doses.","Inhibitors (ritonavir, cobicistat, azole antifungals) → Cushing syndrome even from inhaled or injected steroids.","Thyroxine speeds cortisol clearance: replace cortisol first. Kidney failure makes urinary free cortisol falsely low."],
+quiz:[{q:"A patient with Addison disease starts rifampicin. What usually happens to the hydrocortisone dose?",o:["It is increased (often doubled)","It is halved","No change"],a:0,e:"Rifampicin induces cytochrome P450 3A4 and speeds up cortisol breakdown, so replacement must be increased while it is taken."},
+{q:"Why should glucocorticoid replacement start before thyroxine when both are missing?",o:["Thyroxine speeds cortisol clearance and can precipitate adrenal crisis","Thyroxine blocks the glucocorticoid receptor","Hydrocortisone lowers thyroxine absorption"],a:0,e:"Thyroid hormone raises metabolism and cortisol clearance; without cortisol replacement this can tip the patient into crisis."}]}
+);
+
+/* ===== Subsection 7: widget data, cases, flashcards, exam ===== */
+Object.assign(M7,{
+sort3:{id:"e5-sort",labels:["Falsely high","Falsely low","No effect"],items:[
+["Drinking more than about 5 litres of fluid a day",0,"High urine flow increases cortisol filtration a little; mildly raised results are common."],
+["Missing several urine samples during the collection",1,"Some of the day's cortisol is simply not in the bottle. Check urine creatinine."],
+["Severe chronic kidney disease",1,"Less cortisol is filtered, so production is underestimated."],
+["Taking the combined oestrogen pill",2,"The pill raises cortisol-binding globulin, but urine only contains free cortisol."],
+["Severe depression or heavy alcohol use",0,"Pseudo-Cushing states activate the axis and can raise urinary free cortisol mildly."],
+["Taking prednisolone tablets (older immunoassay)",0,"Prednisolone can cross-react with some cortisol immunoassays; mass-spectrometry assays avoid this."]]},
+cases:[
+{id:"p1",title:"Case 1: The inhaler that caused Cushing syndrome",steps:[
+{t:`<b>The scene:</b> A 38-year-old man with well-controlled human immunodeficiency virus infection takes a ritonavir-boosted regimen. For asthma he uses a fluticasone inhaler. Over 4 months he develops a round face, easy bruising and a new high glucose.`,q:"What is the most likely mechanism?",o:["Ritonavir blocks cytochrome P450 3A4, so fluticasone builds up in the body","Fluticasone causes a pituitary tumour","Ritonavir stimulates the adrenal directly"],a:0,e:"Fluticasone is normally almost completely broken down by cytochrome P450 3A4. With ritonavir it accumulates and acts systemically: drug-interaction Cushing syndrome."},
+{t:`A morning blood cortisol is very low and adrenocorticotropic hormone is low.`,q:"Why is HIS OWN cortisol low although he looks Cushingoid?",o:["Fluticasone suppresses the axis by negative feedback and is not measured as cortisol","He also has Addison disease","The sample was taken at midnight"],a:0,e:"The synthetic steroid gives the Cushing picture and suppresses corticotropin-releasing hormone and adrenocorticotropic hormone, so the adrenal makes little cortisol."},
+{t:`The team wants to stop the fluticasone today.`,q:"Best next step?",o:["Stop the inhaler today without cover","Switch to an inhaled steroid less dependent on cytochrome P450 3A4 (for example beclometasone) or change the antiretroviral, give hydrocortisone cover and a steroid emergency card, and test the axis later","Add a second ritonavir dose"],a:1,e:"His axis is suppressed; sudden withdrawal can cause adrenal insufficiency. Change the interaction, protect him with hydrocortisone and safety rules, and test recovery later."}],
+take:["Cytochrome P450 3A4 inhibitors (ritonavir, cobicistat, azoles) turn 'local' steroids into systemic ones.","Exogenous Cushing syndrome: own cortisol and adrenocorticotropic hormone are LOW.","Never stop suddenly: the axis is suppressed."]},
+{id:"p2",title:"Case 2: Addison disease meets rifampicin",steps:[
+{t:`<b>The scene:</b> A 55-year-old woman with autoimmune Addison disease (hydrocortisone 20 mg per day, fludrocortisone 100 µg) starts rifampicin, isoniazid, pyrazinamide and ethambutol for lung tuberculosis. After two weeks she is exhausted, nauseous and dizzy on standing.`,q:"What is the most likely explanation?",o:["Rifampicin speeds up cortisol breakdown, so her dose is now too low","Tuberculosis has spread to her pituitary","Ethambutol blocks the glucocorticoid receptor"],a:0,e:"Rifampicin is a strong enzyme inducer; her hydrocortisone is cleared faster, giving symptoms of under-replacement."},
+{t:`You increase hydrocortisone (commonly doubled) and teach sick-day rules again.`,q:"What happens when the tuberculosis treatment ends in a few months?",o:["Keep the high dose forever","Return to her usual dose, because the induction wears off over the following weeks","Stop hydrocortisone"],a:1,e:"Enzyme induction fades over a few weeks after rifampicin stops; then the usual replacement dose is enough again."}],
+take:["Enzyme inducers (rifampicin, phenytoin, carbamazepine) increase steroid needs.","Review steroid dose whenever an interacting drug starts or stops.","Under-replacement looks like insufficiency: fatigue, nausea, postural dizziness."]},
+{id:"p3",title:"Case 3 (bonus): High cortisol, but only on paper",steps:[
+{t:`<b>The scene:</b> A 26-year-old woman taking the combined pill had a morning serum cortisol measured "for tiredness". It is above the reference range. She has no features of Cushing syndrome. Her 24-hour urinary free cortisol is normal (two collections).`,q:"What explains the high serum value?",o:["Oestrogen raises cortisol-binding globulin, so total (bound + free) cortisol rises","Early Cushing disease","Liquorice"],a:0,e:"Total cortisol rises with cortisol-binding globulin, but the free fraction (and urinary free cortisol) stays normal."},
+{t:`Her doctor now wants a 1 mg overnight dexamethasone test.`,q:"What should be done about the pill?",o:["Nothing","Stop oestrogen-containing medicines about 6 weeks before the test, or use urinary or salivary tests instead","Double the pill dose"],a:1,e:"Raised cortisol-binding globulin can make the dexamethasone test look 'not suppressed' (falsely positive). Guidelines advise stopping oestrogens about 6 weeks before testing, if possible."}],
+take:["Total cortisol depends on cortisol-binding globulin; free cortisol does not.","Urinary free cortisol and salivary cortisol are unaffected by the pill.","The pill can make the dexamethasone test falsely positive."]}
+],
+flash:[["Plasma half-life of cortisol","Roughly 1 to 1.5 hours."],
+["Main liver inactivation step for cortisol","A-ring reduction (5-alpha-/5-beta-reductase + 3-alpha-hydroxysteroid dehydrogenase) → tetrahydrocortisol."],
+["Why conjugate with glucuronic acid?","To make the inactive metabolite water-soluble for urinary excretion."],
+["Minor cortisol route important for drug interactions","6-beta-hydroxylation by cytochrome P450 3A4."],
+["Aldosterone half-life","About 15–20 minutes."],
+["11-beta-hydroxysteroid dehydrogenase type 1","Cortisone → cortisol; liver, fat, brain, skin, bone; activates prednisone."],
+["11-beta-hydroxysteroid dehydrogenase type 2","Cortisol → cortisone; kidney, colon, salivary and sweat glands, placenta; guards the mineralocorticoid receptor."],
+["Liquorice: renin and aldosterone?","Both LOW, with high blood pressure and low potassium (apparent mineralocorticoid excess)."],
+["Why is potassium very low in ectopic adrenocorticotropic hormone syndrome?","Cortisol flood saturates 11-beta-hydroxysteroid dehydrogenase type 2 and acts on the mineralocorticoid receptor."],
+["Which steroids cross the placenta well?","Dexamethasone and betamethasone (poor substrates for placental type 2)."],
+["What does 24-hour urinary free cortisol measure?","Free (unbound) cortisol filtered into urine over a whole day."],
+["Urinary free cortisol falsely low","Incomplete collection, severe kidney disease."],
+["Effect of rifampicin on hydrocortisone dose","Increase (often double) while on rifampicin."],
+["Inhaled fluticasone + ritonavir","Cushing syndrome, then adrenal insufficiency if stopped suddenly."]],
+exam:[
+"Cortisol plasma half-life ≈ 1–1.5 hours; only <b>free</b> cortisol is inactivated, mainly in the <b>liver</b>.",
+"Liver: <b>A-ring reduction</b> (main inactivation) → <b>conjugation</b> with glucuronic acid or sulfate → urine. 6-beta-hydroxylation by cytochrome P450 3A4 is minor for cortisol.",
+"Aldosterone half-life ≈ 15–20 min (tetrahydroaldosterone, aldosterone 18-glucuronide). Dehydroepiandrosterone → sulfate; androstenedione → testosterone → dihydrotestosterone.",
+"<b>Type 1 turns ON</b> (cortisone → cortisol; liver, fat, brain; prednisone → prednisolone). <b>Type 2 says NO</b> (cortisol → cortisone; kidney, colon, salivary glands, placenta).",
+"Liquorice / inherited type 2 deficiency / ectopic cortisol flood → apparent mineralocorticoid excess: hypertension, low potassium, <b>low renin and low aldosterone</b>.",
+"Placenta (type 2) inactivates cortisol and much prednisolone; dexamethasone and betamethasone reach the fetus.",
+"Cushing screening: 24-hour urinary free cortisol (×2), late-night salivary cortisol, 1 mg overnight dexamethasone test. Not a random cortisol.",
+"Inducers (rifampicin) ↑ dose; inhibitors (ritonavir) → Cushing from inhalers; steroids before thyroxine."],
+finalHtml:`<div class="exam" style="border-color:var(--ok)"><b>➡️ Next</b><br>See how the brain controls all this in <b>Subsection 8: the hypothalamic–pituitary–adrenal axis</b>.<br><button class="pri" style="margin-top:8px" onclick="showModule('m8')">→ Open subsection 8</button></div>`,
+sources:"Sources: Lecture 7 (Prof. Ionela Pascanu, UMCH 2026), pages 23–25 and their figures (Guyton and Hall Textbook of Medical Physiology 2021), extended with standard endocrinology and pharmacology textbooks (Williams Textbook of Endocrinology; Goodman and Gilman) and the Endocrine Society guideline on the diagnosis of Cushing syndrome (Nieman et al., 2008). No prevalence figures are given on purpose. The cases are invented teaching examples.",
+casesHead:"🏥 Clinical cases",casesIntro:"Three short cases. Answer to reveal the next part."
+});
+LESSONS.m7=M7;
+
+/* ===== Lecture 7 subsection 8: hypothalamic–pituitary–adrenal axis – header + steps 1–3 ===== */
+const M8={
+meta:"Endocrinology › Lecture 7 › Subsection 8 · lecture page 26 · ⏱ about 25 minutes in 5 bite-sized steps",
+intro:`<p>Cortisol is not stored, so its level is controlled minute by minute from the brain. This module follows the command chain from hypothalamus to adrenal, the thermostat that keeps it stable (negative feedback), the daily clock, the stress override, and the test that uses all of this logic: the dexamethasone suppression test.</p>`,
+goals:[
+"Name each level of the axis, its hormone and its target",
+"Explain negative feedback and predict the hormone pattern when the axis breaks at different levels",
+"Describe the daily rhythm and the pulses, and time tests and tablets accordingly",
+"Explain how stress and inflammation override the rhythm",
+"Use the logic of the dexamethasone suppression tests to find the cause of high cortisol"],
+cards:[
+
+{id:"f1",title:"The chain of command: hypothalamus → pituitary → adrenal",min:4,goal:0,obj:["Name the three levels and their hormones","Explain why the zona glomerulosa is mostly outside this chain","Name the other products of proopiomelanocortin"],html:`
+<div class="scene"><b>The scene:</b> 3 a.m., a frightening dream, your heart races. Two relays start: a <b>fast</b> one (nerves → adrenal medulla → adrenaline, seconds) and a <b>slower</b> hormonal one that raises cortisol within minutes. This module is about the slower one.</div>
+<figure><svg viewBox="0 0 640 300" style="width:100%" role="img" aria-label="Command chain of the hypothalamic–pituitary–adrenal axis">
+<defs><marker id="f1a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#444"/></marker></defs>
+<g font-size="14" font-weight="700" text-anchor="middle" fill="#222">
+<rect x="20" y="110" width="140" height="64" rx="12" fill="#f3ecff" stroke="#7b3fc4" stroke-width="2.5"/><text x="90" y="138">Hypothalamus</text><text x="90" y="158" font-weight="400" font-size="12">paraventricular nucleus</text>
+<rect x="250" y="110" width="140" height="64" rx="12" fill="#e3f1ff" stroke="#2f6fdb" stroke-width="2.5"/><text x="320" y="138">Anterior pituitary</text><text x="320" y="158" font-weight="400" font-size="12">corticotroph cells</text>
+<rect x="480" y="110" width="140" height="64" rx="12" fill="#fff3d6" stroke="#d9730d" stroke-width="2.5"/><text x="550" y="138">Adrenal cortex</text><text x="550" y="158" font-weight="400" font-size="12">fasciculata, reticularis</text></g>
+<line x1="160" y1="142" x2="248" y2="142" stroke="#444" stroke-width="3" marker-end="url(#f1a)"/><line x1="390" y1="142" x2="478" y2="142" stroke="#444" stroke-width="3" marker-end="url(#f1a)"/>
+<g font-size="12" fill="#0f8b8d" font-weight="700" text-anchor="middle"><text x="205" y="98">corticotropin-</text><text x="205" y="112">releasing hormone</text><text x="205" y="196" fill="#555" font-weight="400">(+ vasopressin)</text><text x="205" y="212" fill="#555" font-weight="400">via portal vessels</text>
+<text x="435" y="98">adrenocorticotropic</text><text x="435" y="112">hormone</text><text x="435" y="196" fill="#555" font-weight="400">via the blood</text></g>
+<line x1="550" y1="174" x2="550" y2="232" stroke="#444" stroke-width="3" marker-end="url(#f1a)"/><text x="550" y="254" text-anchor="middle" font-size="14" font-weight="700" fill="#0f8b8d">cortisol (+ adrenal androgens)</text>
+<g font-size="12" fill="#555"><text x="20" y="40">Inputs to the hypothalamus:</text><text x="20" y="58">body clock · stress · inflammation · low glucose</text></g>
+<line x1="90" y1="66" x2="90" y2="108" stroke="#7b3fc4" stroke-width="2" marker-end="url(#f1a)"/></svg>
+<figcaption>The command chain, drawn by MedLearn (schematic). Feedback is added in step 2.</figcaption></figure>
+<ol><li>The [[pvn]] of the hypothalamus releases [[crh]], helped by vasopressin ([[adh]]).</li>
+<li>It travels in the [[portal]] to the anterior pituitary. There [[corticotroph]] cells cut [[pomc]] into [[acth]] (plus melanocyte-stimulating hormone and beta-endorphin).</li>
+<li>Adrenocorticotropic hormone binds the [[mc2r]] on zona fasciculata and reticularis cells → cortisol within minutes (Module 5) and gland growth over days.</li></ol>
+<p><b>Not the glomerulosa:</b> aldosterone is run mainly by [[angii]] and potassium. That is why aldosterone survives pituitary failure.</p>
+<div class="hint">💡 <b>"Call – Command – Carry out":</b> corticotropin-releasing hormone <b>calls</b>, adrenocorticotropic hormone <b>commands</b>, cortisol <b>carries out</b> the job.</div>
+<details class="chk"><summary>✋ Checkpoint: why do patients with primary adrenal insufficiency get dark skin?</summary><p>Without cortisol feedback the pituitary makes lots of proopiomelanocortin, which is also cut into melanocyte-stimulating hormone; adrenocorticotropic hormone itself also stimulates melanocytes.</p></details>`,
+recap:["Hypothalamus (corticotropin-releasing hormone + vasopressin) → anterior pituitary (adrenocorticotropic hormone) → adrenal cortex (cortisol).","Proopiomelanocortin gives adrenocorticotropic hormone, melanocyte-stimulating hormone and beta-endorphin.","The glomerulosa (aldosterone) follows angiotensin II and potassium, not this chain."],
+quiz:[{q:"Which pituitary cells make adrenocorticotropic hormone?",o:["Somatotroph cells","Corticotroph cells","Lactotroph cells"],a:1,e:"Corticotroph cells of the anterior pituitary cut proopiomelanocortin into adrenocorticotropic hormone."},
+{q:"Which hormone helps corticotropin-releasing hormone stimulate the pituitary, especially in stress?",o:["Vasopressin","Oxytocin","Prolactin"],a:0,e:"Vasopressin (antidiuretic hormone) from the paraventricular nucleus strongly boosts the action of corticotropin-releasing hormone."}]},
+
+{id:"f2",title:"Negative feedback: the thermostat",min:5,goal:1,obj:["Explain how cortisol inhibits the levels above it","Predict cortisol and adrenocorticotropic hormone at each broken level","Use the 'look one level up' rule"],html:`
+<div class="scene"><b>The scene:</b> The heating in your flat switches off when the room is warm. Cortisol does the same: when there is enough, it switches off the hypothalamus and the pituitary.</div>
+<p>Cortisol inhibits the release of [[crh]] and [[acth]] (and the gene for [[pomc]]). This [[negfb]] works <b>fast</b> (minutes, responding to a rising cortisol) and <b>slowly</b> (hours to days, changing gene activity). It keeps cortisol stable and explains every pattern of axis disease.</p>
+<p>👉 Click each situation and watch the hormone levels:</p>
+<div data-widget="axisloop"></div>
+<table><tr><th>Situation</th><th>Cortisol</th><th>Adrenocorticotropic hormone</th></tr>
+<tr><td>Adrenal destroyed ([[pai|primary insufficiency]])</td><td>Low</td><td><b>High</b></td></tr>
+<tr><td>Pituitary failure ([[sai|secondary insufficiency]])</td><td>Low</td><td>Low</td></tr>
+<tr><td>[[cushdis]] (pituitary adenoma)</td><td>High</td><td>High-normal or high</td></tr>
+<tr><td>[[adrad]]</td><td>High</td><td><b>Low</b> (suppressed)</td></tr>
+<tr><td>[[ectopic]]</td><td>Very high</td><td>Very high</td></tr>
+<tr><td>Steroid medicines ([[iatro]])</td><td>Own cortisol low (drug effect high)</td><td>Low</td></tr></table>
+<div class="hint">💡 <b>"Look one level up."</b> If the hormone above is shouting (high), the problem is below it. If the hormone above is silent (low), it is either the cause, or it has been told to be quiet by too much cortisol.</div>
+<details class="chk"><summary>✋ Checkpoint: high cortisol + low adrenocorticotropic hormone. Where is the problem?</summary><p>In the adrenal (an adenoma or carcinoma) or outside the body (steroid medicines). The pituitary is silent because feedback is working.</p></details>`,
+recap:["Cortisol inhibits corticotropin-releasing hormone and adrenocorticotropic hormone (fast and slow feedback).","Low cortisol + high adrenocorticotropic hormone = primary; low + low = secondary or tertiary.","High cortisol + low adrenocorticotropic hormone = adrenal tumour or steroid medicines; high + high = pituitary or ectopic source."],
+quiz:[{q:"Cortisol high, adrenocorticotropic hormone undetectable. Most likely source?",o:["Pituitary adenoma","Cortisol-secreting adrenal adenoma","Ectopic tumour"],a:1,e:"Autonomous adrenal cortisol suppresses the pituitary by feedback, so adrenocorticotropic hormone is low."},
+{q:"A patient takes prednisolone 20 mg daily. What happens to his own adrenocorticotropic hormone and cortisol?",o:["Both high","Both low","Adrenocorticotropic hormone high, cortisol low"],a:1,e:"The drug acts on the hypothalamus and pituitary like cortisol; the axis is switched off and the adrenal makes little cortisol."}]},
+
+{id:"f3",title:"The daily rhythm and the pulses",min:4,goal:2,obj:["Describe when cortisol is highest and lowest","Explain which tests are timed and why","Link the rhythm to tablet timing"],html:`
+<div class="scene"><b>The scene:</b> A friend who works night shifts asks why her doctor wants a blood test "before 9 in the morning" and a saliva sample "at 11 at night".</div>
+<p>The axis follows a [[circadian]] set by the [[scn]] (the master clock, reset by daylight). On top of this, adrenocorticotropic hormone comes in bursts, each followed by a cortisol pulse ([[pulsatile]]).</p>
+<p>👉 Click the time points on the curve:</p>
+<div data-widget="circadian"></div>
+<p><b>Clinical consequences:</b></p>
+<ul><li><b>Too little cortisol?</b> Test at the <b>peak</b>: a [[basalcort]] at about 8–9 a.m.</li>
+<li><b>Too much cortisol?</b> Test at the <b>low point</b>: [[lnsc]]. Losing the midnight low is an early sign of Cushing syndrome.</li>
+<li><b>Tablets:</b> give the biggest hydrocortisone dose on waking, and prednisolone in the <b>morning</b> (less axis suppression and less insomnia).</li>
+<li><b>Night shifts and jet lag:</b> the rhythm shifts only slowly and often incompletely, so interpret timed tests by the patient's sleep times.</li></ul>
+<div class="hint">💡 <b>"Hunt too little at the top, too much at the bottom."</b> Low cortisol shows best at the morning peak; high cortisol shows best at the midnight low.</div>
+<details class="chk"><summary>✋ Checkpoint: why is a single afternoon cortisol useless to exclude Cushing syndrome?</summary><p>Pulses and the daily fall make afternoon values vary a lot, and many patients with Cushing syndrome have normal afternoon values. Their problem is the missing evening fall.</p></details>`,
+recap:["Cortisol rises in late sleep, peaks around waking, and is lowest around midnight (slide 26).","Adrenocorticotropic hormone is pulsatile; single random values mislead.","Morning cortisol tests for insufficiency; late-night salivary cortisol tests for Cushing syndrome; give steroids in the morning."],
+quiz:[{q:"When is cortisol normally lowest?",o:["Around waking","Around midday","Around midnight"],a:2,e:"Cortisol falls through the day and reaches its lowest level around midnight, then rises in the second half of the night."},
+{q:"Which test uses the loss of the midnight low to screen for Cushing syndrome?",o:["Morning serum cortisol","Late-night salivary cortisol","Short stimulation test"],a:1,e:"Saliva collected at about 11 p.m. reflects free cortisol at the time it should be lowest."}]}
+]};
+
+/* ===== Subsection 8: steps 4–5 ===== */
+M8.cards.push(
+{id:"f4",title:"Stress: when the axis overrides the clock",min:4,goal:3,obj:["List physical, psychological and inflammatory triggers","Explain how cytokines drive the axis","Explain what cortisol does for the body in stress"],html:`
+<div class="scene"><b>The scene:</b> Day 1 after a hip replacement. Pain, blood loss, inflammation. Although it is evening, her cortisol is far above her usual morning peak.</div>
+<p><b>Triggers:</b> surgery, trauma, infection, low glucose, low blood pressure, burns, intense emotion or fear. Signals arrive from the limbic system, the brainstem and the blood: [[cytok]] (interleukin-1, interleukin-6, tumour necrosis factor) switch on corticotropin-releasing hormone and adrenocorticotropic hormone directly.</p>
+<p><b>What happens:</b> the set point is turned <b>up</b>. Feedback still works, but the brain now defends a much higher cortisol. Vasopressin adds extra drive.</p>
+<p><b>Why it helps:</b></p>
+<ul><li>Fuel: more glucose ([[gneo]]) and mobilised amino acids and fatty acids.</li>
+<li>Circulation: the [[permis]] keeps blood vessels responsive to adrenaline and noradrenaline.</li>
+<li>Brake on the immune system: cortisol stops inflammation from overshooting. The immune system switches the axis on, and cortisol damps the immune system: a second feedback loop.</li>
+<li>Medulla: cortisol-rich blood flows from the cortex into the medulla and supports the enzyme that makes adrenaline (phenylethanolamine N-methyltransferase).</li></ul>
+<p>👉 In the diagram, compare <b>normal</b> with <b>stress</b>:</p>
+<div data-widget="axisloop" data-start="stress"></div>
+<p><b>Clinical link:</b> a patient without a working adrenal (Addison disease, or an axis suppressed by steroid tablets) cannot mount this rise. That is the reason for [[stressdose]] and [[sickday]] (see <a onclick="showModule('d2')" style="cursor:pointer;color:var(--acc);font-weight:700">module 2.2</a>). Long-term overactivation (severe depression, alcohol excess) gives [[pseudocush]].</p>
+<div class="hint">💡 <b>"Stress turns the thermostat up, it does not remove it."</b> The loop still works, just at a higher setting.</div>
+<details class="chk"><summary>✋ Checkpoint: why does a patient on long-term prednisolone need extra steroid for surgery?</summary><p>Her axis is suppressed, so she cannot raise her own cortisol in response to the surgical stress. The extra dose replaces the rise she cannot make.</p></details>`,
+recap:["Stress (physical, psychological, inflammatory) overrides the rhythm and raises the set point.","Cytokines (interleukin-1, interleukin-6, tumour necrosis factor) and vasopressin drive the axis.","Cortisol in stress: fuel, blood pressure (permissive effect), brake on inflammation; patients without an axis need stress dosing."],
+quiz:[{q:"Which statement about stress is correct?",o:["Negative feedback stops working completely","The set point rises, but feedback still works","Cortisol falls to protect the immune system"],a:1,e:"The brain defends a higher cortisol level during stress; feedback remains active around the new set point."},
+{q:"Which cytokine is a classic activator of the axis during infection?",o:["Interleukin-6","Insulin","Erythropoietin"],a:0,e:"Interleukin-1, interleukin-6 and tumour necrosis factor stimulate corticotropin-releasing hormone and adrenocorticotropic hormone."}]},
+
+{id:"f5",title:"Dexamethasone suppression tests: the logic",min:5,goal:4,obj:["Explain why dexamethasone is used","Interpret the 1 mg overnight and the low-dose tests","Use adrenocorticotropic hormone and the high-dose test to find the source","Name causes of false results"],html:`
+<div class="scene"><b>The scene:</b> A 41-year-old woman has a round red face, wide purple stretch marks, weak thighs and new high blood pressure. Is her cortisol truly too high, and if so, where does it come from?</div>
+<p><b>Why dexamethasone?</b> [[dexa]] acts like a strong cortisol on the pituitary, but it is given in tiny doses and most cortisol assays do not detect it. So any cortisol you measure afterwards is the patient's <b>own</b>. In a healthy person feedback switches off adrenocorticotropic hormone, and cortisol falls.</p>
+<h3>Step A: is there Cushing syndrome?</h3>
+<ul><li><b>1 mg overnight test:</b> 1 mg dexamethasone at 11 p.m.–midnight, serum cortisol at 8–9 a.m. Normal suppression: below <b>1.8 µg/dl (50 nmol/L)</b> (Endocrine Society, 2008).</li>
+<li><b>Low-dose 48-hour test:</b> 0.5 mg every 6 hours for 48 hours; the same cut-off. Used to confirm.</li></ul>
+<h3>Step B: where does it come from?</h3>
+<ul><li><b>Adrenocorticotropic hormone first.</b> Low → adrenal source (imaging of the adrenals). Normal or high → pituitary or ectopic source.</li>
+<li><b>[[hddst]]:</b> 8 mg. A pituitary adenoma usually keeps some feedback, so cortisol falls clearly (classically by more than half); ectopic and adrenal tumours do not suppress.</li>
+<li>Today pituitary magnetic resonance imaging, the corticotropin-releasing hormone test and [[ipss]] are the main tools to tell pituitary from ectopic.</li></ul>
+<p>👉 Run the test on each patient:</p>
+<div data-widget="dextest"></div>
+<p><b>False "no suppression":</b> the oestrogen pill (more cortisol-binding globulin), drugs that speed up dexamethasone breakdown (carbamazepine, phenytoin, rifampicin), a forgotten or vomited tablet, [[pseudocush]], severe illness. Measuring the dexamethasone level together with cortisol checks that the drug was really present. <b>False "suppression":</b> drugs that slow dexamethasone breakdown (for example itraconazole, ritonavir), and liver or kidney failure.</p>
+<div class="hint">💡 <b>Dexamethasone asks the pituitary: "Are you still listening?"</b> Healthy: yes, even to a whisper (1 mg). Pituitary tumour: only if you shout (8 mg). Ectopic tumour and adrenal tumour: never, because they do not listen to the pituitary's feedback at all.</div>
+<details class="chk"><summary>✋ Checkpoint: why does an adrenal adenoma not suppress even with 8 mg?</summary><p>Its cortisol does not depend on adrenocorticotropic hormone at all (which is already suppressed), so lowering adrenocorticotropic hormone further changes nothing.</p></details>`,
+recap:["Dexamethasone = feedback signal that is not measured as cortisol.","1 mg overnight or low-dose 48-hour test: normal cortisol below 1.8 µg/dl (50 nmol/L).","Then adrenocorticotropic hormone: low → adrenal; normal/high → pituitary (partly suppresses with 8 mg) or ectopic (does not).","False positives: pill, enzyme inducers, missed tablet, pseudo-Cushing states."],
+quiz:[{q:"After 1 mg dexamethasone overnight, morning cortisol is 0.9 µg/dl. Interpretation?",o:["Normal suppression; Cushing syndrome unlikely","Cushing syndrome confirmed","Adrenal insufficiency"],a:0,e:"Cortisol below 1.8 µg/dl (50 nmol/L) after 1 mg dexamethasone is normal suppression."},
+{q:"Cortisol is high, adrenocorticotropic hormone is high and cortisol does NOT fall with 8 mg dexamethasone. Most likely source?",o:["Pituitary adenoma","Ectopic adrenocorticotropic hormone-secreting tumour","Adrenal adenoma"],a:1,e:"High adrenocorticotropic hormone points to a pituitary or ectopic source; failure to suppress with high dose favours ectopic."}]}
+);
+
+/* ===== Subsection 8: cases, flashcards, exam ===== */
+Object.assign(M8,{
+cases:[
+{id:"q1",title:"Case 1: The test that failed because of the pill",steps:[
+{t:`<b>The scene:</b> A 29-year-old woman with obesity and irregular periods is screened for Cushing syndrome. She takes a combined oestrogen pill. After 1 mg dexamethasone overnight, her cortisol is 3.5 µg/dl (97 nmol/L): "not suppressed". She has no stretch marks, bruising or muscle weakness.`,q:"What is the most likely explanation?",o:["Cushing disease","Oestrogen raised cortisol-binding globulin, so total cortisol stays higher (a false positive)","Adrenal insufficiency"],a:1,e:"Oestrogen increases cortisol-binding globulin; total cortisol measured after dexamethasone can stay above the cut-off without true cortisol excess."},
+{t:`She would like to keep the pill.`,q:"What is the most sensible next test?",o:["Inferior petrosal sinus sampling","24-hour urinary free cortisol (twice) and late-night salivary cortisol","High-dose dexamethasone test"],a:1,e:"Both measure free cortisol, so they are not affected by cortisol-binding globulin. Alternatively stop the pill about 6 weeks and repeat the dexamethasone test."}],
+take:["Oestrogen → more cortisol-binding globulin → false 'non-suppression'.","Urinary free cortisol and salivary cortisol avoid this problem.","Never localise (step B) before you have proven cortisol excess (step A)."]},
+{id:"q2",title:"Case 2: Weak, swollen and very low potassium",steps:[
+{t:`<b>The scene:</b> A 63-year-old heavy smoker has become very weak over 6 weeks. Blood pressure 170/100 mmHg, ankle swelling, glucose high, potassium 2.4 mmol/L. His skin has darkened. Cortisol is very high and does not suppress with 1 mg dexamethasone. Adrenocorticotropic hormone is very high.`,q:"Most likely source?",o:["Cortisol-secreting adrenal adenoma","Ectopic adrenocorticotropic hormone from a lung tumour","Steroid tablets"],a:1,e:"Rapid onset, very high adrenocorticotropic hormone, dark skin and severe low potassium in a smoker suggest ectopic production, for example by small cell lung cancer."},
+{t:`An 8 mg dexamethasone test shows no fall in cortisol.`,q:"Why is his potassium so low?",o:["Cortisol floods 11-beta-hydroxysteroid dehydrogenase type 2 and activates the mineralocorticoid receptor","Adrenocorticotropic hormone causes vomiting","The lung tumour makes aldosterone"],a:0,e:"Extreme cortisol levels saturate the kidney's protective enzyme, so cortisol acts like aldosterone (Module 7)."}],
+take:["Ectopic source: very high adrenocorticotropic hormone, rapid course, severe low potassium, often less classic body shape.","No suppression even with high-dose dexamethasone.","Next: imaging of chest and abdomen to find the tumour; urgent control of cortisol."]},
+{id:"q3",title:"Case 3 (bonus): Read the axis",steps:[
+{t:`<b>The scene:</b> Three patients each have a low morning cortisol. Patient A: adrenocorticotropic hormone high, potassium high. Patient B: adrenocorticotropic hormone low, a large pituitary tumour on imaging. Patient C: stopped prednisolone 30 mg after 4 months, two days ago.`,q:"Which patient has PRIMARY adrenal insufficiency?",o:["Patient A","Patient B","Patient C"],a:0,e:"Low cortisol with high adrenocorticotropic hormone (the pituitary shouting) and high potassium (aldosterone also missing) = primary."},
+{t:`Patient C feels terrible and her blood pressure is low.`,q:"Which levels of her axis are suppressed?",o:["Only the adrenal","Hypothalamus and pituitary (with an atrophied adrenal cortex)","None"],a:1,e:"Long-term prednisolone switches off corticotropin-releasing hormone and adrenocorticotropic hormone; the adrenal shrinks from lack of stimulation. Aldosterone is usually preserved."}],
+take:["'Look one level up' solves most axis puzzles.","Primary: adrenocorticotropic hormone high (and often high potassium).","Steroid tablets suppress the hypothalamus and pituitary: tertiary plus secondary."]}
+],
+flash:[["Hypothalamic nucleus that makes corticotropin-releasing hormone","Paraventricular nucleus."],
+["Hormone that boosts corticotropin-releasing hormone in stress","Vasopressin (antidiuretic hormone)."],
+["Precursor of adrenocorticotropic hormone","Proopiomelanocortin (also gives melanocyte-stimulating hormone and beta-endorphin)."],
+["Where does cortisol feed back?","Hypothalamus and anterior pituitary (negative feedback)."],
+["Cortisol low, adrenocorticotropic hormone high","Primary adrenal insufficiency."],
+["Cortisol high, adrenocorticotropic hormone low","Adrenal tumour or steroid medicines."],
+["Lowest cortisol of the day","Around midnight."],
+["Peak cortisol","Around waking (after rising during late sleep)."],
+["Master clock","Suprachiasmatic nucleus (reset by light)."],
+["Cytokines that drive the axis","Interleukin-1, interleukin-6, tumour necrosis factor."],
+["1 mg overnight dexamethasone test: normal result","Morning cortisol below 1.8 µg/dl (50 nmol/L)."],
+["Pituitary adenoma with 8 mg dexamethasone","Usually suppresses partly (feedback kept at a higher set point)."],
+["Ectopic tumour or adrenal adenoma with 8 mg dexamethasone","No suppression."],
+["Causes of false-positive dexamethasone test","Oestrogen pill, enzyme inducers, missed tablet, pseudo-Cushing states, severe illness."]],
+exam:[
+"Paraventricular nucleus → <b>corticotropin-releasing hormone</b> (+ vasopressin) → portal vessels → corticotrophs → <b>adrenocorticotropic hormone</b> (from proopiomelanocortin) → melanocortin 2 receptor → <b>cortisol</b>.",
+"Cortisol gives <b>negative feedback</b> to hypothalamus and pituitary (fast + slow). Aldosterone is outside the axis (angiotensin II, potassium).",
+"Patterns: primary = cortisol ↓ adrenocorticotropic hormone ↑; secondary/tertiary = both ↓; adrenal tumour/steroid tablets = cortisol ↑ (or drug) with adrenocorticotropic hormone ↓; pituitary/ectopic = both ↑.",
+"Rhythm: rises in late sleep, <b>peaks on waking</b>, <b>lowest at midnight</b>; adrenocorticotropic hormone is pulsatile.",
+"Test too little at the peak (8–9 a.m. cortisol); test too much at the low (late-night salivary cortisol).",
+"Stress (surgery, infection, cytokines) raises the set point; patients without an axis need stress dosing.",
+"Dexamethasone tests: 1 mg overnight or 0.5 mg every 6 h for 48 h, normal cortisol &lt; 1.8 µg/dl (50 nmol/L); high dose (8 mg): pituitary suppresses partly, ectopic/adrenal do not.",
+"False positives: oestrogen pill, enzyme inducers, missed dose, pseudo-Cushing states."],
+finalHtml:`<div class="exam" style="border-color:var(--ok)"><b>➡️ Next</b><br>What does all this cortisol actually do, and what happens when we give it as a drug? <b>Subsection 9: glucocorticoid actions, therapy and side effects.</b><br><button class="pri" style="margin-top:8px" onclick="showModule('m9')">→ Open subsection 9</button></div>`,
+sources:"Sources: Lecture 7 (Prof. Ionela Pascanu, UMCH 2026), page 26 and its figures (Barrett, Medical Physiology 2017; Crash Course Endocrinology 2015; Endotext), extended with standard endocrinology textbooks and the Endocrine Society guidelines on the diagnosis of Cushing syndrome (Nieman et al., 2008) and on primary adrenal insufficiency (Bornstein et al., 2016). The curves are schematic: no invented values. The cases are invented teaching examples. Conversion: cortisol µg/dl × 27.59 = nmol/L.",
+casesHead:"🏥 Clinical cases",casesIntro:"Three short cases. Answer to reveal the next part."
+});
+LESSONS.m8=M8;
+
+/* ===== Lecture 7 subsection 9: glucocorticoid actions, therapy, side effects – header + steps 1–3 ===== */
+const M9={
+meta:"Endocrinology › Lecture 7 › Subsection 9 · lecture pages 27–29 · ⏱ about 30 minutes in 6 bite-sized steps",
+intro:`<p>Glucocorticoids are among the most prescribed drugs in medicine, and among those with the most side effects. This module goes from the receptor inside the cell, through the body-wide actions of cortisol, to choosing the right steroid, preventing side effects, recognising Cushing syndrome from medicines, and stopping safely.</p>`,
+goals:[
+"Explain how glucocorticoids change gene activity inside the cell",
+"List the main body-wide actions of cortisol and link each one to a side effect",
+"Choose the right steroid using potency, salt-retaining effect and duration",
+"Recall the side effects with a mnemonic and know how to prevent them",
+"Recognise Cushing syndrome caused by steroid medicines and explain axis suppression",
+"Taper and stop steroids safely and recognise withdrawal problems"],
+cards:[
+
+{id:"g1",title:"Inside the cell: the glucocorticoid receptor",min:4,goal:0,obj:["Follow the receptor from cytoplasm to DNA","Tell transactivation from transrepression","Explain why the effect takes hours"],html:`
+<div class="scene"><b>The scene:</b> A patient with a severe asthma attack asks: "The doctor said the prednisolone needs a few hours to work. Why not instantly, like my blue reliever inhaler?"</div>
+<p>👉 Step through what happens inside the cell:</p>
+<div data-widget="grcell"></div>
+<ol><li>The fat-soluble steroid crosses the cell membrane.</li>
+<li>In the cytoplasm it binds the [[gr]], which is held by [[hsp]]. Binding releases them.</li>
+<li>The activated receptor moves into the nucleus and binds [[gre]] on DNA.</li>
+<li>[[transact]]: genes switched ON, for example [[annexin]] (anti-inflammatory) and liver enzymes of [[gneo]] (side effect: high glucose).</li>
+<li>[[transrep]]: the receptor blocks [[nfkb]] and [[ap1]] → fewer cytokines, adhesion molecules and cyclo-oxygenase 2 → less inflammation.</li></ol>
+<p><b>Why hours?</b> New messenger RNA and proteins have to be made (genomic effects, slide 27). Very high doses (for example intravenous methylprednisolone pulses) also have faster non-genomic effects on cell membranes, but the main benefit still needs hours. That is why the asthma attack needs the bronchodilator <b>now</b> and the steroid for the <b>next hours and days</b>.</p>
+<div class="hint">💡 <b>"Turn ON the calming genes, turn OFF the shouting genes."</b> And it takes hours, because the cell has to build new proteins.</div>
+<details class="chk"><summary>✋ Checkpoint: which mechanism gives most of the wanted anti-inflammatory effect?</summary><p>Transrepression: blocking nuclear factor kappa B and activator protein 1. Many metabolic side effects come from transactivation.</p></details>`,
+recap:["Steroid enters the cell → binds the glucocorticoid receptor → heat-shock proteins released → receptor enters nucleus.","Binds glucocorticoid response elements: transactivation (genes on) and transrepression (blocks nuclear factor kappa B, activator protein 1).","Genomic effects take hours."],
+quiz:[{q:"Where is the unbound glucocorticoid receptor mainly found?",o:["In the cell membrane","In the cytoplasm, held by heat-shock proteins","In the mitochondria"],a:1,e:"The receptor waits in the cytoplasm bound to heat-shock proteins; hormone binding releases them so it can enter the nucleus."},
+{q:"Blocking nuclear factor kappa B by the glucocorticoid receptor is called…",o:["Transactivation","Transrepression","Down-regulation of the receptor"],a:1,e:"Transrepression: the receptor interferes with inflammatory transcription factors and switches inflammatory genes off."}]},
+
+{id:"g2",title:"What cortisol does around the body",min:5,goal:1,obj:["List the actions of cortisol by organ system","Link each action to a side effect of excess and a sign of deficiency"],html:`
+<div class="scene"><b>The scene:</b> The hormone that keeps you alive in a crisis gives, in excess, the round face, thin skin and fragile bones. Every side effect is a normal action turned up too high for too long.</div>
+<p>👉 Click each organ system: <b>normal action</b> → <b>too much</b> → <b>too little</b>.</p>
+<div data-widget="actions"></div>
+<p>The lecture groups them as metabolism, cardiovascular system, immune system and central nervous system (slide 28). Add <b>bone, skin and muscle, eye, salt and water, and the fetal lung</b> to see where most side effects come from.</p>
+<div class="hint">💡 <b>"Side effect = normal action × too much × too long."</b> If you know what cortisol does, you can predict every side effect without memorising a list.</div>
+<details class="chk"><summary>✋ Checkpoint: why does a patient on high-dose steroids have a HIGH neutrophil count but LOW eosinophils?</summary><p>Cortisol releases neutrophils from the vessel wall and bone marrow into the blood, and pushes eosinophils and lymphocytes out of the blood. It is not a sign of infection by itself.</p></details>`,
+recap:["Metabolism: gluconeogenesis, insulin resistance, protein breakdown, fat redistribution.","Circulation: permissive effect on catecholamines; immune: anti-inflammatory, fewer lymphocytes and eosinophils.","Bone: fewer bone-building cells, less calcium absorption; brain: mood and sleep; fetal lung maturation."],
+quiz:[{q:"Which action of cortisol explains steroid-induced diabetes?",o:["More gluconeogenesis and insulin resistance","More insulin secretion","Less glucose absorption"],a:0,e:"Cortisol makes the liver produce glucose and makes muscle and fat less sensitive to insulin."},
+{q:"Which blood count change is typical on high-dose glucocorticoids?",o:["High eosinophils","High neutrophils, low lymphocytes and eosinophils","Low neutrophils"],a:1,e:"Neutrophils are released into the blood; lymphocytes and eosinophils fall. Eosinophilia is a clue to cortisol deficiency."}]},
+
+{id:"g3",title:"Choosing a steroid: potency, salt effect and duration",min:5,goal:2,obj:["Read a steroid potency table","Convert between equivalent doses","Match the steroid to the clinical job"],html:`
+<div class="scene"><b>The scene:</b> Ward round. A woman with Addison disease. A man with brain metastases and swelling around them. A flare of rheumatoid arthritis. A pregnancy at 29 weeks with threatened preterm labour. Four patients, four different steroids.</div>
+<p>👉 Compare the drugs, then try the dose converter:</p>
+<div data-widget="potency"></div>
+<table><tr><th>Job</th><th>Usual choice</th><th>Why</th></tr>
+<tr><td>Replacement in adrenal insufficiency</td><td>[[hydrocortisone]] (+ [[fludro]] in primary)</td><td>Identical to natural cortisol; short-acting, so it can mimic the rhythm</td></tr>
+<tr><td>Most anti-inflammatory courses by mouth</td><td>[[pred]] (or [[prednisone]])</td><td>Intermediate action, little salt effect, once in the morning; largely inactivated by the placenta</td></tr>
+<tr><td>Severe flares, intravenous pulses</td><td>[[mpred]]</td><td>High potency, low salt effect</td></tr>
+<tr><td>Brain swelling around tumours, nausea with chemotherapy, severe coronavirus disease 2019 (COVID-19) needing oxygen</td><td>[[dexa]]</td><td>Very potent, long-acting, <b>no</b> salt retention</td></tr>
+<tr><td>Fetal lung maturation before preterm birth</td><td>Dexamethasone or [[betameth]] (given to the mother)</td><td>Cross the placenta (Module 7)</td></tr></table>
+<p><b>Route matters:</b> inhaled, nasal, skin, eye and joint steroids act mostly locally, but high doses, large skin areas or interacting drugs (ritonavir) can still cause systemic effects and axis suppression.</p>
+<div class="hint">💡 <b>"Hydrocortisone replaces, prednisolone calms, methylprednisolone hammers, dexamethasone goes to the brain and to the baby."</b></div>
+<details class="chk"><summary>✋ Checkpoint: why is dexamethasone a poor choice for Addison disease replacement?</summary><p>It has no salt-retaining (mineralocorticoid) effect, and its long action cannot mimic the daily rhythm, so it easily causes over-replacement and Cushing features. Guidelines advise against it.</p></details>`,
+recap:["Equivalent doses: hydrocortisone 20 mg ≈ prednisolone 5 mg ≈ methylprednisolone 4 mg ≈ dexamethasone 0.75 mg.","Salt effect: hydrocortisone > prednisolone > methylprednisolone; dexamethasone none; fludrocortisone mainly salt.","Duration: hydrocortisone short, prednisolone and methylprednisolone intermediate, dexamethasone long."],
+quiz:[{q:"Prednisolone 5 mg has about the same glucocorticoid effect as…",o:["Hydrocortisone 5 mg","Hydrocortisone 20 mg","Dexamethasone 5 mg"],a:1,e:"Prednisolone is about 4 times as potent as hydrocortisone: 5 mg ≈ 20 mg hydrocortisone ≈ 0.75 mg dexamethasone."},
+{q:"Which steroid has essentially no mineralocorticoid (salt-retaining) effect?",o:["Hydrocortisone","Fludrocortisone","Dexamethasone"],a:2,e:"Dexamethasone is a pure glucocorticoid, which is why it is used for brain swelling but not for mineralocorticoid replacement."}]}
+]};
+
+/* ===== Subsection 9: steps 4–6 ===== */
+M9.cards.push(
+{id:"g4",title:"Side effects: the CUSHINGOID checklist",min:5,goal:3,obj:["Recall the main side effects with one word","Name the prevention or monitoring step for each","Know which side effects need urgent action"],html:`
+<div class="scene"><b>The scene:</b> Your patient with polymyalgia rheumatica starts prednisolone 15 mg daily and asks: "What exactly could these tablets do to me, and what can we do about it?"</div>
+<p>👉 Click each letter of <b>CUSHINGOID</b>:</p>
+<div data-widget="mnemonic"></div>
+<p><b>Also remember:</b> [[myop]] (difficulty standing from a chair), slowed growth in children, fluid retention, acne and easy bruising. Risk rises with <b>dose and duration</b>. Some effects appear within days (high glucose, mood, sleep), others over months (bone, eyes, skin).</p>
+<p><b>The three general rules:</b> lowest effective dose for the shortest time; give it in the morning; add a [[spare|steroid-sparing drug]] (for example [[mtx]]) when long treatment is expected.</p>
+<div class="corr">📝 <b>Slide check (page 29):</b> the side-effect list on the slide is correct but incomplete. Add <b>avascular necrosis of bone</b>, <b>proximal myopathy</b>, <b>growth suppression in children</b> and <b>peptic ulcer risk</b> (mainly together with non-steroidal anti-inflammatory painkillers). Bone protection is often started from the beginning of long courses; United Kingdom guidance suggests it when prednisolone 7.5 mg or more per day is expected for 3 months or longer, especially in older people.</div>
+<div class="hint">💡 <b>CUSHINGOID</b> = Cataracts, Ulcers, Skin, Hypertension, Infections, Necrosis of bone, Glucose, Osteoporosis, Insomnia and mood, Diminished own cortisol.</div>
+<details class="chk"><summary>✋ Checkpoint: a patient on prednisolone for 4 months develops new groin pain when walking. What must you exclude?</summary><p>Avascular necrosis of the femoral head (and an osteoporotic fracture): arrange imaging, ideally magnetic resonance imaging.</p></details>`,
+recap:["CUSHINGOID: cataracts, ulcers, skin, hypertension, infections, necrosis of bone, glucose, osteoporosis, insomnia/mood, diminished own cortisol.","Plus proximal myopathy and growth suppression in children.","Prevent: lowest dose, morning dosing, steroid-sparing drugs, bone protection, glucose and blood pressure checks, steroid card."],
+quiz:[{q:"Which side effect typically shows as afternoon or evening high glucose in a patient taking prednisolone in the morning?",o:["Steroid-induced hyperglycaemia","Avascular necrosis","Cataract"],a:0,e:"Morning prednisolone acts most strongly over the following hours, so glucose peaks in the afternoon and evening."},
+{q:"Which prevention step fits a 70-year-old woman starting prednisolone for at least 6 months?",o:["Bone protection (calcium, vitamin D and usually a bisphosphonate)","Stop the steroid every weekend","Give it at bedtime"],a:0,e:"Glucocorticoid-induced osteoporosis starts early and fracture risk rises within months; older patients on long courses usually need bone protection."}]},
+
+{id:"g5",title:"Cushing syndrome from medicines and the suppressed axis",min:4,goal:4,obj:["Recognise exogenous Cushing syndrome","Explain why the patient's own axis is switched off","Know who is at risk of adrenal insufficiency"],html:`
+<div class="scene"><b>The scene:</b> A 66-year-old woman has taken prednisolone 10 mg daily for 14 months for polymyalgia rheumatica. She now has a round red face, thin bruised skin, a vertebral fracture and high glucose.</div>
+<p>[[iatro]] is the <b>most common cause</b> of Cushing syndrome. It can come from tablets, injections into joints, potent skin creams over large areas, and inhalers, especially with [[ritonavir]] (Module 7).</p>
+<p><b>The two faces of the same patient:</b></p>
+<ul><li><b>Outside:</b> too much glucocorticoid → Cushing features.</li>
+<li><b>Inside:</b> [[negfb]] has switched off corticotropin-releasing hormone and adrenocorticotropic hormone for months → the zona fasciculata and reticularis have <b>shrunk</b>: [[gcsup]]. Her own adrenal cannot respond to stress or to sudden stopping.</li></ul>
+<p><b>Who is at risk?</b> Anyone on more than a [[physdose]] for more than about <b>4 weeks</b>; also repeated short courses, evening doses, long-acting steroids (dexamethasone), and high-dose inhaled steroids. These patients should carry a [[card]] and follow [[sickday]] (United Kingdom guidance gives the card to people on prednisolone 5 mg or more, or equivalent, for at least 4 weeks). A course shorter than about 3 weeks can usually be stopped without tapering, unless other risks apply.</p>
+<p><b>Lab trap:</b> prednisolone cross-reacts with many cortisol immunoassays, while dexamethasone does not. Testing her own axis means measuring cortisol in the morning <b>before</b> the steroid dose (with prednisolone, at least 24 hours after the last dose).</p>
+<div class="hint">💡 <b>"Cushing outside, Addison inside."</b> She looks like too much cortisol, but her own adrenal is asleep. Never stop suddenly.</div>
+<details class="chk"><summary>✋ Checkpoint: is aldosterone affected by axis suppression from prednisolone?</summary><p>Usually not: the glomerulosa is driven by angiotensin II and potassium. So potassium is usually normal if she becomes adrenally insufficient.</p></details>`,
+recap:["Steroid medicines are the most common cause of Cushing syndrome.","They suppress corticotropin-releasing hormone and adrenocorticotropic hormone; the inner cortex atrophies.","Risk: above physiological dose for more than about 4 weeks → steroid card, sick-day rules, no sudden stop."],
+quiz:[{q:"What is the most common cause of Cushing syndrome?",o:["Pituitary adenoma","Glucocorticoid medicines","Adrenal carcinoma"],a:1,e:"Exogenous (medicine-induced) Cushing syndrome is far more common than all endogenous causes together."},
+{q:"A patient on prednisolone 10 mg for a year becomes adrenally insufficient after stopping abruptly. Typical potassium?",o:["High, as in Addison disease","Usually normal","Very low"],a:1,e:"Suppression affects the hypothalamus–pituitary–fasciculata axis; aldosterone (renin–angiotensin) is preserved, so potassium is usually normal."}]},
+
+{id:"g6",title:"Coming off: tapering, withdrawal and recovery of the axis",min:5,goal:5,obj:["Give two reasons to taper","Tell disease flare, adrenal insufficiency and withdrawal syndrome apart","Interpret a morning cortisol during the taper"],html:`
+<div class="scene"><b>The scene:</b> Your polymyalgia patient feels well and wants to stop prednisolone tomorrow. "Why do I have to come down so slowly?"</div>
+<p><b>Two reasons to taper:</b> (1) the disease may flare; (2) the suppressed axis needs time to wake up (weeks to months, sometimes longer).</p>
+<p><b>Three problems when the dose comes down:</b></p>
+<table><tr><th>Problem</th><th>Clues</th></tr>
+<tr><td>Disease flare</td><td>Symptoms of the original disease return (for example shoulder and hip girdle pain, raised inflammatory markers)</td></tr>
+<tr><td>Adrenal insufficiency</td><td>Fatigue, nausea, dizziness on standing, low blood pressure, low sodium, low glucose; danger of crisis with illness</td></tr>
+<tr><td>[[gws]]</td><td>Fatigue, aches, low mood, poor appetite, although cortisol is adequate; improves over weeks</td></tr></table>
+<p>👉 Walk through a taper:</p>
+<div data-widget="taper"></div>
+<p><b>The approach</b> (European Society of Endocrinology and Endocrine Society guideline on glucocorticoid-induced adrenal insufficiency, 2024): taper as fast as the disease allows while the dose is high; slow down near the physiological dose (prednisolone about 4–5 mg per day); then either keep tapering slowly or check a morning cortisol. Keep the steroid card and stress dosing until recovery is shown.</p>
+<div class="hint">💡 <b>"Fast down the steep part of the mountain, slow on the last steps to the valley."</b> High doses can come down quickly; the last few milligrams need patience.</div>
+<details class="chk"><summary>✋ Checkpoint: during the taper, her morning cortisol (taken before the dose) is about 400 nmol/L. What does that suggest?</summary><p>Above about 300 nmol/L (10 µg/dl) suggests that the axis has recovered, and the steroid can usually be stopped (follow the guideline and the specialist's plan).</p></details>`,
+recap:["Taper to prevent flare and to let the axis recover.","Coming down: think flare versus adrenal insufficiency versus withdrawal syndrome.","Near the physiological dose: slow taper or morning cortisol (above about 300 nmol/L = recovered; below about 150 nmol/L = continue and retest)."],
+quiz:[{q:"A patient tapering from prednisolone 30 mg to 7.5 mg feels tired and achy, with normal blood pressure, sodium and inflammatory markers. Most likely?",o:["Glucocorticoid withdrawal syndrome","Adrenal crisis","Disease flare"],a:0,e:"The dose is still above physiological replacement, the disease markers are quiet and the electrolytes are normal: tissues are adapting to the lower dose."},
+{q:"Which statement about tapering is correct?",o:["All steroid courses must be tapered","Courses shorter than about 3 weeks can usually be stopped without tapering","Taper fastest near the physiological dose"],a:1,e:"Short courses rarely suppress the axis enough to matter (unless other risks apply). The slowest part of a long taper is near the physiological dose."}]}
+);
+
+/* ===== Subsection 9: cases, flashcards, exam ===== */
+Object.assign(M9,{
+cases:[
+{id:"r1",title:"Case 1: Polymyalgia, prednisolone and a broken vertebra",steps:[
+{t:`<b>The scene:</b> A 66-year-old woman has taken prednisolone 10 mg daily for 14 months for polymyalgia rheumatica. She has a round red face, bruises on her forearms, thin skin, new diabetes and sudden back pain after lifting a shopping bag. An X-ray shows a vertebral compression fracture.`,q:"What is the cause of her Cushing features?",o:["A pituitary adenoma","Her prednisolone (exogenous Cushing syndrome)","An adrenal carcinoma"],a:1,e:"Long-term supraphysiological prednisolone is by far the most common cause of Cushing syndrome."},
+{t:`A colleague suggests a dexamethasone suppression test to "confirm Cushing syndrome".`,q:"Is that useful?",o:["Yes, it is essential","No: the cause is known, and her own axis is already suppressed by prednisolone","Only the high-dose test is useful"],a:1,e:"Dexamethasone tests look for endogenous cortisol excess. Here the cause is the medicine; her own cortisol and adrenocorticotropic hormone are low."},
+{t:`Her polymyalgia flares whenever the dose goes below 7.5 mg.`,q:"Best overall plan?",o:["Stop prednisolone today","Add a steroid-sparing drug (for example methotrexate), taper slowly to the lowest effective dose, start bone protection, treat glucose, and give a steroid card","Switch to dexamethasone 4 mg daily"],a:1,e:"Reduce exposure (steroid-sparing drug, slow taper), treat and prevent the side effects, and protect her suppressed axis."}],
+take:["Exogenous Cushing syndrome: diagnosis is clinical; no suppression test needed.","Prevent harm: lowest dose, steroid-sparing drug, bone protection, glucose and blood pressure checks.","Suppressed axis: steroid card, sick-day rules, never stop abruptly."]},
+{id:"r2",title:"Case 2: Ran out of tablets on holiday",steps:[
+{t:`<b>The scene:</b> A 58-year-old man has taken prednisolone 20 mg daily for 6 months for a lung disease. On holiday he ran out of tablets. Three days later he is vomiting and dizzy. Blood pressure 85/50 mmHg, sodium 129 mmol/L, potassium 4.6 mmol/L, glucose 3.3 mmol/L.`,q:"Most likely diagnosis?",o:["Gastroenteritis only","Adrenal crisis from glucocorticoid-induced adrenal suppression","Primary adrenal insufficiency from autoimmune adrenalitis"],a:1,e:"Months of prednisolone suppressed his axis; stopping suddenly removed all glucocorticoid. Potassium is normal because aldosterone is preserved."},
+{t:`He reaches the emergency department.`,q:"Immediate treatment?",o:["Restart prednisolone 20 mg by mouth and send him home","Hydrocortisone 100 mg into a vein or muscle, 0.9 % saline, glucose, then hydrocortisone 200 mg per 24 hours","Fludrocortisone only"],a:1,e:"Treat as adrenal crisis: parenteral hydrocortisone, fluids and glucose. He is vomiting, so tablets are not reliable."}],
+take:["Sudden stop after long steroid use → adrenal crisis.","Glucocorticoid-induced insufficiency: potassium usually normal (aldosterone intact).","Prevention: steroid card, enough tablets, sick-day rules, emergency injection kit where appropriate."]},
+{id:"r3",title:"Case 3 (bonus): Four patients, four steroids",steps:[
+{t:`<b>Patient 1:</b> a man with lung cancer has headaches and vomiting; scans show swelling around brain metastases.`,q:"Which steroid?",o:["Hydrocortisone","Dexamethasone","Fludrocortisone"],a:1,e:"Dexamethasone: very potent, long-acting, no salt retention. The classic choice for oedema around brain tumours."},
+{t:`<b>Patient 2:</b> a woman with newly diagnosed Addison disease.`,q:"Which combination?",o:["Hydrocortisone + fludrocortisone","Dexamethasone alone","Methylprednisolone pulses"],a:0,e:"Hydrocortisone replaces cortisol and mimics the rhythm in 2–3 doses; fludrocortisone replaces aldosterone in primary insufficiency."},
+{t:`<b>Patient 3:</b> a pregnant woman at 29 weeks with threatened preterm labour.`,q:"Which steroid, and for whom?",o:["Prednisolone for the mother","Dexamethasone or betamethasone to the mother, to mature the baby's lungs","No steroid in pregnancy"],a:1,e:"These steroids cross the placenta (poor substrates for placental 11-beta-hydroxysteroid dehydrogenase type 2) and speed up fetal lung maturation."},
+{t:`<b>Patient 4:</b> a pregnant woman with a severe asthma flare.`,q:"Which oral steroid is usually preferred?",o:["Prednisolone","Dexamethasone","Betamethasone"],a:0,e:"Prednisolone treats the mother; much of it is inactivated by the placenta, so fetal exposure is lower."}],
+take:["Hydrocortisone replaces; prednisolone calms; methylprednisolone for intravenous pulses; dexamethasone for brain oedema and fetal lungs.","Placental type 2 decides which steroid reaches the baby.","Never use dexamethasone for routine adrenal replacement."]}
+],
+flash:[["Where is the unbound glucocorticoid receptor?","In the cytoplasm, held by heat-shock proteins."],
+["Transrepression","The receptor blocks nuclear factor kappa B and activator protein 1 → inflammatory genes off."],
+["Why do steroids take hours to work?","Genomic effects: new messenger RNA and proteins must be made."],
+["Permissive effect of cortisol","Blood vessels respond fully to adrenaline and noradrenaline."],
+["Blood count on high-dose steroids","Neutrophils up; lymphocytes and eosinophils down."],
+["Equivalent glucocorticoid doses","Hydrocortisone 20 = prednisolone 5 = methylprednisolone 4 = dexamethasone 0.75 mg."],
+["Steroid with no salt-retaining effect","Dexamethasone."],
+["Steroid used for mineralocorticoid replacement","Fludrocortisone."],
+["CUSHINGOID","Cataracts, Ulcers, Skin, Hypertension, Infections, Necrosis of bone, Glucose, Osteoporosis, Insomnia/mood, Diminished own cortisol."],
+["Most common cause of Cushing syndrome","Glucocorticoid medicines."],
+["Who is at risk of axis suppression?","More than a physiological dose for more than about 4 weeks (and repeated courses, evening or long-acting doses)."],
+["Physiological dose","Hydrocortisone about 15–25 mg or prednisolone about 4–5 mg per day."],
+["Morning cortisol during a taper: above about 300 nmol/L","Axis recovered; steroid can usually be stopped."],
+["Glucocorticoid withdrawal syndrome","Fatigue, aches, low mood when the dose falls, despite adequate cortisol."]],
+exam:[
+"Mechanism: glucocorticoid receptor in the cytoplasm (heat-shock proteins) → nucleus → glucocorticoid response elements; <b>transactivation</b> (genes on) and <b>transrepression</b> (nuclear factor kappa B and activator protein 1 off); takes hours.",
+"Actions: gluconeogenesis and insulin resistance, protein breakdown, central fat, permissive for catecholamines, anti-inflammatory/immunosuppressive, less bone formation, mood and sleep, fetal lung maturation.",
+"Potency (glucocorticoid / mineralocorticoid): hydrocortisone 1/1, prednisolone 4/0.8, methylprednisolone 5/0.5, dexamethasone 25–30/≈0, fludrocortisone 10/125–250 (approximate).",
+"Equivalent doses: hydrocortisone 20 mg = prednisolone 5 mg = methylprednisolone 4 mg = dexamethasone 0.75 mg.",
+"Side effects: <b>CUSHINGOID</b> + myopathy + growth suppression in children. Prevent: lowest dose, morning, steroid-sparing drugs, bone protection.",
+"Exogenous Cushing syndrome = most common cause; own cortisol and adrenocorticotropic hormone low; 'Cushing outside, Addison inside'.",
+"Above physiological dose for &gt; ~4 weeks → risk of adrenal insufficiency: card, sick-day rules, taper; short courses (&lt; ~3 weeks) usually need no taper.",
+"Taper: fast at high doses, slow near physiological dose; morning cortisol &gt; ~300 nmol/L (10 µg/dl) = recovered, &lt; ~150 nmol/L (5 µg/dl) = continue and retest (European Society of Endocrinology and Endocrine Society guideline, 2024)."],
+finalHtml:`<div class="exam" style="border-color:var(--ok)"><b>🏥 Apply it</b><br>Glucocorticoid-induced suppression is the most common cause of adrenal insufficiency. See it in practice in module 2.2 and the CBL 5 case.<br><button class="pri" style="margin-top:8px" onclick="showModule('d2')">→ Open module 2.2</button> <button class="pri" style="margin-top:8px" onclick="showModule('cbl5')">→ Open CBL 5</button></div>`,
+sources:"Sources: Lecture 7 (Prof. Ionela Pascanu, UMCH 2026), pages 27–29 and their figures (Goldman-Cecil Medicine 2020; Netter's Illustrated Pharmacology 2014; Gerber et al., Journal of Biological Chemistry), extended with standard pharmacology references (Goodman and Gilman; British National Formulary) for the potency table, the European Society of Endocrinology and Endocrine Society joint guideline on glucocorticoid-induced adrenal insufficiency (Beuschlein et al., 2024), and United Kingdom Society for Endocrinology steroid emergency card guidance (2020). Potency values are approximate; sources differ slightly. No prevalence figures are given on purpose. The cases are invented teaching examples.",
+casesHead:"🏥 Clinical cases",casesIntro:"Three cases. Answer to reveal the next part."
+});
+LESSONS.m9=M9;
+
+/* ===== Subsection 7 widgets: liver route, cortisol–cortisone shuttle, three-way sorter ===== */
+const MK=(id,c)=>`<marker id="${id}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0L10 5L0 10z" fill="${c}"/></marker>`;
+const BX=(x,y,w,h,f,s,lines,fs=13)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="10" fill="${f}" stroke="${s}" stroke-width="2.2"/>`+lines.map((t,i)=>`<text x="${x+w/2}" y="${y+h/2+(i-(lines.length-1)/2)*(fs+3)+fs/3}" text-anchor="middle" font-size="${fs}" font-weight="${i==0?700:400}" fill="#222">${t}</text>`).join("");
+W.liver=el=>{
+const S=[["A","Free cortisol leaves the blood","Only the free fraction (about 1 in 10 molecules) reaches the liver enzymes; cortisol bound to cortisol-binding globulin is protected."],
+["B","Step 1: A-ring reduction","5-alpha- and 5-beta-reductase plus 3-alpha-hydroxysteroid dehydrogenase reduce ring A → tetrahydrocortisol (and tetrahydrocortisone from cortisone). <b>This is the switching-off step.</b>"],
+["C","Step 2: conjugation","Glucuronic acid (or sulfate) is attached → a water-soluble glucuronide that the kidney can excrete."],
+["D","Minor route: 6-beta-hydroxylation","Cytochrome P450 3A4 makes 6-beta-hydroxycortisol. Minor for cortisol, but the main route for many synthetic steroids, so inducers and inhibitors matter."],
+["E","Kidney → urine","The kidney filters the water-soluble metabolites into urine; most cortisol leaves the body this way."],
+["G","A tiny fraction unchanged","A very small part of free cortisol is filtered unchanged: urinary free cortisol, used to screen for Cushing syndrome."]];
+const svg=`<svg viewBox="0 0 760 300" style="width:100%" role="img" aria-label="Route of cortisol inactivation"><defs>${MK("lva","#555")}</defs>
+<g data-k="A">${BX(10,118,120,56,"#e6f6f6","#0f8b8d",["Cortisol","(free, in blood)"])}<line x1="130" y1="146" x2="203" y2="146" stroke="#555" stroke-width="3" marker-end="url(#lva)"/></g>
+<rect x="205" y="18" width="345" height="264" rx="16" fill="#fff6ee" stroke="#b5651d" stroke-width="2" stroke-dasharray="7 5"/><text x="378" y="40" text-anchor="middle" font-size="15" font-weight="800" fill="#b5651d">LIVER</text>
+<g data-k="B">${BX(222,58,310,58,"#f3ecff","#7b3fc4",["Step 1: A-ring reduction","→ tetrahydrocortisol (inactive)"])}</g>
+<line x1="377" y1="116" x2="377" y2="140" stroke="#555" stroke-width="3" marker-end="url(#lva)"/>
+<g data-k="C">${BX(222,142,310,58,"#e3f1ff","#2f6fdb",["Step 2: conjugation (glucuronic acid)","→ water-soluble glucuronide"])}</g>
+<g data-k="D">${BX(222,214,310,52,"#f4f4f4","#888",["Minor: 6-beta-hydroxylation","cytochrome P450 3A4"],12)}</g>
+<g data-k="E"><line x1="532" y1="171" x2="586" y2="171" stroke="#555" stroke-width="3" marker-end="url(#lva)"/>${BX(588,140,150,62,"#e6f6ee","#1f9d55",["Kidney → urine","glucuronides"])}</g>
+<g data-k="G"><path d="M70 118 Q70 4 400 6 Q660 8 662 136" fill="none" stroke="#c62828" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#lva)"/><text x="600" y="30" text-anchor="middle" font-size="12" fill="#c62828">tiny fraction unchanged = urinary free cortisol</text></g></svg>`;
+el.innerHTML=`<div class="ctrl">${S.map((s,i)=>`<button data-i="${i}">${i+1}. ${s[1]}</button>`).join("")}<button data-i="all">Show all</button></div><div class="swipe">↔ Swipe sideways to see the whole diagram</div><div class="svgwrap"><figure>${svg}<figcaption>Cortisol inactivation route, drawn by MedLearn (schematic, not to scale).</figcaption></figure></div><div class="info" id="lv-info">Click step 1 to start.</div>`;
+const seen=new Set();
+el.querySelectorAll("[data-i]").forEach(b=>b.onclick=()=>{const i=b.dataset.i;el.querySelectorAll("[data-i]").forEach(x=>x.classList.toggle("on",x==b));
+el.querySelectorAll("g[data-k]").forEach(g=>g.style.opacity=i=="all"||g.dataset.k==S[i][0]?1:.2);
+el.querySelector("#lv-info").innerHTML=i=="all"?"Whole route: free cortisol → A-ring reduction → conjugation → kidney → urine; minor 6-beta-hydroxylation; a tiny fraction unchanged.":`<b>${S[i][1]}:</b> ${S[i][2]}`;
+if(i!="all")seen.add(i);if(seen.size==S.length)complete("e2-liver",10,"🧪 Route followed! +10 XP")})};
+
+W.shuttle=el=>{
+const SC={normal:{l:"Normal",x2:0,w2:3,mr:"Aldosterone binds; cortisol is kept away",mc:"#e6f6ee",lt:"Kidney, colon, salivary and sweat glands, placenta",ri:"Cortisone",ro:"Cortisol",rl:"type 1: switches ON",t:"Type 2 turns cortisol into cortisone where the mineralocorticoid receptor lives; type 1 regenerates cortisol where glucocorticoid action is wanted."},
+liq:{l:"Liquorice",x2:1,w2:3,mr:"CORTISOL binds → salt kept, potassium lost",mc:"#ffe1e1",lt:"Kidney, colon, salivary and sweat glands, placenta",ri:"Cortisone",ro:"Cortisol",rl:"type 1: switches ON",t:"Glycyrrhetinic acid blocks type 2. Cortisol (100–1000 times more abundant than aldosterone) occupies the receptor: high blood pressure, low potassium, low renin, low aldosterone."},
+flood:{l:"Ectopic cortisol flood",x2:0,w2:9,mr:"Enzyme saturated → excess cortisol binds",mc:"#ffe1e1",lt:"Kidney, colon, salivary and sweat glands, placenta",ri:"Cortisone",ro:"Cortisol",rl:"type 1: switches ON",t:"The enzyme works, but extreme cortisol levels overwhelm it. The spill-over explains the severe low potassium of ectopic adrenocorticotropic hormone syndrome."},
+pred:{l:"Prednisone tablet",x2:0,w2:3,mr:"Aldosterone binds (prednisolone has little salt effect)",mc:"#e6f6ee",lt:"Kidney, colon, salivary and sweat glands, placenta",ri:"Prednisone (inactive tablet)",ro:"Prednisolone (active)",rl:"type 1 in the liver activates it",t:"Prednisone, like cortisone, is a prodrug: liver type 1 turns it into prednisolone. In severe liver failure prefer prednisolone itself."},
+preg:{l:"Pregnancy (placenta)",x2:0,w2:3,mr:"Fetus protected from maternal cortisol",mc:"#e6f6ee",lt:"PLACENTA (type 2 barrier)",ri:"Cortisone",ro:"Cortisol",rl:"type 1: switches ON",t:"Placental type 2 inactivates most maternal cortisol and much prednisolone. Dexamethasone and betamethasone are poor substrates, cross to the fetus, and are used for fetal lung maturation."}};
+const svg=`<svg viewBox="0 0 760 330" style="width:100%" role="img" aria-label="Cortisol–cortisone shuttle"><defs>${MK("sha","#555")}</defs>
+<rect x="8" y="10" width="300" height="310" rx="14" fill="#fff4f4" stroke="#d64545" stroke-width="2"/><text id="sh-lt" x="158" y="34" text-anchor="middle" font-size="12.5" font-weight="700" fill="#a12d2d"></text>
+<rect x="452" y="10" width="300" height="310" rx="14" fill="#f5f0ff" stroke="#7b3fc4" stroke-width="2"/><text x="602" y="34" text-anchor="middle" font-size="12.5" font-weight="700" fill="#5a2a99">Liver, fat tissue, brain, skin, bone</text>
+<text x="380" y="34" text-anchor="middle" font-size="13" font-weight="700" fill="#555">BLOOD</text>
+${BX(330,70,100,40,"#e6f6f6","#0f8b8d",["Cortisol"])}${BX(330,210,100,40,"#f1f1f1","#888",["Cortisone"])}
+${BX(60,70,140,40,"#e6f6f6","#0f8b8d",["Cortisol"])}${BX(60,210,140,40,"#f1f1f1","#888",["Cortisone"])}
+<line x1="330" y1="90" x2="202" y2="90" stroke="#555" stroke-width="2" marker-end="url(#sha)"/><line x1="200" y1="230" x2="328" y2="230" stroke="#555" stroke-width="2" marker-end="url(#sha)"/>
+<line id="sh-a2" x1="130" y1="110" x2="130" y2="207" stroke="#d64545" stroke-width="3" marker-end="url(#sha)"/><text x="120" y="150" text-anchor="end" font-size="12" font-weight="700" fill="#a12d2d">type 2:</text><text x="120" y="165" text-anchor="end" font-size="12" font-weight="700" fill="#a12d2d">switches OFF</text>
+<text id="sh-x2" x="112" y="172" font-size="40" font-weight="900" fill="#c62828" opacity="0">✕</text>
+<rect id="sh-mr" x="214" y="128" width="88" height="66" rx="8" stroke="#1f9d55" stroke-width="2"/><text x="258" y="146" text-anchor="middle" font-size="10.5" font-weight="700">mineralo-</text><text x="258" y="159" text-anchor="middle" font-size="10.5" font-weight="700">corticoid</text><text x="258" y="172" text-anchor="middle" font-size="10.5" font-weight="700">receptor</text>
+<line x1="200" y1="100" x2="236" y2="126" stroke="#c62828" stroke-width="2" stroke-dasharray="4 3" id="sh-leak" opacity="0" marker-end="url(#sha)"/>
+<text id="sh-mrt" x="158" y="290" text-anchor="middle" font-size="12" font-weight="700" fill="#222"></text>
+${BX(510,210,190,40,"#f1f1f1","#888",[""])}<text id="sh-ri" x="605" y="235" text-anchor="middle" font-size="12.5" font-weight="700"></text>
+${BX(510,70,190,40,"#e6f6f6","#0f8b8d",[""])}<text id="sh-ro" x="605" y="95" text-anchor="middle" font-size="12.5" font-weight="700"></text>
+<line x1="430" y1="230" x2="508" y2="230" stroke="#555" stroke-width="2" marker-end="url(#sha)"/>
+<line x1="605" y1="208" x2="605" y2="113" stroke="#7b3fc4" stroke-width="3" marker-end="url(#sha)"/><text id="sh-rl" x="615" y="165" font-size="12" font-weight="700" fill="#5a2a99"></text>
+<text x="605" y="290" text-anchor="middle" font-size="12" fill="#333">→ glucocorticoid receptor: local cortisol action</text></svg>`;
+el.innerHTML=`<div class="ctrl">${Object.entries(SC).map(([k,v])=>`<button data-s="${k}">${v.l}</button>`).join("")}</div><div class="swipe">↔ Swipe sideways to see the whole diagram</div><div class="svgwrap"><figure>${svg}<figcaption>Cortisol–cortisone shuttle, drawn by MedLearn (schematic). Red ✕ = enzyme blocked.</figcaption></figure></div><div class="info" id="sh-info"></div>`;
+const seen=new Set(),q=s=>el.querySelector(s);
+const set=k=>{const s=SC[k];seen.add(k);el.querySelectorAll("[data-s]").forEach(b=>b.classList.toggle("on",b.dataset.s==k));
+q("#sh-x2").setAttribute("opacity",s.x2);q("#sh-a2").setAttribute("stroke-width",s.w2);q("#sh-leak").setAttribute("opacity",k=="liq"||k=="flood"?1:0);
+q("#sh-mr").setAttribute("fill",s.mc);q("#sh-mrt").textContent=s.mr;q("#sh-lt").textContent=s.lt;q("#sh-ri").textContent=s.ri;q("#sh-ro").textContent=s.ro;q("#sh-rl").textContent=s.rl;
+q("#sh-info").innerHTML=`<b>${s.l}:</b> ${s.t}`;if(seen.size==Object.keys(SC).length)complete("e3-shuttle",10,"🔁 Shuttle mastered! +10 XP")};
+el.querySelectorAll("[data-s]").forEach(b=>b.onclick=()=>set(b.dataset.s));set("normal")};
+
+W.sort3=el=>{const D=L.sort3,I=D.items;let ok=0;const done=new Set();
+el.innerHTML=`<div class="sortg">${I.map((it,i)=>`<div class="sortrow" data-i="${i}"><span class="st">${it[0]}</span><span class="sb">${D.labels.map((l,j)=>`<button data-a="${j}">${l}</button>`).join("")}</span><div class="sfb" hidden></div></div>`).join("")}</div><div class="info" id="s3-info">0/${I.length} sorted correctly.</div>`;
+el.querySelectorAll(".sortrow").forEach(row=>row.querySelectorAll("button").forEach(b=>b.onclick=()=>{const i=+row.dataset.i,it=I[i],fb=row.querySelector(".sfb");fb.hidden=false;
+if(+b.dataset.a==it[1]){row.querySelectorAll("button").forEach(x=>x.disabled=true);b.classList.add("right");row.classList.add("ok");fb.innerHTML="✅ "+it[2];if(!done.has(i)){done.add(i);ok++}}
+else{b.classList.add("wrong");fb.innerHTML="❌ Not quite. Think: does it change how much free cortisol reaches the bottle?"}
+el.querySelector("#s3-info").textContent=`${ok}/${I.length} sorted correctly.`;if(ok==I.length){el.querySelector("#s3-info").textContent="🏆 All sorted!";complete(D.id,15,"🧩 Sorting complete! +15 XP")}}))};
+
+/* ===== Subsection 8 widgets: axis feedback loop, daily rhythm, dexamethasone test ===== */
+W.axisloop=el=>{
+const SC={normal:["Normal","=","=","=",1,[],"Each level drives the next; cortisol switches off the pituitary and hypothalamus (negative feedback), keeping cortisol in range."],
+stress:["Stress or illness","↑","↑","↑",.6,["str"],"Pain, fever, surgery and inflammatory cytokines (interleukin-1, interleukin-6) push the hypothalamus. Stress overrides the feedback brake, so cortisol rises well above the normal daily range."],
+tab:["Steroid tablets","↓","↓","↓ own",3,["tab","atr"],"The tablet's steroid feeds back like cortisol. Corticotropin-releasing hormone and adrenocorticotropic hormone fall, the patient's own cortisol falls, and the unused adrenal cortex shrinks (atrophy). The tablet itself still acts on the body."],
+prim:["Primary adrenal insufficiency (Addison disease)","↑","↑↑","↓",.2,["xadr"],"The adrenal gland is damaged. Low cortisol means no brake, so adrenocorticotropic hormone rises (pigmentation). Aldosterone is also lost."],
+sec:["Secondary adrenal insufficiency (pituitary)","↑","↓","↓",.2,["xpit"],"The pituitary cannot make adrenocorticotropic hormone. Cortisol falls; aldosterone is mostly kept because renin–angiotensin still drives it."],
+cushd:["Cushing disease (pituitary tumour)","↓","↑","↑",1.5,["pit"],"A pituitary tumour makes adrenocorticotropic hormone. It is partly resistant to feedback: it ignores normal cortisol but still responds to high-dose dexamethasone."],
+adr:["Adrenal tumour making cortisol","↓","↓","↑",3,["adr","atr2"],"The tumour makes cortisol on its own. Strong feedback suppresses adrenocorticotropic hormone, so the other adrenal tissue shrinks."],
+ect:["Ectopic adrenocorticotropic hormone (e.g. lung tumour)","↓","↑↑","↑↑",3,["ect"],"A tumour outside the pituitary makes adrenocorticotropic hormone and ignores feedback. The pituitary is switched off but the tumour drives the adrenals very hard."]};
+const C=v=>v.startsWith("↑")?"#c62828":v.startsWith("↓")?"#2f6fdb":"#1f9d55";
+const svg=`<svg viewBox="0 0 720 470" style="width:100%" role="img" aria-label="Hypothalamic-pituitary-adrenal axis with feedback"><defs>${MK("axa","#444")}${MK("axr","#c62828")}</defs>
+<g class="ax-x" data-x="str" opacity="0">${BX(40,6,240,40,"#fff2d6","#d9730d",["Stress, pain, fever, cytokines"],12.5)}<line x1="280" y1="26" x2="300" y2="50" stroke="#d9730d" stroke-width="3" marker-end="url(#axa)"/></g>
+${BX(260,50,200,56,"#e3f1ff","#2f6fdb",["Hypothalamus","paraventricular nucleus"])}
+<line x1="360" y1="106" x2="360" y2="160" stroke="#444" stroke-width="3" marker-end="url(#axa)"/><text x="372" y="128" font-size="12.5">corticotropin-releasing hormone</text><text id="ax-v1" x="372" y="146" font-size="15" font-weight="800"></text>
+${BX(260,162,200,56,"#f3ecff","#7b3fc4",["Anterior pituitary","corticotroph cells"])}
+<text class="ax-x" data-x="xpit" x="436" y="200" font-size="36" font-weight="900" fill="#c62828" opacity="0">✕</text>
+<g class="ax-x" data-x="pit" opacity="0"><circle cx="440" cy="168" r="15" fill="#ffd6d6" stroke="#c62828" stroke-width="2"/><text x="440" y="173" text-anchor="middle" font-size="10" font-weight="700">tumour</text></g>
+<line x1="360" y1="218" x2="360" y2="272" stroke="#444" stroke-width="3" marker-end="url(#axa)"/><text x="372" y="240" font-size="12.5">adrenocorticotropic hormone</text><text id="ax-v2" x="372" y="258" font-size="15" font-weight="800"></text>
+<g class="ax-x" data-x="ect" opacity="0">${BX(560,160,150,56,"#ffe1e1","#c62828",["Lung tumour","makes the hormone"],12)}<path d="M600 216 Q560 280 462 300" fill="none" stroke="#c62828" stroke-width="3" marker-end="url(#axr)"/></g>
+<rect id="ax-adr" x="260" y="274" width="200" height="56" rx="10" fill="#fff6ee" stroke="#b5651d" stroke-width="2.2"/><text x="360" y="298" text-anchor="middle" font-size="13" font-weight="700">Adrenal cortex</text><text id="ax-adrt" x="360" y="316" text-anchor="middle" font-size="12">zona fasciculata</text>
+<text class="ax-x" data-x="xadr" x="436" y="314" font-size="36" font-weight="900" fill="#c62828" opacity="0">✕</text>
+<g class="ax-x" data-x="adr" opacity="0"><circle cx="440" cy="280" r="15" fill="#ffd6d6" stroke="#c62828" stroke-width="2"/><text x="440" y="285" text-anchor="middle" font-size="10" font-weight="700">tumour</text></g>
+<line x1="360" y1="330" x2="360" y2="384" stroke="#444" stroke-width="3" marker-end="url(#axa)"/><text x="372" y="362" font-size="12.5">cortisol</text><text id="ax-v3" x="430" y="362" font-size="15" font-weight="800"></text>
+${BX(260,386,200,50,"#e6f6ee","#1f9d55",["Body tissues","glucocorticoid receptor"])}
+<g class="ax-x" data-x="tab" opacity="0">${BX(540,386,170,50,"#e3f1ff","#2f6fdb",["Steroid tablets","(e.g. prednisolone)"],12)}<line x1="540" y1="411" x2="463" y2="411" stroke="#2f6fdb" stroke-width="3" marker-end="url(#axa)"/></g>
+<path class="ax-fb" d="M260 410 Q150 410 150 300 Q150 200 257 190" fill="none" stroke="#c62828" stroke-dasharray="8 6" marker-end="url(#axr)"/>
+<path class="ax-fb" d="M260 420 Q60 420 60 250 Q60 80 257 78" fill="none" stroke="#c62828" stroke-dasharray="8 6" marker-end="url(#axr)"/>
+<text x="40" y="460" font-size="12.5" fill="#c62828" font-weight="700">- - - negative feedback (line thickness = strength of the brake)</text></svg>`;
+el.innerHTML=`<div class="ctrl">${Object.entries(SC).map(([k,v])=>`<button data-s="${k}">${v[0]}</button>`).join("")}</div><div class="swipe">↔ Swipe sideways to see the whole diagram</div><div class="svgwrap"><figure>${svg}<figcaption>Hypothalamic-pituitary-adrenal axis, drawn by MedLearn. ↑ high, ↓ low, = normal.</figcaption></figure></div><div class="info" id="ax-info"></div>`;
+const q=s=>el.querySelector(s),seen=new Set();
+const set=k=>{const s=SC[k];seen.add(k);el.querySelectorAll("[data-s]").forEach(b=>b.classList.toggle("on",b.dataset.s==k));
+[["#ax-v1",s[1]],["#ax-v2",s[2]],["#ax-v3",s[3]]].forEach(([id,v])=>{const t=q(id);t.textContent=v;t.setAttribute("fill",C(v))});
+el.querySelectorAll(".ax-fb").forEach(p=>p.setAttribute("stroke-width",s[4]*2+0.5));
+el.querySelectorAll(".ax-x").forEach(g=>g.setAttribute("opacity",s[5].includes(g.dataset.x)?1:0));
+const atr=s[5].includes("atr")||s[5].includes("atr2");q("#ax-adr").setAttribute("fill",atr?"#eeeeee":"#fff6ee");q("#ax-adrt").textContent=s[5].includes("atr")?"shrinks (atrophy)":s[5].includes("atr2")?"other tissue shrinks":"zona fasciculata";
+q("#ax-info").innerHTML=`<b>${s[0]}:</b> corticotropin-releasing hormone ${s[1]}, adrenocorticotropic hormone ${s[2]}, cortisol ${s[3]}. ${s[6]}`;
+if(seen.size==Object.keys(SC).length)complete("f2-axis",15,"🔄 All axis patterns explored! +15 XP")};
+{const w=el.querySelector(".svgwrap");requestAnimationFrame(()=>{w.scrollLeft=(w.scrollWidth-w.clientWidth)/2})}
+el.querySelectorAll("[data-s]").forEach(b=>b.onclick=()=>set(b.dataset.s));set(SC[el.dataset.start]?el.dataset.start:"normal")};
+
+W.circadian=el=>{
+const X=h=>60+h*25,Y=v=>250-v*200;
+const base=h=>{const pk=h<=7.5?0.85*Math.exp(-Math.pow((h-7.5)/2,2)):0.85*Math.exp(-(h-7.5)/4.5);return 0.07+pk+0.06*Math.exp(-Math.pow((h-12.5)/0.7,2))+0.02*Math.sin(h*4.2)};
+const cush=h=>Math.max(base(h),0.47+0.02*Math.sin(h*3));
+const hc=h=>{const b=(t,a)=>h>=t?a*(h-t)/1.2*Math.exp(1-(h-t)/1.2):0;return 0.03+b(7,0.95)+b(12,0.45)+b(17,0.3)};
+const path=f=>{let d="";for(let h=0;h<=24.001;h+=0.25)d+=(d?"L":"M")+X(h).toFixed(1)+" "+Y(f(h)).toFixed(1);return d};
+const P=[[4.5,"4–5 a.m.: rising","Cortisol is lowest around midnight and starts climbing in the early morning hours, before you wake."],
+[7.5,"Waking: the peak","Highest about 30–45 minutes after waking (the cortisol awakening response). Morning blood cortisol is used to screen for adrenal insufficiency."],
+[12.5,"Noon","Falling through the day, with small pulses and a bump around meals. The hormone is released in bursts (pulsatile), not as a smooth stream."],
+[17,"Late afternoon","Lower again. Hydrocortisone replacement copies this shape: the largest dose on waking, smaller doses later, none at bedtime."],
+[23,"11 p.m. / midnight: the lowest point","Normally almost nothing. A high late-night saliva cortisol means the evening fall is lost, an early sign of Cushing syndrome."]];
+const svg=`<svg viewBox="0 0 700 300" style="width:100%" role="img" aria-label="Daily cortisol rhythm"><rect x="${X(0)}" y="45" width="${X(7)-X(0)}" height="205" fill="#eef1fb"/><rect x="${X(23)}" y="45" width="${X(24)-X(23)}" height="205" fill="#eef1fb"/><text x="${X(3.5)}" y="62" text-anchor="middle" font-size="12" fill="#55639a">sleep</text>
+<line x1="60" y1="250" x2="660" y2="250" stroke="#444" stroke-width="2"/><line x1="60" y1="40" x2="60" y2="250" stroke="#444" stroke-width="2"/>
+${[[0,"midnight"],[6,"6 a.m."],[12,"noon"],[18,"6 p.m."],[24,"midnight"]].map(([h,l])=>`<text x="${X(h)}" y="270" text-anchor="middle" font-size="12">${l}</text>`).join("")}
+<text x="22" y="150" text-anchor="middle" font-size="12" transform="rotate(-90 22 150)">cortisol (schematic, no units)</text>
+<path id="ci-c" d="${path(cush)}" fill="none" stroke="#c62828" stroke-width="2.5" stroke-dasharray="7 5" opacity="0"/>
+<path id="ci-h" d="${path(hc)}" fill="none" stroke="#2f6fdb" stroke-width="2.5" stroke-dasharray="3 4" opacity="0"/>
+<path d="${path(base)}" fill="none" stroke="#0f8b8d" stroke-width="3.5"/>
+${P.map((p,i)=>`<circle class="ci-p" data-i="${i}" cx="${X(p[0])}" cy="${Y(base(p[0]))}" r="9" fill="#fff" stroke="#0f8b8d" stroke-width="3" style="cursor:pointer"/>`).join("")}
+<g id="ci-leg" font-size="12"><line x1="420" y1="20" x2="450" y2="20" stroke="#0f8b8d" stroke-width="3.5"/><text x="455" y="24">healthy person</text></g></svg>`;
+el.innerHTML=`<div class="ctrl">${P.map((p,i)=>`<button data-i="${i}">${p[1].split(":")[0]}</button>`).join("")}</div><div class="ctrl"><label><input type="checkbox" id="ci-tc"> Cushing syndrome: lost evening fall (red)</label> <label><input type="checkbox" id="ci-th"> Hydrocortisone tablets, 3 doses (blue)</label></div><div class="swipe">↔ Swipe sideways to see the whole diagram</div><div class="svgwrap"><figure>${svg}<figcaption>Daily cortisol rhythm, drawn by MedLearn. Shape only; real values vary between people and laboratories.</figcaption></figure></div><div class="info" id="ci-info">Click a point on the curve or a button.</div>`;
+const seen=new Set(),q=s=>el.querySelector(s);
+const show=i=>{seen.add(i);el.querySelectorAll(".ci-p").forEach(c=>c.setAttribute("fill",c.dataset.i==i?"#0f8b8d":"#fff"));el.querySelectorAll(".ctrl button").forEach(b=>b.classList.toggle("on",b.dataset.i==i));
+q("#ci-info").innerHTML=`<b>${P[i][1]}.</b> ${P[i][2]}`;if(seen.size==P.length)complete("f3-circ",10,"🕰️ Rhythm understood! +10 XP")};
+el.querySelectorAll("[data-i]").forEach(b=>b.addEventListener("click",()=>show(+b.dataset.i)));
+q("#ci-tc").onchange=e=>{q("#ci-c").setAttribute("opacity",e.target.checked?1:0);if(e.target.checked)q("#ci-info").innerHTML="<b>Cushing syndrome:</b> the morning value may look normal, but the evening fall is lost. That is why late-night saliva cortisol is a screening test."};
+q("#ci-th").onchange=e=>{q("#ci-h").setAttribute("opacity",e.target.checked?1:0);if(e.target.checked)q("#ci-info").innerHTML="<b>Hydrocortisone replacement:</b> each tablet gives a peak and then falls (plasma half-life about 1.5 hours). The biggest dose is on waking; no dose at night. It can only roughly copy the natural curve."}};
+
+W.dextest=el=>{
+const P={hea:["Healthy person",.5,"normal",.05,.03,"Suppressed: normal feedback. Cushing syndrome is unlikely.","Suppressed (not needed)."],
+cd:["Cushing disease (pituitary tumour)",.85,"normal or high",.7,.3,"Not suppressed → Cushing syndrome confirmed; now find the cause.","Falls by more than half: the pituitary tumour still obeys a strong brake → points to Cushing disease."],
+ect:["Ectopic adrenocorticotropic hormone (lung tumour)",1,"very high",1,.97,"Not suppressed → Cushing syndrome.","No fall: the tumour ignores feedback → ectopic source (confirm with imaging or pituitary vein sampling)."],
+adr:["Adrenal tumour making cortisol",.8,"low (suppressed)",.8,.8,"Not suppressed → Cushing syndrome.","No fall: the tumour does not depend on adrenocorticotropic hormone. A low adrenocorticotropic hormone already pointed here."],
+pill:["Healthy woman on the combined pill",.65,"normal",.2,.08,"FALSE POSITIVE: oestrogen raises cortisol-binding globulin, so total cortisol looks too high.","Not needed. Repeat the test off the pill (about 6 weeks) or use saliva cortisol."],
+carb:["Healthy person on carbamazepine",.5,"normal",.3,.12,"FALSE POSITIVE: carbamazepine induces cytochrome P450 3A4, which breaks down the dexamethasone too fast.","Not useful. Measure the dexamethasone level or use another test."]};
+const svg=`<svg viewBox="0 0 560 260" style="width:100%"><line x1="50" y1="220" x2="550" y2="220" stroke="#444" stroke-width="2"/>
+<rect id="dx-b" x="80" width="90" fill="#0f8b8d"/><rect id="dx-a" x="210" width="90" fill="#7b3fc4"/>
+<text x="125" y="240" text-anchor="middle" font-size="13">before</text><text id="dx-al" x="255" y="240" text-anchor="middle" font-size="13">after</text>
+<line x1="50" y1="${220-0.12*190}" x2="550" y2="${220-0.12*190}" stroke="#c62828" stroke-width="2" stroke-dasharray="6 4"/><text x="548" y="${190-0.12*190}" text-anchor="end" font-size="11.5" fill="#c62828">cut-off after 1 mg:</text><text x="548" y="${204-0.12*190}" text-anchor="end" font-size="11.5" fill="#c62828">50 nmol/L (1.8 µg/dl)</text>
+<text x="0" y="0" font-size="12" text-anchor="middle" transform="translate(28 120) rotate(-90)">cortisol (schematic)</text></svg>`;
+el.innerHTML=`<div class="ctrl">${Object.entries(P).map(([k,v])=>`<button data-p="${k}">${v[0]}</button>`).join("")}</div><div class="ctrl"><button data-d="lo" class="on">Low dose (1 mg overnight)</button><button data-d="hi">High dose (8 mg)</button></div><div style="max-width:600px"><figure>${svg}</figure></div><div class="info" id="dx-info">Pick a patient.</div>`;
+let pk="hea",dk="lo";const seen=new Set(),q=s=>el.querySelector(s);
+const bar=(r,v)=>{r.setAttribute("y",220-v*190);r.setAttribute("height",v*190)};
+const run=()=>{const p=P[pk];seen.add(pk);bar(q("#dx-b"),p[1]);bar(q("#dx-a"),dk=="lo"?p[3]:p[4]);q("#dx-al").textContent=dk=="lo"?"after 1 mg":"after 8 mg";
+el.querySelectorAll("[data-p]").forEach(b=>b.classList.toggle("on",b.dataset.p==pk));el.querySelectorAll("[data-d]").forEach(b=>b.classList.toggle("on",b.dataset.d==dk));
+q("#dx-info").innerHTML=`<b>${p[0]}</b> · adrenocorticotropic hormone: <b>${p[2]}</b><br>${dk=="lo"?"Low dose: "+p[5]:"High dose: "+p[6]}`;if(seen.size==6)complete("f5-dex",15,"💊 Dexamethasone logic mastered! +15 XP")};
+el.querySelectorAll("[data-p]").forEach(b=>b.onclick=()=>{pk=b.dataset.p;run()});el.querySelectorAll("[data-d]").forEach(b=>b.onclick=()=>{dk=b.dataset.d;run()});run()};
+
+/* ===== Subsection 9 widgets: receptor, actions, potency, CUSHINGOID, taper ===== */
+W.grcell=el=>{
+const S=[["Steroid enters","Glucocorticoids are fat-soluble, so they pass through the cell membrane without a surface receptor (only the free fraction can)."],
+["Binds the receptor","In the cytoplasm the glucocorticoid receptor is held inactive by heat-shock proteins. Binding the steroid releases them."],
+["Moves to the nucleus","The steroid–receptor complex moves into the nucleus."],
+["Transactivation: genes ON","Pairs of receptors bind glucocorticoid response elements on DNA and switch genes ON: for example annexin-1 (anti-inflammatory) and gluconeogenesis enzymes. This drives many metabolic side effects."],
+["Transrepression: genes OFF","Single receptors grab nuclear factor kappa B and activator protein 1, switching OFF inflammatory genes (cytokines, cyclooxygenase-2). This is the main anti-inflammatory effect."],
+["Effect after hours","New messenger RNA and proteins are made, so the main effect starts after hours. That is why the biological half-life is much longer than the plasma half-life."]];
+const V=(n,s)=>`opacity="${n.includes(s)?1:Math.max(...n)<s?.45:.1}"`;
+const svg=st=>`<svg viewBox="0 0 700 320" style="width:100%" role="img" aria-label="Glucocorticoid receptor mechanism"><defs>${MK("gra","#444")}</defs>
+<rect x="110" y="20" width="580" height="290" rx="40" fill="#fffaf0" stroke="#b5651d" stroke-width="4"/><text x="130" y="44" font-size="12" font-weight="700" fill="#b5651d">cell membrane</text>
+<circle cx="540" cy="165" r="120" fill="#f3ecff" stroke="#7b3fc4" stroke-width="3"/><text x="540" y="62" text-anchor="middle" font-size="12" font-weight="700" fill="#5a2a99">NUCLEUS</text>
+<path d="M440 210 q15 -14 30 0 t30 0 t30 0 t30 0 t30 0 t30 0" fill="none" stroke="#555" stroke-width="3"/><text x="450" y="236" font-size="11">DNA</text>
+<rect x="455" y="198" width="90" height="22" rx="4" fill="#ffe9a8" stroke="#a37800" ${V([3,4],st)}/><text x="500" y="213" text-anchor="middle" font-size="9.5" ${V([3,4],st)}>response element</text>
+<g ${V([0],st)}><polygon points="40,160 55,150 70,160 70,178 55,188 40,178" fill="#0f8b8d"/><text x="55" y="210" text-anchor="middle" font-size="11">steroid</text><line x1="72" y1="169" x2="150" y2="169" stroke="#444" stroke-width="3" marker-end="url(#gra)"/></g>
+<g ${V([1],st)}><rect x="160" y="140" width="90" height="56" rx="10" fill="#e3f1ff" stroke="#2f6fdb" stroke-width="2"/><text x="205" y="165" text-anchor="middle" font-size="11" font-weight="700">glucocorticoid</text><text x="205" y="179" text-anchor="middle" font-size="11" font-weight="700">receptor</text>
+<circle cx="170" cy="210" r="13" fill="#ddd" stroke="#888"/><circle cx="240" cy="214" r="13" fill="#ddd" stroke="#888"/><text x="205" y="244" text-anchor="middle" font-size="11">heat-shock proteins fall off</text><polygon points="190,124 202,116 214,124 214,138 202,146 190,138" fill="#0f8b8d"/></g>
+<g ${V([2],st)}><line x1="252" y1="168" x2="410" y2="168" stroke="#444" stroke-width="3" marker-end="url(#gra)"/><text x="330" y="158" text-anchor="middle" font-size="11">complex moves in</text></g>
+<g ${V([3],st)}><rect x="470" y="160" width="60" height="30" rx="6" fill="#e3f1ff" stroke="#2f6fdb"/><text x="500" y="179" text-anchor="middle" font-size="10">pair</text><line x1="530" y1="175" x2="600" y2="120" stroke="#1f9d55" stroke-width="3" marker-end="url(#gra)"/><text x="600" y="108" text-anchor="middle" font-size="11" font-weight="700" fill="#1f9d55">genes ON</text></g>
+<g ${V([4],st)}><rect x="575" y="230" width="85" height="30" rx="6" fill="#ffe1e1" stroke="#c62828"/><text x="617" y="243" text-anchor="middle" font-size="9">nuclear factor</text><text x="617" y="255" text-anchor="middle" font-size="9">kappa B</text><text x="617" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#c62828">inflammation OFF</text><line x1="530" y1="220" x2="572" y2="242" stroke="#c62828" stroke-width="3"/></g>
+<g ${V([5],st)}><text x="300" y="290" text-anchor="middle" font-size="12" font-weight="700">⏱ new proteins → effect after hours</text></g></svg>`;
+el.innerHTML=`<div class="ctrl">${S.map((s,i)=>`<button data-i="${i}">${i+1}. ${s[0]}</button>`).join("")}</div><div class="swipe">↔ Swipe sideways to see the whole diagram</div><div class="svgwrap"><figure id="gr-f"></figure></div><div class="info" id="gr-info"></div>`;
+const seen=new Set();const go=i=>{seen.add(i);el.querySelector("#gr-f").innerHTML=svg(i)+`<figcaption>Glucocorticoid receptor, drawn by MedLearn (schematic).</figcaption>`;el.querySelectorAll("[data-i]").forEach(b=>b.classList.toggle("on",+b.dataset.i==i));
+el.querySelector("#gr-info").innerHTML=`<b>Step ${i+1}: ${S[i][0]}.</b> ${S[i][1]}`;if(seen.size==S.length)complete("g1-gr",10,"🧬 Mechanism followed! +10 XP")};
+el.querySelectorAll("[data-i]").forEach(b=>b.onclick=()=>go(+b.dataset.i));go(0)};
+
+W.actions=el=>{
+const A=[["🍬 Metabolism","Raises blood glucose: gluconeogenesis, less glucose uptake in muscle and fat; breaks down protein and fat for fuel.","Steroid-induced diabetes; muscle wasting; central fat.","Low blood glucose, especially in children and during fasting."],
+["🛡️ Immune system","Switches off inflammation; fewer lymphocytes and eosinophils, more neutrophils in blood.","Infections (including unusual ones), poor wound healing, masked fever.","Unchecked inflammation; high eosinophils."],
+["❤️ Heart and vessels","Permissive: lets noradrenaline and angiotensin II tighten vessels; keeps blood pressure up.","High blood pressure; fluid retention (more with hydrocortisone).","Low blood pressure; shock in a crisis that does not respond to fluids alone."],
+["🦴 Bone and muscle","Less bone formation, less calcium absorbed from the gut.","Osteoporosis, fractures, avascular necrosis of the hip, proximal muscle weakness.","Weakness and fatigue."],
+["🧠 Brain","Mood, alertness, sleep–wake timing.","Insomnia, euphoria, depression, steroid psychosis.","Fatigue, low mood, poor concentration."],
+["👁️ Eye","Raises eye pressure in some people; lens changes.","Glaucoma, cataract (posterior subcapsular).","—"],
+["🩸 Stomach","Less protective prostaglandin.","Peptic ulcer risk, mainly when combined with anti-inflammatory painkillers.","Nausea, abdominal pain (in adrenal insufficiency)."],
+["🧒 Growth","Inhibits growth hormone action and growth plates.","Poor growth in children on long courses.","—"]];
+el.innerHTML=`<div class="ctrl">${A.map((a,i)=>`<button data-i="${i}">${a[0]}</button>`).join("")}</div><div class="info" id="ac-info">Pick a system.</div>`;const seen=new Set();
+el.querySelectorAll("[data-i]").forEach(b=>b.onclick=()=>{const a=A[+b.dataset.i];seen.add(b.dataset.i);el.querySelectorAll("[data-i]").forEach(x=>x.classList.toggle("on",x==b));
+el.querySelector("#ac-info").innerHTML=`<table><tr><th>${a[0]}</th><th>Too much (Cushing / steroid side effect)</th><th>Too little (adrenal insufficiency)</th></tr><tr><td>${a[1]}</td><td>${a[2]}</td><td>${a[3]}</td></tr></table>`;if(seen.size==A.length)complete("g2-act",10,"🫀 All systems explored! +10 XP")})};
+
+W.potency=el=>{
+const D=[["Hydrocortisone",1,"1",1,20,"short","8–12 h","about 1.5 h","Replacement in adrenal insufficiency; emergency injection in crisis."],
+["Prednisolone",4,"0.8",0.8,5,"intermediate","12–36 h","about 2–3.5 h","Most common anti-inflammatory tablet."],
+["Methylprednisolone",5,"0.5",0.5,4,"intermediate","12–36 h","about 2–3 h","High-dose intravenous pulses (e.g. multiple sclerosis relapse)."],
+["Dexamethasone",27,"25–30",0.02,0.75,"long","36–72 h","about 3–5 h","Brain swelling, nausea in chemotherapy, fetal lungs, suppression test; almost no salt effect."],
+["Fludrocortisone",10,"10",150,null,"intermediate","12–36 h","about 3.5 h","Salt replacement in primary adrenal insufficiency (125–250 times the mineralocorticoid effect of hydrocortisone; sources differ)."]];
+const bar=(v,m,c)=>`<span class="pbar"><i style="width:${Math.max(3,Math.min(100,Math.log10(v*10+1)/Math.log10(m*10+1)*100))}%;background:${c}"></i></span>`;
+el.innerHTML=`<div class="tblwrap"><table class="ptab"><tr><th>Drug</th><th>Anti-inflammatory (glucocorticoid) potency</th><th>Salt-retaining (mineralocorticoid) potency</th><th>Equivalent dose</th><th>Biological half-life</th><th>Plasma half-life</th></tr>
+${D.map(d=>`<tr><td><b>${d[0]}</b><br><small>${d[8]}</small></td><td>${d[1]==27?"25–30":d[1]} ${bar(d[1],30,"#2f6fdb")}</td><td>${d[0]=="Fludrocortisone"?"125–250":d[0]=="Dexamethasone"?"≈ 0":d[2]} ${bar(d[3],250,"#d9730d")}</td><td>${d[4]?d[4]+" mg":"not used for its glucocorticoid effect"}</td><td>${d[6]} <small>(${d[5]})</small></td><td>${d[7]}</td></tr>`).join("")}</table></div>
+<p class="hint">💡 Bars use a log scale. Values are relative to hydrocortisone = 1 and are approximate (Goodman and Gilman; British National Formulary); textbooks differ slightly.</p>
+<div class="ctrl"><b>Dose converter:</b> <input id="po-n" type="number" min="0" step="0.5" value="20" style="width:70px"> mg of <select id="po-d">${D.slice(0,4).map((d,i)=>`<option value="${i}">${d[0]}</option>`).join("")}</select></div><div class="info" id="po-info"></div>`;
+const q=s=>el.querySelector(s),f=x=>Math.round(x*100)/100;let n=0;
+const calc=()=>{const v=+q("#po-n").value,i=+q("#po-d").value,eq=v/D[i][4];q("#po-info").innerHTML=`${v} mg ${D[i][0].toLowerCase()} ≈ `+D.slice(0,4).filter((d,j)=>j!=i).map(d=>`<b>${f(eq*d[4])} mg</b> ${d[0].toLowerCase()}`).join(" ≈ ")+` (anti-inflammatory effect only). Fludrocortisone has no glucocorticoid equivalent.`;if(++n>=3)complete("g3-pot",10,"⚖️ Potency converter used! +10 XP")};
+q("#po-n").oninput=calc;q("#po-d").onchange=calc;calc()};
+
+W.mnemonic=el=>{
+const M=[["C","Cataracts (and glaucoma)","Eye check if long-term or symptoms."],["U","Ulcers (peptic)","Stomach protection (a proton pump inhibitor) if also on anti-inflammatory painkillers or other risks."],["S","Skin: thin, bruising, stretch marks, acne; poor wound healing","Lowest dose, shortest time; skin, inhaled or joint forms where possible."],["H","Hypertension and fluid retention","Check blood pressure."],["I","Infections (immunosuppression)","Warn about infection signs; check tuberculosis and hepatitis B risk before long high-dose courses; consider vaccines."],["N","Necrosis of bone (avascular, often the hip)","Ask about new hip or groin pain; arrange imaging."],["G","Glucose high (steroid diabetes)","Check glucose, ideally in the afternoon."],["O","Osteoporosis","Bone protection (e.g. bisphosphonate, calcium and vitamin D) if prednisolone 7.5 mg or more for 3 months or more (United Kingdom guidance)."],["I","Insomnia and mood changes","Give the dose in the morning; ask about mood, sleep and psychosis."],["D","Diminished own cortisol (adrenal suppression)","Steroid card, sick-day rules, never stop suddenly after long courses."]];
+el.innerHTML=`<div class="mtiles">${M.map((m,i)=>`<button class="mtile" data-i="${i}"><span class="ml">${m[0]}</span><span class="mt" hidden><b>${m[1]}</b><br><small>🛡️ ${m[2]}</small></span></button>`).join("")}</div><div class="info" id="mn-info">Tap each letter. 0/${M.length} revealed.</div>`;
+const seen=new Set();el.querySelectorAll(".mtile").forEach(b=>b.onclick=()=>{b.classList.add("open");b.querySelector(".mt").hidden=false;seen.add(b.dataset.i);
+el.querySelector("#mn-info").textContent=seen.size==M.length?"🏆 CUSHINGOID complete!":`${seen.size}/${M.length} revealed.`;if(seen.size==M.length)complete("g4-mn",15,"🔤 CUSHINGOID mastered! +15 XP")})};
+
+W.taper=el=>{
+const P=[["1. High dose","The disease is being controlled. Taper as fast as the disease allows (the disease decides here, not the adrenal gland)."],
+["2. Approaching physiological","Near prednisolone 5–7.5 mg a day (about the body's own cortisol output) the adrenal gland becomes the limit. Slow the taper down, e.g. small steps every few weeks (illustrative only: follow the prescriber's plan)."],
+["3. At physiological dose: test","Around prednisolone 4–5 mg (or switched to hydrocortisone), a morning cortisol can be checked, taken before the dose (about 24 hours after the last prednisolone dose). Pick the result:"],
+["4. Stop","Once recovery is shown, the steroid can stop. Until then: steroid card, sick-day rules and an emergency injection plan."]];
+const R=[["more than about 300 nmol/L (10 µg/dl)","Axis recovered: the steroid can be stopped. ✅"],["about 150–300 nmol/L","Partly recovered: keep the physiological dose, recheck in weeks to months (or do a stimulation test)."],["less than about 150 nmol/L (5 µg/dl)","Still suppressed: continue the physiological dose with sick-day rules and retest in a few months."]];
+el.innerHTML=`<div class="ctrl">${P.map((p,i)=>`<button data-i="${i}">${p[0]}</button>`).join("")}</div><div class="info" id="tp-info">Start with phase 1.</div><div class="ctrl" id="tp-r" hidden>${R.map((r,i)=>`<button data-r="${i}">${r[0]}</button>`).join("")}</div><div class="info" id="tp-ri" hidden></div>
+<div class="ctrl"><button id="tp-unwell">😣 Feeling unwell during the taper?</button></div><p class="hint">💡 Thresholds are from the 2024 European Society of Endocrinology and Endocrine Society guideline and depend on the laboratory test; this is a teaching example, not a dosing plan.</p>`;
+const q=s=>el.querySelector(s),seen=new Set();
+el.querySelectorAll("[data-i]").forEach(b=>b.onclick=()=>{const i=+b.dataset.i;seen.add("p"+i);el.querySelectorAll("[data-i]").forEach(x=>x.classList.toggle("on",x==b));q("#tp-info").innerHTML=`<b>${P[i][0]}:</b> ${P[i][1]}`;q("#tp-r").hidden=i!=2;q("#tp-ri").hidden=true;chk()});
+el.querySelectorAll("[data-r]").forEach(b=>b.onclick=()=>{seen.add("r"+b.dataset.r);el.querySelectorAll("[data-r]").forEach(x=>x.classList.toggle("on",x==b));q("#tp-ri").hidden=false;q("#tp-ri").innerHTML=R[+b.dataset.r][1];chk()});
+q("#tp-unwell").onclick=()=>{q("#tp-info").innerHTML="<b>Three possibilities:</b> (1) the disease is flaring up again; (2) adrenal insufficiency (tiredness, nausea, dizziness, low blood pressure) → check morning cortisol and give stress doses if ill; (3) steroid withdrawal syndrome: aches, low mood, tiredness with an adequate dose → temporarily go back to the last dose and taper more slowly."};
+const chk=()=>{if(seen.size>=7)complete("g6-taper",15,"📉 Taper planned! +15 XP")}};
+
+/* ===== Subsections 7–9: small learning games ===== */
+const XO={
+axis:{t:"Put the axis in order",items:["Waking or stress signals reach the hypothalamus","Hypothalamus releases corticotropin-releasing hormone","It travels down the portal veins to the anterior pituitary","Corticotroph cells release adrenocorticotropic hormone","It binds the melanocortin 2 receptor in the zona fasciculata","Cortisol is made and released into the blood","Cortisol brakes the pituitary and hypothalamus (negative feedback)"]},
+liver:{t:"Put the route out of the body in order",items:["Free cortisol reaches the liver","A-ring reduction (5-alpha/5-beta-reductase)","Tetrahydrocortisol: now inactive","Glucuronic acid is attached (conjugation)","Water-soluble glucuronide enters the blood","The kidney excretes it in urine"]}};
+const XS={
+m7:["Spot the error",[["Cortisone itself is almost inactive at the glucocorticoid receptor.",1],["Liquorice blocks 11-beta-hydroxysteroid dehydrogenase type 1 in the liver.",0,"Wrong: liquorice blocks <b>type 2</b> (kidney), so cortisol reaches the mineralocorticoid receptor."],["Rifampicin speeds up the breakdown of glucocorticoids.",1],["Urinary free cortisol reflects the free (unbound) cortisol in blood.",1]]],
+m8:["Spot the error",[["Cortisol is highest shortly after waking.",1],["In Cushing disease, 8 mg dexamethasone usually lowers cortisol by more than half.",1],["In primary adrenal insufficiency, adrenocorticotropic hormone is low.",0,"Wrong: with the adrenal damaged there is no cortisol brake, so adrenocorticotropic hormone is <b>high</b> (hence pigmentation)."],["The combined pill can make the 1 mg overnight test look abnormal.",1]]],
+m9:["Spot the error",[["Dexamethasone has almost no salt-retaining effect.",1],["Long-term prednisolone can switch off the patient's own adrenal axis.",1],["After 1 year of prednisolone it is safe to stop all at once if the patient feels well.",0,"Wrong: after long courses the axis is suppressed. Stopping suddenly risks <b>adrenal crisis</b>; taper and check recovery."],["Steroid-induced osteoporosis starts within the first months.",1]]]};
+const XT={m7:"halflife,aring,glucur,cyp3a4,ufc,cortisone,hsd11b1,hsd11b2,liquorice,ame,placbar,inducer",
+m8:"crh,acth,pvn,portal,corticotroph,negfb,circadian,pulsatile,dst,hddst,cushdis,ectopic,pseudocush",
+m9:"gr,hsp,gre,transact,transrep,gneo,permis,iatro,avn,myop,gcsup,gws,physdose,taper,card,sickday"};
+const XP_=[["A 35-year-old with Addison disease needs daily replacement that mimics the body's own rhythm.","Hydrocortisone","Identical to cortisol and short-acting, so 2–3 doses can copy the daily curve (plus fludrocortisone for salt)."],
+["A woman with a brain tumour has severe swelling around it.","Dexamethasone","Very potent, long-acting and almost no salt or water retention, which would worsen swelling."],
+["An adult with a severe asthma attack needs 5 days of tablets.","Prednisolone","The standard oral anti-inflammatory steroid; a short course under about 3 weeks needs no taper."],
+["A patient with a multiple sclerosis relapse needs high-dose intravenous pulses for 3 days.","Methylprednisolone","The usual intravenous pulse steroid, with little salt effect."],
+["A patient with primary adrenal insufficiency is dizzy on standing, sodium is low and renin is high despite hydrocortisone.","Fludrocortisone","High renin means mineralocorticoid (aldosterone) is missing: replace it with fludrocortisone."],
+["A pregnant woman at 30 weeks is in preterm labour.","Dexamethasone","Dexamethasone (or betamethasone) escapes placental type 2 inactivation and matures the baby's lungs."],
+["A man on long-term prednisolone vomits, is confused and has low blood pressure in the emergency department.","Hydrocortisone","Adrenal crisis: 100 mg intravenous or intramuscular hydrocortisone at once, then fluids. Its salt effect at high dose also helps."]];
+const shuf=a=>{const b=a.map((x,i)=>[x,i]);for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}if(b.every((x,i)=>x[1]==i)&&b.length>1)[b[0],b[1]]=[b[1],b[0]];return b};
+W.order=el=>{const D=XO[el.dataset.set];let next=0,mist=0;const sh=shuf(D.items);
+el.innerHTML=`<div class="xgame"><b>🎮 ${D.t}</b> <small>(tap the steps in the right order)</small><ol class="xord"></ol><div class="xchips">${sh.map(([t,i])=>`<button class="xchip" data-i="${i}">${t}</button>`).join("")}</div><div class="info xo-info">Tap the first step.</div><button class="xreset">↺ Shuffle again</button></div>`;
+const info=el.querySelector(".xo-info"),ol=el.querySelector(".xord");
+el.querySelectorAll(".xchip").forEach(b=>b.onclick=()=>{if(+b.dataset.i==next){b.remove();ol.insertAdjacentHTML("beforeend",`<li>${D.items[next]}</li>`);next++;info.textContent=next==D.items.length?`🏆 Perfect order${mist?` (${mist} slip${mist>1?"s":""} on the way)`:""}!`:"✅ Yes. Next step?";if(next==D.items.length)complete("x-ord-"+el.dataset.set,10,"🧩 Sequence complete! +10 XP")}
+else{mist++;b.classList.add("shake");setTimeout(()=>b.classList.remove("shake"),400);info.textContent="❌ Not yet. What has to happen first?"}});
+el.querySelector(".xreset").onclick=()=>W.order(el)};
+W.spot=el=>{const [t,S]=XS[el.dataset.set];
+el.innerHTML=`<div class="xgame"><b>🔎 ${t}</b> <small>(one statement is wrong: tap it)</small>${S.map((s,i)=>`<button class="xstate" data-i="${i}">${s[0]}</button>`).join("")}<div class="info xs-info">Which one is wrong?</div></div>`;
+const info=el.querySelector(".xs-info");el.querySelectorAll(".xstate").forEach(b=>b.onclick=()=>{const s=S[+b.dataset.i];
+if(s[1]){b.classList.add("ok");info.innerHTML="✔️ That one is true. Keep looking."}else{b.classList.add("bad");el.querySelectorAll(".xstate").forEach(x=>x.disabled=true);info.innerHTML="🎯 Found it! "+s[2];complete("x-spot-"+el.dataset.set,10,"🔎 Error spotted! +10 XP")}})};
+W.termdeck=el=>{const K=XT[el.dataset.set].split(",").filter(k=>GLOSSARY[k]);let q=[...K],i=0,known=0;
+el.innerHTML=`<div class="xgame"><b>🃏 Key terms deck</b> <small>(tap the card to flip)</small><button class="xcard"><span class="xf"></span></button><div class="ctrl"><button class="xa">🔁 Again</button><button class="xg">✅ Got it</button></div><div class="info xt-info"></div></div>`;
+const c=el.querySelector(".xcard"),f=el.querySelector(".xf"),inf=el.querySelector(".xt-info");let back=false;
+const show=()=>{back=false;c.classList.remove("back");const g=GLOSSARY[q[i]];f.innerHTML=`<b class="t-${g.c}">${g.l}</b>`;inf.textContent=`${known}/${K.length} known · ${q.length} left in the deck`};
+c.onclick=()=>{back=!back;c.classList.toggle("back",back);const g=GLOSSARY[q[i]];f.innerHTML=back?`<small>${g.d}</small>`:`<b class="t-${g.c}">${g.l}</b>`};
+el.querySelector(".xa").onclick=()=>{q.push(q.splice(i,1)[0]);show()};
+el.querySelector(".xg").onclick=()=>{q.splice(i,1);known++;if(!q.length){f.innerHTML="🏆 Deck finished!";inf.textContent=`${known}/${K.length} known`;c.onclick=null;el.querySelectorAll(".ctrl button").forEach(b=>b.disabled=true);complete("x-deck-"+el.dataset.set,10,"🃏 Deck finished! +10 XP");return}if(i>=q.length)i=0;show()};show()};
+W.pick=el=>{const O=["Hydrocortisone","Prednisolone","Methylprednisolone","Dexamethasone","Fludrocortisone"];let n=0,right=0;
+const draw=()=>{if(n>=XP_.length){el.innerHTML=`<div class="xgame"><b>💊 Which steroid would you pick?</b><div class="info">🏆 Done: ${right}/${XP_.length} right first time.</div><button class="xreset">↺ Play again</button></div>`;el.querySelector(".xreset").onclick=()=>{n=0;right=0;draw()};complete("x-pick",15,"💊 Steroid picker done! +15 XP");return}
+const s=XP_[n];let first=true;el.innerHTML=`<div class="xgame"><b>💊 Which steroid would you pick?</b> <small>(${n+1}/${XP_.length})</small><p class="xscen">${s[0]}</p><div class="ctrl">${O.map(o=>`<button data-o="${o}">${o}</button>`).join("")}</div><div class="info xp-info">Pick one.</div></div>`;
+el.querySelectorAll("[data-o]").forEach(b=>b.onclick=()=>{const inf=el.querySelector(".xp-info");if(b.dataset.o==s[1]){if(first)right++;b.classList.add("right");el.querySelectorAll("[data-o]").forEach(x=>x.disabled=true);inf.innerHTML=`✅ <b>${s[1]}.</b> ${s[2]} <button class="xnext">Next ▶</button>`;inf.querySelector(".xnext").onclick=()=>{n++;draw()}}else{first=false;b.classList.add("wrong");b.disabled=true;inf.textContent="❌ Think about potency, salt effect and how long it lasts."}})};draw()};
+/* place the games in the cards */
+{const add=(Lx,id,h)=>{const c=Lx.cards.find(c=>c.id==id);if(c)c.html+=h};
+add(M7,"e2",`<div data-widget="order" data-set="liver"></div>`);
+add(M7,"e6",`<div data-widget="spot" data-set="m7"></div><div data-widget="termdeck" data-set="m7"></div>`);
+add(M8,"f1",`<div data-widget="order" data-set="axis"></div>`);
+add(M8,"f5",`<div data-widget="spot" data-set="m8"></div><div data-widget="termdeck" data-set="m8"></div>`);
+add(M9,"g3",`<div data-widget="pick"></div>`);
+add(M9,"g6",`<div data-widget="spot" data-set="m9"></div><div data-widget="termdeck" data-set="m9"></div>`);}
 </script></body></html>
