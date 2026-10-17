@@ -31,6 +31,26 @@ Every image is an atlas-style realistic medical illustration. Do not put text, l
   - **Used in:** Module 5 clinical link for long-term glucocorticoid excess: the Cushing-like body shape that step 7 (card `c7`) links to cortisol-lowering drugs, and the side-effect picture of glucocorticoid therapy (round face, central weight gain, stretch marks).
   - **Prompt:** Textbook anatomical illustration, clean medical-atlas drawing style, not a photograph. Two panels on a plain off-white background. Main panel: a fully clothed adult in a plain fitted t-shirt and long trousers, standing in side view (profile), neutral calm expression, drawn respectfully and not as a caricature. Show a round, full face; a soft fat pad at the base of the back of the neck (upper back) clearly visible in profile; fullness above the collarbones; central fullness of the abdomen under the t-shirt; and comparatively thin arms and legs. Small separate panel: a close-up square of skin texture only (no body parts identifiable) showing a few wide purple-red stretch marks on thin skin. Soft even lighting, restrained natural colours. No bare torso, no underwear, no text, letters, numbers or labels anywhere.
 
+- [ ] **id:** `m5-liquorice-bp`
+  - **Save as:** `images/m5-liquorice-bp.png`
+  - **Used in:** Subsection 7, step 4 (card `e4`): liquorice blocks 11-beta-hydroxysteroid dehydrogenase type 2 and raises blood pressure. Planned placement: under "The scene", before the renin and aldosterone pattern table.
+  - **Prompt:** Clean, realistic still-life illustration on a plain light wooden table, soft natural daylight. A small white ceramic bowl filled with glossy black liquorice sweets (twisted ropes and small round pieces) stands next to a neatly folded upper-arm blood pressure cuff with its rubber bulb and tube. Calm, uncluttered composition, restrained colours, shallow depth of field. No dial numbers or readings visible, no screens, no people. No text, letters, numbers, brand names, logos or labels anywhere, including on the cuff and the sweets.
+
+- [ ] **id:** `m5-circadian-day`
+  - **Save as:** `images/m5-circadian-day.png`
+  - **Used in:** Subsection 8, step 3 (card `f3`): the daily cortisol rhythm (peak on waking, lowest at midnight). Planned placement: above the interactive daily rhythm curve.
+  - **Prompt:** Calm, friendly flat vector illustration in soft pastel colours on a plain off-white background. A large round clock face with no numbers and no hands sits in the centre, surrounded by four small scenes of the same fully clothed adult placed around the clock like a day cycle: top right, waking and stretching by a window at sunrise; bottom right, working at a desk in daylight; bottom left, relaxing on a sofa with a book in the evening light; top left, asleep in bed under a blanket at night with a crescent moon outside the window. A soft gradient ring around the clock goes from bright yellow (morning) to deep blue (night). Clean, simple, uncluttered. No text, letters, numbers or labels anywhere.
+
+- [ ] **id:** `m5-steroid-forms`
+  - **Save as:** `images/m5-steroid-forms.png`
+  - **Used in:** Subsection 9, step 3 (card `g3`): the many forms of steroid medicine (and why inhalers, creams and joint injections can still suppress the axis). Planned placement: above the steroid potency table.
+  - **Prompt:** Clean, realistic product-style illustration, top-down view on a plain white surface, soft even lighting. Neatly arranged in a row: a blister strip of small round white tablets, a plain grey-and-white metered-dose inhaler, a small plain white cream tube with its cap off, a small plain eye-drop bottle, and a small closed glass injection vial with a grey rubber stopper beside a capped syringe. Gentle shadows, restrained colours, uncluttered. No needles exposed, no people, no blood. No text, letters, numbers, brand names, logos or labels on any item.
+
+- [ ] **id:** `m5-steroid-skin-forearm`
+  - **Save as:** `images/m5-steroid-skin-forearm.png`
+  - **Used in:** Subsection 9, step 4 (card `g4`): the "S" of CUSHINGOID, thin skin and easy bruising after long-term steroids. Planned placement: after the CUSHINGOID tiles, before "Also remember".
+  - **Prompt:** Calm, atlas-style realistic medical illustration. Close-up of an older adult's forearm resting on a plain table, the sleeve of a knitted cardigan rolled up to just below the elbow. The skin is thin, smooth and slightly shiny, with a few flat purple-red bruises of different sizes on the back of the forearm and fine visible veins. No wounds, no bleeding, no torn skin, nothing graphic. Soft even daylight, muted natural colours, plain neutral background. No face visible, no jewellery with writing, no text, letters, numbers or labels anywhere.
+
 ---
 
 # CBL 5 illustration requests (case: adrenal insufficiency, Schmidt syndrome)

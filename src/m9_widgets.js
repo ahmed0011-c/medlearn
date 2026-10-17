@@ -1,0 +1,73 @@
+/* ===== Subsection 9 widgets: receptor, actions, potency, CUSHINGOID, taper ===== */
+W.grcell=el=>{
+const S=[["Steroid enters","Glucocorticoids are fat-soluble, so they pass through the cell membrane without a surface receptor (only the free fraction can)."],
+["Binds the receptor","In the cytoplasm the glucocorticoid receptor is held inactive by heat-shock proteins. Binding the steroid releases them."],
+["Moves to the nucleus","The steroid–receptor complex moves into the nucleus."],
+["Transactivation: genes ON","Pairs of receptors bind glucocorticoid response elements on DNA and switch genes ON: for example annexin-1 (anti-inflammatory) and gluconeogenesis enzymes. This drives many metabolic side effects."],
+["Transrepression: genes OFF","Single receptors grab nuclear factor kappa B and activator protein 1, switching OFF inflammatory genes (cytokines, cyclooxygenase-2). This is the main anti-inflammatory effect."],
+["Effect after hours","New messenger RNA and proteins are made, so the main effect starts after hours. That is why the biological half-life is much longer than the plasma half-life."]];
+const V=(n,s)=>`opacity="${n.includes(s)?1:Math.max(...n)<s?.45:.1}"`;
+const svg=st=>`<svg viewBox="0 0 700 320" style="width:100%" role="img" aria-label="Glucocorticoid receptor mechanism"><defs>${MK("gra","#444")}</defs>
+<rect x="110" y="20" width="580" height="290" rx="40" fill="#fffaf0" stroke="#b5651d" stroke-width="4"/><text x="130" y="44" font-size="12" font-weight="700" fill="#b5651d">cell membrane</text>
+<circle cx="540" cy="165" r="120" fill="#f3ecff" stroke="#7b3fc4" stroke-width="3"/><text x="540" y="62" text-anchor="middle" font-size="12" font-weight="700" fill="#5a2a99">NUCLEUS</text>
+<path d="M440 210 q15 -14 30 0 t30 0 t30 0 t30 0 t30 0 t30 0" fill="none" stroke="#555" stroke-width="3"/><text x="450" y="236" font-size="11">DNA</text>
+<rect x="455" y="198" width="90" height="22" rx="4" fill="#ffe9a8" stroke="#a37800" ${V([3,4],st)}/><text x="500" y="213" text-anchor="middle" font-size="9.5" ${V([3,4],st)}>response element</text>
+<g ${V([0],st)}><polygon points="40,160 55,150 70,160 70,178 55,188 40,178" fill="#0f8b8d"/><text x="55" y="210" text-anchor="middle" font-size="11">steroid</text><line x1="72" y1="169" x2="150" y2="169" stroke="#444" stroke-width="3" marker-end="url(#gra)"/></g>
+<g ${V([1],st)}><rect x="160" y="140" width="90" height="56" rx="10" fill="#e3f1ff" stroke="#2f6fdb" stroke-width="2"/><text x="205" y="165" text-anchor="middle" font-size="11" font-weight="700">glucocorticoid</text><text x="205" y="179" text-anchor="middle" font-size="11" font-weight="700">receptor</text>
+<circle cx="170" cy="210" r="13" fill="#ddd" stroke="#888"/><circle cx="240" cy="214" r="13" fill="#ddd" stroke="#888"/><text x="205" y="244" text-anchor="middle" font-size="11">heat-shock proteins fall off</text><polygon points="190,124 202,116 214,124 214,138 202,146 190,138" fill="#0f8b8d"/></g>
+<g ${V([2],st)}><line x1="252" y1="168" x2="410" y2="168" stroke="#444" stroke-width="3" marker-end="url(#gra)"/><text x="330" y="158" text-anchor="middle" font-size="11">complex moves in</text></g>
+<g ${V([3],st)}><rect x="470" y="160" width="60" height="30" rx="6" fill="#e3f1ff" stroke="#2f6fdb"/><text x="500" y="179" text-anchor="middle" font-size="10">pair</text><line x1="530" y1="175" x2="600" y2="120" stroke="#1f9d55" stroke-width="3" marker-end="url(#gra)"/><text x="600" y="108" text-anchor="middle" font-size="11" font-weight="700" fill="#1f9d55">genes ON</text></g>
+<g ${V([4],st)}><rect x="575" y="230" width="85" height="30" rx="6" fill="#ffe1e1" stroke="#c62828"/><text x="617" y="243" text-anchor="middle" font-size="9">nuclear factor</text><text x="617" y="255" text-anchor="middle" font-size="9">kappa B</text><text x="617" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#c62828">inflammation OFF</text><line x1="530" y1="220" x2="572" y2="242" stroke="#c62828" stroke-width="3"/></g>
+<g ${V([5],st)}><text x="300" y="290" text-anchor="middle" font-size="12" font-weight="700">⏱ new proteins → effect after hours</text></g></svg>`;
+el.innerHTML=`<div class="ctrl">${S.map((s,i)=>`<button data-i="${i}">${i+1}. ${s[0]}</button>`).join("")}</div><div class="swipe">↔ Swipe sideways to see the whole diagram</div><div class="svgwrap"><figure id="gr-f"></figure></div><div class="info" id="gr-info"></div>`;
+const seen=new Set();const go=i=>{seen.add(i);el.querySelector("#gr-f").innerHTML=svg(i)+`<figcaption>Glucocorticoid receptor, drawn by MedLearn (schematic).</figcaption>`;el.querySelectorAll("[data-i]").forEach(b=>b.classList.toggle("on",+b.dataset.i==i));
+el.querySelector("#gr-info").innerHTML=`<b>Step ${i+1}: ${S[i][0]}.</b> ${S[i][1]}`;if(seen.size==S.length)complete("g1-gr",10,"🧬 Mechanism followed! +10 XP")};
+el.querySelectorAll("[data-i]").forEach(b=>b.onclick=()=>go(+b.dataset.i));go(0)};
+
+W.actions=el=>{
+const A=[["🍬 Metabolism","Raises blood glucose: gluconeogenesis, less glucose uptake in muscle and fat; breaks down protein and fat for fuel.","Steroid-induced diabetes; muscle wasting; central fat.","Low blood glucose, especially in children and during fasting."],
+["🛡️ Immune system","Switches off inflammation; fewer lymphocytes and eosinophils, more neutrophils in blood.","Infections (including unusual ones), poor wound healing, masked fever.","Unchecked inflammation; high eosinophils."],
+["❤️ Heart and vessels","Permissive: lets noradrenaline and angiotensin II tighten vessels; keeps blood pressure up.","High blood pressure; fluid retention (more with hydrocortisone).","Low blood pressure; shock in a crisis that does not respond to fluids alone."],
+["🦴 Bone and muscle","Less bone formation, less calcium absorbed from the gut.","Osteoporosis, fractures, avascular necrosis of the hip, proximal muscle weakness.","Weakness and fatigue."],
+["🧠 Brain","Mood, alertness, sleep–wake timing.","Insomnia, euphoria, depression, steroid psychosis.","Fatigue, low mood, poor concentration."],
+["👁️ Eye","Raises eye pressure in some people; lens changes.","Glaucoma, cataract (posterior subcapsular).","—"],
+["🩸 Stomach","Less protective prostaglandin.","Peptic ulcer risk, mainly when combined with anti-inflammatory painkillers.","Nausea, abdominal pain (in adrenal insufficiency)."],
+["🧒 Growth","Inhibits growth hormone action and growth plates.","Poor growth in children on long courses.","—"]];
+el.innerHTML=`<div class="ctrl">${A.map((a,i)=>`<button data-i="${i}">${a[0]}</button>`).join("")}</div><div class="info" id="ac-info">Pick a system.</div>`;const seen=new Set();
+el.querySelectorAll("[data-i]").forEach(b=>b.onclick=()=>{const a=A[+b.dataset.i];seen.add(b.dataset.i);el.querySelectorAll("[data-i]").forEach(x=>x.classList.toggle("on",x==b));
+el.querySelector("#ac-info").innerHTML=`<table><tr><th>${a[0]}</th><th>Too much (Cushing / steroid side effect)</th><th>Too little (adrenal insufficiency)</th></tr><tr><td>${a[1]}</td><td>${a[2]}</td><td>${a[3]}</td></tr></table>`;if(seen.size==A.length)complete("g2-act",10,"🫀 All systems explored! +10 XP")})};
+
+W.potency=el=>{
+const D=[["Hydrocortisone",1,"1",1,20,"short","8–12 h","about 1.5 h","Replacement in adrenal insufficiency; emergency injection in crisis."],
+["Prednisolone",4,"0.8",0.8,5,"intermediate","12–36 h","about 2–3.5 h","Most common anti-inflammatory tablet."],
+["Methylprednisolone",5,"0.5",0.5,4,"intermediate","12–36 h","about 2–3 h","High-dose intravenous pulses (e.g. multiple sclerosis relapse)."],
+["Dexamethasone",27,"25–30",0.02,0.75,"long","36–72 h","about 3–5 h","Brain swelling, nausea in chemotherapy, fetal lungs, suppression test; almost no salt effect."],
+["Fludrocortisone",10,"10",150,null,"intermediate","12–36 h","about 3.5 h","Salt replacement in primary adrenal insufficiency (125–250 times the mineralocorticoid effect of hydrocortisone; sources differ)."]];
+const bar=(v,m,c)=>`<span class="pbar"><i style="width:${Math.max(3,Math.min(100,Math.log10(v*10+1)/Math.log10(m*10+1)*100))}%;background:${c}"></i></span>`;
+el.innerHTML=`<div class="tblwrap"><table class="ptab"><tr><th>Drug</th><th>Anti-inflammatory (glucocorticoid) potency</th><th>Salt-retaining (mineralocorticoid) potency</th><th>Equivalent dose</th><th>Biological half-life</th><th>Plasma half-life</th></tr>
+${D.map(d=>`<tr><td><b>${d[0]}</b><br><small>${d[8]}</small></td><td>${d[1]==27?"25–30":d[1]} ${bar(d[1],30,"#2f6fdb")}</td><td>${d[0]=="Fludrocortisone"?"125–250":d[0]=="Dexamethasone"?"≈ 0":d[2]} ${bar(d[3],250,"#d9730d")}</td><td>${d[4]?d[4]+" mg":"not used for its glucocorticoid effect"}</td><td>${d[6]} <small>(${d[5]})</small></td><td>${d[7]}</td></tr>`).join("")}</table></div>
+<p class="hint">💡 Bars use a log scale. Values are relative to hydrocortisone = 1 and are approximate (Goodman and Gilman; British National Formulary); textbooks differ slightly.</p>
+<div class="ctrl"><b>Dose converter:</b> <input id="po-n" type="number" min="0" step="0.5" value="20" style="width:70px"> mg of <select id="po-d">${D.slice(0,4).map((d,i)=>`<option value="${i}">${d[0]}</option>`).join("")}</select></div><div class="info" id="po-info"></div>`;
+const q=s=>el.querySelector(s),f=x=>Math.round(x*100)/100;let n=0;
+const calc=()=>{const v=+q("#po-n").value,i=+q("#po-d").value,eq=v/D[i][4];q("#po-info").innerHTML=`${v} mg ${D[i][0].toLowerCase()} ≈ `+D.slice(0,4).filter((d,j)=>j!=i).map(d=>`<b>${f(eq*d[4])} mg</b> ${d[0].toLowerCase()}`).join(" ≈ ")+` (anti-inflammatory effect only). Fludrocortisone has no glucocorticoid equivalent.`;if(++n>=3)complete("g3-pot",10,"⚖️ Potency converter used! +10 XP")};
+q("#po-n").oninput=calc;q("#po-d").onchange=calc;calc()};
+
+W.mnemonic=el=>{
+const M=[["C","Cataracts (and glaucoma)","Eye check if long-term or symptoms."],["U","Ulcers (peptic)","Stomach protection (a proton pump inhibitor) if also on anti-inflammatory painkillers or other risks."],["S","Skin: thin, bruising, stretch marks, acne; poor wound healing","Lowest dose, shortest time; skin, inhaled or joint forms where possible."],["H","Hypertension and fluid retention","Check blood pressure."],["I","Infections (immunosuppression)","Warn about infection signs; check tuberculosis and hepatitis B risk before long high-dose courses; consider vaccines."],["N","Necrosis of bone (avascular, often the hip)","Ask about new hip or groin pain; arrange imaging."],["G","Glucose high (steroid diabetes)","Check glucose, ideally in the afternoon."],["O","Osteoporosis","Bone protection (e.g. bisphosphonate, calcium and vitamin D) if prednisolone 7.5 mg or more for 3 months or more (United Kingdom guidance)."],["I","Insomnia and mood changes","Give the dose in the morning; ask about mood, sleep and psychosis."],["D","Diminished own cortisol (adrenal suppression)","Steroid card, sick-day rules, never stop suddenly after long courses."]];
+el.innerHTML=`<div class="mtiles">${M.map((m,i)=>`<button class="mtile" data-i="${i}"><span class="ml">${m[0]}</span><span class="mt" hidden><b>${m[1]}</b><br><small>🛡️ ${m[2]}</small></span></button>`).join("")}</div><div class="info" id="mn-info">Tap each letter. 0/${M.length} revealed.</div>`;
+const seen=new Set();el.querySelectorAll(".mtile").forEach(b=>b.onclick=()=>{b.classList.add("open");b.querySelector(".mt").hidden=false;seen.add(b.dataset.i);
+el.querySelector("#mn-info").textContent=seen.size==M.length?"🏆 CUSHINGOID complete!":`${seen.size}/${M.length} revealed.`;if(seen.size==M.length)complete("g4-mn",15,"🔤 CUSHINGOID mastered! +15 XP")})};
+
+W.taper=el=>{
+const P=[["1. High dose","The disease is being controlled. Taper as fast as the disease allows (the disease decides here, not the adrenal gland)."],
+["2. Approaching physiological","Near prednisolone 5–7.5 mg a day (about the body's own cortisol output) the adrenal gland becomes the limit. Slow the taper down, e.g. small steps every few weeks (illustrative only: follow the prescriber's plan)."],
+["3. At physiological dose: test","Around prednisolone 4–5 mg (or switched to hydrocortisone), a morning cortisol can be checked, taken before the dose (about 24 hours after the last prednisolone dose). Pick the result:"],
+["4. Stop","Once recovery is shown, the steroid can stop. Until then: steroid card, sick-day rules and an emergency injection plan."]];
+const R=[["more than about 300 nmol/L (10 µg/dl)","Axis recovered: the steroid can be stopped. ✅"],["about 150–300 nmol/L","Partly recovered: keep the physiological dose, recheck in weeks to months (or do a stimulation test)."],["less than about 150 nmol/L (5 µg/dl)","Still suppressed: continue the physiological dose with sick-day rules and retest in a few months."]];
+el.innerHTML=`<div class="ctrl">${P.map((p,i)=>`<button data-i="${i}">${p[0]}</button>`).join("")}</div><div class="info" id="tp-info">Start with phase 1.</div><div class="ctrl" id="tp-r" hidden>${R.map((r,i)=>`<button data-r="${i}">${r[0]}</button>`).join("")}</div><div class="info" id="tp-ri" hidden></div>
+<div class="ctrl"><button id="tp-unwell">😣 Feeling unwell during the taper?</button></div><p class="hint">💡 Thresholds are from the 2024 European Society of Endocrinology and Endocrine Society guideline and depend on the laboratory test; this is a teaching example, not a dosing plan.</p>`;
+const q=s=>el.querySelector(s),seen=new Set();
+el.querySelectorAll("[data-i]").forEach(b=>b.onclick=()=>{const i=+b.dataset.i;seen.add("p"+i);el.querySelectorAll("[data-i]").forEach(x=>x.classList.toggle("on",x==b));q("#tp-info").innerHTML=`<b>${P[i][0]}:</b> ${P[i][1]}`;q("#tp-r").hidden=i!=2;q("#tp-ri").hidden=true;chk()});
+el.querySelectorAll("[data-r]").forEach(b=>b.onclick=()=>{seen.add("r"+b.dataset.r);el.querySelectorAll("[data-r]").forEach(x=>x.classList.toggle("on",x==b));q("#tp-ri").hidden=false;q("#tp-ri").innerHTML=R[+b.dataset.r][1];chk()});
+q("#tp-unwell").onclick=()=>{q("#tp-info").innerHTML="<b>Three possibilities:</b> (1) the disease is flaring up again; (2) adrenal insufficiency (tiredness, nausea, dizziness, low blood pressure) → check morning cortisol and give stress doses if ill; (3) steroid withdrawal syndrome: aches, low mood, tiredness with an adequate dose → temporarily go back to the last dose and taper more slowly."};
+const chk=()=>{if(seen.size>=7)complete("g6-taper",15,"📉 Taper planned! +15 XP")}};
