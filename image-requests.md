@@ -87,3 +87,62 @@ Same rules: atlas-style realistic medical illustration, no text, letters, number
   - **Save as:** `images/cbl5-adrenal-haemorrhage.png`
   - **Used in:** CBL 5, bonus practice case: bleeding into both adrenal glands in severe meningococcal infection (Waterhouse-Friderichsen syndrome).
   - **Prompt:** Clean textbook anatomical illustration, medical-atlas drawing style, on a plain off-white background. Front view of both kidneys with an adrenal gland sitting on top of each. Both adrenal glands are enlarged and evenly coloured a deep dark red-purple to show bleeding inside the gland; one gland is drawn in a neat, smooth cut section showing the dark red colour filling the gland in place of the normal yellow cortex. Simple, schematic and calm: no liquid blood, no drips, no surgical instruments, no gore. Small separate inset: a plain square of skin texture only (no body part identifiable) with a few small, flat purple pinpoint spots. Restrained colours, soft even lighting. No text, letters, numbers or labels anywhere.
+
+# Adrenal disorders and thyroid section requests (added October 2026, publish4)
+
+Same rules: calm illustrated or atlas style, clothed adults only, no unwell children, no undressed bodies, no needles in skin, no blood, and no text, letters, numbers, captions, logos or watermarks anywhere in the image. Save each to the given filename, then tick its box. The modules already work without these images; each placement below is where the figure will be inserted once it exists.
+
+- [ ] **id:** `d3-cushing-features`
+  - **Save as:** `images/d3-cushing-features.png`
+  - **Used in:** Adrenal disorders 2.3, step 2 (card `cu2`): the features that best separate Cushing syndrome from simple obesity. Planned placement: after the "Most discriminating features" paragraph.
+  - **Prompt:** Calm, atlas-style medical illustration of a woman in her 40s shown in two views on a plain light background, fully clothed in a loose short-sleeved T-shirt and trousers. Front view: round, full, reddish face, slim arms and legs with a fuller central body. Side view: a soft rounded fat pad at the back of the lower neck. On one forearm, a few flat purple bruises. Gentle expression, soft even lighting, muted natural colours. No exposed abdomen, no stretch marks shown, no text, letters, numbers or labels.
+
+- [ ] **id:** `d6-pheo-attack`
+  - **Save as:** `images/d6-pheo-attack.png`
+  - **Used in:** Adrenal disorders 2.6, step 1 (card `ph1`): an attack of headache, sweating and palpitations. Planned placement: after the "Classic triad" paragraph.
+  - **Prompt:** Calm illustrated scene of a man in his late 30s sitting on the edge of a sofa in a living room, fully clothed in a shirt and jeans, one hand pressed to his forehead and the other resting on his chest, face pale with small beads of sweat, eyes closed, looking uncomfortable but not in danger. Soft warm daylight, muted colours, tidy room. No medical equipment, no other people, no text, letters, numbers or labels.
+
+- [ ] **id:** `d7-incidentaloma-scan`
+  - **Save as:** `images/d7-incidentaloma-scan.png`
+  - **Used in:** Adrenal disorders 2.7, step 2 (card `in2`): what a small, smooth adrenal adenoma looks like on a computed tomography slice. Planned placement: after the list of density rules.
+  - **Prompt:** Clean grayscale illustration in the style of an axial abdominal computed tomography slice, seen from below as radiologists view it: spine at the bottom, liver on the viewer's left, kidneys on both sides, aorta in front of the spine. Just above the left kidney, a small smooth round homogeneous darker-grey nodule sits in the left adrenal gland. Simplified, schematic and calm, like a textbook drawing of a scan. No text, letters, numbers, rulers, markers or labels anywhere.
+
+- [ ] **id:** `t2-iodine-foods`
+  - **Save as:** `images/t2-iodine-foods.png`
+  - **Used in:** Thyroid 6.2.1, step 1 (card `ig1`): everyday sources of iodine. Planned placement: after the table of daily needs.
+  - **Prompt:** Bright illustrated top-down view of a wooden kitchen table with everyday iodine sources neatly arranged: a plain white salt shaker and a small bowl of salt, a piece of cooked white fish, a glass of milk, two eggs, a slice of bread and a small dish of seaweed. Plain packaging with no writing at all. Soft natural light, friendly cookbook style. No text, letters, numbers, logos or labels.
+
+- [ ] **id:** `t2-endemic-goitre`
+  - **Save as:** `images/t2-endemic-goitre.png`
+  - **Used in:** Thyroid 6.2.2, step 1 (card `eg1`): a long-standing goitre in an iodine-deficient region. Planned placement: after the World Health Organization grading line, before the grading game.
+  - **Prompt:** Respectful, calm illustrated portrait of a woman in her 50s standing outdoors in a mountain village, fully clothed in a simple blouse and cardigan with an open collar, with a clearly visible smooth, large swelling at the front of her neck (a goitre). She looks calm and dignified, slight smile. Soft daylight, muted natural colours, hills in the soft-focus background. No text, letters, numbers or labels.
+
+- [ ] **id:** `t2-goitre-grades`
+  - **Save as:** `images/t2-goitre-grades.png`
+  - **Used in:** Thyroid 6.2.2, step 1 (card `eg1`): World Health Organization goitre grades 0, 1 and 2. Planned placement: just above the grading game.
+  - **Prompt:** Clean three-panel medical illustration on a plain light background, the same clothed adult woman in an open-collar shirt shown from the front in each panel. Panel one: normal neck, no swelling. Panel two: the neck looks normal, and a doctor's hand (shirt cuff visible) gently feels the front of the neck with the fingertips. Panel three: a clearly visible smooth swelling at the front of the neck with the head in normal position. Calm, textbook style, soft lighting. No text, letters, numbers or labels.
+
+- [ ] **id:** `t2-neck-ultrasound`
+  - **Save as:** `images/t2-neck-ultrasound.png`
+  - **Used in:** Thyroid 6.2.4, step 2 (card `no2`): ultrasound of a thyroid nodule. Planned placement: after the work-up list.
+  - **Prompt:** Calm illustrated clinic scene: a fully clothed adult woman lies on an examination couch with her head slightly tilted back, wearing a T-shirt; a doctor in a white coat holds a small ultrasound probe gently against the front of her neck; beside them, a screen shows a soft grey fan-shaped ultrasound image with a small dark oval nodule. Soft lighting, muted colours, reassuring mood. No needles, no text, letters, numbers or labels on the screen or anywhere else.
+
+- [ ] **id:** `t2-papillary-histology`
+  - **Save as:** `images/t2-papillary-histology.png`
+  - **Used in:** Thyroid 6.2.5, step 2 (card `tc2`): the microscopic hallmarks of papillary carcinoma. Planned placement: after the bullet list of pathology features.
+  - **Prompt:** Atlas-style realistic microscopy illustration with haematoxylin and eosin colours: branching finger-like papillae with thin fibrovascular cores, lined by cells with enlarged, overlapping, pale "ground-glass" nuclei, some with nuclear grooves; a few small round, layered purple calcified psammoma bodies. A circular magnified inset shows three nuclei with a groove and a pale pseudo-inclusion. Textbook accuracy, restrained colours. No text, letters, numbers, arrows or labels.
+
+- [ ] **id:** `t1-graves-eyes`
+  - **Save as:** `images/t1-graves-eyes.png`
+  - **Used in:** Thyroid 6.1.3, step 1 (card `or1`): what Graves orbitopathy looks like. Planned placement: after the scene, before the mechanism list.
+  - **Prompt:** Respectful illustrated close-up portrait of a clothed adult woman in her 40s, head and shoulders, wearing a sweater. Her eyes are mildly prominent with a little white visible above the irises, slightly puffy eyelids and mild redness of the white of the eyes. Calm expression, soft clinic lighting, muted colours, textbook illustration style. No text, letters, numbers or labels.
+
+- [ ] **id:** `t1-thyroid-scintigraphy`
+  - **Save as:** `images/t1-thyroid-scintigraphy.png`
+  - **Used in:** Thyroid 6.1.4, step 2 (card `dx2`): uptake patterns. Planned placement: after the uptake explanation, before the decision tree.
+  - **Prompt:** Clean three-panel medical illustration of thyroid scintigraphy images on dark backgrounds, each a butterfly-shaped thyroid in warm orange-yellow tones. Panel one: both lobes evenly bright (diffuse uptake). Panel two: one round bright spot in one lobe, the rest of the gland faint (single hot nodule). Panel three: several patchy bright spots across both lobes (multinodular). Textbook style. No text, letters, numbers or labels.
+
+- [ ] **id:** `t1-storm-icu`
+  - **Save as:** `images/t1-storm-icu.png`
+  - **Used in:** Thyroid 6.1.10, step 2 (card `sx2`): thyroid storm needs intensive care. Planned placement: after the scene, before the score calculator.
+  - **Prompt:** Calm illustrated intensive care scene: a clothed adult woman in a hospital gown lies in a bed with a light blanket, a cooling pad on her forehead, a heart monitor glowing beside her bed; two nurses in scrubs adjust an intravenous drip. Reassuring, professional mood, soft blue lighting, muted colours. No blood, no needles visible in skin, no text, letters, numbers or labels on screens or anywhere.

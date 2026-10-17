@@ -105,3 +105,10 @@ body.dark details.chk{background:color-mix(in srgb,var(--acc) 10%,var(--panel))}
 .swipe{display:none;font-size:13px;color:var(--mute);margin:4px 0}
 @media(max-width:700px){.swipe{display:block}[data-widget] .ctrl button,[data-widget] .sb button,.xchip{min-height:44px}[data-widget] .ctrl{gap:8px}}
 .match{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.match button{white-space:normal;overflow-wrap:anywhere}
+.xpath{font-size:13px;color:var(--mute);margin:6px 0}.xpath span{background:var(--line);border-radius:6px;padding:1px 6px}
+.ctrl.xcol{flex-direction:column;align-items:stretch}.ctrl.xcol button{text-align:left}
+.xlabs{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}.xlab{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:10px;padding:6px 10px;background:var(--panel);min-width:90px}.xlab small{color:var(--mute)}.xlab b{font-size:18px}
+.ctrl button.right{background:color-mix(in srgb,var(--ok) 22%,var(--panel));border-color:var(--ok)}.ctrl button.wrong{background:color-mix(in srgb,var(--bad) 16%,var(--panel));border-color:var(--bad)}
+.sortrow .sb{flex-wrap:wrap}
+.xcalc{display:grid;gap:10px;margin:10px 0}.xci{display:flex;flex-direction:column;gap:4px;font-size:15px}.xci input[type=range]{width:100%;min-height:32px}.xci select{font-size:15px;padding:6px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:inherit;max-width:100%}.xcc{flex-direction:row;align-items:center}.xcc input{width:22px;height:22px}
+.xci{min-width:0}.xci select{width:100%;white-space:normal}.xcalc{grid-template-columns:minmax(0,1fr)}

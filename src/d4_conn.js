@@ -1,0 +1,77 @@
+/* ===== Adrenal disorders 2.4: Primary hyperaldosteronism ===== */
+Object.assign(GLOSSARY,{
+pa:{l:"primary hyperaldosteronism",c:"disease",d:"The adrenal glands make aldosterone without renin control (also called primary aldosteronism or, for an adenoma, Conn syndrome).",w:"The most common treatable cause of secondary hypertension."},
+apa:{l:"aldosterone-producing adenoma",c:"disease",d:"A benign tumour in one adrenal making aldosterone (Conn adenoma).",w:"Usually curable by removing that adrenal."},
+bhyp:{l:"bilateral idiopathic hyperaldosteronism",c:"disease",d:"Both adrenals overproduce aldosterone (bilateral hyperplasia).",w:"Treated with tablets (mineralocorticoid receptor antagonists), not surgery."},
+sit:{l:"saline infusion test",c:"test",d:"2 litres of saline over 4 hours; normally aldosterone falls. In primary hyperaldosteronism it stays high.",w:"A common confirmatory test."},
+eplerenone:{l:"eplerenone",c:"drug",d:"A more selective mineralocorticoid receptor antagonist than spironolactone.",w:"Fewer hormonal side effects (no gynaecomastia), but weaker per milligram."},
+gra:{l:"familial hyperaldosteronism type 1",c:"disease",d:"Inherited form in which an aldosterone synthase gene is controlled by adrenocorticotropic hormone (glucocorticoid-remediable aldosteronism).",w:"Early-onset hypertension and stroke in the family; low-dose glucocorticoid suppresses it."}
+});
+XCALC.arr={t:"Aldosterone-to-renin ratio simulator",inp:[["al","Plasma aldosterone","n",[2,60,1,22,"ng/dl"]],["re","Plasma renin activity","n",[0.1,6,0.1,0.4,"ng/ml/h"]],["k","Potassium","n",[2.5,5.5,0.1,3.4,"mmol/L"]],["dr","Current drug","s",[["None or verapamil/doxazosin (little effect)","0"],["Spironolactone, diuretic, ACE inhibitor or angiotensin receptor blocker","1"],["Beta-blocker or clonidine","2"]]]],
+f:v=>{const r=v.al/Math.max(v.re,0.1),pos=r>20&&v.al>=10&&v.re<=1;let s=`Ratio = ${v.al} ÷ ${v.re.toFixed(1)} = <b>${r.toFixed(0)}</b> ng/dl per ng/ml/h (aldosterone ≈ ${Math.round(v.al*27.7)} pmol/L). `;
+s+=pos?"🔴 <b>Screen positive</b>: renin suppressed (1 or less), aldosterone at least 10 ng/dl and ratio above 20. Next: decide with the patient between tablets and work-up for surgery (confirmation if probability is intermediate, then computed tomography and adrenal vein sampling).":(v.re>1?"🟢 <b>Screen negative</b>: renin is not suppressed.":v.al<10?"🟢 <b>Screen negative</b>: aldosterone is not inappropriately high.":"🟢 <b>Screen negative</b>: ratio 20 or below.")+(r>20&&!pos?" (The ratio alone looks high, but the 2025 guideline needs low renin <b>and</b> aldosterone at least 10 ng/dl too.)":"");
+if(v.k<3.5)s+=" ⚠️ Potassium is low: low potassium lowers aldosterone and can hide the disease. Correct it and repeat.";
+if(v.dr==1)s+=" ⚠️ This drug raises renin: a <b>negative</b> result can be false. A positive result is still meaningful.";
+if(v.dr==2)s+=" ⚠️ This drug lowers renin: a <b>positive</b> result can be false.";
+if(v.re<=0.2&&v.al>=20&&v.k<3.5)s+=" 💡 Spontaneous low potassium, suppressed renin and aldosterone above about 20 ng/dl: guidelines allow skipping the confirmatory test.";return s},
+note:"Criteria from the Endocrine Society 2025 guideline for immunoassay aldosterone with plasma renin activity: renin 1 ng/ml/h or less, aldosterone at least 10 ng/dl (277 pmol/L), ratio above 20. Cut-offs are about 25% lower with mass spectrometry and differ for renin concentration; older texts (2016) often quote about 30. Learning tool only."};
+XSORT.arrdrug={t:"What does this do to the ratio?",labels:["False negative (ratio ↓)","False positive (ratio ↑)"],items:[["Spironolactone",0,"Blocks the receptor → renin rises → ratio falls."],["Thiazide or loop diuretic",0,"Volume loss raises renin."],["ACE inhibitor or angiotensin receptor blocker",0,"Raise renin."],["Beta-blocker",1,"Lowers renin more than aldosterone."],["Clonidine or methyldopa",1,"Lower renin."],["Untreated low potassium",0,"Low potassium lowers aldosterone."],["Non-steroidal anti-inflammatory drugs",1,"Lower renin."],["Oestrogen pill (with renin concentration)",1,"Lowers measured renin concentration."]]};
+XS.conn=["Spot the error",[["Most patients with primary hyperaldosteronism have normal potassium.",1],["Bilateral hyperplasia is treated by removing both adrenals.",0,"Wrong: bilateral disease is treated with <b>mineralocorticoid receptor antagonists</b> (spironolactone or eplerenone)."],["Adrenal vein sampling shows which side makes the aldosterone.",1],["Beta-blockers can cause a falsely positive ratio.",1]]];
+XT.conn="pa,apa,bhyp,arr,sit,avs,spiro,eplerenone,gra,liddle,hypok";
+const D4={
+meta:"Endocrinology › Adrenal disorders › 2.4 · theory module · ⏱ about 25 minutes in 4 bite-sized steps",
+intro:`<p>Primary hyperaldosteronism is the most common curable cause of high blood pressure, and it is badly under-diagnosed. This module shows who to test, how to read the ratio, how to find the side and how to treat it.</p>`,
+goals:["Explain the physiology and the two main causes","Know who to screen","Interpret the aldosterone-to-renin ratio and its pitfalls","Plan confirmation and lateralisation","Choose surgery or tablets"],
+cards:[
+{id:"ca1",title:"Aldosterone without a brake",min:5,goal:0,obj:["Explain the hormone pattern","Name the causes"],html:`
+<div class="scene"><b>The scene:</b> A 42-year-old man with blood pressure 170/104 mmHg on three drugs. He has leg cramps. Potassium 3.1 mmol/L.</div>
+<p>In [[pa]] the adrenal makes [[aldo]] by itself. Aldosterone holds sodium and water and loses potassium and hydrogen ions → <b>high blood pressure</b>, sometimes [[hypok]] and alkalosis. The extra volume switches <b>renin off</b>: high aldosterone with low renin is the fingerprint.</p>
+<ul><li>[[bhyp]]: about 60–65%.</li><li>[[apa]]: about 30–35%.</li><li>Rare: unilateral hyperplasia, carcinoma, familial forms such as [[gra]].</li></ul>
+<p>Beyond blood pressure, aldosterone excess damages heart, kidneys and vessels: more atrial fibrillation, stroke and heart failure than in matched essential hypertension.</p>
+<div class="corr">📝 <b>Fact check:</b> low potassium is <b>not</b> needed for the diagnosis. Most patients (often quoted as more than half) have normal potassium.</div>
+<div class="hint">💡 <b>"High aldosterone, low renin, often normal potassium."</b></div>
+<details class="chk"><summary>✋ Checkpoint: why is renin low?</summary><p>Volume expansion and high blood pressure suppress renin release.</p></details>`,
+recap:["Autonomous aldosterone: hypertension, sometimes low potassium.","High aldosterone with low renin.","Bilateral hyperplasia is more common than adenoma."],
+quiz:[{q:"Renin in primary hyperaldosteronism is…",o:["High","Low","Normal"],a:1,e:"Suppressed by volume."},{q:"Most common subtype?",o:["Adenoma","Bilateral hyperplasia","Carcinoma"],a:1,e:"Bilateral hyperplasia."}]},
+{id:"ca2",title:"Who to screen, and the ratio",min:6,goal:2,obj:["List screening indications","Calculate the ratio","Know which drugs disturb it"],html:`
+<div class="scene"><b>The scene:</b> The man from step 1 takes ramipril, amlodipine and bisoprolol. Can you test him now?</div>
+<p><b>Screen</b> (Endocrine Society 2016): sustained blood pressure above 150/100 mmHg; resistant hypertension; hypertension with low potassium, an adrenal incidentaloma, sleep apnoea, a family history of early hypertension or stroke before 40, or a first-degree relative with the disease.</p>
+<div class="corr">📝 <b>Guideline update:</b> the 2025 Endocrine Society guideline goes further and suggests screening <b>everyone with hypertension</b>, usually without stopping blood pressure drugs first. Check which guideline your exam uses.</div>
+<p><b>The test:</b> [[arr]], morning, seated after being up for about 2 hours, potassium corrected.</p>
+<div data-widget="calc" data-set="arr"></div>
+<div data-widget="sortset" data-set="arrdrug"></div>
+<div class="hint">💡 <b>"Renin-raisers hide it, renin-lowerers fake it."</b></div>
+<details class="chk"><summary>✋ Checkpoint: his ratio is positive while on ramipril. Is that meaningful?</summary><p>Yes: ramipril raises renin, so a positive ratio despite it is strong evidence.</p></details>`,
+recap:["Screen resistant, severe or low-potassium hypertension (2025: all hypertension).","Positive screen (2025): low renin, aldosterone at least 10 ng/dl, ratio above 20 (older texts: about 30).","Beta-blockers fake it; diuretics, spironolactone and ACE inhibitors hide it."],
+quiz:[{q:"Which drug can make the ratio falsely positive?",o:["Beta-blocker","Spironolactone","Diuretic"],a:0,e:"It lowers renin."},{q:"What should be corrected before testing?",o:["Low potassium","Low glucose","High calcium"],a:0,e:"Low potassium lowers aldosterone."}]},
+{id:"ca3",title:"Confirm, then find the side",min:5,goal:3,obj:["Name confirmatory tests","Explain why adrenal vein sampling matters"],html:`
+<div class="scene"><b>The scene:</b> His saline infusion test: aldosterone stays high. The scan shows a 1.5 cm right adrenal nodule. Remove it? Not yet.</div>
+<p><b>Confirm</b> (only if surgery is an option and the probability of one-sided disease is intermediate, per the 2025 guideline): [[sit]], oral salt loading, fludrocortisone suppression or captopril challenge. Skip it when the picture is florid: spontaneous low potassium, undetectable renin and aldosterone above about 20 ng/dl (550 pmol/L). With an adenoma, also do a 1 mg dexamethasone test (some secrete cortisol too).</p>
+<p><b>Image:</b> adrenal computed tomography to exclude carcinoma and show anatomy, but it cannot tell you which side is active: small nodules are common and may be harmless.</p>
+<p><b>Lateralise:</b> [[avs]] compares aldosterone (corrected for cortisol) in each adrenal vein. One side much higher → unilateral. It can be skipped in patients under about 35 with florid disease and a clear unilateral adenoma.</p>
+<div class="hint">💡 <b>"Scans show lumps; vein sampling shows hormones."</b></div>
+<details class="chk"><summary>✋ Checkpoint: why measure cortisol in the adrenal vein samples?</summary><p>To prove the catheter is in the adrenal vein and to correct for dilution.</p></details>`,
+recap:["Confirm with saline, salt or fludrocortisone tests.","Computed tomography for anatomy and to exclude carcinoma.","Adrenal vein sampling decides surgery."],
+quiz:[{q:"Which test decides if one side is responsible?",o:["Computed tomography","Adrenal vein sampling","Ratio"],a:1,e:"Imaging cannot show function."},{q:"In a saline infusion test, aldosterone normally…",o:["Falls","Rises","Stays the same"],a:0,e:"Volume loading suppresses it."}]},
+{id:"ca4",title:"Treatment: knife or tablets",min:5,goal:4,obj:["Choose treatment by subtype","Know side effects and follow-up"],html:`
+<div class="scene"><b>The scene:</b> Sampling shows right-sided excess. A second patient has bilateral disease.</div>
+<ul><li><b>Unilateral:</b> laparoscopic [[adx]]. Potassium normalises almost always; blood pressure improves in most and is cured in a minority (long-standing hypertension leaves vessel damage). Watch for high potassium after surgery (the other side was suppressed).</li>
+<li><b>Bilateral or not operable:</b> [[spiro]] (side effects: gynaecomastia, erectile problems, menstrual changes) or [[eplerenone]] (the 2025 guideline prefers spironolactone for cost and availability). Aim for renin to rise out of suppression. Add other drugs as needed.</li>
+<li>[[gra]]: low-dose glucocorticoid.</li></ul>
+<div class="hint">💡 <b>"One side, cut it; both sides, block it."</b></div>
+<details class="chk"><summary>✋ Checkpoint: why might potassium rise after adrenalectomy?</summary><p>The remaining glomerulosa has been suppressed and takes time to recover.</p></details>`,
+recap:["Unilateral: adrenalectomy.","Bilateral: spironolactone or eplerenone.","After surgery: watch potassium and blood pressure."],
+quiz:[{q:"Bilateral hyperplasia is treated with…",o:["Spironolactone","Adrenalectomy","Hydrocortisone"],a:0,e:"Block the receptor."},{q:"A side effect of spironolactone in men?",o:["Gynaecomastia","Hair loss","Weight loss"],a:0,e:"Anti-androgen effect."}]}],
+cases:[{id:"cak1",title:"Case 1: Resistant hypertension",steps:[
+{t:`<b>The scene:</b> A 42-year-old man: blood pressure 170/104 mmHg on three drugs, potassium 3.1 mmol/L. Aldosterone 28 ng/dl, renin activity 0.2 ng/ml/h.`,q:"Ratio and interpretation?",o:["140: screen positive","14: negative","Cannot be calculated"],a:0,e:"28 ÷ 0.2 = 140."},
+{t:`Low potassium, suppressed renin and aldosterone above 20 ng/dl.`,q:"Next?",o:["Computed tomography, then adrenal vein sampling (confirmation may be skipped)","Start hydrocortisone","Repeat in a year"],a:0,e:"Florid disease."},
+{t:`Sampling: right-sided.`,q:"Treatment?",o:["Right laparoscopic adrenalectomy","Spironolactone only","Both adrenals out"],a:0,e:"Unilateral → surgery."}],take:["High aldosterone, low renin, sampling decides surgery."]},
+{id:"cak2",title:"Case 2: The beta-blocker trap",steps:[
+{t:`<b>The scene:</b> A 55-year-old woman on bisoprolol, normal potassium: ratio 34 with aldosterone 9 ng/dl, renin activity 0.26 ng/ml/h.`,q:"How do you read this?",o:["Not a positive screen: aldosterone is below 10 ng/dl, and beta-blockers lower renin","Definite diagnosis","Exclude the disease"],a:0,e:"Low renin raises the ratio."},
+{t:`She is switched to verapamil and doxazosin; repeat: aldosterone 10 ng/dl, renin activity 0.9 ng/ml/h, ratio 11.`,q:"Conclusion?",o:["Screen negative","Positive","Needs surgery"],a:0,e:"The first result was drug-related."}],take:["Interpret the ratio with the drugs."]}],
+flash:[["Fingerprint of primary hyperaldosteronism","High aldosterone, low renin."],["Most common subtype","Bilateral hyperplasia."],["Is low potassium needed?","No: most have normal potassium."],["Screening test","Aldosterone-to-renin ratio."],["Positive screen (2025, immunoassay)","Renin activity 1 ng/ml/h or less, aldosterone at least 10 ng/dl, ratio above 20."],["False positive drugs","Beta-blockers, clonidine, non-steroidal anti-inflammatory drugs."],["False negative drugs","Spironolactone, diuretics, ACE inhibitors, angiotensin receptor blockers."],["Confirmatory test","Saline infusion test (aldosterone does not fall)."],["Lateralisation","Adrenal vein sampling."],["Treatment","Unilateral: adrenalectomy; bilateral: spironolactone or eplerenone."]],
+exam:["Primary hyperaldosteronism: autonomous aldosterone, low renin, hypertension; low potassium only in a minority.","Screen severe, resistant or low-potassium hypertension (2016); 2025 update: all hypertension.","Ratio: correct potassium; know drug effects.","Confirm (saline infusion), image (computed tomography), lateralise (adrenal vein sampling).","Unilateral → adrenalectomy; bilateral → mineralocorticoid receptor antagonist."],
+finalHtml:`<div data-widget="spot" data-set="conn"></div><div data-widget="termdeck" data-set="conn"></div><div class="exam" style="border-color:var(--ok)"><b>➡️ Next</b><br><b>2.5 Congenital adrenal hyperplasia.</b><br><button class="pri" style="margin-top:8px" onclick="showModule('d5')">→ Open 2.5</button></div>`,
+sources:"Sources: Endocrine Society guideline on primary aldosteronism (Funder et al., JCEM 2016) and its 2025 update (Adler et al., JCEM 2025); Williams Textbook of Endocrinology. Subtype percentages are standard approximations. Cases are invented teaching examples.",
+casesHead:"🏥 Clinical cases",casesIntro:"Answer to reveal the next part."};
+LESSONS.d4=D4;
