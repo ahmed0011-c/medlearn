@@ -53,7 +53,7 @@ take:["The most common cause of adrenal insufficiency in practice is stopping lo
 take:["Vomiting or diarrhoea in Addison disease = high crisis risk; oral tablets fail.","Home: 100 mg hydrocortisone into a muscle + emergency services.","Hospital: hydrocortisone + saline + glucose; then education."]},
 {id:"x3",title:"Mini-case 3 (bonus): Fever, purple rash, collapse",steps:[
 {t:`<b>The scene:</b> A 19-year-old student has fever, a rapidly spreading purple rash and shock that does not respond to fluids. Blood cultures later grow meningococci. Computed tomography shows bleeding in <b>both</b> adrenal glands (like the left picture on slide 19).`,q:"Which syndrome, and what extra drug does he need besides antibiotics?",o:["Waterhouse–Friderichsen syndrome: hydrocortisone","Cushing syndrome: metyrapone","Conn syndrome: spironolactone"],a:0,e:"Waterhouse–Friderichsen syndrome: bilateral adrenal haemorrhage in severe sepsis causes acute primary adrenal insufficiency. Give stress-dose hydrocortisone along with antibiotics and resuscitation."},
-{t:`Read more: [[wfs]]. Bleeding into both adrenals destroys the cortex within hours, so it behaves like a sudden primary insufficiency.`}],
+{t:`Read more: [[wfs]]. Bleeding into both adrenals destroys the cortex within hours, so it behaves like a sudden primary insufficiency.${FIG("haem")}`}],
 take:["Bilateral adrenal bleeding (sepsis, anticoagulants) → sudden primary adrenal crisis.","Shock not responding to fluids in sepsis → think adrenal and give hydrocortisone.","Imaging matters in non-autoimmune causes: bleeding, metastases, tuberculosis."]}
 ],
 flash:[["Skin colour: primary versus secondary adrenal insufficiency","Primary: dark (very high adrenocorticotropic hormone). Secondary: pale."],
