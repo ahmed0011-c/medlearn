@@ -112,3 +112,5 @@ body.dark details.chk{background:color-mix(in srgb,var(--acc) 10%,var(--panel))}
 .sortrow .sb{flex-wrap:wrap}
 .xcalc{display:grid;gap:10px;margin:10px 0}.xci{display:flex;flex-direction:column;gap:4px;font-size:15px}.xci input[type=range]{width:100%;min-height:32px}.xci select{font-size:15px;padding:6px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:inherit;max-width:100%}.xcc{flex-direction:row;align-items:center}.xcc input{width:22px;height:22px}
 .xci{min-width:0}.xci select{width:100%;white-space:normal}.xcalc{grid-template-columns:minmax(0,1fr)}
+.xlink{color:var(--acc);font-weight:700;text-decoration:underline;text-underline-offset:2px;cursor:pointer}
+.xlink:focus-visible,.opt:focus-visible,#inside a:focus-visible{outline:3px solid var(--acc);outline-offset:2px}

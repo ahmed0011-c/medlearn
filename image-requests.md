@@ -26,11 +26,6 @@ Every image is an atlas-style realistic medical illustration. Do not put text, l
   - **Used in:** Module 5, case 1 `k1` ("The newborn who crashed on day 10"): the salt-wasting newborn (poor feeding, sleepiness, dehydration). Do not illustrate the Prader scale or the genitalia; that widget stays text-only.
   - **Prompt:** Calm, gentle, atlas-style medical illustration of a sleepy newborn baby, about ten days old, swaddled snugly in a soft pale blanket and lying in a clear hospital cot. Close focus on the baby's face and upper body: eyes slightly sunken, lips a little dry, and the soft spot on top of the head gently sunken. The baby is resting quietly, not crying. One tiny hand rests outside the blanket with a small, neat intravenous line taped to the back of the hand, and a thin clear tube leads out of frame. A parent's hand rests softly beside the baby on the blanket. Warm, soft daylight, peaceful hospital room, muted colours. No monitors, no screens, no medical crisis, no tears, no distress, no visible needle tip. Body fully covered by the swaddle from the chest down. No text, letters or numbers anywhere.
 
-- [x] **id:** `m5-cushingoid`
-  - **Save as:** `images/m5-cushingoid-patient.png`
-  - **Used in:** Module 5 clinical link for long-term glucocorticoid excess: the Cushing-like body shape that step 7 (card `c7`) links to cortisol-lowering drugs, and the side-effect picture of glucocorticoid therapy (round face, central weight gain, stretch marks).
-  - **Prompt:** Textbook anatomical illustration, clean medical-atlas drawing style, not a photograph. Two panels on a plain off-white background. Main panel: a fully clothed adult in a plain fitted t-shirt and long trousers, standing in side view (profile), neutral calm expression, drawn respectfully and not as a caricature. Show a round, full face; a soft fat pad at the base of the back of the neck (upper back) clearly visible in profile; fullness above the collarbones; central fullness of the abdomen under the t-shirt; and comparatively thin arms and legs. Small separate panel: a close-up square of skin texture only (no body parts identifiable) showing a few wide purple-red stretch marks on thin skin. Soft even lighting, restrained natural colours. No bare torso, no underwear, no text, letters, numbers or labels anywhere.
-
 - [x] **id:** `m5-liquorice-bp`
   - **Save as:** `images/m5-liquorice-bp.png`
   - **Used in:** Subsection 7, step 4 (card `e4`): liquorice blocks 11-beta-hydroxysteroid dehydrogenase type 2 and raises blood pressure. Planned placement: under "The scene", before the renin and aldosterone pattern table.
@@ -41,7 +36,7 @@ Every image is an atlas-style realistic medical illustration. Do not put text, l
   - **Used in:** Subsection 8, step 3 (card `f3`): the daily cortisol rhythm (peak on waking, lowest at midnight). Planned placement: above the interactive daily rhythm curve.
   - **Prompt:** Calm, friendly flat vector illustration in soft pastel colours on a plain off-white background. A large round clock face with no numbers and no hands sits in the centre, surrounded by four small scenes of the same fully clothed adult placed around the clock like a day cycle: top right, waking and stretching by a window at sunrise; bottom right, working at a desk in daylight; bottom left, relaxing on a sofa with a book in the evening light; top left, asleep in bed under a blanket at night with a crescent moon outside the window. A soft gradient ring around the clock goes from bright yellow (morning) to deep blue (night). Clean, simple, uncluttered. No text, letters, numbers or labels anywhere.
 
-- [ ] **id:** `m5-steroid-forms`
+- [x] **id:** `m5-steroid-forms` (PR #16 second attempt, live)
   - **Save as:** `images/m5-steroid-forms.png`
   - **Used in:** Subsection 9, step 3 (card `g3`): the many forms of steroid medicine (and why inhalers, creams and joint injections can still suppress the axis). Planned placement: above the steroid potency table.
   - **Prompt:** Clean, realistic product-style illustration, top-down view on a plain white surface, soft even lighting. Neatly arranged in a row: a blister strip of small round white tablets, a plain grey-and-white metered-dose inhaler, a small plain white cream tube with its cap off, a small plain eye-drop bottle, and a small closed glass injection vial with a grey rubber stopper beside a capped syringe. Gentle shadows, restrained colours, uncluttered. No needles exposed, no people, no blood. No text, letters, numbers, brand names, logos or labels on any item.
@@ -92,7 +87,7 @@ Same rules: atlas-style realistic medical illustration, no text, letters, number
 
 Same rules: calm illustrated or atlas style, clothed adults only, no unwell children, no undressed bodies, no needles in skin, no blood, and no text, letters, numbers, captions, logos or watermarks anywhere in the image. Save each to the given filename, then tick its box. The modules already work without these images; each placement below is where the figure will be inserted once it exists.
 
-- [x] **id:** `d3-cushing-features`
+- [x] **id:** `d3-cushing-features` (PR #15 second attempt, live; replaces the PR #14 version)
   - **Save as:** `images/d3-cushing-features.png`
   - **Used in:** Adrenal disorders 2.3, step 2 (card `cu2`): the features that best separate Cushing syndrome from simple obesity. Planned placement: after the "Most discriminating features" paragraph.
   - **Prompt:** Calm, atlas-style medical illustration of a woman in her 40s shown in two views on a plain light background, fully clothed in a loose short-sleeved T-shirt and trousers. Front view: round, full, reddish face, slim arms and legs with a fuller central body. Side view: a soft rounded fat pad at the back of the lower neck. On one forearm, a few flat purple bruises. Gentle expression, soft even lighting, muted natural colours. No exposed abdomen, no stretch marks shown, no text, letters, numbers or labels.
@@ -102,7 +97,7 @@ Same rules: calm illustrated or atlas style, clothed adults only, no unwell chil
   - **Used in:** Adrenal disorders 2.6, step 1 (card `ph1`): an attack of headache, sweating and palpitations. Planned placement: after the "Classic triad" paragraph.
   - **Prompt:** Calm illustrated scene of a man in his late 30s sitting on the edge of a sofa in a living room, fully clothed in a shirt and jeans, one hand pressed to his forehead and the other resting on his chest, face pale with small beads of sweat, eyes closed, looking uncomfortable but not in danger. Soft warm daylight, muted colours, tidy room. No medical equipment, no other people, no text, letters, numbers or labels.
 
-- [ ] **id:** `d7-incidentaloma-scan`
+- [x] **id:** `d7-incidentaloma-scan` (PR #16 second attempt, live)
   - **Save as:** `images/d7-incidentaloma-scan.png`
   - **Used in:** Adrenal disorders 2.7, step 2 (card `in2`): what a small, smooth adrenal adenoma looks like on a computed tomography slice. Planned placement: after the list of density rules.
   - **Prompt:** Clean grayscale illustration in the style of an axial abdominal computed tomography slice, seen from below as radiologists view it: spine at the bottom, liver on the viewer's left, kidneys on both sides, aorta in front of the spine. Just above the left kidney, a small smooth round homogeneous darker-grey nodule sits in the left adrenal gland. Simplified, schematic and calm, like a textbook drawing of a scan. No text, letters, numbers, rulers, markers or labels anywhere.
@@ -112,7 +107,7 @@ Same rules: calm illustrated or atlas style, clothed adults only, no unwell chil
   - **Used in:** Thyroid 6.2.1, step 1 (card `ig1`): everyday sources of iodine. Planned placement: after the table of daily needs.
   - **Prompt:** Bright illustrated top-down view of a wooden kitchen table with everyday iodine sources neatly arranged: a plain white salt shaker and a small bowl of salt, a piece of cooked white fish, a glass of milk, two eggs, a slice of bread and a small dish of seaweed. Plain packaging with no writing at all. Soft natural light, friendly cookbook style. No text, letters, numbers, logos or labels.
 
-- [x] **id:** `t2-endemic-goitre`
+- [x] **id:** `t2-endemic-goitre` (PR #15 second attempt, live; replaces the PR #14 version)
   - **Save as:** `images/t2-endemic-goitre.png`
   - **Used in:** Thyroid 6.2.2, step 1 (card `eg1`): a long-standing goitre in an iodine-deficient region. Planned placement: after the World Health Organization grading line, before the grading game.
   - **Prompt:** Respectful, calm illustrated portrait of a woman in her 50s standing outdoors in a mountain village, fully clothed in a simple blouse and cardigan with an open collar, with a clearly visible smooth, large swelling at the front of her neck (a goitre). She looks calm and dignified, slight smile. Soft daylight, muted natural colours, hills in the soft-focus background. No text, letters, numbers or labels.
@@ -122,12 +117,12 @@ Same rules: calm illustrated or atlas style, clothed adults only, no unwell chil
   - **Used in:** Thyroid 6.2.2, step 1 (card `eg1`): World Health Organization goitre grades 0, 1 and 2. Planned placement: just above the grading game.
   - **Prompt:** Clean three-panel medical illustration on a plain light background, the same clothed adult woman in an open-collar shirt shown from the front in each panel. Panel one: normal neck, no swelling. Panel two: the neck looks normal, and a doctor's hand (shirt cuff visible) gently feels the front of the neck with the fingertips. Panel three: a clearly visible smooth swelling at the front of the neck with the head in normal position. Calm, textbook style, soft lighting. No text, letters, numbers or labels.
 
-- [ ] **id:** `t2-neck-ultrasound`
+- [x] **id:** `t2-neck-ultrasound` (PR #16 second attempt, live)
   - **Save as:** `images/t2-neck-ultrasound.png`
   - **Used in:** Thyroid 6.2.4, step 2 (card `no2`): ultrasound of a thyroid nodule. Planned placement: after the work-up list.
   - **Prompt:** Calm illustrated clinic scene: a fully clothed adult woman lies on an examination couch with her head slightly tilted back, wearing a T-shirt; a doctor in a white coat holds a small ultrasound probe gently against the front of her neck; beside them, a screen shows a soft grey fan-shaped ultrasound image with a small dark oval nodule. Soft lighting, muted colours, reassuring mood. No needles, no text, letters, numbers or labels on the screen or anywhere else.
 
-- [x] **id:** `t2-papillary-histology`
+- [x] **id:** `t2-papillary-histology` (PR #15 second attempt, live; replaces the PR #14 version)
   - **Save as:** `images/t2-papillary-histology.png`
   - **Used in:** Thyroid 6.2.5, step 2 (card `tc2`): the microscopic hallmarks of papillary carcinoma. Planned placement: after the bullet list of pathology features.
   - **Prompt:** Atlas-style realistic microscopy illustration with haematoxylin and eosin colours: branching finger-like papillae with thin fibrovascular cores, lined by cells with enlarged, overlapping, pale "ground-glass" nuclei, some with nuclear grooves; a few small round, layered purple calcified psammoma bodies. A circular magnified inset shows three nuclei with a groove and a pale pseudo-inclusion. Textbook accuracy, restrained colours. No text, letters, numbers, arrows or labels.
@@ -146,3 +141,109 @@ Same rules: calm illustrated or atlas style, clothed adults only, no unwell chil
   - **Save as:** `images/t1-storm-icu.png`
   - **Used in:** Thyroid 6.1.10, step 2 (card `sx2`): thyroid storm needs intensive care. Planned placement: after the scene, before the score calculator.
   - **Prompt:** Calm illustrated intensive care scene: a clothed adult woman in a hospital gown lies in a bed with a light blanket, a cooling pad on her forehead, a heart monitor glowing beside her bed; two nurses in scrubs adjust an intravenous drip. Reassuring, professional mood, soft blue lighting, muted colours. No blood, no needles visible in skin, no text, letters, numbers or labels on screens or anywhere.
+
+## Set aside (do not generate again)
+
+- **`m5-cushingoid`** (file `m5-cushingoid-patient`; Module 5 step c7 and Module 9 step g4): set aside after 2 failed attempts (PR #9 and PR #14). The results were either photoreal or missed the key signs: no true moon face, no fat pad at the back of the neck, arms and legs not thin. Removed from the lessons in publish7; the clinical picture is covered by `d3-cushing-features` (PR #15 version), shown in Adrenal 2.3 card `cu2` and Module 9 card `g4`. The original request is kept below for reference.
+  <details><summary>Original request</summary>
+
+  - [-] **id:** `m5-cushingoid`
+    - **Save as:** `images/m5-cushingoid-patient.png`
+    - **Used in:** Module 5 clinical link for long-term glucocorticoid excess: the Cushing-like body shape that step 7 (card `c7`) links to cortisol-lowering drugs, and the side-effect picture of glucocorticoid therapy (round face, central weight gain, stretch marks).
+    - **Prompt:** Textbook anatomical illustration, clean medical-atlas drawing style, not a photograph. Two panels on a plain off-white background. Main panel: a fully clothed adult in a plain fitted t-shirt and long trousers, standing in side view (profile), neutral calm expression, drawn respectfully and not as a caricature. Show a round, full face; a soft fat pad at the base of the back of the neck (upper back) clearly visible in profile; fullness above the collarbones; central fullness of the abdomen under the t-shirt; and comparatively thin arms and legs. Small separate panel: a close-up square of skin texture only (no body parts identifiable) showing a few wide purple-red stretch marks on thin skin. Soft even lighting, restrained natural colours. No bare torso, no underwear, no text, letters, numbers or labels anywhere.
+
+  </details>
+- **`m5-salt-wasting-newborn-v2`** (Module 5, step k1, and 2.5): set aside after 2 attempts. The new version still shows no dehydration signs (rosy, plump baby; eyes not sunken; no dry lips or sunken fontanelle). Keep the live `images/m5-salt-wasting-newborn-labelled.jpg` and its existing honest Image check.
+
+# CBL 3 and CBL 4 illustration requests (thyroid investigations and thyroid clinical cases, added October 2026, publish6)
+
+Same rules as above: illustrated textbook style, fully clothed adults, calm and respectful mood, no text, letters, numbers, logos or labels anywhere in the picture (labels are added later by MedLearn). Save each file under the given name in images/ and tick the box.
+
+- [ ] **id:** `t3-neck-palpation`
+  - **Save as:** `images/t3-neck-palpation.png`
+  - **Used in:** CBL 3.1, step 1 (card `ta1`, "Look, feel, swallow: grading the goitre"). Planned placement: after the scene, before the grading text.
+  - **Prompt:** Calm illustrated clinic scene: a fully clothed adult woman in her 40s sits upright on a chair in an open-collar blouse, holding a small glass of water and swallowing; a doctor in a white coat stands behind her and gently places the fingertips of both hands on the front of her lower neck to feel the thyroid. Soft daylight, muted colours, friendly textbook style. No text, letters, numbers, logos or labels.
+
+- [ ] **id:** `t3-gamma-camera`
+  - **Save as:** `images/t3-gamma-camera.png`
+  - **Used in:** CBL 3.3, step 2 (card `tc2`, "Scintigraphy: where is the iodine going?"). Planned placement: after the scene, before the explanation of tracers.
+  - **Prompt:** Illustrated nuclear medicine room: a fully clothed adult man lies relaxed on his back on a narrow scanning table with a small pillow under his neck; a large flat square camera head is positioned just above the front of his neck; a technologist in scrubs stands at a nearby computer screen showing a soft orange butterfly-shaped glow. Clean, bright, reassuring mood, muted colours, textbook style. No radiation symbols, no text, letters, numbers or labels on screens or anywhere.
+
+- [ ] **id:** `t3-ultrasound-position`
+  - **Save as:** `images/t3-ultrasound-position.png`
+  - **Used in:** CBL 3.4, step 1 (card `td1`, "Technique and the normal neck"). Planned placement: after the technique paragraph, before the labelled neck diagram.
+  - **Prompt:** Illustrated clinic scene seen from the side: a fully clothed adult man in a T-shirt lies on an examination couch with a small rolled towel under his shoulders so his neck is gently extended; a doctor sits beside him holding a small linear ultrasound probe across the front of his lower neck, with a little clear gel visible; a screen in the background shows a soft grey fan-shaped image. Calm, professional, muted colours. No needles, no text, letters, numbers or labels on the screen or anywhere.
+
+- [ ] **id:** `t3-fna-procedure`
+  - **Save as:** `images/t3-fna-procedure.png`
+  - **Used in:** CBL 3.5, step 3 (card `te3`, "Fine-needle aspiration and Bethesda"). Planned placement: after the paragraph on how the aspiration is done, before the Bethesda table.
+  - **Prompt:** Gentle illustrated clinic scene: a fully clothed adult woman lies calmly on an examination couch with her head slightly tilted back, a nurse holding her hand reassuringly; a doctor holds a small ultrasound probe on the side of her neck while looking at a screen; on a small tray beside the couch lie a few thin, capped syringes, glass slides and gauze. Nothing is inserted into the skin, no blood. Soft lighting, muted colours, reassuring textbook style. No text, letters, numbers or labels.
+
+- [ ] **id:** `t4-tight-throat`
+  - **Save as:** `images/t4-tight-throat.png`
+  - **Used in:** CBL 4.1, step 1 (card `ca1`, "The story: a tight feeling in the throat"). Planned placement: after the scene.
+  - **Prompt:** Illustrated consultation: a fully clothed man in his mid-30s with slightly excess weight sits across a desk from a doctor and touches the front of his own neck with two fingers, looking mildly worried, as he describes a tight feeling when swallowing; the doctor listens attentively with a notepad. Warm, calm clinic setting, muted colours, textbook illustration style. No text, letters, numbers, logos or labels.
+
+- [ ] **id:** `t4-mdt-meeting`
+  - **Save as:** `images/t4-mdt-meeting.png`
+  - **Used in:** CBL 4.2, step 4 (card `cb4`, "Final diagnosis, prognosis and the team"). Planned placement: before the multidisciplinary team paragraph.
+  - **Prompt:** Illustrated hospital meeting room: six clothed adult doctors of different ages and backgrounds (an endocrinologist, a surgeon in scrubs, a pathologist, a radiologist, a nuclear medicine doctor and an oncologist) sit around a table discussing a case; a wall screen shows a soft grey neck ultrasound image and a simple line graph without any numbers; coffee cups and closed folders on the table. Collaborative, calm mood, muted colours. No text, letters, numbers, logos or labels anywhere.
+
+- [ ] **id:** `t4-growth-chart-consult`
+  - **Save as:** `images/t4-growth-chart-consult.png`
+  - **Used in:** CBL 4.3, step 4 (card `cc4`, "Management and growth follow-up"). Planned placement: before the target-height calculator.
+  - **Prompt:** Illustrated paediatric clinic office: a mother and a father (fully clothed adults) sit at a desk opposite a friendly paediatric endocrinologist who points with a pen at a large paper growth chart with smooth curved pink lines and a few dots; a measuring stand for height is in the corner of the room; no child is shown. Warm, hopeful mood, soft colours, textbook style. No text, letters, numbers or labels on the chart or anywhere.
+
+- [ ] **id:** `t4-heart-clinic`
+  - **Save as:** `images/t4-heart-clinic.png`
+  - **Used in:** CBL 4.4, step 2 (card `cd2`, "Complaints and examination"). Planned placement: after the scene, before the electrocardiogram diagram.
+  - **Prompt:** Illustrated cardiology clinic: a fully clothed man in his 30s in a T-shirt sits on an examination couch looking tired, a light sheen of sweat on his forehead; a doctor holds a stethoscope to the left side of his chest over the T-shirt while gently feeling the pulse at his wrist with the other hand; a heart monitor in the background shows an irregular green line. Calm, professional mood, muted colours. No text, letters, numbers or labels on the monitor or anywhere.
+
+# Lecture 4 and Lecture 5 illustration requests (thyroid gland physiology and hypothyroidism, added October 2026, publish7)
+
+Same rules as above: illustrated textbook style, fully clothed people, calm and respectful mood, no text, letters, numbers, logos or labels anywhere in the picture (labels are added later by MedLearn). Save each file under the given name in images/ and tick the box.
+
+- [ ] **id:** `t5-follicle-histology`
+  - **Save as:** `images/t5-follicle-histology.png`
+  - **Used in:** Lecture 4.1, step 2 (card `ga2`, the follicle). Planned placement: after the follicle diagram.
+  - **Prompt:** Illustrated microscope view in soft pink and purple haematoxylin and eosin colours of normal thyroid tissue: many round follicles of different sizes, each lined by a single layer of small cube-shaped cells with dark round nuclei and filled with smooth pink colloid; a few paler, larger cells sit between the follicles; thin capillaries run between them. Clean textbook style, circular microscope field on a white background. No text, letters, numbers, arrows or labels.
+
+- [ ] **id:** `t5-contrast-scan`
+  - **Save as:** `images/t5-contrast-scan.png`
+  - **Used in:** Lecture 4.4, case 1 (`gdk1`, "After the contrast scan"). Planned placement: case intro, or card `gd3` after the scene.
+  - **Prompt:** Illustrated hospital scene: a fully clothed man in his late 70s in a hospital gown over a T-shirt lies on the table of a large ring-shaped computed tomography scanner; a nurse beside him checks a thin intravenous line in his forearm connected to an injector pump. Calm, clean, reassuring mood, muted blues and greys, textbook style. No needles shown entering skin, no blood, no text, letters, numbers or labels on any screen or device.
+
+- [ ] **id:** `t6-heel-prick`
+  - **Save as:** `images/t6-heel-prick.png`
+  - **Used in:** Lecture 5.2, step 1 (card `hb1`, screening). Planned placement: after the paragraph on screening, before the baby diagram.
+  - **Prompt:** Gentle illustrated maternity-ward scene: a mother in a dressing gown holds her newborn baby, who is wrapped in a soft blanket with only one small foot showing; a midwife in uniform gently holds the baby's heel and presses it onto a small blank paper card with four empty printed circles. Warm, calm, tender mood, soft pastel colours, textbook style. No blood drops, no needles, no text, letters, numbers or labels.
+
+- [ ] **id:** `t6-sleepy-infant`
+  - **Save as:** `images/t6-sleepy-infant.png`
+  - **Used in:** Lecture 5.2, case 1 (`hbk1`, "The 'good quiet baby'"). Planned placement: card `hb1` after the scene.
+  - **Prompt:** Illustrated close-up of a sleepy 3-week-old baby fully wrapped in a cream blanket in a parent's arms: slightly puffy eyelids, a broad flat nose, the tip of a large tongue showing between the lips, and a faint yellow tint to the skin of the face. Calm, tender mood, soft light, gentle textbook style, not frightening. No text, letters, numbers or labels.
+
+- [ ] **id:** `t6-tired-teacher`
+  - **Save as:** `images/t6-tired-teacher.png`
+  - **Used in:** Lecture 5.3, step 1 (card `hc1`, "Symptoms and signs"). Planned placement: after the scene, before the body map.
+  - **Prompt:** Illustrated scene of a fully clothed woman in her late 40s sitting at a classroom desk after school, wearing a thick cardigan and a scarf although the room is warm and sunny; she looks tired, with a slightly puffy face, dry hair and thin outer eyebrows; a cup of tea and a pile of exercise books sit in front of her. Gentle, sympathetic mood, muted colours, textbook style. No text, letters, numbers or labels on the books, board or anywhere.
+
+- [ ] **id:** `t6-older-man-daughter`
+  - **Save as:** `images/t6-older-man-daughter.png`
+  - **Used in:** Lecture 5.3, step 4 (card `hc4`, "Older people: the quiet presentation"). Planned placement: after the scene.
+  - **Prompt:** Illustrated clinic scene: a fully clothed 81-year-old man with a cardigan sits slowly and quietly in a chair, looking slightly puzzled; his adult daughter sits beside him with a supportive hand on his arm, talking to a kind doctor across a desk. Warm, respectful mood, soft light, muted colours, textbook style. No text, letters, numbers or labels.
+
+- [ ] **id:** `t6-morning-tablet`
+  - **Save as:** `images/t6-morning-tablet.png`
+  - **Used in:** Lecture 5.4, step 2 (card `hd2`, "What changes the need"). Planned placement: after the hint on timing.
+  - **Prompt:** Illustrated early-morning kitchen scene: a single small white tablet and a glass of water on a bedside-style tray in the foreground; in the background, deliberately set apart on the counter, a cup of coffee, a breakfast plate and two unlabelled supplement bottles; soft dawn light through the window. Calm, tidy, textbook style, muted colours. No clock faces, no text, letters, numbers, logos or labels on anything.
+
+- [ ] **id:** `t6-icu-warming`
+  - **Save as:** `images/t6-icu-warming.png`
+  - **Used in:** Lecture 5.5, step 1 (card `he1`, myxoedema coma). Planned placement: after the treatment order puzzle.
+  - **Prompt:** Illustrated intensive care scene: an older woman lies asleep in a hospital bed covered with several thick warm blankets up to her chest, wearing a hospital gown, with a clear oxygen mask on her face and an intravenous line in a covered arm; a nurse adjusts the blankets; monitors in the background show only soft coloured wave lines. Calm, caring mood, muted colours, textbook style. No blood, no numbers, text, letters or labels on monitors or anywhere.
+
+- [ ] **id:** `t6-postpartum-mother`
+  - **Save as:** `images/t6-postpartum-mother.png`
+  - **Used in:** Lecture 5.6, step 2 (card `hf2`, "Variants and treatment"). Planned placement: after the scene.
+  - **Prompt:** Illustrated home scene: a fully clothed young mother sits on a sofa holding her 4-month-old baby, who is dressed in a soft romper, on her lap; she rests her free hand on her chest as if feeling her heart racing, and looks slightly anxious and tired; a cup of tea on the table. Warm daylight, gentle mood, muted colours, textbook style. No text, letters, numbers or labels.

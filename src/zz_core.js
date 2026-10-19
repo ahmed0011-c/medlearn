@@ -4,12 +4,12 @@ const XPK={},XSORT={},XTREE={},XPAT={};
 const FIGX=file=>{for(const c of M5.cards){const m=c.html.match(new RegExp('<figure class="mlfig">(?:(?!</figure>).)*?images/'+file.replace(/[.-]/g,"\\$&")+'[\\s\\S]*?</figure>'));if(m)return m[0]}return ""};
 const XSH=a=>{const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b};
 /* pick the right answer: XPK[set]={t,opts:[...],items:[[scenario,answer,explanation],...]} */
-W.pickset=el=>{const D=XPK[el.dataset.set];let n=0,right=0;
+W.pickset=el=>{const D0=XPK[el.dataset.set],D={...D0,items:XSH(D0.items)};let n=0,right=0;
 const draw=()=>{if(n>=D.items.length){el.innerHTML=`<div class="xgame"><b>${D.t}</b><div class="info">🏆 Done: ${right}/${D.items.length} right first time.</div><button class="xreset">↺ Play again</button></div>`;el.querySelector(".xreset").onclick=()=>{n=0;right=0;draw()};complete("x-pk-"+el.dataset.set,15,"🎯 Scenario game done! +15 XP");return}
 const s=D.items[n];let first=true;el.innerHTML=`<div class="xgame"><b>${D.t}</b> <small>(${n+1}/${D.items.length})</small><p class="xscen">${s[0]}</p><div class="ctrl">${D.opts.map((o,i)=>`<button data-o="${i}">${o}</button>`).join("")}</div><div class="info xp-info">Pick one.</div></div>`;
 el.querySelectorAll("[data-o]").forEach(b=>b.onclick=()=>{const inf=el.querySelector(".xp-info");if(D.opts[+b.dataset.o]==s[1]){if(first)right++;b.classList.add("right");el.querySelectorAll("[data-o]").forEach(x=>x.disabled=true);inf.innerHTML=`✅ <b>${s[1]}.</b> ${s[2]} <button class="xnext">Next ▶</button>`;inf.querySelector(".xnext").onclick=()=>{n++;draw()}}else{first=false;b.classList.add("wrong");b.disabled=true;inf.innerHTML="❌ Not quite. "+(s[3]||"Think again about the key clue.")}})};draw()};
 /* sort into columns: XSORT[set]={t,labels:[...],items:[[text,answerIndex,explanation]]} */
-W.sortset=el=>{const D=XSORT[el.dataset.set],I=D.items;let ok=0;const done=new Set();
+W.sortset=el=>{const D=XSORT[el.dataset.set],I=XSH(D.items);let ok=0;const done=new Set();
 el.innerHTML=`<div class="xgame"><b>🧩 ${D.t}</b><div class="sortg">${I.map((it,i)=>`<div class="sortrow" data-i="${i}"><span class="st">${it[0]}</span><span class="sb">${D.labels.map((l,j)=>`<button data-a="${j}">${l}</button>`).join("")}</span><div class="sfb" hidden></div></div>`).join("")}</div><div class="info xs3">0/${I.length} sorted correctly.</div></div>`;
 el.querySelectorAll(".sortrow").forEach(row=>row.querySelectorAll("button").forEach(b=>b.onclick=()=>{const i=+row.dataset.i,it=I[i],fb=row.querySelector(".sfb");fb.hidden=false;
 if(+b.dataset.a==it[1]){row.querySelectorAll("button").forEach(x=>x.disabled=true);b.classList.add("right");row.classList.add("ok");fb.innerHTML="✅ "+it[2];if(!done.has(i)){done.add(i);ok++}}

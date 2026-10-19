@@ -29,7 +29,9 @@ const g=GLOSSARY[t.dataset.k];p.innerHTML=`<b class="t-${g.c}">${g.l}${g.k?` <sp
 p.style.display="block";const r=t.getBoundingClientRect();let L=r.left+scrollX;L=Math.min(L,scrollX+innerWidth-360);p.style.left=Math.max(8,L)+"px";p.style.top=(r.bottom+scrollY+8)+"px"});
 document.addEventListener("keydown",e=>{if(e.key==="Enter"&&e.target.classList.contains("term"))e.target.click();if(e.key==="Escape")$("#pop").style.display="none"});
 /* ===== quiz ===== */
-function quizHTML(id,qs){return `<div class="quiz"><b>⚡ Quick check</b>${qs.map((q,i)=>`<div class="q">${i+1}. ${q.q}</div>${q.o.map((o,j)=>`<button class="opt" data-q="${id}-${i}" data-j="${j}">${o}</button>`).join("")}<div class="fb" id="fb-${id}-${i}" hidden></div>`).join("")}</div>`}
+/* answer options are shown in random order (the stored index data-j stays the original one) */
+const QORD=n=>{const b=[...Array(n).keys()];for(let i=n-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b};
+function quizHTML(id,qs){return `<div class="quiz"><b>⚡ Quick check</b>${qs.map((q,i)=>`<div class="q">${i+1}. ${q.q}</div>${QORD(q.o.length).map(j=>`<button class="opt" data-q="${id}-${i}" data-j="${j}">${q.o[j]}</button>`).join("")}<div class="fb" id="fb-${id}-${i}" hidden></div>`).join("")}</div>`}
 function bindQuiz(root,id,qs,onAll){root.querySelectorAll(".opt").forEach(b=>b.onclick=()=>{const [cid,i]=b.dataset.q.split(/-(?=\d+$)/);const q=qs[+i],j=+b.dataset.j;
 const grp=root.querySelectorAll(`[data-q="${b.dataset.q}"]`);const fb=root.querySelector(`#fb-${b.dataset.q}`);
 if(j===q.a){grp.forEach(x=>x.disabled=true);b.classList.add("right");fb.innerHTML="✅ <b>Correct!</b> "+q.e;if(!S.ans[b.dataset.q]){S.ans[b.dataset.q]=1;award(10)}}
@@ -158,7 +160,7 @@ const hm=location.hash.match(/mod=(\w+)/),saved=LS.getItem("ml_mod");showModule(
 function showModule(id){const m=COURSE.modules.find(x=>x.id==id);if(!m)return showModule("m5");$$("nav [data-m]").forEach(a=>a.classList.toggle("on",a.dataset.m==id));const c=$("#content");
 if(!m.built||!LESSONS[id]){c.innerHTML=`<div class="card soon-card"><div class="meta">${COURSE.area} › ${m.grp||COURSE.lectureGroup} › ${m.n}</div><h2>${LAB(m)}${m.title}</h2><p>${m.summary}</p><p>🚧 <b>Coming soon.</b> This module will follow the same format as the built modules: goals, micro-steps, quick checks, cases and flashcards.</p>${m.grp?`<button class="pri" onclick="showModule('d2')">→ Open the built module 2.2</button> `:""}<button class="pri" onclick="showModule('m5')">← Back to the demo module 5</button></div>`;scrollTo(0,0);return}
 L=LESSONS[id];CUR=id;if($("#modsel"))$("#modsel").value=id;LS.setItem("ml_mod",id);document.title=`MedLearn – ${COURSE.area}: ${m.title}`;
-$("#inside").innerHTML=`<div class="grp">Inside this module</div>${L.cards.map((c,i)=>`<a onclick="go('${c.id}')">${i+1}. ${c.title}</a>`).join("")}<a onclick="go('cases')">${L.casesHead||"🏥 Clinical cases"}</a><a onclick="go('flash')">🃏 Flashcards</a><a onclick="go('final')">🎯 What I got from this</a>`;
+$("#inside").innerHTML=`<div class="grp">Inside this module</div>${L.cards.map((c,i)=>`<a href="#" onclick="go('${c.id}');return false">${i+1}. ${c.title}</a>`).join("")}<a href="#" onclick="go('cases');return false">${L.casesHead||"🏥 Clinical cases"}</a><a href="#" onclick="go('flash');return false">🃏 Flashcards</a><a href="#" onclick="go('final');return false">🎯 What I got from this</a>`;
 const legend=Object.entries(CATS).map(([k,v])=>`<span class="t-${k}" style="font-weight:700">● ${v}</span>`).join("");
 const meta=L.meta||`${COURSE.area} › Lecture 7 › Subsection ${m.n} · lecture ${m.pages} · ⏱ about 25 minutes in ${L.cards.length} bite-sized steps`;
 c.innerHTML=`<div class="card" id="intro"><div class="meta">${meta}</div>
