@@ -41,7 +41,7 @@ Every image is an atlas-style realistic medical illustration. Do not put text, l
   - **Used in:** Subsection 8, step 3 (card `f3`): the daily cortisol rhythm (peak on waking, lowest at midnight). Planned placement: above the interactive daily rhythm curve.
   - **Prompt:** Calm, friendly flat vector illustration in soft pastel colours on a plain off-white background. A large round clock face with no numbers and no hands sits in the centre, surrounded by four small scenes of the same fully clothed adult placed around the clock like a day cycle: top right, waking and stretching by a window at sunrise; bottom right, working at a desk in daylight; bottom left, relaxing on a sofa with a book in the evening light; top left, asleep in bed under a blanket at night with a crescent moon outside the window. A soft gradient ring around the clock goes from bright yellow (morning) to deep blue (night). Clean, simple, uncluttered. No text, letters, numbers or labels anywhere.
 
-- [ ] **id:** `m5-steroid-forms`
+- [x] **id:** `m5-steroid-forms`
   - **Save as:** `images/m5-steroid-forms.png`
   - **Used in:** Subsection 9, step 3 (card `g3`): the many forms of steroid medicine (and why inhalers, creams and joint injections can still suppress the axis). Planned placement: above the steroid potency table.
   - **Prompt:** Clean, realistic product-style illustration, top-down view on a plain white surface, soft even lighting. Neatly arranged in a row: a blister strip of small round white tablets, a plain grey-and-white metered-dose inhaler, a small plain white cream tube with its cap off, a small plain eye-drop bottle, and a small closed glass injection vial with a grey rubber stopper beside a capped syringe. Gentle shadows, restrained colours, uncluttered. No needles exposed, no people, no blood. No text, letters, numbers, brand names, logos or labels on any item.
@@ -102,7 +102,7 @@ Same rules: calm illustrated or atlas style, clothed adults only, no unwell chil
   - **Used in:** Adrenal disorders 2.6, step 1 (card `ph1`): an attack of headache, sweating and palpitations. Planned placement: after the "Classic triad" paragraph.
   - **Prompt:** Calm illustrated scene of a man in his late 30s sitting on the edge of a sofa in a living room, fully clothed in a shirt and jeans, one hand pressed to his forehead and the other resting on his chest, face pale with small beads of sweat, eyes closed, looking uncomfortable but not in danger. Soft warm daylight, muted colours, tidy room. No medical equipment, no other people, no text, letters, numbers or labels.
 
-- [ ] **id:** `d7-incidentaloma-scan`
+- [x] **id:** `d7-incidentaloma-scan`
   - **Save as:** `images/d7-incidentaloma-scan.png`
   - **Used in:** Adrenal disorders 2.7, step 2 (card `in2`): what a small, smooth adrenal adenoma looks like on a computed tomography slice. Planned placement: after the list of density rules.
   - **Prompt:** Clean grayscale illustration in the style of an axial abdominal computed tomography slice, seen from below as radiologists view it: spine at the bottom, liver on the viewer's left, kidneys on both sides, aorta in front of the spine. Just above the left kidney, a small smooth round homogeneous darker-grey nodule sits in the left adrenal gland. Simplified, schematic and calm, like a textbook drawing of a scan. No text, letters, numbers, rulers, markers or labels anywhere.
@@ -122,7 +122,7 @@ Same rules: calm illustrated or atlas style, clothed adults only, no unwell chil
   - **Used in:** Thyroid 6.2.2, step 1 (card `eg1`): World Health Organization goitre grades 0, 1 and 2. Planned placement: just above the grading game.
   - **Prompt:** Clean three-panel medical illustration on a plain light background, the same clothed adult woman in an open-collar shirt shown from the front in each panel. Panel one: normal neck, no swelling. Panel two: the neck looks normal, and a doctor's hand (shirt cuff visible) gently feels the front of the neck with the fingertips. Panel three: a clearly visible smooth swelling at the front of the neck with the head in normal position. Calm, textbook style, soft lighting. No text, letters, numbers or labels.
 
-- [ ] **id:** `t2-neck-ultrasound`
+- [x] **id:** `t2-neck-ultrasound`
   - **Save as:** `images/t2-neck-ultrasound.png`
   - **Used in:** Thyroid 6.2.4, step 2 (card `no2`): ultrasound of a thyroid nodule. Planned placement: after the work-up list.
   - **Prompt:** Calm illustrated clinic scene: a fully clothed adult woman lies on an examination couch with her head slightly tilted back, wearing a T-shirt; a doctor in a white coat holds a small ultrasound probe gently against the front of her neck; beside them, a screen shows a soft grey fan-shaped ultrasound image with a small dark oval nodule. Soft lighting, muted colours, reassuring mood. No needles, no text, letters, numbers or labels on the screen or anywhere else.
