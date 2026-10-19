@@ -584,6 +584,12 @@ chk:"this is a <b>staged scene</b>. A real patient in crisis may be <b>more drow
 sickday:{f:"cbl5-sick-day-labelled.jpg",w:1400,h:673,alt:"Labelled illustration of sick-day items: hydrocortisone tablets, water, thermometer, medical alert bracelet and emergency injection kit",
 cap:"<b>The sick-day kit.</b> Tablets, fluids and a thermometer for the rules (above 38 °C double, above 39 °C triple), a medical alert bracelet, and the emergency injection kit (vial, syringe, needle, alcohol swab) for when tablets cannot be kept down.",
 chk:"bracelets, cards and kits <b>vary by country</b>. In Germany patients carry an emergency card (<i>Notfallausweis</i>) and an emergency hydrocortisone kit, often 100 mg. Injectable hydrocortisone usually comes as a powder that has to be dissolved first, not as the ready liquid drawn here. The swab is drawn as a plain pad; real alcohol swabs come sealed in a small packet."},
+aps2:{f:"cbl5-aps2-organs-labelled.jpg",w:1114,h:992,alt:"Labelled illustration of a female body outline highlighting the thyroid, both adrenal glands and both ovaries, the glands most often hit together in autoimmune polyglandular syndrome type 2",
+cap:"<b>Glands that fail together: autoimmune polyglandular syndrome type 2 (Schmidt syndrome).</b> Highlighted: thyroid (autoimmune thyroiditis or Graves disease), both adrenals (autoimmune adrenalitis, Addison disease) and both ovaries (primary ovarian insufficiency). Kidneys and uterus are drawn faintly for orientation only.",
+chk:"the drawing shows the <b>adrenals sitting correctly on top of the kidneys</b> and the thyroid in the front of the neck. Not drawn: the <b>pancreas</b> (type 1 diabetes, a common part of type 2 syndrome), and the skin, stomach and gut (vitiligo, autoimmune gastritis with pernicious anaemia, coeliac disease). In men the <b>testes</b> can fail instead of the ovaries, but this is rarer. The uterus is not affected."},
+saltnb:{f:"m5-salt-wasting-newborn-labelled.jpg",w:1121,h:749,alt:"Labelled photo-style illustration of a drowsy newborn in a hospital cot with an intravenous cannula in the hand and a parent's hand resting on the blanket",
+cap:"<b>Salt-wasting crisis in a newborn with congenital adrenal hyperplasia.</b> Typically in the first 1–4 weeks: poor feeding, vomiting, weight loss, drowsiness, then shock. Treatment runs through the cannula: saline bolus, glucose, and intravenous hydrocortisone.",
+chk:"the <b>dehydration signs are understated</b>. This baby looks <b>pink, well filled and comfortable</b>. A real baby in a salt-wasting crisis is usually <b>pale or mottled, floppy</b>, with <b>sunken eyes and fontanelle</b>, dry lips, cool hands and feet, slow capillary refill and marked weight loss. Do not judge severity from this picture; judge it from the baby, and from sodium, potassium and glucose."},
 haem:{f:"cbl5-adrenal-haemorrhage-labelled.jpg",w:1400,h:673,alt:"Labelled illustration of bilateral adrenal haemorrhage on both kidneys, with an inset of a purpuric rash on the legs",
 cap:"<b>Bilateral adrenal haemorrhage.</b> Both adrenals are swollen and dark red; the cut gland is filled with blood clot. Inset: purpura, a non-blanching purple rash, the classic skin sign of meningococcal sepsis.",
 chk:"the glands are drawn as <b>shapeless blood-filled masses</b> instead of keeping the adrenal shape. The rash is the <b>classic meningococcal purpura pattern</b>."}
@@ -739,6 +745,7 @@ CBL5.cards.push(
 <tr><td>Hiatal hernia, gallstones, [[cholestasis|cholestatic syndrome]], fatty liver, overweight</td><td>History, yellow sclerae, high direct bilirubin and [[ggt]], body mass index 26</td></tr></table>
 <div class="corr">📝 <b>Thyroid note:</b> M.T. is <b>anti-thyroglobulin positive but anti-thyroid peroxidase negative</b>. Most people with autoimmune thyroiditis are thyroid peroxidase positive, so this pattern is less typical. Positive thyroglobulin antibodies with a goitre still support autoimmune thyroiditis. Also, slide 7 asked "hypothyroidism?": the answer is <b>no</b>, she is euthyroid. The ultrasound on slide 26 is a reference picture from Radiopaedia, not necessarily M.T.'s scan.</div>
 ${FIG("adrenalitis","This is what is happening in M.T.'s adrenals.")}
+${FIG("aps2","M.T. has the adrenal and thyroid parts of this picture.")}
 <h3>[[aps|Autoimmune polyglandular syndromes]] (slide 29)</h3>
 <table><tr><th>Type</th><th>Definition</th></tr>
 <tr><td>Type 1</td><td>Chronic candidiasis, hypoparathyroidism, autoimmune adrenal insufficiency (at least two)</td></tr>
@@ -2891,6 +2898,7 @@ quiz:[{q:"A salt-wasting crisis typically shows…",o:["Low sodium, high potassi
 <div data-widget="sortset" data-set="cahtype"></div>
 <div data-widget="tree" data-set="cahnb"></div>
 <div class="hint">💡 <b>"Eleven and seventeen raise the pressure."</b></div>
+${FIG("saltnb")}
 <details class="chk"><summary>✋ Checkpoint: why do 11-beta-hydroxylase defects cause hypertension?</summary><p>11-deoxycorticosterone builds up; it is a mineralocorticoid.</p></details>`,
 recap:["11-beta and 17-alpha deficiency: high blood pressure, low potassium.","Newborn screening measures 17-hydroxyprogesterone; preterm babies give false positives.","Crisis: saline, glucose, intravenous hydrocortisone at once."],
 quiz:[{q:"Hypertension plus virilisation suggests…",o:["11-beta-hydroxylase deficiency","21-hydroxylase deficiency","17-alpha-hydroxylase deficiency"],a:0,e:"11-deoxycorticosterone plus androgens."},{q:"First treatment of a salt-wasting crisis includes…",o:["Intravenous hydrocortisone","Dexamethasone tablets","Waiting for gene results"],a:0,e:"Treat immediately."}]},
@@ -3113,6 +3121,7 @@ cards:[
 <ul><li>[[aps1]]: [[cmc]], [[hypopara]], Addison disease.</li><li>[[aps2]]: Addison disease plus autoimmune thyroid disease and/or type 1 diabetes ([[schmidt]]).</li><li>[[aps3]]: autoimmune thyroid disease plus other autoimmune disease, no Addison.</li><li><b>Type 4:</b> other combinations.</li></ul>
 <p>Modern additions: [[ici]] can attack several glands; rare IPEX syndrome (FOXP3 gene) in baby boys.</p>
 <div class="hint">💡 <b>"One autoimmune gland? Look for the next."</b></div>
+${FIG("aps2")}
 <details class="chk"><summary>✋ Checkpoint: what is the likely new problem in the scene?</summary><p>Autoimmune hypothyroidism (type 2 syndrome).</p></details>`,
 recap:["Two or more autoimmune endocrine diseases.","Type 1: candidiasis, hypoparathyroidism, Addison.","Type 2: Addison plus thyroid and/or type 1 diabetes."],
 quiz:[{q:"Type 2 includes…",o:["Addison plus autoimmune thyroid disease and/or type 1 diabetes","Candidiasis plus hypoparathyroidism","No Addison"],a:0,e:"Definition."},{q:"Which type has no Addison disease?",o:["Type 3","Type 1","Type 2"],a:0,e:"Type 3."}]},
