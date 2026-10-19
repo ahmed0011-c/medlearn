@@ -1,0 +1,19 @@
+/* ===== publish7: labelled figures from PR #16 (first-review redos: neck ultrasound, steroid forms, incidentaloma scan). Inserted into existing steps by anchor text, like zz_figs6.js. ===== */
+Object.assign(FIGS,{
+usnod16:{f:"t2-neck-ultrasound-labelled.jpg",w:1400,h:577,alt:"Labelled illustration of a clothed woman lying with her head tilted back while a doctor holds an ultrasound probe across the front of her lower neck; the screen shows both thyroid lobes beside the windpipe and a small dark nodule in the left lobe",
+cap:"<b>Thyroid ultrasound.</b> The head is tilted back to stretch the neck and the probe is held across the front of the lower neck. The screen shows a cross-section: the right and left lobes of the thyroid either side of the windpipe (the patient's right is shown on the viewer's left), with a small dark (hypoechoic) nodule in the left lobe. Ultrasound describes the nodule, and its features decide the EU-TIRADS category and whether it needs a needle.",
+chk:"simplified. The thin bridge of thyroid in front of the windpipe (the isthmus) is not drawn, so the lobes look separate; on a real scan the windpipe shows as a bright curved line with a shadow behind it, not a clear dark ring; the neck muscles and the carotid arteries and jugular veins beside the lobes are left out. The rectangular image is right for the straight (linear) probe used on the neck."},
+sforms16:{f:"m5-steroid-forms-labelled.jpg",w:1200,h:590,alt:"Labelled row of steroid medicine forms: tablets, inhaler, cream, eye drops, injection vial and a capped syringe",
+cap:"<b>Steroids come in many forms.</b> Tablets by mouth, inhalers, skin creams, eye drops and injections (into a vein, a muscle or a joint). All of them can reach the bloodstream, so high doses, large skin areas, long courses or interacting drugs can still suppress the hypothalamic-pituitary-adrenal axis.",
+chk:"generic, unbranded items drawn to show the routes only, so no specific drug or strength is implied. Nasal sprays and enemas or foams (other common steroid forms) are not shown."},
+incid16:{f:"d7-incidentaloma-scan-labelled.jpg",w:1400,h:577,alt:"Labelled computed tomography style slice of the upper abdomen showing liver, spleen, kidneys, aorta, spine and a small smooth round nodule in the left adrenal gland",
+cap:"<b>An adrenal incidentaloma on computed tomography.</b> A cross-section viewed from the feet (the patient's right is on the viewer's left): liver, stomach, spleen, both kidneys, the aorta in front of the spine, and a small, smooth, round, evenly darker nodule beside the aorta on the left, in the left adrenal gland. Smooth, round, uniform and dark (low density, lipid-rich) is the benign adenoma pattern; the number that settles it is the unenhanced density in Hounsfield units.",
+chk:"a schematic drawing, not a real scan. The nodule is drawn somewhat wider than the aorta, so it looks a little bigger than the 2.4 cm in the scene, and sits a little further forward than a real left adrenal gland, which lies just in front of the upper pole of the kidney; the slice is also at the level of the kidney's central hilum, slightly lower than where the adrenal glands usually appear. The kidneys look contrast-enhanced, whereas the density rule uses an <b>unenhanced</b> scan, and the picture does not show a Hounsfield value."}});
+(function(){
+const put=(mod,card,anchor,key,after)=>{const L=LESSONS[mod],c=L&&L.cards.find(x=>x.id==card);if(!c){console.warn("fig7: no card",mod,card);return}
+if(c.html.includes('images/'+FIGS[key].f))return;const i=c.html.indexOf(anchor);if(i<0){console.warn("fig7: anchor missing",mod,card);return}
+const j=after?c.html.indexOf(after,i)+after.length:i;c.html=c.html.slice(0,j)+"\n"+FIG(key)+"\n"+c.html.slice(j)};
+put("t2d","no2","<ol><li><b>Thyroid-stimulating hormone</b>","usnod16","</ol>");
+put("m9","g3","<p><b>Route matters:</b>","sforms16","</p>");
+put("d7","in2","<li><b>Suspicious:</b>","incid16","</ul>");
+})();

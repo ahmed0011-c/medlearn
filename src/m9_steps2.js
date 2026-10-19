@@ -4,7 +4,7 @@ M9.cards.push(
 <div class="scene"><b>The scene:</b> Your patient with polymyalgia rheumatica starts prednisolone 15 mg daily and asks: "What exactly could these tablets do to me, and what can we do about it?"</div>
 <p>👉 Click each letter of <b>CUSHINGOID</b>:</p>
 <div data-widget="mnemonic"></div>
-${FIG("cushbody")}
+${FIG("cushfeat","<b>Long-term glucocorticoid treatment produces the same picture</b> (iatrogenic Cushing syndrome): the CUSHINGOID checklist above.")}
 ${FIG("steroidskin")}
 <p><b>Also remember:</b> [[myop]] (difficulty standing from a chair), slowed growth in children, fluid retention, acne and easy bruising. Risk rises with <b>dose and duration</b>. Some effects appear within days (high glucose, mood, sleep), others over months (bone, eyes, skin).</p>
 <p><b>The three general rules:</b> lowest effective dose for the shortest time; give it in the morning; add a [[spare|steroid-sparing drug]] (for example [[mtx]]) when long treatment is expected.</p>
