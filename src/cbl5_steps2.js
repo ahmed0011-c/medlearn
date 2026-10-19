@@ -12,6 +12,7 @@ CBL5.cards.push(
 <tr><td>Hiatal hernia, gallstones, [[cholestasis|cholestatic syndrome]], fatty liver, overweight</td><td>History, yellow sclerae, high direct bilirubin and [[ggt]], body mass index 26</td></tr></table>
 <div class="corr">📝 <b>Thyroid note:</b> M.T. is <b>anti-thyroglobulin positive but anti-thyroid peroxidase negative</b>. Most people with autoimmune thyroiditis are thyroid peroxidase positive, so this pattern is less typical. Positive thyroglobulin antibodies with a goitre still support autoimmune thyroiditis. Also, slide 7 asked "hypothyroidism?": the answer is <b>no</b>, she is euthyroid. The ultrasound on slide 26 is a reference picture from Radiopaedia, not necessarily M.T.'s scan.</div>
 ${FIG("adrenalitis","This is what is happening in M.T.'s adrenals.")}
+${FIG("aps2","M.T. has the adrenal and thyroid parts of this picture.")}
 <h3>[[aps|Autoimmune polyglandular syndromes]] (slide 29)</h3>
 <table><tr><th>Type</th><th>Definition</th></tr>
 <tr><td>Type 1</td><td>Chronic candidiasis, hypoparathyroidism, autoimmune adrenal insufficiency (at least two)</td></tr>

@@ -28,6 +28,7 @@ cards:[
 <ul><li>[[aps1]]: [[cmc]], [[hypopara]], Addison disease.</li><li>[[aps2]]: Addison disease plus autoimmune thyroid disease and/or type 1 diabetes ([[schmidt]]).</li><li>[[aps3]]: autoimmune thyroid disease plus other autoimmune disease, no Addison.</li><li><b>Type 4:</b> other combinations.</li></ul>
 <p>Modern additions: [[ici]] can attack several glands; rare IPEX syndrome (FOXP3 gene) in baby boys.</p>
 <div class="hint">💡 <b>"One autoimmune gland? Look for the next."</b></div>
+${FIG("aps2")}
 <details class="chk"><summary>✋ Checkpoint: what is the likely new problem in the scene?</summary><p>Autoimmune hypothyroidism (type 2 syndrome).</p></details>`,
 recap:["Two or more autoimmune endocrine diseases.","Type 1: candidiasis, hypoparathyroidism, Addison.","Type 2: Addison plus thyroid and/or type 1 diabetes."],
 quiz:[{q:"Type 2 includes…",o:["Addison plus autoimmune thyroid disease and/or type 1 diabetes","Candidiasis plus hypoparathyroidism","No Addison"],a:0,e:"Definition."},{q:"Which type has no Addison disease?",o:["Type 3","Type 1","Type 2"],a:0,e:"Type 3."}]},

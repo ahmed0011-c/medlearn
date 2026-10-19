@@ -56,6 +56,7 @@ quiz:[{q:"A salt-wasting crisis typically shows…",o:["Low sodium, high potassi
 <div data-widget="sortset" data-set="cahtype"></div>
 <div data-widget="tree" data-set="cahnb"></div>
 <div class="hint">💡 <b>"Eleven and seventeen raise the pressure."</b></div>
+${FIG("saltnb")}
 <details class="chk"><summary>✋ Checkpoint: why do 11-beta-hydroxylase defects cause hypertension?</summary><p>11-deoxycorticosterone builds up; it is a mineralocorticoid.</p></details>`,
 recap:["11-beta and 17-alpha deficiency: high blood pressure, low potassium.","Newborn screening measures 17-hydroxyprogesterone; preterm babies give false positives.","Crisis: saline, glucose, intravenous hydrocortisone at once."],
 quiz:[{q:"Hypertension plus virilisation suggests…",o:["11-beta-hydroxylase deficiency","21-hydroxylase deficiency","17-alpha-hydroxylase deficiency"],a:0,e:"11-deoxycorticosterone plus androgens."},{q:"First treatment of a salt-wasting crisis includes…",o:["Intravenous hydrocortisone","Dexamethasone tablets","Waiting for gene results"],a:0,e:"Treat immediately."}]},
