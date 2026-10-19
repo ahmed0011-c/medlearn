@@ -37,6 +37,7 @@ quiz:[{q:"Most common thyroid cancer?",o:["Papillary","Follicular","Medullary"],
 {id:"tc2",title:"Pathology features that matter",min:6,goal:1,obj:["Know the hallmark features","Explain spread patterns"],html:`
 <div class="scene"><b>The scene:</b> The cytology report says "nuclear grooves and pseudo-inclusions". What does that mean?</div>
 <ul><li><b>Papillary:</b> [[orphan]], [[psammoma]]; multifocal; spreads to neck nodes; [[braf]] common. [[microca]] usually very low risk.</li><li><b>Follicular:</b> diagnosis needs capsular or vascular invasion (histology); spreads to lung and bone.</li><li><b>Oncocytic:</b> mitochondria-rich cells; less iodine uptake.</li><li><b>Medullary:</b> calcitonin and carcinoembryonic antigen, amyloid in stroma; about 25% hereditary.</li><li><b>Anaplastic:</b> undifferentiated, often arises from a long-standing differentiated cancer; no iodine uptake.</li></ul>
+${FIG("papillary")}
 <div data-widget="sortset" data-set="cspread"></div>
 <div class="hint">💡 <b>"Grooves and ground glass = papillary."</b></div>
 <details class="chk"><summary>✋ Checkpoint: which cancer often shows amyloid?</summary><p>Medullary carcinoma (calcitonin-derived amyloid).</p></details>`,

@@ -2,6 +2,7 @@
 M7.cards.push(
 {id:"e4",title:"Liquorice: when the guard falls asleep",min:4,goal:3,obj:["Explain apparent mineralocorticoid excess step by step","Predict renin, aldosterone and potassium","List other causes of the same 'low–low' pattern"],html:`
 <div class="scene"><b>The scene:</b> A 47-year-old woman has new high blood pressure, muscle cramps and a potassium of 2.9 mmol/L. Renin and aldosterone are both <b>low</b>. On direct questioning she drinks several cups of liquorice tea a day "for her stomach".</div>
+${FIG("liquorice")}
 <p><b>Step by step:</b></p>
 <ol><li>Glycyrrhetinic acid from [[liquorice]] blocks [[hsd11b2]] in the kidney.</li>
 <li>Cortisol is no longer switched off and occupies the [[mr]].</li>

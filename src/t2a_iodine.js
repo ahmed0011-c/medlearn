@@ -33,6 +33,7 @@ cards:[
 <div class="scene"><b>The scene:</b> A pregnant woman in a mountain village asks why she should use iodised salt. Her mother had a big neck; her neighbour's son is deaf and has learning problems.</div>
 <p>[[iodine]] is trapped by the [[nis]], attached to [[tg]] by [[tpo]] and stored in the [[colloid]] as [[t4]] and [[t3]].</p>
 <div class="tblwrap"><table><tr><th>Group</th><th>Daily need (World Health Organization)</th></tr><tr><td>Children 0–5 years</td><td>90 µg</td></tr><tr><td>Children 6–12 years</td><td>120 µg</td></tr><tr><td>Adolescents and adults</td><td>150 µg</td></tr><tr><td>Pregnant and breastfeeding women</td><td>250 µg</td></tr></table></div>
+${FIG("iodinefood")}
 <p>Sources: iodised salt, seafood, milk and eggs (iodine in animal feed), bread made with iodised salt. Soil in mountains and old flood plains is poor in iodine, so local crops are too.</p>
 <div class="hint">💡 <b>"150 for you, 250 for two."</b></div>
 <details class="chk"><summary>✋ Checkpoint: why does pregnancy need more iodine?</summary><p>The mother makes more thyroxine, the baby needs iodine for its own thyroid, and kidney losses rise.</p></details>`,

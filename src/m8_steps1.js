@@ -56,6 +56,7 @@ quiz:[{q:"Cortisol high, adrenocorticotropic hormone undetectable. Most likely s
 {id:"f3",title:"The daily rhythm and the pulses",min:4,goal:2,obj:["Describe when cortisol is highest and lowest","Explain which tests are timed and why","Link the rhythm to tablet timing"],html:`
 <div class="scene"><b>The scene:</b> A friend who works night shifts asks why her doctor wants a blood test "before 9 in the morning" and a saliva sample "at 11 at night".</div>
 <p>The axis follows a [[circadian]] set by the [[scn]] (the master clock, reset by daylight). On top of this, adrenocorticotropic hormone comes in bursts, each followed by a cortisol pulse ([[pulsatile]]).</p>
+${FIG("circadian")}
 <p>👉 Click the time points on the curve:</p>
 <div data-widget="circadian"></div>
 <p><b>Clinical consequences:</b></p>
