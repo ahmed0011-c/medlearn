@@ -4,6 +4,8 @@ M9.cards.push(
 <div class="scene"><b>The scene:</b> Your patient with polymyalgia rheumatica starts prednisolone 15 mg daily and asks: "What exactly could these tablets do to me, and what can we do about it?"</div>
 <p>👉 Click each letter of <b>CUSHINGOID</b>:</p>
 <div data-widget="mnemonic"></div>
+${FIG("cushbody")}
+${FIG("steroidskin")}
 <p><b>Also remember:</b> [[myop]] (difficulty standing from a chair), slowed growth in children, fluid retention, acne and easy bruising. Risk rises with <b>dose and duration</b>. Some effects appear within days (high glucose, mood, sleep), others over months (bone, eyes, skin).</p>
 <p><b>The three general rules:</b> lowest effective dose for the shortest time; give it in the morning; add a [[spare|steroid-sparing drug]] (for example [[mtx]]) when long treatment is expected.</p>
 <div class="corr">📝 <b>Slide check (page 29):</b> the side-effect list on the slide is correct but incomplete. Add <b>avascular necrosis of bone</b>, <b>proximal myopathy</b>, <b>growth suppression in children</b> and <b>peptic ulcer risk</b> (mainly together with non-steroidal anti-inflammatory painkillers). Bone protection (United Kingdom National Osteoporosis Guideline Group): prednisolone 7.5 mg or more a day for 3 months or more in women after the menopause and in men aged 50 or over; lower thresholds with a previous fracture, age 70 or over, or a high fracture-risk score. Start it <b>alongside the steroid</b>, without waiting for a bone density scan. Younger patients: decided case by case.</div>

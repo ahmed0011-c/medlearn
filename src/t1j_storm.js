@@ -28,6 +28,7 @@ recap:["Non-suppressed thyroid-stimulating hormone + high hormones = central, re
 quiz:[{q:"Thyroid-stimulating hormone in an adenoma?",o:["Normal or mildly raised","Very high always","Suppressed"],a:0,e:"Slide correction."},{q:"Treatment of an adenoma?",o:["Transsphenoidal surgery","Radioactive iodine alone","Levothyroxine"],a:0,e:"Remove the tumour."}]},
 {id:"sx2",title:"Recognising thyroid storm",min:6,goal:1,obj:["Use the Burch–Wartofsky score"],html:`
 <div class="scene"><b>The scene:</b> A 35-year-old woman with Graves disease stopped her tablets 2 months ago. Now pneumonia, 39.6 °C, heart rate 150 in atrial fibrillation, confused, vomiting.</div>
+${FIG("stormicu")}
 <p>[[storm]] is a clinical diagnosis; hormone levels are not higher than in ordinary thyrotoxicosis. Triggers: infection, surgery, stopping antithyroid drugs, radioactive iodine, iodine contrast, delivery, trauma. The [[bwps]] supports the diagnosis (the Japanese Thyroid Association criteria are an alternative).</p>
 <div data-widget="calc" data-set="bw"></div>
 <div class="hint">💡 <b>"Fever, fast heart, failing brain, failing gut."</b></div>

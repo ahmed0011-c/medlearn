@@ -36,6 +36,7 @@ quiz:[{q:"The most common cause of Cushing syndrome?",o:["Pituitary adenoma","Gl
 {id:"cu2",title:"Who to test: the features that discriminate",min:5,goal:1,obj:["Name the features that best separate Cushing syndrome from obesity","Know which groups to screen"],html:`
 <div class="scene"><b>The scene:</b> Obesity, hypertension and diabetes are very common; Cushing syndrome is rare. Who really needs a test?</div>
 <p><b>Most discriminating features</b> (Endocrine Society): easy bruising, [[plethora]], [[proxmyo]], [[striae]] (wide, purple), and in children weight gain with slowing growth.</p>
+${FIG("cushfeat")}
 <p><b>Common but non-specific:</b> central weight gain, round face, fat pad behind the neck, high blood pressure, diabetes, [[gio|osteoporosis]] and fractures, depression, poor sleep, irregular periods, acne, excess hair, infections, thin skin.</p>
 <p><b>Test:</b> people with several progressive features; unusual features for age (osteoporosis or hypertension in a young person); children with weight gain and falling height; people with an [[incid|adrenal incidentaloma]].</p>
 <div class="hint">💡 <b>"Bruises, a red face, weak thighs, wide purple stripes."</b></div>

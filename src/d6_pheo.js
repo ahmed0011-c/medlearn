@@ -28,6 +28,7 @@ cards:[
 <div class="scene"><b>The scene:</b> A 38-year-old man has attacks of pounding headache, drenching sweat and a racing heart lasting 15 minutes. During one attack his blood pressure was 220/120 mmHg.</div>
 <p>[[pheo]] comes from [[chromaffin]] cells in the medulla; [[pgl]] arises outside the adrenal. Together: [[ppgl]].</p>
 <p><b>Classic triad:</b> headache, sweating, palpitations, usually in attacks. Blood pressure can be high all the time, in bursts or normal. Others: pallor, tremor, anxiety, weight loss, high blood sugar, heart muscle damage. Many tumours are now found by chance on scans.</p>
+${FIG("pheoatk")}
 <p><b>Triggers:</b> pressure on the abdomen, anaesthesia and surgery, some drugs (metoclopramide, beta-blockers alone, glucagon, high-dose glucocorticoids, some antidepressants, opioids), contrast, pregnancy and labour.</p>
 <div class="corr">📝 <b>Fact check:</b> the old "rule of 10s" (10% bilateral, 10% malignant, 10% familial, 10% extra-adrenal…) is outdated. About 30–40% carry a germline gene fault, and every tumour is now considered to have some metastatic potential.</div>
 <div class="hint">💡 <b>"Pounding, perspiration, palpitations, pale."</b></div>

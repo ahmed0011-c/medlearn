@@ -20,6 +20,8 @@ cards:[
 {id:"eg1",title:"Grading and natural history",min:5,goal:0,obj:["Use the World Health Organization grading","Describe the stages"],html:`
 <div class="scene"><b>The scene:</b> A 45-year-old woman from a rural area: "My neck has been getting thicker for 20 years."</div>
 <p>[[whogr]]: grade 0, 1, 2.</p>
+${FIG("endgoitre")}
+${FIG("goitgrades")}
 <div data-widget="pickset" data-set="whogr"></div>
 <p><b>Natural history:</b> diffuse hyperplasia → colloid goitre → [[mng]] → some nodules become autonomous → toxic multinodular goitre (especially after iodine is given: [[jodbas]]).</p>
 <div class="hint">💡 <b>"Diffuse when young, nodular when old."</b></div>

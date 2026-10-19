@@ -24,6 +24,7 @@ goals:["Explain the mechanism","Score activity","Grade severity","Choose treatme
 cards:[
 {id:"or1",title:"What happens behind the eye",min:5,goal:0,obj:["Explain the mechanism and signs"],html:`
 <div class="scene"><b>The scene:</b> A 45-year-old smoker with Graves disease says her eyes "look angry", feel gritty and she sees double when looking up.</div>
+${FIG("graveseye")}
 <p>In [[go]], orbital fibroblasts carry thyroid-stimulating hormone receptors and insulin-like growth factor 1 receptors. Antibodies and T cells make them produce sugar-rich matrix and fat; eye muscles swell. The bony orbit cannot expand, so the eye is pushed forward ([[proptosis]]), muscles stiffen ([[diplopia]]), and rarely the nerve is compressed ([[don]]).</p>
 <p>Signs: lid retraction, swelling and redness, proptosis, restricted movement, exposure of the cornea. Usually both eyes, sometimes one.</p>
 <p><b>Course:</b> active phase (6–18 months) → burns out into an inactive, fibrotic phase.</p>

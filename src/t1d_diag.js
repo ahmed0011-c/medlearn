@@ -26,6 +26,7 @@ quiz:[{q:"Low thyroid-stimulating hormone, normal free thyroxine, high triiodoth
 {id:"dx2",title:"Find the cause",min:6,goal:1,obj:["Use the algorithm"],html:`
 <div class="scene"><b>The scene:</b> No eye signs, small goitre.</div>
 <ul><li>[[trab]]: positive → Graves disease (high sensitivity and specificity).</li><li>[[antitpo]]: common in autoimmune thyroid disease, not specific.</li><li>[[scinti]]: diffuse high (Graves), focal (adenoma), patchy (multinodular), low (thyroiditis, iodine, tablets).</li><li>[[doppler]]: high flow in Graves, low in destructive thyroiditis; useful when scintigraphy is not possible.</li><li>[[esr]]: high in subacute thyroiditis.</li><li>[[tg]]: low in exogenous intake.</li></ul>
+${FIG("scinti")}
 <div data-widget="tree" data-set="thyrodx"></div>
 <div class="hint">💡 <b>"Antibodies first, uptake if negative."</b></div>
 <details class="chk"><summary>✋ Checkpoint: pregnant and thyrotoxic: which tests?</summary><p>Thyroid-stimulating hormone receptor antibodies and ultrasound; no scintigraphy.</p></details>`,
