@@ -169,7 +169,7 @@ Same rules as above: illustrated textbook style, fully clothed adults, calm and 
   - **Used in:** CBL 3.3, step 2 (card `tc2`, "Scintigraphy: where is the iodine going?"). Planned placement: after the scene, before the explanation of tracers.
   - **Prompt:** Illustrated nuclear medicine room: a fully clothed adult man lies relaxed on his back on a narrow scanning table with a small pillow under his neck; a large flat square camera head is positioned just above the front of his neck; a technologist in scrubs stands at a nearby computer screen showing a soft orange butterfly-shaped glow. Clean, bright, reassuring mood, muted colours, textbook style. No radiation symbols, no text, letters, numbers or labels on screens or anywhere.
 
-- [ ] **id:** `t3-ultrasound-position`
+- [x] **id:** `t3-ultrasound-position`
   - **Save as:** `images/t3-ultrasound-position.png`
   - **Used in:** CBL 3.4, step 1 (card `td1`, "Technique and the normal neck"). Planned placement: after the technique paragraph, before the labelled neck diagram.
   - **Prompt:** Illustrated clinic scene seen from the side: a fully clothed adult man in a T-shirt lies on an examination couch with a small rolled towel under his shoulders so his neck is gently extended; a doctor sits beside him holding a small linear ultrasound probe across the front of his lower neck, with a little clear gel visible; a screen in the background shows a soft grey fan-shaped image. Calm, professional, muted colours. No needles, no text, letters, numbers or labels on the screen or anywhere.

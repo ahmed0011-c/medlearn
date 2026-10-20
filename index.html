@@ -6138,4 +6138,14 @@ put("t6d","hd2","<div class=\"hint\">💡 <b>\"Calcium, iron, coffee, breakfast"
 put("t6e","he1","<div data-widget=\"order\" data-set=\"comarx\"></div>","coma19","<div data-widget=\"order\" data-set=\"comarx\"></div>");
 put("t6f","hf2","<div class=\"scene\"><b>The scene:</b> Ioana, 29","pp19","</div>");
 })();
+
+/* ===== publish9: labelled figure for thyroid ultrasound positioning (accepted redo of t3-ultrasound-position, supersedes draft PR #21). Inserted into the existing CBL 3.4 step by anchor text, like zz_figs8.js. ===== */
+Object.assign(FIGS,{
+uspos21:{f:"t3-ultrasound-position-labelled.jpg",w:1400,h:577,alt:"Labelled illustration seen from the side of a clothed man lying on his back on an examination couch with a rolled towel under the base of his neck and shoulders, chin pointing up, while a doctor holds a linear ultrasound probe with gel across the front of his lower neck; an ultrasound screen stands behind",cap:"<b>Positioning for a thyroid ultrasound.</b> The patient lies on his back with a rolled towel or small pillow under the shoulders, so the head tips back, the chin points up and the front of the neck is stretched. This brings the thyroid forward and clear of the collarbones. Gel removes the air between the skin and the linear high-frequency probe, which is held across the neck for transverse views and turned along it for longitudinal views.",chk:"close but simplified. The rolled towel sits right at the base of the neck where it meets the shoulders; it usually goes a little lower, under the shoulders and upper back, so the head can tip back further. The patient is a man, whereas the scene in this step is a woman. The screen is left blank on purpose; the labelled neck diagram below shows what a transverse image looks like.",credit:"AI illustration, labelled and checked by MedLearn."}});
+(function(){
+const put=(mod,card,anchor,key,after)=>{const L=LESSONS[mod],c=L&&L.cards.find(x=>x.id==card);if(!c){console.warn("fig9: no card",mod,card);return}
+if(c.html.includes('images/'+FIGS[key].f))return;const i=c.html.indexOf(anchor);if(i<0){console.warn("fig9: anchor missing",mod,card,key);return}
+const j=after?c.html.indexOf(after,i)+after.length:i;c.html=c.html.slice(0,j)+"\n"+FIG(key)+"\n"+c.html.slice(j)};
+put("t3d","td1","<p><b>Technique (page 15):</b>","uspos21","</p>");
+})();
 </script></body></html>
