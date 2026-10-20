@@ -159,42 +159,42 @@ Same rules: calm illustrated or atlas style, clothed adults only, no unwell chil
 
 Same rules as above: illustrated textbook style, fully clothed adults, calm and respectful mood, no text, letters, numbers, logos or labels anywhere in the picture (labels are added later by MedLearn). Save each file under the given name in images/ and tick the box.
 
-- [ ] **id:** `t3-neck-palpation`
+- [x] **id:** `t3-neck-palpation`
   - **Save as:** `images/t3-neck-palpation.png`
   - **Used in:** CBL 3.1, step 1 (card `ta1`, "Look, feel, swallow: grading the goitre"). Planned placement: after the scene, before the grading text.
   - **Prompt:** Calm illustrated clinic scene: a fully clothed adult woman in her 40s sits upright on a chair in an open-collar blouse, holding a small glass of water and swallowing; a doctor in a white coat stands behind her and gently places the fingertips of both hands on the front of her lower neck to feel the thyroid. Soft daylight, muted colours, friendly textbook style. No text, letters, numbers, logos or labels.
 
-- [ ] **id:** `t3-gamma-camera`
+- [x] **id:** `t3-gamma-camera`
   - **Save as:** `images/t3-gamma-camera.png`
   - **Used in:** CBL 3.3, step 2 (card `tc2`, "Scintigraphy: where is the iodine going?"). Planned placement: after the scene, before the explanation of tracers.
   - **Prompt:** Illustrated nuclear medicine room: a fully clothed adult man lies relaxed on his back on a narrow scanning table with a small pillow under his neck; a large flat square camera head is positioned just above the front of his neck; a technologist in scrubs stands at a nearby computer screen showing a soft orange butterfly-shaped glow. Clean, bright, reassuring mood, muted colours, textbook style. No radiation symbols, no text, letters, numbers or labels on screens or anywhere.
 
-- [ ] **id:** `t3-ultrasound-position`
+- [x] **id:** `t3-ultrasound-position`
   - **Save as:** `images/t3-ultrasound-position.png`
   - **Used in:** CBL 3.4, step 1 (card `td1`, "Technique and the normal neck"). Planned placement: after the technique paragraph, before the labelled neck diagram.
   - **Prompt:** Illustrated clinic scene seen from the side: a fully clothed adult man in a T-shirt lies on an examination couch with a small rolled towel under his shoulders so his neck is gently extended; a doctor sits beside him holding a small linear ultrasound probe across the front of his lower neck, with a little clear gel visible; a screen in the background shows a soft grey fan-shaped image. Calm, professional, muted colours. No needles, no text, letters, numbers or labels on the screen or anywhere.
 
-- [ ] **id:** `t3-fna-procedure`
+- [x] **id:** `t3-fna-procedure`
   - **Save as:** `images/t3-fna-procedure.png`
   - **Used in:** CBL 3.5, step 3 (card `te3`, "Fine-needle aspiration and Bethesda"). Planned placement: after the paragraph on how the aspiration is done, before the Bethesda table.
   - **Prompt:** Gentle illustrated clinic scene: a fully clothed adult woman lies calmly on an examination couch with her head slightly tilted back, a nurse holding her hand reassuringly; a doctor holds a small ultrasound probe on the side of her neck while looking at a screen; on a small tray beside the couch lie a few thin, capped syringes, glass slides and gauze. Nothing is inserted into the skin, no blood. Soft lighting, muted colours, reassuring textbook style. No text, letters, numbers or labels.
 
-- [ ] **id:** `t4-tight-throat`
+- [x] **id:** `t4-tight-throat`
   - **Save as:** `images/t4-tight-throat.png`
   - **Used in:** CBL 4.1, step 1 (card `ca1`, "The story: a tight feeling in the throat"). Planned placement: after the scene.
   - **Prompt:** Illustrated consultation: a fully clothed man in his mid-30s with slightly excess weight sits across a desk from a doctor and touches the front of his own neck with two fingers, looking mildly worried, as he describes a tight feeling when swallowing; the doctor listens attentively with a notepad. Warm, calm clinic setting, muted colours, textbook illustration style. No text, letters, numbers, logos or labels.
 
-- [ ] **id:** `t4-mdt-meeting`
+- [x] **id:** `t4-mdt-meeting`
   - **Save as:** `images/t4-mdt-meeting.png`
   - **Used in:** CBL 4.2, step 4 (card `cb4`, "Final diagnosis, prognosis and the team"). Planned placement: before the multidisciplinary team paragraph.
   - **Prompt:** Illustrated hospital meeting room: six clothed adult doctors of different ages and backgrounds (an endocrinologist, a surgeon in scrubs, a pathologist, a radiologist, a nuclear medicine doctor and an oncologist) sit around a table discussing a case; a wall screen shows a soft grey neck ultrasound image and a simple line graph without any numbers; coffee cups and closed folders on the table. Collaborative, calm mood, muted colours. No text, letters, numbers, logos or labels anywhere.
 
-- [ ] **id:** `t4-growth-chart-consult`
+- [x] **id:** `t4-growth-chart-consult`
   - **Save as:** `images/t4-growth-chart-consult.png`
   - **Used in:** CBL 4.3, step 4 (card `cc4`, "Management and growth follow-up"). Planned placement: before the target-height calculator.
   - **Prompt:** Illustrated paediatric clinic office: a mother and a father (fully clothed adults) sit at a desk opposite a friendly paediatric endocrinologist who points with a pen at a large paper growth chart with smooth curved pink lines and a few dots; a measuring stand for height is in the corner of the room; no child is shown. Warm, hopeful mood, soft colours, textbook style. No text, letters, numbers or labels on the chart or anywhere.
 
-- [ ] **id:** `t4-heart-clinic`
+- [x] **id:** `t4-heart-clinic`
   - **Save as:** `images/t4-heart-clinic.png`
   - **Used in:** CBL 4.4, step 2 (card `cd2`, "Complaints and examination"). Planned placement: after the scene, before the electrocardiogram diagram.
   - **Prompt:** Illustrated cardiology clinic: a fully clothed man in his 30s in a T-shirt sits on an examination couch looking tired, a light sheen of sweat on his forehead; a doctor holds a stethoscope to the left side of his chest over the T-shirt while gently feeling the pulse at his wrist with the other hand; a heart monitor in the background shows an irregular green line. Calm, professional mood, muted colours. No text, letters, numbers or labels on the monitor or anywhere.
@@ -203,47 +203,47 @@ Same rules as above: illustrated textbook style, fully clothed adults, calm and 
 
 Same rules as above: illustrated textbook style, fully clothed people, calm and respectful mood, no text, letters, numbers, logos or labels anywhere in the picture (labels are added later by MedLearn). Save each file under the given name in images/ and tick the box.
 
-- [ ] **id:** `t5-follicle-histology`
+- [x] **id:** `t5-follicle-histology`
   - **Save as:** `images/t5-follicle-histology.png`
   - **Used in:** Lecture 4.1, step 2 (card `ga2`, the follicle). Planned placement: after the follicle diagram.
   - **Prompt:** Illustrated microscope view in soft pink and purple haematoxylin and eosin colours of normal thyroid tissue: many round follicles of different sizes, each lined by a single layer of small cube-shaped cells with dark round nuclei and filled with smooth pink colloid; a few paler, larger cells sit between the follicles; thin capillaries run between them. Clean textbook style, circular microscope field on a white background. No text, letters, numbers, arrows or labels.
 
-- [ ] **id:** `t5-contrast-scan`
+- [x] **id:** `t5-contrast-scan`
   - **Save as:** `images/t5-contrast-scan.png`
   - **Used in:** Lecture 4.4, case 1 (`gdk1`, "After the contrast scan"). Planned placement: case intro, or card `gd3` after the scene.
   - **Prompt:** Illustrated hospital scene: a fully clothed man in his late 70s in a hospital gown over a T-shirt lies on the table of a large ring-shaped computed tomography scanner; a nurse beside him checks a thin intravenous line in his forearm connected to an injector pump. Calm, clean, reassuring mood, muted blues and greys, textbook style. No needles shown entering skin, no blood, no text, letters, numbers or labels on any screen or device.
 
-- [ ] **id:** `t6-heel-prick`
+- [x] **id:** `t6-heel-prick`
   - **Save as:** `images/t6-heel-prick.png`
   - **Used in:** Lecture 5.2, step 1 (card `hb1`, screening). Planned placement: after the paragraph on screening, before the baby diagram.
   - **Prompt:** Gentle illustrated maternity-ward scene: a mother in a dressing gown holds her newborn baby, who is wrapped in a soft blanket with only one small foot showing; a midwife in uniform gently holds the baby's heel and presses it onto a small blank paper card with four empty printed circles. Warm, calm, tender mood, soft pastel colours, textbook style. No blood drops, no needles, no text, letters, numbers or labels.
 
-- [ ] **id:** `t6-sleepy-infant`
+- [x] **id:** `t6-sleepy-infant`
   - **Save as:** `images/t6-sleepy-infant.png`
   - **Used in:** Lecture 5.2, case 1 (`hbk1`, "The 'good quiet baby'"). Planned placement: card `hb1` after the scene.
   - **Prompt:** Illustrated close-up of a sleepy 3-week-old baby fully wrapped in a cream blanket in a parent's arms: slightly puffy eyelids, a broad flat nose, the tip of a large tongue showing between the lips, and a faint yellow tint to the skin of the face. Calm, tender mood, soft light, gentle textbook style, not frightening. No text, letters, numbers or labels.
 
-- [ ] **id:** `t6-tired-teacher`
+- [x] **id:** `t6-tired-teacher`
   - **Save as:** `images/t6-tired-teacher.png`
   - **Used in:** Lecture 5.3, step 1 (card `hc1`, "Symptoms and signs"). Planned placement: after the scene, before the body map.
   - **Prompt:** Illustrated scene of a fully clothed woman in her late 40s sitting at a classroom desk after school, wearing a thick cardigan and a scarf although the room is warm and sunny; she looks tired, with a slightly puffy face, dry hair and thin outer eyebrows; a cup of tea and a pile of exercise books sit in front of her. Gentle, sympathetic mood, muted colours, textbook style. No text, letters, numbers or labels on the books, board or anywhere.
 
-- [ ] **id:** `t6-older-man-daughter`
+- [x] **id:** `t6-older-man-daughter`
   - **Save as:** `images/t6-older-man-daughter.png`
   - **Used in:** Lecture 5.3, step 4 (card `hc4`, "Older people: the quiet presentation"). Planned placement: after the scene.
   - **Prompt:** Illustrated clinic scene: a fully clothed 81-year-old man with a cardigan sits slowly and quietly in a chair, looking slightly puzzled; his adult daughter sits beside him with a supportive hand on his arm, talking to a kind doctor across a desk. Warm, respectful mood, soft light, muted colours, textbook style. No text, letters, numbers or labels.
 
-- [ ] **id:** `t6-morning-tablet`
+- [x] **id:** `t6-morning-tablet`
   - **Save as:** `images/t6-morning-tablet.png`
   - **Used in:** Lecture 5.4, step 2 (card `hd2`, "What changes the need"). Planned placement: after the hint on timing.
   - **Prompt:** Illustrated early-morning kitchen scene: a single small white tablet and a glass of water on a bedside-style tray in the foreground; in the background, deliberately set apart on the counter, a cup of coffee, a breakfast plate and two unlabelled supplement bottles; soft dawn light through the window. Calm, tidy, textbook style, muted colours. No clock faces, no text, letters, numbers, logos or labels on anything.
 
-- [ ] **id:** `t6-icu-warming`
+- [x] **id:** `t6-icu-warming`
   - **Save as:** `images/t6-icu-warming.png`
   - **Used in:** Lecture 5.5, step 1 (card `he1`, myxoedema coma). Planned placement: after the treatment order puzzle.
   - **Prompt:** Illustrated intensive care scene: an older woman lies asleep in a hospital bed covered with several thick warm blankets up to her chest, wearing a hospital gown, with a clear oxygen mask on her face and an intravenous line in a covered arm; a nurse adjusts the blankets; monitors in the background show only soft coloured wave lines. Calm, caring mood, muted colours, textbook style. No blood, no numbers, text, letters or labels on monitors or anywhere.
 
-- [ ] **id:** `t6-postpartum-mother`
+- [x] **id:** `t6-postpartum-mother`
   - **Save as:** `images/t6-postpartum-mother.png`
   - **Used in:** Lecture 5.6, step 2 (card `hf2`, "Variants and treatment"). Planned placement: after the scene.
   - **Prompt:** Illustrated home scene: a fully clothed young mother sits on a sofa holding her 4-month-old baby, who is dressed in a soft romper, on her lap; she rests her free hand on her chest as if feeling her heart racing, and looks slightly anxious and tired; a cup of tea on the table. Warm daylight, gentle mood, muted colours, textbook style. No text, letters, numbers or labels.
