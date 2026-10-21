@@ -248,3 +248,47 @@ Same rules as above: illustrated textbook style, fully clothed people, calm and 
   - **Save as:** `images/t6-postpartum-mother.png`
   - **Used in:** Lecture 5.6, step 2 (card `hf2`, "Variants and treatment"). Planned placement: after the scene.
   - **Prompt:** Illustrated home scene: a fully clothed young mother sits on a sofa holding her 4-month-old baby, who is dressed in a soft romper, on her lap; she rests her free hand on her chest as if feeling her heart racing, and looks slightly anxious and tired; a cup of tea on the table. Warm daylight, gentle mood, muted colours, textbook style. No text, letters, numbers or labels.
+
+# Lecture 2, Lecture 3 and Lecture 3 part 2 illustration requests (hypothalamus, pituitary tumours, posterior pituitary, hypopituitarism, added October 2026, publish9)
+
+Same rules as above: illustrated textbook style, fully clothed people, calm and respectful mood, no text, letters, numbers, logos or labels anywhere in the picture (labels are added later by MedLearn, so leave clear space around the structures named below). Save each file under the given name in images/ and tick the box.
+
+- [ ] **id:** `p2-sella-coronal`
+  - **Save as:** `images/p2-sella-coronal.png`
+  - **Used in:** Lecture L2.2, step 1 (card `pb1`, "Location and neighbours"). Planned placement: after the `pitnbr` step-through diagram. Labels to add later: pituitary, stalk, optic chiasm, cavernous sinus, internal carotid artery, cranial nerves III, IV, VI, V1, V2, sphenoid sinus, diaphragma sellae.
+  - **Prompt:** Atlas-style realistic medical illustration of a coronal (front-facing) section through the human sella turcica on a plain off-white background. In the centre the small oval pituitary gland sits in the saddle-shaped hollow of the sphenoid bone, hanging from a thin stalk; just above it the pale yellow X-shaped optic chiasm; on each side a venous cavernous sinus containing a round red internal carotid artery and five small round nerve cross-sections, three along the outer wall and one beside the artery; below the gland the dark air-filled sphenoid sinus divided by a thin bony septum; a thin membrane roof over the gland. Correct proportions, restrained naturalistic colours, even lighting, generous space around each structure. No text, letters, numbers, arrows, leader lines or labels anywhere.
+
+- [ ] **id:** `p2-rathke-embryo`
+  - **Save as:** `images/p2-rathke-embryo.png`
+  - **Used in:** Lecture L2.2, step 2 (card `pb2`, "Size, blood supply and embryology"). Planned placement: after the embryology paragraph. Labels to add later: oral ectoderm, Rathke pouch, floor of the diencephalon, infundibulum, future anterior lobe, future posterior lobe.
+  - **Prompt:** Two-panel textbook-style sagittal illustration of the developing human pituitary on a plain light background. Left panel, early embryo: the roof of the primitive mouth (pink epithelium) pushes upward as a small pocket towards a downward finger-like bud from the floor of the developing brain (pale lavender neural tissue). Right panel, later stage: the pocket has pinched off and wrapped around the front of the brain bud, forming a two-part gland: a pink glandular front part and a lavender neural back part attached to the brain by a stalk. Consistent colours in both panels (pink = from the mouth, lavender = from the brain). Clean lines, soft shading. No text, letters, numbers, arrows or labels.
+
+- [ ] **id:** `p2-lorry-driver`
+  - **Save as:** `images/p2-lorry-driver.png`
+  - **Used in:** Lecture L2.2, step 1 scene and case `pbk1` ("The scraped lorry"); also linked from L2.3 step 3. Planned placement: after the scene in card `pb1`.
+  - **Prompt:** Illustrated scene from inside the cab of a lorry on a city street: a fully clothed man in his late fifties grips the steering wheel and looks straight ahead with a slightly puzzled, tense expression; through the side windows on both sides, cars and a cyclist are drawn softly faded and blurred as if outside his awareness, while the road straight ahead is sharp and clear. Daylight, calm muted colours, textbook style, no danger or crash. No text, letters, numbers, number plates, logos or labels anywhere.
+
+- [ ] **id:** `p3-acromegaly-photos`
+  - **Save as:** `images/p3-acromegaly-photos.png`
+  - **Used in:** Lecture L3.1.2, step 1 (card `qb1`, "Who and why"). Planned placement: after the scene.
+  - **Prompt:** Illustrated clinic scene: a fully clothed man in his late forties sits at a desk holding an old printed photograph of his younger self beside his current face; his present face shows a prominent lower jaw, wide nose, thick lips, a heavy brow and widely spaced lower teeth; his hands are large and broad with thick fingers; a wedding ring that has been cut open lies on the desk. A kind doctor sits opposite. Respectful, gentle mood, soft light, textbook style. No text, letters, numbers or labels anywhere, nothing written on the photograph.
+
+- [ ] **id:** `p3-collecting-duct`
+  - **Save as:** `images/p3-collecting-duct.png`
+  - **Used in:** Lecture L3.1.4, step 2 (card `qd2`, "Vasopressin: control, receptors, kidney"). Planned placement: after the `aqp` step-through diagram. Labels to add later: lumen (urine), principal cell, V2 receptor, aquaporin 2 vesicles, aquaporin 2 in the apical membrane, aquaporins 3 and 4, interstitium, tight junction.
+  - **Prompt:** Atlas-style realistic cutaway illustration of one kidney collecting duct principal cell on a plain background, urine-filled tubule lumen on the left and the salty interstitium with a capillary on the right. On the right (blood-side) membrane a purple receptor is bound by a small red hormone molecule; inside the cell, small round vesicles carrying blue water channels travel towards the left (urine-side) membrane, where several blue channels are already inserted; a few different channels sit in the right membrane; tiny blue water droplets pass from the lumen through the cell into the interstitium. Tight junctions seal the gaps between neighbouring cells. Scientific, restrained colours. No text, letters, numbers, arrows or labels.
+
+- [ ] **id:** `p3-night-thirst`
+  - **Save as:** `images/p3-night-thirst.png`
+  - **Used in:** Lecture L3.1.5, step 1 (card `qe1`, "Definition and causes"). Planned placement: after the scene.
+  - **Prompt:** Illustrated night-time bedroom scene: a fully clothed young man in pyjamas sits on the edge of his bed, tired, holding a large glass of water with ice cubes; on the bedside table a big jug of iced water and an empty glass; the bathroom door is half open with the light on. Soft blue night light, calm, sympathetic mood, muted colours, textbook style. No clock faces, no text, letters, numbers or labels anywhere.
+
+- [ ] **id:** `p4-sheehan-mother`
+  - **Save as:** `images/p4-sheehan-mother.png`
+  - **Used in:** Lecture L3.2.1, step 2 (card `ra2`, "Acquired causes"). Planned placement: after the scene.
+  - **Prompt:** Illustrated home scene: a fully clothed, pale and exhausted young mother wrapped in a thick cardigan sits in an armchair holding a feeding bottle for her 6-month-old baby, who rests in a bouncer beside her; an unused breast pump sits on a shelf in the background; a blanket over her knees although it is daytime. Gentle, sympathetic mood, soft daylight, muted colours, textbook style. No text, letters, numbers, logos or labels anywhere.
+
+- [ ] **id:** `p4-pale-wrinkled-face`
+  - **Save as:** `images/p4-pale-wrinkled-face.png`
+  - **Used in:** Lecture L3.2.2, step 1 (card `rb1`, "The picture, hormone by hormone"). Planned placement: after the scene.
+  - **Prompt:** Illustrated portrait of a fully clothed woman in her early sixties in a clinic chair: very pale, smooth, thin skin with many fine wrinkles around the eyes and mouth, sparse thin eyebrows, tired calm expression, slightly overweight, wearing a buttoned blouse and cardigan. Respectful, gentle mood, soft neutral light, textbook style, not exaggerated. No text, letters, numbers or labels anywhere.
