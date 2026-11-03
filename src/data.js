@@ -61,10 +61,17 @@ prader:{l:"Prader scale",c:"concept",d:"A 0–5 grading of how virilised externa
 };
 const CATS={enzyme:"Enzymes",hormone:"Hormones and steroid molecules",cell:"Cell parts, receptors, transport proteins",disease:"Diseases",drug:"Drugs and substances",concept:"Key concepts"};
 
+/* ===== SPECIALTIES: hub tiles on the front page. Add a new specialty here + tag its first module with area2 belonging to one of its areas. ===== */
+const SPECIALTIES=[
+{id:"endo",label:"Endocrinology",emoji:"🩺",blurb:"Adrenal gland, thyroid gland, hypothalamus and pituitary.",areas:["🫘 Adrenal gland","🦋 Thyroid gland","🧠 Hypothalamus and pituitary gland"]},
+{id:"ortho",label:"Orthopaedics",emoji:"🦴",blurb:"Injuries of the knee and leg (Lecture 8).",areas:["🦴 Orthopaedics · Knee and leg"]},
+{id:"gsurg",label:"General Surgery",emoji:"🏥",blurb:"Coming soon — lectures will land here.",comingSoon:true,areas:[]}
+];
+
 /* ===== MODULE TEMPLATE: add new modules as objects here ===== */
 const COURSE={area:"Endocrinology",lectureGroup:"Lecture 7: Normal adrenal cortex",lecture:"Lecture 7: Regulation of the secretion of the adrenal cortex hormones",teacher:"Prof. Ionela Pascanu",
 modules:[
-{id:"m1",n:1,title:"Embryology",summary:"Cortex comes from mesoderm (coelomic epithelium); medulla from neural crest cells that migrate into it. Explains why cortex makes steroids and medulla makes catecholamines.",pages:"pages 3–8",built:true},
+{id:"m1",n:1,area2:"🫘 Adrenal gland",title:"Embryology",summary:"Cortex comes from mesoderm (coelomic epithelium); medulla from neural crest cells that migrate into it. Explains why cortex makes steroids and medulla makes catecholamines.",pages:"pages 3–8",built:true},
 {id:"m2",n:2,title:"Fetal steroids",summary:"The large fetal zone makes dehydroepiandrosterone sulfate, which the placenta turns into oestrogens (the feto-placental unit). The fetal zone shrinks after birth.",pages:"pages 9–10",built:true},
 {id:"m3",n:3,title:"Adult anatomy and blood supply",summary:"Right gland pyramidal, left crescent-shaped. Three arteries (superior, middle, inferior suprarenal); one adrenal vein – right into the inferior vena cava, left into the left renal vein.",pages:"pages 12–15",built:true},
 {id:"m4",n:4,title:"Zones and histology (triple S)",summary:"Glomerulosa = Salt (aldosterone), Fasciculata = Sugar (cortisol), Reticularis = Sex (androgens). Fasciculata cells are 'clear cells' full of lipid.",pages:"pages 11–12 and 16",built:true},
