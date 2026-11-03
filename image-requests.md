@@ -292,3 +292,48 @@ Same rules as above: illustrated textbook style, fully clothed people, calm and 
   - **Save as:** `images/p4-pale-wrinkled-face.png`
   - **Used in:** Lecture L3.2.2, step 1 (card `rb1`, "The picture, hormone by hormone"). Planned placement: after the scene.
   - **Prompt:** Illustrated portrait of a fully clothed woman in her early sixties in a clinic chair: very pale, smooth, thin skin with many fine wrinkles around the eyes and mouth, sparse thin eyebrows, tired calm expression, slightly overweight, wearing a buttoned blouse and cardigan. Respectful, gentle mood, soft neutral light, textbook style, not exaggerated. No text, letters, numbers or labels anywhere.
+
+
+# Lecture 8 illustration requests (Orthopaedics: injuries of the knee and leg, added November 2026)
+
+Same rules as above: atlas-style realistic medical illustration, fully clothed people where scenes are shown, calm and respectful mood, no text, letters, numbers, logos or labels anywhere in the picture (labels are added later by MedLearn). Save each file under the given name in `images/` and tick the box.
+
+- [ ] **id:** `o8-extensor-chain`
+  - **Save as:** `images/o8-extensor-chain.png`
+  - **Used in:** L8.1 card `oa2` (extensor chain). Planned placement: beside the `extchain` step-through diagram.
+  - **Prompt:** Atlas-style realistic sagittal illustration of the human knee extensor mechanism on a plain off-white background. Show the quadriceps muscle belly above, the quadriceps tendon attaching to the upper pole of the patella, the oval patella sesamoid, the patellar tendon running to the tibial tubercle, and thin medial and lateral retinacular bands bypassing the patella to the proximal tibia. Bones of distal femur and proximal tibia in realistic proportion, cartilage surfaces visible, no skin. Generous clear space around each structure for later labels. Restrained naturalistic colour, even lighting. No text, letters, numbers, arrows or labels.
+
+- [ ] **id:** `o8-patella-dislocate`
+  - **Save as:** `images/o8-patella-dislocate.png`
+  - **Used in:** L8.4 card `od1` scene. Planned placement: after the scene.
+  - **Prompt:** Atlas-style clinical illustration of a flexed human knee from the front, skin intact, fully clothed torso cropped out of frame. The patella is clearly displaced to the lateral side of the knee; the uncovered medial femoral condyle is visible as a rounded prominence on the inner side. Calm, non-graphic, no wounds, no blood. Soft clinical lighting, plain background. No text, letters, numbers or labels.
+
+- [ ] **id:** `o8-lachman`
+  - **Save as:** `images/o8-lachman.png`
+  - **Used in:** L8.5 card `oe1`. Planned placement: after the grades paragraph.
+  - **Prompt:** Atlas-style realistic illustration of the Lachman test: an examiner's two hands on a supine patient's knee at about 20–30 degrees of flexion, one hand stabilising the femur and the other translating the proximal tibia gently forward; patient fully clothed in shorts, calm clinical setting, plain background. No text, letters, numbers or labels.
+
+- [ ] **id:** `o8-meniscus-zones`
+  - **Save as:** `images/o8-meniscus-zones.png`
+  - **Used in:** L8.6 card `of2`. Planned placement: beside the `menzones` diagram.
+  - **Prompt:** Atlas-style top-down view of a medial meniscus crescent on the tibial plateau, plain background. Show three concentric vascular zones with subtle colour only (no words): outer peripheral band slightly pinker (red–red), middle transitional band, inner pale avascular tip (white–white). Femoral condyle ghosted faintly above. Generous space for later labels. No text, letters, numbers, arrows or labels.
+
+- [ ] **id:** `o8-schatzker`
+  - **Save as:** `images/o8-schatzker.png`
+  - **Used in:** L8.9 card `oi1`. Planned placement: beside the `schatzker` step diagram.
+  - **Prompt:** Six-panel atlas-style schematic of tibial plateau fracture patterns (Schatzker I–VI) on one plain background row: I lateral split; II lateral split-depression; III pure lateral depression; IV medial plateau; V bicondylar; VI metaphyseal–diaphyseal separation. Simple realistic bone shapes, restrained red fracture lines, identical viewing angle in each panel, generous spacing. No text, letters, numbers, arrows or labels (numbers added later by MedLearn).
+
+- [ ] **id:** `o8-four-compartments`
+  - **Save as:** `images/o8-four-compartments.png`
+  - **Used in:** L8.11 card `ok2`. Planned placement: beside the `fourcomp` diagram.
+  - **Prompt:** Atlas-style realistic transverse cross-section through the mid-leg on a plain background, showing tibia and fibula and the four fascial compartments (anterior, lateral, superficial posterior, deep posterior) with muscle groups in naturalistic colour and clear fascial boundaries. Leave empty space in each compartment for later labels. No text, letters, numbers, arrows or labels.
+
+- [ ] **id:** `o8-fasciotomy-leg`
+  - **Save as:** `images/o8-fasciotomy-leg.png`
+  - **Used in:** L8.11 treatment recap. Planned placement: after the fasciotomy paragraph.
+  - **Prompt:** Atlas-style illustration of a lower leg after two-incision four-compartment fasciotomy, patient under drapes, calm operative lighting: a long medial and a long lateral skin incision with fascia opened, viable muscle bulging slightly without gore or necrotic detail, no blood pools. Educational, restrained, non-graphic. No text, letters, numbers or labels.
+
+- [ ] **id:** `o8-knee-dislocate-vessel`
+  - **Save as:** `images/o8-knee-dislocate-vessel.png`
+  - **Used in:** L8.7 card `og2`. Planned placement: after complications.
+  - **Prompt:** Atlas-style realistic posterior view of a flexed knee skeleton with the popliteal artery tightly tethered above and below the joint line, and the common peroneal nerve winding toward the fibular neck; subtle shading only, no open wounds, no blood. Plain background, space for later labels. No text, letters, numbers, arrows or labels.
