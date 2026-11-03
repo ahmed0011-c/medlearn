@@ -1,0 +1,39 @@
+/* ===== Orthopaedics · Knee replacement · 6: Aftercare, VTE, rehab ===== */
+XPK.krvte={t:"NICE NG89 — elective knee replacement clot prevention",opts:["Aspirin 75 or 150 mg for 14 days","Low-molecular-weight heparin for 14 days + stockings until discharge","Rivaroxaban (as in technology appraisal) for 14 days","Intermittent pneumatic compression until mobile (drugs contraindicated)"],items:[
+["Fit patient after total knee replacement; unit protocol prefers aspirin alone",0,"NG89 1.11.8 option 1.",""],
+["Higher clot risk; team chooses injectable prophylaxis plus stockings",1,"NG89 1.11.8 option 2.",""],
+["Oral direct factor Xa inhibitor pathway used by the arthroplasty unit",2,"NG89 1.11.8 option 3 (rivaroxaban per TA170).",""],
+["Active major bleeding risk makes drugs unsafe",3,"NG89 1.11.10: consider intermittent pneumatic compression until mobile.",""]]};
+XS.okr6=["Spot the error",[["NICE NG157 asks for rehabilitation on the day of surgery if possible, and no later than 24 hours.",1],["For elective knee replacement, NICE NG89 lists aspirin for 14 days as one prophylaxis option.",1],["People should stay in bed for a week after uncomplicated knee replacement to protect the implant.",0,"Wrong: early mobilisation is central to enhanced recovery and clot prevention."],["Discharge advice should include warning signs of deep vein thrombosis and pulmonary embolism.",1]]];
+XT.okr6="eras,vte,tkr,ukr,txa,arthrofib";
+const OKR6={
+meta:"Orthopaedics › Knee replacement › Subsection KR.6 · Aftercare and rehab · ⏱ about 14 minutes in 2 bite-sized steps",
+intro:`<p>After [[tkr|total]] or [[ukr|partial]] knee replacement, [[eras|enhanced recovery]] packages get people drinking, eating and walking early. Clot prevention follows NICE <b>NG89</b>; rehab timing follows NICE <b>NG157</b>.</p>`,
+goals:["Apply NG89 venous thromboembolism options after elective knee replacement","Describe early rehab and discharge safety nets"],
+cards:[
+{id:"kr6a",title:"Enhanced recovery and venous thromboembolism prevention",min:7,goal:0,obj:["Choose an NG89 option and start early mobility"],html:`
+<div class="scene"><b>The scene:</b> Six hours after a cemented total knee replacement, Mrs Patel sits on the bed edge feeling dizzy. The nurse asks whether she is "allowed" to stand.</div>
+<p><b>Enhanced recovery.</b> Multimodal analgesia (including the local infiltration already placed), anti-emetics, early oral intake, and mobilisation. NG157 1.10.1: a physiotherapist or occupational therapist should offer rehabilitation <b>on the day of surgery if possible and no more than 24 hours after</b>, including advice on daily activities, a home exercise programme, and mobilisation after knee replacement.</p>
+<p><b>Venous thromboembolism — NICE NG89 1.11.8.</b> If clot risk outweighs bleeding risk after elective knee replacement, choose <b>one</b> of: aspirin 75 mg or 150 mg for 14 days; or low-molecular-weight heparin for 14 days combined with anti-embolism stockings until discharge; or rivaroxaban as in technology appraisal guidance (TA170) for 14 days. If those cannot be used, consider apixaban or dabigatran (1.11.9). If drugs are contraindicated, consider intermittent pneumatic compression until the person is mobile (1.11.10). Encourage mobility and avoid dehydration (NG89 general measures).</p>
+<div data-widget="pickset" data-set="krvte"></div>
+<div class="hint">💡 <b>"Walk today if you can. Pick one NG89 knee pathway and finish the full course."</b></div>
+<div class="exam"><b>🎓 For exams:</b> rehab ≤24 h (aim same day); NG89 knee options — aspirin 14 d / low-molecular-weight heparin 14 d + stockings / rivaroxaban 14 d.</div>
+<details class="chk"><summary>✅ Checkpoint: may she stand?</summary><p>Yes — unless a specific medical reason forbids it. Same-day or next-morning mobilisation is the NICE expectation, with help and blood-pressure sense.</p></details>`,
+recap:["Mobilise day 0–1.","One NG89 pharmacological pathway (or pumps if drugs unsafe).","Hydrate and educate."],
+quiz:[{q:"Aspirin duration after elective knee replacement in NG89 option 1?",o:["14 days","14 months","14 hours only"],a:0,e:"NG89 1.11.8."},{q:"Latest NICE NG157 wants inpatient rehab started…",o:["Day of surgery if possible, otherwise within 24 hours","After 2 weeks of bed rest"],a:0,e:"NG157 1.10.1."}]},
+{id:"kr6b",title:"Exercises, discharge and red flags",min:7,goal:1,obj:["Give self-directed rehab advice and safety-net clot/infection signs"],html:`
+<div class="scene"><b>The scene:</b> Day 3: Mrs Patel goes home with a walking aid. Her daughter asks what would make them call for help overnight.</div>
+<p>Before discharge, therapy teams give <b>self-directed rehabilitation</b> advice (NG157 1.10.2) with clear goals and a contact point (1.10.4). Offer supervised outpatient rehab if daily activities, ongoing impairment, or failed self-directed goals need it (1.10.5). Early targets: full extension, progressive flexion, quadriceps switch-on, gait re-education. Stiffness risk links to [[arthrofib|arthrofibrosis]] later (${XL("okr7","KR.7")}).</p>
+<p><b>Safety-net.</b> Wound ooze, spreading redness, fever; calf pain/swelling; chest pain or breathlessness; new calf-to-lung worry; sudden giving-way or inability to straighten. NG89 discharge information must cover deep vein thrombosis and pulmonary embolism warning signs. Primary care should refer new or worsening pain, limp or loss of function related to the joint replacement back to orthopaedics (NG157 1.11.1).</p>
+<div class="hint">💡 <b>"Home exercises are a prescription, not a suggestion. Red-flag card goes on the fridge."</b></div>
+<div class="exam"><b>🎓 For exams:</b> self-directed rehab + contact; supervised if struggling; refer new pain/limp/loss of function to orthopaedics.</div>
+<details class="chk"><summary>✅ Checkpoint: three overnight call triggers?</summary><p>Examples: fever with wound change; breathless/chest pain; tense calf swelling — plus inability to bear weight after a fall.</p></details>`,
+recap:["Home programme with a phone number.","Watch wound, calf, chest, sudden dysfunction.","New limp/pain → orthopaedic review."],
+quiz:[{q:"NG157 if self-directed rehab is not meeting goals?",o:["Offer supervised group or individual outpatient rehabilitation","Stop all exercises permanently"],a:0,e:"NG157 1.10.5."},{q:"New worsening limp years after replacement. NG157 primary care action?",o:["Refer to an orthopaedic surgical service","Ignore because the implant is old"],a:0,e:"NG157 1.11.1."}]}],
+cases:[{id:"kr6k1",title:"Case: Day-zero wobble",steps:[{t:`Evening of surgery: blood pressure stable, pain controlled, motor block resolving after spinal anaesthetic.`,q:"Rehab plan?",o:["Stand and take steps with therapy if safe","Strict bed rest until day 5"],a:0,e:"Enhanced recovery / NG157 early mobilisation."}],take:["Early walk beats prolonged bed rest."]}],
+flash:[["ERAS","Early drink, eat, walk, multimodal pain relief."],["NG89 knee","Aspirin 14 d OR LMWH 14 d + stockings OR rivaroxaban 14 d."],["Rehab timing","Day 0 if possible; ≤24 h."],["Discharge","Exercises + clot/infection red flags + contact."],["Later problems","New pain/limp → refer back (NG157)."]],
+exam:["List NG89 elective knee prophylaxis options.","State rehab timing from NG157.","Name four discharge red flags."],
+finalHtml:`<div data-widget="spot" data-set="okr6"></div><div data-widget="termdeck" data-set="okr6"></div><div class="exam" style="border-color:var(--ok)"><b>➡️ Next</b><br><b>KR.7 Complications early and late.</b><br><button class="pri" style="margin-top:8px" onclick="showModule('okr7')">→ Open</button></div>`,
+sources:"Sources: NICE NG157 §1.10–1.11; NICE NG89 §1.11.8–1.11.10 https://www.nice.org.uk/guidance/ng89 . Teaching questions by MedLearn.",
+casesHead:"🏥 Cases",casesIntro:"Answer to reveal the next part."};
+LESSONS.okr6=OKR6;

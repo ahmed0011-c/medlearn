@@ -144,7 +144,27 @@ const REL=[
 ["o8j","o8k","Tibial shaft fractures are the classic setup for leg compartment syndrome"],
 ["o8j","o8i","Proximal tibial shaft personality meets plateau thinking"],
 ["o8h","o8e","Spine avulsion versus mid-substance anterior cruciate tear"],
-["o8d","o8g","Clarify patellar dislocation versus true tibiofemoral dislocation in the history"]];
+["o8d","o8g","Clarify patellar dislocation versus true tibiofemoral dislocation in the history"],
+["okr1","okr2","After the osteoarthritis pathway, choose total versus partial with trial and registry evidence"],
+["okr1","okr3","Referral becomes listing only after optimisation and consent"],
+["okr2","okr4","If total is chosen, walk the operative steps"],
+["okr2","okr5","If partial is chosen, walk the medial operative steps and conversion triggers"],
+["okr2","okr8","Function-versus-revision tension returns in the counselling script"],
+["okr3","okr4","Pre-op checks feed directly into the total-knee theatre plan"],
+["okr3","okr6","Venous thromboembolism plan is chosen before the day of surgery"],
+["okr4","okr5","Total versus partial technique side by side"],
+["okr4","okr6","From theatre to enhanced recovery and clot prevention"],
+["okr5","okr7","Partial-knee progression of arthritis and bearing dislocation sit in complications"],
+["okr6","okr7","Clots and early stiffness bridge aftercare to complications"],
+["okr7","okr8","Complications and registry outcomes close the shared decision"],
+["okr7","o8c","Periprosthetic patella fracture maps after knee replacement"],
+["okr7","o8i","Felix tibial periprosthetic fractures around a knee replacement"],
+["okr4","o8a","Extensor mechanism anatomy you must protect during replacement"],
+["okr7","o8a","Extensor failure after replacement is an extensor-chain problem"],
+["o8c","okr7","Patella fractures around implants link back to knee-replacement complications"],
+["o8i","okr7","Tibial periprosthetic fractures link back to knee-replacement complications"],
+["o8i","okr1","Plateau arthritis and failed coronal stability may lead to later knee replacement (McRae <5%)"]
+];
 const RELMAP={};REL.forEach(([a,b,w])=>{(RELMAP[a]=RELMAP[a]||[]).push([b,w]);(RELMAP[b]=RELMAP[b]||[]).push([a,w])});
 function relatedCard(id){const R=(RELMAP[id]||[]).filter(([b])=>OK(b));if(!R.length)return "";const m=MOD(id);
 return `<div class="card fx-related" id="fx-related"><h2>🔗 Related topics</h2><p class="fx-sub">Sections that connect to ${ESC(m.title)}, most of them from other lectures. 💡 Linking topics helps them stick.</p><ul class="fx-rel">${R.map(([b,w])=>{const t=MOD(b);return `<li><a href="#" data-fxgo="${b}" class="${SD[b]?"fx-sd":""}"><span class="fx-ra">${ESC(t._specLabel||t._area)}${(t._spec&&m._spec&&t._spec!=m._spec)?" · other specialty":(t._area!=m._area?" · other area":"")}${t._specLabel&&t._area?` · ${ESC(t._area)}`:""}</span><b>${ESC(LABEL(t))}</b><span class="fx-rw">${ESC(w)}</span></a></li>`}).join("")}</ul></div>`}

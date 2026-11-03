@@ -337,3 +337,38 @@ Same rules as above: atlas-style realistic medical illustration, fully clothed p
   - **Save as:** `images/o8-knee-dislocate-vessel.png`
   - **Used in:** L8.7 card `og2`. Planned placement: after complications.
   - **Prompt:** Atlas-style realistic posterior view of a flexed knee skeleton with the popliteal artery tightly tethered above and below the joint line, and the common peroneal nerve winding toward the fibular neck; subtle shading only, no open wounds, no blood. Plain background, space for later labels. No text, letters, numbers, arrows or labels.
+
+
+# Knee replacement illustration requests (Orthopaedics, added November 2026)
+
+Same rules: atlas-style realistic medical illustration, fully clothed people where scenes are shown, calm and respectful mood, no text, letters, numbers, logos or labels anywhere in the picture (labels are added later by MedLearn). Save each file under the given name in `images/` and tick the box.
+
+- [ ] **id:** `okr-tkr-components`
+  - **Save as:** `images/okr-tkr-components.png`
+  - **Used in:** KR.4 card `kr4a` / step diagram `tkrsteps`. Planned placement: beside the total-knee step map.
+  - **Prompt:** Atlas-style realistic exploded illustration of a cemented total knee replacement on a plain off-white background: metallic femoral component, polyethylene tibial insert on a metal tibial tray, and a polyethylene patellar button, shown in anatomical orientation relative to a ghosted distal femur and proximal tibia. Restrained naturalistic metal and polyethylene colours, even lighting, generous space for later labels. No text, letters, numbers, arrows or labels.
+
+- [ ] **id:** `okr-ukr-medial`
+  - **Save as:** `images/okr-ukr-medial.png`
+  - **Used in:** KR.5 card `kr5a` / step diagram `ukrsteps`. Planned placement: beside the partial-knee step map.
+  - **Prompt:** Atlas-style realistic illustration of a medial unicompartmental knee replacement in place: small metallic femoral runner and tibial tray with polyethylene bearing only on the medial side; lateral compartment cartilage intact; cruciate ligaments faintly suggested in the notch. Plain background, space for later labels. No text, letters, numbers, arrows or labels.
+
+- [ ] **id:** `okr-oa-compartments`
+  - **Save as:** `images/okr-oa-compartments.png`
+  - **Used in:** KR.1–KR.2 scenes comparing medial-only versus tricompartmental wear.
+  - **Prompt:** Two-panel atlas-style anterior view of human knees without skin: left panel shows bone-on-bone wear limited to the medial compartment with preserved lateral joint space; right panel shows wear in medial, lateral and patellofemoral compartments. Soft naturalistic bone and cartilage colours, plain background. No text, letters, numbers, arrows or labels.
+
+- [ ] **id:** `okr-vte-walk`
+  - **Save as:** `images/okr-vte-walk.png`
+  - **Used in:** KR.6 enhanced-recovery scene.
+  - **Prompt:** Illustrated hospital scene: a fully clothed older woman in a hospital gown and grip socks takes assisted first steps beside a bed with a physiotherapist supporting her; knee dressing visible but not graphic; calm daylight, respectful mood, textbook style. No text, letters, numbers, logos or labels.
+
+- [ ] **id:** `okr-pji-concept`
+  - **Save as:** `images/okr-pji-concept.png`
+  - **Used in:** KR.7 infection teaching (non-graphic).
+  - **Prompt:** Atlas-style non-graphic cross-section concept of a total knee replacement with subtle shading suggesting inflamed soft tissue around the implant interface; no pus, no gore, educational restraint, plain background, space for later labels. No text, letters, numbers, arrows or labels.
+
+- [ ] **id:** `okr-consent-clinic`
+  - **Save as:** `images/okr-consent-clinic.png`
+  - **Used in:** KR.2 / KR.8 shared-decision scenes.
+  - **Prompt:** Illustrated clinic scene: a fully clothed man in his sixties sits with an orthopaedic clinician looking together at a knee model that can represent total versus partial replacement; warm respectful mood, soft light, textbook style. No text, letters, numbers, logos or brand names on the model.
