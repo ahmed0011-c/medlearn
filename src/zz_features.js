@@ -115,7 +115,24 @@ const REL=[
 ["m8","p2b","The corticotroph cells of the anterior pituitary"],
 ["t3a","t4e","Practise reading thyroid test patterns"],
 ["t5b","t2a","Iodine supply: what happens when it is missing"],
-["t5c","t6e","Deiodinases explain the sick euthyroid pattern"]];
+["t5c","t6e","Deiodinases explain the sick euthyroid pattern"],
+["o8a","o8b","Extensor chain map: which link tears in which patient"],
+["o8a","o8c","Patella fracture is a bony break in the same extensor chain"],
+["o8a","o8e","Cruciate and collateral ligaments sit beside the extensor story"],
+["o8b","o8c","Tendon rupture versus patella fracture: age and the straight-leg raise"],
+["o8c","o8d","After bony or soft-tissue patellofemoral injury, watch for osteochondral flakes"],
+["o8d","o8f","Fat in the haemarthrosis can also accompany meniscal and osteochondral injury"],
+["o8e","o8f","Anterior cruciate delay raises secondary meniscal tear risk"],
+["o8e","o8g","Multi-ligament injury is more than an isolated cruciate tear"],
+["o8e","o8h","Tibial spine fracture is the bony anterior cruciate equivalent in the young"],
+["o8g","o8k","Dislocation and tibial trauma share popliteal and compartment risks"],
+["o8g","o8i","High-energy knee trauma: dislocation and plateau can coexist in spirit — vessels and soft tissues first"],
+["o8i","o8j","From plateau metaphysis into the tibial shaft: same bone, different personality"],
+["o8i","o8k","High-energy plateau fractures need compartment surveillance"],
+["o8j","o8k","Tibial shaft fractures are the classic setup for leg compartment syndrome"],
+["o8j","o8i","Proximal tibial shaft personality meets plateau thinking"],
+["o8h","o8e","Spine avulsion versus mid-substance anterior cruciate tear"],
+["o8d","o8g","Clarify patellar dislocation versus true tibiofemoral dislocation in the history"]];
 const RELMAP={};REL.forEach(([a,b,w])=>{(RELMAP[a]=RELMAP[a]||[]).push([b,w]);(RELMAP[b]=RELMAP[b]||[]).push([a,w])});
 function relatedCard(id){const R=(RELMAP[id]||[]).filter(([b])=>OK(b));if(!R.length)return "";const m=MOD(id);
 return `<div class="card fx-related" id="fx-related"><h2>🔗 Related topics</h2><p class="fx-sub">Sections that connect to ${ESC(m.title)}, most of them from other lectures. 💡 Linking topics helps them stick.</p><ul class="fx-rel">${R.map(([b,w])=>{const t=MOD(b);return `<li><a href="#" data-fxgo="${b}" class="${SD[b]?"fx-sd":""}"><span class="fx-ra">${ESC(t._area)}${t._area!=m._area?" · other area":""}</span><b>${ESC(LABEL(t))}</b><span class="fx-rw">${ESC(w)}</span></a></li>`}).join("")}</ul></div>`}
