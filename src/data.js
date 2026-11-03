@@ -64,7 +64,7 @@ const CATS={enzyme:"Enzymes",hormone:"Hormones and steroid molecules",cell:"Cell
 /* ===== SPECIALTIES: hub tiles on the front page. Add a new specialty here + tag its first module with area2 belonging to one of its areas. ===== */
 const SPECIALTIES=[
 {id:"endo",label:"Endocrinology",emoji:"🩺",blurb:"Adrenal gland, thyroid gland, hypothalamus and pituitary.",areas:["🫘 Adrenal gland","🦋 Thyroid gland","🧠 Hypothalamus and pituitary gland"]},
-{id:"ortho",label:"Orthopaedics",emoji:"🦴",blurb:"Injuries of the knee and leg (Lecture 8).",areas:["🦴 Orthopaedics · Knee and leg"]},
+{id:"ortho",label:"Orthopaedics",emoji:"🦴",blurb:"Knee and leg injuries (Lecture 8) and knee replacement.",areas:["🦴 Orthopaedics · Knee and leg","🦴 Orthopaedics · Knee replacement"]},
 {id:"gsurg",label:"General Surgery",emoji:"🏥",blurb:"Coming soon — lectures will land here.",comingSoon:true,areas:[]}
 ];
 
@@ -153,5 +153,13 @@ modules:[
 {id:"o8h",n:"L8.8",grp:"Lecture 8: Injuries of the knee and leg",title:"Tibial spine fractures",summary:"Anterior cruciate avulsion in the young: Meyers and McKeever types I–III.",pages:"pages 69–72",built:true},
 {id:"o8i",n:"L8.9",grp:"Lecture 8: Injuries of the knee and leg",title:"Tibial plateau and periprosthetic tibial fractures",summary:"Schatzker map, lipohaemarthrosis, when to brace, and Felix types around a knee replacement.",pages:"pages 73–87",built:true},
 {id:"o8j",n:"L8.10",grp:"Lecture 8: Injuries of the knee and leg",title:"Tibia and fibula shaft fractures",summary:"Open rate, cast versus nail versus plate, Poller screws, and soft-tissue first principles.",pages:"pages 88–99",built:true},
-{id:"o8k",n:"L8.11",grp:"Lecture 8: Injuries of the knee and leg",title:"Compartment syndrome of the leg",summary:"Pain out of proportion, delta P, and four-compartment fasciotomy — if you think about it, treat it.",pages:"pages 68 and 100–104",built:true}
+{id:"o8k",n:"L8.11",grp:"Lecture 8: Injuries of the knee and leg",title:"Compartment syndrome of the leg",summary:"Pain out of proportion, delta P, and four-compartment fasciotomy — if you think about it, treat it.",pages:"pages 68 and 100–104",built:true},
+{id:"okr1",n:"KR.1",grp:"Knee replacement",area2:"🦴 Orthopaedics · Knee replacement",lec:"Knee replacement: total and unicompartmental",teacher:"Evidence-based module · NICE / TOPKAT / NJR / AOANJRR / McRae 3rd ed",title:"Indications and conservative care first",summary:"NICE NG226 pathway: exercise and weight support before referral; when life impact means discuss replacement.",built:true},
+{id:"okr2",n:"KR.2",grp:"Knee replacement",title:"Choosing total versus unicompartmental",summary:"NG157 choice for isolated medial disease; TOPKAT function versus registry revision risk.",built:true},
+{id:"okr3",n:"KR.3",grp:"Knee replacement",title:"Pre-operative assessment and consent",summary:"Optimise anaemia and diabetes, clear infection sources, template, WHO checklist and implant stop moments.",built:true},
+{id:"okr4",n:"KR.4",grp:"Knee replacement",title:"Total knee replacement: surgical steps",summary:"Approach, cuts, balancing, cemented fixation, patella resurfacing and tranexamic acid.",built:true},
+{id:"okr5",n:"KR.5",grp:"Knee replacement",title:"Unicompartmental knee replacement: surgical steps",summary:"Medial partial and Oxford-style steps, conversion triggers and bearing pitfalls.",built:true},
+{id:"okr6",n:"KR.6",grp:"Knee replacement",title:"Aftercare, clot prevention and rehabilitation",summary:"Enhanced recovery, NICE NG89 options after elective knee replacement, and discharge red flags.",built:true},
+{id:"okr7",n:"KR.7",grp:"Knee replacement",title:"Complications early and late",summary:"Infection (McRae), clots, stiffness, nerve injury, periprosthetic fracture cross-links, partial-knee progression.",built:true},
+{id:"okr8",n:"KR.8",grp:"Knee replacement",title:"Outcomes and shared decisions",summary:"Verified PROMs and revision figures, counselling script, and when to refer back.",built:true}
 ]};
