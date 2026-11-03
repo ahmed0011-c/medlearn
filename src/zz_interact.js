@@ -11,7 +11,8 @@ const tp=document.createElement("template");const PT=h=>{tp.innerHTML=TM(h);retu
 const MOD=id=>COURSE.modules.find(m=>m.id==id);const OK=id=>{const m=MOD(id);return !!(m&&m.built&&LESSONS[id])};
 const SH=a=>{const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b};
 const AREA=id=>{let a="🫘 Adrenal gland";for(const m of COURSE.modules){if(m.area2)a=m.area2;if(m.id==id)return a}return a};
-const AREAS=["🫘 Adrenal gland","🦋 Thyroid gland","🧠 Hypothalamus and pituitary gland"];
+const AREAS=(typeof SPECIALTIES!=="undefined"?SPECIALTIES.flatMap(s=>s.areas||[]):["🫘 Adrenal gland","🦋 Thyroid gland","🧠 Hypothalamus and pituitary gland","🦴 Orthopaedics · Knee and leg"]).filter((a,i,arr)=>a&&arr.indexOf(a)==i);
+if(!AREAS.includes("🦴 Orthopaedics · Knee and leg"))AREAS.push("🦴 Orthopaedics · Knee and leg");
 /* ================= spaced review store ================= */
 const RK="ml_review",INT=[0,1,3,7];
 let RV=J(RK,{});

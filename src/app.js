@@ -12,7 +12,11 @@ function esc(s){return s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;
 function T(html){return html.replace(/\[\[(\w+)(?:\|([^\]]+))?\]\]/g,(m,k,l)=>{const g=GLOSSARY[k];if(!g){console.warn("missing term",k);return l||k}
 return `<span class="term t-${g.c}" data-k="${k}" tabindex="0">${l||g.l}</span>${g.k&&!l?`<span class="code">${g.k}</span>`:""}`})}
 const UNITS=()=>[...L.cards.map(c=>c.id),...L.cases.map(c=>c.id),...(L.match?["match"]:[])];
-function updTop(){const u=UNITS(),d=u.filter(x=>S.done[x]).length;$("#bar i").style.width=(100*d/u.length)+"%";
+function updTop(){if(typeof VIEW!=="undefined"&&VIEW!="mod"){const mods=(VIEW=="spec"&&CUR_SPEC?COURSE.modules.filter(m=>m._spec==CUR_SPEC):COURSE.modules).filter(m=>m.built&&LESSONS[m.id]);
+const d=mods.filter(m=>{try{return JSON.parse(LS.getItem("ml_secdone")||"{}")[m.id]}catch(e){return false}}).length;const n=mods.length;
+$("#bar i").style.width=(n?100*d/n:0)+"%";$("#prog").textContent=VIEW=="hub"?`${SPECIALTIES?SPECIALTIES.length:0} specialties`:`${d}/${n} subsections`;
+$("#xp").textContent=`⭐ ${S.xp} XP`;$("#streak").textContent=`🔥 ${streak()} day streak`;return}
+const u=UNITS(),d=u.filter(x=>S.done[x]).length;$("#bar i").style.width=(100*d/u.length)+"%";
 $("#prog").textContent=`${d}/${u.length} steps`;$("#xp").textContent=`⭐ ${S.xp} XP`;$("#streak").textContent=`🔥 ${streak()} day streak`;
 L.cards.forEach(c=>{const b=$("#badge-"+c.id);if(b)b.textContent=S.done[c.id]?"✅ done":""});
 $$(".goals li").forEach((li,i)=>{const c=L.cards.find(c=>c.goal===i);li.classList.toggle("got",!!(c&&S.done[c.id]))});renderSummary()}
@@ -150,20 +154,106 @@ ${d.map((t,i)=>`<g><circle cx="${40+i*128}" cy="37" r="15" fill="#fff" stroke="#
 
 /* ===== render ===== */
 const LAB=m=>String(m.n).includes(".")?m.n+" ":m.n+". ";
-function render(){const nav=$("nav");const groups=[];COURSE.modules.forEach(m=>{const g=m.grp||"";let G=groups.find(x=>x.g==g);if(!G)groups.push(G={g,ms:[]});G.ms.push(m)});
-nav.innerHTML=`<h1>🩺 MedLearn</h1><div class="sub">Samy's exam and clinic companion</div><div class="grp">${COURSE.area}</div><div class="area2">🫘 Adrenal gland</div>`+
-groups.map(G=>(G.ms[0].area2?`<div class="area2" style="margin-top:16px">${G.ms[0].area2}</div>`:"")+(G.g?`<div class="grp">${G.g}</div><div class="lec">${G.ms[0].lec||""}<br><span style="font-weight:400;color:var(--mute);font-size:13px">${G.ms[0].teacher||""}</span></div>`:`<div class="grp">${COURSE.lectureGroup||"Lecture"}</div><div class="lec">${COURSE.lecture}<br><span style="font-weight:400;color:var(--mute);font-size:13px">${COURSE.teacher}</span></div>`)+
-G.ms.map(m=>`<a data-m="${m.id}" class="${m.built?"on":""}">${LAB(m)}${m.title} ${m.built?"⭐":`<span class="soon">· coming soon</span>`}</a>`).join("")).join("")+`<div id="inside"></div>`;
+let VIEW="hub",CUR_SPEC=null;
+function specById(id){return (typeof SPECIALTIES!=="undefined"?SPECIALTIES:[]).find(s=>s.id==id)||null}
+function specOfArea(a){return (typeof SPECIALTIES!=="undefined"?SPECIALTIES:[]).find(s=>(s.areas||[]).includes(a))||null}
+function moduleSpec(m){return m&&m._spec?specById(m._spec):null}
+function firstAreaName(){const m=COURSE.modules.find(x=>x.area2);return m&&m.area2||"🫘 Adrenal gland"}
+function assignAreas(){let a=firstAreaName();COURSE.modules.forEach(m=>{if(m.area2)a=m.area2;m._area=a;const sp=specOfArea(a);m._spec=sp?sp.id:null;m._specLabel=sp?(sp.emoji+" "+sp.label):""})}
+function groupsOf(mods){const groups=[];mods.forEach(m=>{const g=m.grp||"";let G=groups.find(x=>x.g==g);if(!G)groups.push(G={g,ms:[]});G.ms.push(m)});return groups}
+function modulesOfSpec(sid){return COURSE.modules.filter(m=>m._spec==sid)}
+function paintNav(specId){const nav=$("nav");if(!COURSE.modules[0]||!COURSE.modules[0]._area)assignAreas();
+const specs=typeof SPECIALTIES!=="undefined"?SPECIALTIES:[{id:"endo",label:COURSE.area||"Endocrinology",emoji:"🩺",areas:[firstAreaName()]}];
+let html=`<h1>🩺 MedLearn</h1><div class="sub">Samy's exam and clinic companion</div>`;
+html+=`<a class="hub-home${VIEW=="hub"?" on":""}" data-hub href="#">🏠 All specialties</a>`;
+if(specId){const sp=specById(specId);if(sp)html+=`<div class="spec-head on" data-spec="${sp.id}">${sp.emoji} ${sp.label}</div>`;
+const mods=modulesOfSpec(specId);const groups=groupsOf(mods);
+html+=groups.map(G=>{const areaLabel=G.ms[0]._area;const prev=groups[groups.indexOf(G)-1];const areaChanged=!prev||prev.ms[0]._area!=areaLabel;
+return (areaChanged?`<div class="area2">${areaLabel}</div>`:"")+(G.g?`<div class="grp">${G.g}</div><div class="lec">${G.ms[0].lec||""}<br><span style="font-weight:400;color:var(--mute);font-size:13px">${G.ms[0].teacher||""}</span></div>`:`<div class="grp">${COURSE.lectureGroup||"Lecture"}</div><div class="lec">${COURSE.lecture}<br><span style="font-weight:400;color:var(--mute);font-size:13px">${COURSE.teacher||""}</span></div>`)+
+G.ms.map(m=>`<a data-m="${m.id}" class="${m.built&&VIEW=="mod"&&CUR==m.id?"on":""}">${LAB(m)}${m.title} ${m.built?"":`<span class="soon">· coming soon</span>`}</a>`).join("")}).join("")
+}else{html+=`<div class="grp">Specialties</div>`+specs.map(sp=>`<a class="spec-link${VIEW=="spec"&&CUR_SPEC==sp.id?" on":""}" data-spec="${sp.id}" href="#">${sp.emoji} ${sp.label}${sp.comingSoon?` <span class="soon">· coming soon</span>`:""}</a>`).join("")}
+html+=`<div id="inside"></div>`;
+nav.innerHTML=html;
+nav.querySelectorAll("[data-hub]").forEach(a=>a.onclick=e=>{e.preventDefault();showHub()});
+nav.querySelectorAll("[data-spec]").forEach(a=>a.onclick=e=>{e.preventDefault();showSpecialty(a.dataset.spec)});
 nav.querySelectorAll("[data-m]").forEach(a=>a.onclick=()=>showModule(a.dataset.m));
-if(!$("#modsel")){const sel=document.createElement("select");sel.id="modsel";sel.title="Choose module";sel.innerHTML=COURSE.modules.filter(m=>m.built).map(m=>`<option value="${m.id}">${LAB(m)}${m.title}</option>`).join("");sel.onchange=()=>showModule(sel.value);$(".top").prepend(sel)}
-const hm=location.hash.match(/mod=(\w+)/),saved=LS.getItem("ml_mod");showModule(hm&&LESSONS[hm[1]]?hm[1]:saved&&LESSONS[saved]?saved:"m5")}
-function showModule(id){const m=COURSE.modules.find(x=>x.id==id);if(!m)return showModule("m5");$$("nav [data-m]").forEach(a=>a.classList.toggle("on",a.dataset.m==id));const c=$("#content");
-if(!m.built||!LESSONS[id]){c.innerHTML=`<div class="card soon-card"><div class="meta">${COURSE.area} › ${m.grp||COURSE.lectureGroup} › ${m.n}</div><h2>${LAB(m)}${m.title}</h2><p>${m.summary}</p><p>🚧 <b>Coming soon.</b> This module will follow the same format as the built modules: goals, micro-steps, quick checks, cases and flashcards.</p>${m.grp?`<button class="pri" onclick="showModule('d2')">→ Open the built module 2.2</button> `:""}<button class="pri" onclick="showModule('m5')">← Back to the demo module 5</button></div>`;scrollTo(0,0);return}
-L=LESSONS[id];CUR=id;if($("#modsel"))$("#modsel").value=id;LS.setItem("ml_mod",id);document.title=`MedLearn – ${COURSE.area}: ${m.title}`;
+ensureModsel(specId)}
+function ensureModsel(specId){let sel=$("#modsel");const mods=(specId?modulesOfSpec(specId):COURSE.modules).filter(m=>m.built);
+if(!sel){sel=document.createElement("select");sel.id="modsel";sel.title="Choose module";$(".top").prepend(sel);sel.onchange=()=>{if(sel.value==="__hub")showHub();else if(sel.value.startsWith("spec:"))showSpecialty(sel.value.slice(5));else showModule(sel.value)}}
+const hubOpt=`<option value="__hub">🏠 All specialties</option>`;
+const specOpts=(typeof SPECIALTIES!=="undefined"?SPECIALTIES:[]).map(sp=>`<option value="spec:${sp.id}">${sp.emoji} ${sp.label}${sp.comingSoon?" (soon)":""}</option>`).join("");
+const modOpts=mods.map(m=>`<option value="${m.id}">${LAB(m)}${m.title}</option>`).join("");
+sel.innerHTML=hubOpt+specOpts+`<optgroup label="Subsections">${modOpts}</optgroup>`;
+if(VIEW=="hub")sel.value="__hub";else if(VIEW=="spec"&&CUR_SPEC)sel.value="spec:"+CUR_SPEC;else if(VIEW=="mod")sel.value=CUR}
+function setHash(parts){if(/solo=/.test(location.hash))return;if(!history.replaceState)return;const dk=/dark/.test(location.hash)?"&dark":"";history.replaceState(null,"",location.pathname+location.search+"#"+parts+dk)}
+function showHub(){VIEW="hub";CUR_SPEC=null;paintNav(null);document.title="MedLearn";setHash("hub");
+const specs=typeof SPECIALTIES!=="undefined"?SPECIALTIES:[];
+const c=$("#content");
+c.innerHTML=`<div class="card hub-card" id="intro"><div class="meta">MedLearn › Home</div>
+<h2>Choose a specialty</h2>
+<p>Each specialty has its own lectures and subsections. Pick one to open its lecture list. You can also search everything with <b>/</b>.</p>
+<div class="hub-grid" id="hub-grid">${specs.map(sp=>{
+  const ids=modulesOfSpec(sp.id).map(m=>m.id);
+  const built=ids.filter(id=>LESSONS[id]);
+  const n=built.length;
+  const soon=!!sp.comingSoon||!n;
+  return `<button type="button" class="hub-tile${soon?" soon-card":""}" data-hubspec="${sp.id}" ${soon&&sp.comingSoon?"":""}>
+    <span class="hub-emoji">${sp.emoji}</span>
+    <span class="hub-name">${sp.label}</span>
+    <span class="hub-blurb">${sp.blurb||""}</span>
+    <span class="hub-meta">${soon?(sp.comingSoon?"Coming soon":"No subsections yet"):`${n} subsection${n==1?"":"s"}`}</span>
+    <span class="hub-prog" data-hubprog="${sp.id}"></span>
+  </button>`}).join("")}</div>
+<p style="font-size:14px;color:var(--mute);margin-top:18px">Tip: new specialties are added in <code>SPECIALTIES</code> in <code>src/data.js</code>. Each lecture stays its own section with subsections inside.</p>
+</div>`;
+c.querySelectorAll("[data-hubspec]").forEach(b=>b.onclick=()=>showSpecialty(b.dataset.hubspec));
+if($("#inside"))$("#inside").innerHTML="";
+scrollTo(0,0);updTop()}
+function showSpecialty(id){const sp=specById(id);if(!sp){showHub();return}
+VIEW="spec";CUR_SPEC=id;paintNav(id);document.title=`MedLearn – ${sp.label}`;setHash("spec="+id);
+const mods=modulesOfSpec(id);const groups=groupsOf(mods);const c=$("#content");
+if(sp.comingSoon||!mods.length){c.innerHTML=`<div class="card soon-card" id="intro"><div class="meta">MedLearn › ${sp.emoji} ${sp.label}</div>
+<h2>${sp.emoji} ${sp.label}</h2><p>${sp.blurb||""}</p>
+<p>🚧 <b>Coming soon.</b> This specialty area is ready on the front page. Lectures will appear here in the same format: patient scenes, checkpoints, quizzes and widgets.</p>
+<button class="pri" data-backhub>← Back to all specialties</button></div>`;
+c.querySelector("[data-backhub]").onclick=showHub;if($("#inside"))$("#inside").innerHTML="";scrollTo(0,0);updTop();return}
+c.innerHTML=`<div class="card hub-card" id="intro"><div class="meta">MedLearn › ${sp.emoji} ${sp.label}</div>
+<h2>${sp.emoji} ${sp.label}</h2><p>${sp.blurb||""}</p>
+<button class="hub-back" data-backhub>← All specialties</button>
+<div class="spec-lec-list">${groups.map(G=>{
+  const built=G.ms.filter(m=>m.built&&LESSONS[m.id]);
+  return `<section class="spec-lec"><h3>${G.g||COURSE.lectureGroup||"Lecture"}</h3>
+  <p class="spec-lec-meta">${G.ms[0].lec||""}${G.ms[0].teacher?` · ${G.ms[0].teacher}`:""}</p>
+  <ul class="spec-sub">${G.ms.map(m=>`<li><a href="#" data-m="${m.id}" class="${m.built?"":"soon-card"}">${LAB(m)}${m.title}${m.built?"":" · coming soon"}${m.summary?`<small>${m.summary}</small>`:""}</a></li>`).join("")}</ul>
+  ${built.length?`<button class="pri" data-m="${built[0].id}">Open first subsection →</button>`:""}
+  </section>`}).join("")}</div></div>`;
+c.querySelectorAll("[data-backhub]").forEach(b=>b.onclick=showHub);
+c.querySelectorAll("[data-m]").forEach(a=>a.onclick=e=>{e.preventDefault();showModule(a.dataset.m)});
+if($("#inside"))$("#inside").innerHTML=`<div class="grp">In this specialty</div>`+mods.filter(m=>m.built).map(m=>`<a data-m="${m.id}" href="#">${LAB(m)}${m.title}</a>`).join("");
+$("#inside")&&$("#inside").querySelectorAll("[data-m]").forEach(a=>a.onclick=e=>{e.preventDefault();showModule(a.dataset.m)});
+scrollTo(0,0);updTop()}
+function render(){assignAreas();
+const hm=location.hash.match(/(?:^|#|&)mod=(\w+)/);
+const hs=location.hash.match(/(?:^|#|&)spec=([\w-]+)/);
+const hubWanted=/(?:^|#|&)hub(?:&|$)/.test(location.hash);
+if(hm&&(LESSONS[hm[1]]||COURSE.modules.find(x=>x.id==hm[1])))showModule(hm[1]);
+else if(hs&&specById(hs[1]))showSpecialty(hs[1]);
+else showHub()}
+function showModule(id){const m=COURSE.modules.find(x=>x.id==id);if(!m){showHub();return}
+if(!COURSE.modules[0]._area)assignAreas();
+VIEW="mod";CUR=id;CUR_SPEC=m._spec||null;paintNav(CUR_SPEC);
+$$("nav [data-m]").forEach(a=>a.classList.toggle("on",a.dataset.m==id));const c=$("#content");
+if(!m.built||!LESSONS[id]){c.innerHTML=`<div class="card soon-card"><div class="meta">${(m._specLabel||COURSE.area)} › ${m.grp||COURSE.lectureGroup} › ${m.n}</div><h2>${LAB(m)}${m.title}</h2><p>${m.summary||""}</p><p>🚧 <b>Coming soon.</b> This module will follow the same format as the built modules: goals, micro-steps, quick checks, cases and flashcards.</p>
+<button class="pri" data-backspec>← Back to ${(m._specLabel||"specialty")}</button>
+<button data-backhub>🏠 All specialties</button></div>`;
+const bs=c.querySelector("[data-backspec]");if(bs)bs.onclick=()=>m._spec?showSpecialty(m._spec):showHub();
+c.querySelector("[data-backhub]").onclick=showHub;scrollTo(0,0);return}
+L=LESSONS[id];CUR=id;if($("#modsel"))$("#modsel").value=id;LS.setItem("ml_mod",id);document.title=`MedLearn – ${(m._specLabel||COURSE.area)}: ${m.title}`;setHash("mod="+id);
 $("#inside").innerHTML=`<div class="grp">Inside this module</div>${L.cards.map((c,i)=>`<a href="#" onclick="go('${c.id}');return false">${i+1}. ${c.title}</a>`).join("")}<a href="#" onclick="go('cases');return false">${L.casesHead||"🏥 Clinical cases"}</a><a href="#" onclick="go('flash');return false">🃏 Flashcards</a><a href="#" onclick="go('final');return false">🎯 What I got from this</a>`;
 const legend=Object.entries(CATS).map(([k,v])=>`<span class="t-${k}" style="font-weight:700">● ${v}</span>`).join("");
-const meta=L.meta||`${COURSE.area} › Lecture 7 › Subsection ${m.n} · lecture ${m.pages} · ⏱ about 25 minutes in ${L.cards.length} bite-sized steps`;
+const meta=L.meta||`${(m._specLabel||COURSE.area)} › ${m._area||""} › ${m.grp||COURSE.lectureGroup||""} › ${m.n}${m.pages?" · lecture "+m.pages:""} · ⏱ about 25 minutes in ${L.cards.length} bite-sized steps`;
 c.innerHTML=`<div class="card" id="intro"><div class="meta">${meta}</div>
+<button class="hub-back" data-backspec>← ${(m._specLabel||"Specialty")}</button>
 <h2>${LAB(m)}${m.title}</h2>${L.intro?T(L.intro):""}<p><b>🎯 By the end you will be able to…</b></p><ol class="goals">${L.goals.map(g=>`<li>${g}</li>`).join("")}</ol>
 <p style="font-size:15px;color:var(--mute)">Each step takes 2–5 minutes and ends with a quick check. Finish one, get XP and a ✅. That's it – one small win at a time.</p>
 <div class="legend"><b>Colour key (click any coloured word):</b> ${legend}</div></div>`+
@@ -173,6 +263,7 @@ L.cards.map((cd,i)=>`<div class="card" id="${cd.id}"><span class="done-badge" id
 <div class="card" id="flash"><h2>🃏 Flashcards</h2><p>Click the card to flip. Use the buttons to move on.</p><div class="fc" id="fcard"><div class="in"><div class="f"></div><div class="b"></div></div></div><div class="ctrl"><button id="fprev">← Previous</button><button id="fshuf">🔀 Shuffle</button><button class="pri" id="fnext">Next →</button><span class="pill" id="fcount"></span></div></div>
 <div class="card" id="final"><h2>🎯 What I got from this</h2><div id="summary"></div><div class="exam"><b>📘 For exams</b><ul>${L.exam.map(e=>`<li>${e}</li>`).join("")}</ul></div>${L.finalHtml?T(L.finalHtml):""}
 <p style="font-size:14px;color:var(--mute)">${L.sources||"Sources: Lecture 7 (Prof. Ionela Pascanu), pages 17–22 and their figures (Barrett Medical Physiology; Berne and Levy Physiology), extended with standard textbook endocrinology. No statistics beyond those in the lecture figures."}</p><button onclick="if(confirm('Reset all progress?')){LS.removeItem(KEY);location.reload()}">Reset progress</button></div>`;
+const back=c.querySelector("[data-backspec]");if(back)back.onclick=()=>m._spec?showSpecialty(m._spec):showHub();
 c.querySelectorAll("[data-widget]").forEach(w=>W[w.dataset.widget](w));
 L.cards.forEach(cd=>{const el=$("#"+cd.id);if(S.done[cd.id])$("#recap-"+cd.id).classList.add("show");bindQuiz(el,cd.id,cd.quiz,()=>{$("#recap-"+cd.id).classList.add("show");complete(cd.id,20,`✅ Step complete! +20 XP`)})});
 L.cases.forEach(k=>{const el=$("#"+k.id),st=el.querySelectorAll(".step");const next=i=>{st[i+1].classList.add("show");if(i+1==st.length-1)complete(k.id,30,"🏥 Case solved! +30 XP")};
@@ -181,11 +272,16 @@ el.querySelectorAll("[data-widget]").forEach(w=>{if(!w.innerHTML)W[w.dataset.wid
 let fi=0,F=[...L.flash];const fc=$("#fcard"),showF=()=>{fc.classList.remove("flip");setTimeout(()=>{fc.querySelector(".f").textContent=F[fi][0];fc.querySelector(".b").textContent=F[fi][1];$("#fcount").textContent=`${fi+1} / ${F.length}`},150)};
 fc.onclick=()=>fc.classList.toggle("flip");$("#fnext").onclick=()=>{fi=(fi+1)%F.length;showF()};$("#fprev").onclick=()=>{fi=(fi-1+F.length)%F.length;showF()};$("#fshuf").onclick=()=>{F.sort(()=>Math.random()-.5);fi=0;showF()};showF();
 observe();updTop();scrollTo(0,0)}
+
 function renderSummary(){const el=$("#summary");if(!el)return;const got=L.cards.filter(c=>S.done[c.id]);
 el.innerHTML=`<p>You have completed <b>${got.length} of ${L.cards.length}</b> steps, <b>${L.cases.filter(k=>S.done[k.id]).length} of ${L.cases.length}</b> cases and earned <b>${S.xp} XP</b> in total.</p><ul>${L.goals.map((g,i)=>{const c=L.cards.find(c=>c.goal==i);return `<li>${c&&S.done[c.id]?"✅":"⬜"} ${g}</li>`}).join("")}</ul>${got.length==L.cards.length?"<p>🎉 <b>Module mastered.</b> Come back tomorrow for the flashcards to keep your streak!</p>":"<p>Keep going – the next step is only a few minutes.</p>"}`}
 function go(id){const e=document.getElementById(id);if(e)e.scrollIntoView({behavior:"smooth",block:"start"})}
 function observe(){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){$$(".card").forEach(c=>c.classList.remove("active"));e.target.classList.add("active")}}),{rootMargin:"-40% 0px -50% 0px"});$$(".card").forEach(c=>io.observe(c))}
 /* ===== boot ===== */
+window.addEventListener("hashchange",()=>{const hm=location.hash.match(/(?:^|#|&)mod=(\w+)/);const hs=location.hash.match(/(?:^|#|&)spec=([\w-]+)/);
+if(hm&&(LESSONS[hm[1]]||COURSE.modules.find(x=>x.id==hm[1]))&&(VIEW!="mod"||CUR!=hm[1]))showModule(hm[1]);
+else if(hs&&specById(hs[1])&&(VIEW!="spec"||CUR_SPEC!=hs[1]))showSpecialty(hs[1]);
+else if(/(?:^|#|&)hub(?:&|$)/.test(location.hash)&&VIEW!="hub")showHub()});
 window.addEventListener("DOMContentLoaded",()=>{if(LS.getItem("ml_dark")==="1"||location.hash.includes("dark"))document.body.classList.add("dark");render();
 $("#dark").onclick=()=>{document.body.classList.toggle("dark");LS.setItem("ml_dark",document.body.classList.contains("dark")?"1":"0")};
 $("#focus").onclick=e=>{document.body.classList.toggle("focus");e.target.classList.toggle("pri")};
