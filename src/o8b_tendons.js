@@ -14,6 +14,7 @@ cards:[
 {id:"ob1",title:"Quadriceps tendon rupture (pages 10–13)",min:7,goal:0,obj:["Recognise and treat quadriceps tendon rupture"],html:`
 <div class="scene"><b>The scene:</b> Mrs Keller, 72, rheumatoid arthritis on steroids, felt a rip above the right kneecap when she stood from a chair. The knee looks dented above the patella. She cannot do a straight-leg raise.</div>
 <p>[[quadrupt|Quadriceps tendon rupture]]: elderly, diabetes, rheumatoid disease, corticosteroids (lecture page 11); occasionally a young athlete. Clinical: tearing pain, swelling, a palpable gap above the patella, loss of active extension. Imaging: ultrasound or magnetic resonance imaging; plain X-ray excludes fracture (page 12).</p>
+${FIG('o8-quad-rupture')}
 <p><b>Treatment (page 13):</b> partial tears — extension brace or plaster cylinder, then physiotherapy for flexion and strength. Complete tears — operative repair / reattachment.</p>
 <div class="hint">💡 <b>"Gap above = quadriceps. Gap below = patellar tendon."</b></div>
 <div class="exam"><b>🎓 For exams:</b> risk factors (age, diabetes, steroids, rheumatoid); gap superior to the patella; complete → repair.</div>

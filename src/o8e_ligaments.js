@@ -22,6 +22,7 @@ ${FIG('o8-ligaments-menisci')}
 <p>Collateral grades (page 45): 1 tenderness without laxity; 2 laxity at 30° flexion but stable in extension; 3 more severe / other structures. [[acl|Anterior cruciate]]: partial rare; complete — classify by tibial translation on [[lachman|Lachman]] testing (page 46). [[pcl|Posterior cruciate]] grades by posterior drawer at 90° (page 47): 1 tibia stays in front of the condyle; 2 to the level of the condyle; 3 behind. Clinical scripts (page 48): medial collateral — valgus blow, medial pain, little early swelling; anterior cruciate — pop, rapid swelling. Imaging: X-ray, magnetic resonance imaging; angio-computed tomography if dislocation concern (page 49). On the plain film, a small flake of bone just beside the outer side of the tibial plateau (a Segond lesion) is a strong clue that the anterior cruciate ligament has torn.</p>
 ${FIG('o8-segond-xray')}
 ${FIG('o8-lachman')}
+${FIG('o8-acl-mri')}
 <div data-widget="sortset" data-set="liggrade"></div>
 <div class="hint">💡 <b>"Medial collateral = side blow, slow swell. Anterior cruciate = pop, fast swell. Lachman beats the drawer for the anterior cruciate."</b></div>
 <div class="exam"><b>🎓 For exams:</b> collateral grades; Lachman and pivot-shift for anterior cruciate ligament; posterior drawer grades for posterior cruciate ligament.</div>

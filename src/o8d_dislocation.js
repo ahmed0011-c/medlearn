@@ -14,6 +14,7 @@ cards:[
 {id:"od1",title:"Why it goes lateral; first dislocation (pages 32–38)",min:8,goal:0,obj:["List restraints and first-line care"],html:`
 <div class="scene"><b>The scene:</b> Mia, 16, plants her foot and twists. She feels the kneecap 'go out'. In the emergency department the medial femoral condyle looks oddly prominent. Neither active nor passive movement is possible until someone reduces it.</div>
 <p>Natural lateral pull in extension; restraints: deep lateral trochlea, and soft tissues including the [[mpfl|medial patellofemoral ligament]] (pages 33–34). Predisposition: [[trochdys|trochlear dysplasia]], [[patalta|patella alta]], hypermobility (page 34). Traumatic dislocation tears medial restraints; atraumatic/habitual forms exist (page 35). Clinical trap: the uncovered medial condyle is mistaken for the patella (page 36).</p>
+${FIG('o8-patella-dislocate')}
 <p>Imaging: anteroposterior, lateral, skyline; ~5% have an associated osteochondral fracture (page 37). Treatment first-time (page 38): no need for prolonged immobilisation; safe to weight-bear; reduce swelling and regain range. McRae emphasises early motion after reduction of a first dislocation without large osteochondral fragments.</p>
 <div class="hint">💡 <b>"Lateral is the default escape route. Medial soft tissues and a deep trochlea are the gates."</b></div>
 <div class="exam"><b>🎓 For exams:</b> risk triad dysplasia / alta / laxity; clinical misidentification of the condyle; first-time = non-operative pathway.</div>

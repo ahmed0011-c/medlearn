@@ -26,6 +26,7 @@ cards:[
 <div class="corr">📝 <b>Slide check (page 75):</b> the heading is typed "Imiging" — the correct word is <b>imaging</b>.</div>
 <div data-widget="stepsvg" data-set="schatzker"></div>
 ${FIG('o8-schatzker')}
+${FIG('o8-schatzker-ct')}
 <div class="hint">💡 <b>"Fat–fluid level = the joint is broken inside. computed tomography tells the surgeon how to climb it."</b></div>
 <div class="exam"><b>🎓 For exams:</b> Schatzker I–VI in order; lipohaemarthrosis meaning; computed tomography for planning.</div>
 <details class="chk"><summary>✅ Checkpoint: answer the scene.</summary><p>Schatzker II (split-depression) pattern — soft-tissue and neurovascular check, then surgical planning if displaced.</p></details>`,
