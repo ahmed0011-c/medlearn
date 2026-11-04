@@ -32,8 +32,6 @@ quiz:[{q:"Classic proximal-fragment posture?",o:["Flexed, abducted, externally r
 {id:"hf2",title:"Atypical and isolated trochanter fractures (page 36; McRae 383–384)",min:8,goal:1,obj:["Spot atypical beaking; age-code isolated trochanters"],html:`
 <div class="scene"><b>The scene:</b> A woman on long-term alendronate reports months of thigh ache. Today she pivots in the kitchen and the femur gives with a transverse crack and a lateral cortical beak. Her other thigh has ached for weeks.</div>
 <p>[[atypff|Atypical femoral fractures]] (McRae book page 383): ~5% of subtrochanteric cracks; long-term bisphosphonate in ~80%; prodromal pain ~30%; cortical thickening/beaking; low energy; transverse/short oblique; little comminution; slow healing. Impending contralateral cracks deserve prophylactic fixation (lecture page 27). Isolated lesser trochanter (page 36): young = psoas apophyseal avulsion → rest; elderly = suspect metastasis. Greater trochanter: direct blow; &lt;1 cm displacement → protected weight-bearing 6–8 weeks; &gt;1 cm → screws, tension band or plate.</p>
-${FIG('o7-atypical')}
-${FIG('o7-atypical-xray')}
 ${FIG('o7-isolated-trach')}
 <div data-widget="pickset" data-set="subrx"></div>
 <div class="hint">💡 <b>"Bisphosphonate + thigh pain + lateral beak = atypical until proven otherwise — check the twin femur."</b></div>
