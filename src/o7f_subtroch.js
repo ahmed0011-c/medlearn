@@ -22,7 +22,6 @@ cards:[
 <div class="scene"><b>The scene:</b> A motorcyclist’s proximal femur ends above mid-shaft. The short proximal piece points at the ceiling in flexion while the shaft lies back on the bed — as if two people are pulling the bone in opposite directions.</div>
 <p>Definition (page 27): from the inferior margin of the lesser trochanter to 5 cm below. Rare in young adults because the posteromedial [[calcar|calcar]] is strong. Patterns: transverse or oblique; proximal fragment flexed, abducted and externally rotated; shaft posterior. Challenges (page 31): greater blood loss from profunda branches; subtle extensions into the intertrochanteric region; mandatory deformity correction before locking a nail. Pathological cracks need biopsy thinking.</p>
 ${FIG('o7-subtroch')}
-${FIG('o7-pfn')}
 <div data-widget="stepsvg" data-set="subdef"></div>
 <div class="hint">💡 <b>"Psoas lifts the proximal fragment like a trapdoor — close the trapdoor before you nail."</b></div>
 <div class="exam"><b>🎓 For exams:</b> 5 cm zone; classic deformity; nail after reduction; biopsy if pathology suspected.</div>

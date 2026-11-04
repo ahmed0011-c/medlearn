@@ -24,7 +24,6 @@ cards:[
 <p>Native hip (pages 40–41; McRae 375): usually posterior, high energy — dashboard force may also break patella, femoral shaft, hip, posterior acetabular wall, and bruise the [[sciaticn|sciatic nerve]]. Anterior dislocation follows abduction force — watch femoral vessels/nerve. Prosthetic hips: instability from sitting, low-energy falls, or high energy. Clinical (page 42): severe pain, refuses passive motion; posture may be masked if the femur is also broken. Imaging: X-ray then CT after reduction.</p>
 ${FIG('o7-dislocate')}
 ${FIG('o7-dislocate-clinic')}
-${FIG('o7-dislocate-xray')}
 <div data-widget="stepsvg" data-set="dashchain"></div>
 <div class="hint">💡 <b>"Neck fracture = foot points out. Posterior dislocation = foot points in. Always check the nerve before you pull."</b></div>
 <div class="exam"><b>🎓 For exams:</b> posterior posture; dashboard associated injuries; sciatic vs femoral nerve by direction.</div>

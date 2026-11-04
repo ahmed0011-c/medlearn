@@ -27,6 +27,8 @@ cards:[
 <p><b>Bone cuts and alignment.</b> Measured resection of the distal femur and proximal tibia restores a planned mechanical or kinematic alignment per the chosen philosophy; femoral rotation references (posterior condyles, transepicondylar axis, Whiteside) set the flexion gap. Remove osteophytes that tension ligaments falsely.</p>
 <p><b>Ligament balancing.</b> Create rectangular, equal flexion and extension gaps with stable varus–valgus balance through the arc. Posterior cruciate retaining versus substituting designs change how the gap is managed. Trials must track centrally without lift-off or trapping.</p>
 <div data-widget="stepsvg" data-set="tkrsteps"></div>
+${FIG('okr-tkr-components')}
+${FIG('okr-tkr-xray')}
 <div class="hint">💡 <b>"Cut bone to a plan; then tune soft tissues until the trial knee behaves like a stable hinge."</b></div>
 <div class="exam"><b>🎓 For exams:</b> medial parapatellar approach; measured cuts; balance flexion/extension gaps; know cruciate-retaining versus substituting concept.</div>
 <details class="chk"><summary>✅ Checkpoint: first three chapters of the trainee's narration?</summary><p>Anaesthetic plan with local infiltration analgesia → expose via medial parapatellar approach → measured femoral and tibial cuts → soft-tissue balance before cementing.</p></details>`,

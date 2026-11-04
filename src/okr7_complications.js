@@ -16,6 +16,7 @@ cards:[
 {id:"kr7a",title:"Early complications",min:8,goal:0,obj:["Spot infection, clot, nerve, vessel, stiffness and instability early"],html:`
 <div class="scene"><b>The scene:</b> Day 9 after total knee replacement: low-grade fever, a moist wound corner, and CRP still climbing. The junior doctor wonders if it is "just a haematoma".</div>
 <p><b>[[pji|Periprosthetic joint infection]].</b> McRae chapter 6 (book pages 104–105): infection of an arthroplasty differs from native septic arthritis — risk is higher, local signs are less pronounced, so keep a higher index of suspicion; people may be more unwell and deteriorate faster; an infected prosthesis usually needs extensive revision surgery; identify the organism with deep samples; if systemically well, avoid starting empirical antibiotics before surgery when safe to wait; diagnostic aspiration is preferably considered in a theatre environment because inoculating a sterile joint is a real risk. Early post-operative wound problems need senior orthopaedic review — washout with implant retention can succeed when treated fast; delayed care costs implants.</p>
+${FIG('okr-pji-concept')}
 <p><b>[[vte|Venous thromboembolism]].</b> Despite NG89 prophylaxis, watch for deep vein thrombosis and pulmonary embolism (${XL("okr6","KR.6")}).</p>
 <p><b>Nerve and vessel.</b> [[peronealn|Common peroneal]] nerve injury → foot drop and dorsal sensory loss (also emphasised in multi-ligament trauma in ${XL("o8g","L8.7")}). Vascular injury is uncommon but catastrophic — check pulses after difficult corrections or trauma around the knee.</p>
 <p><b>Stiffness.</b> [[arthrofib|Arthrofibrosis]] begins early when swelling and fear limit extension/flexion; McRae notes post-traumatic knee stiffness may need surgical release after plateau fractures (book page 455) — the same biology can follow replacement. Manipulation under anaesthesia is time-sensitive.</p>
@@ -34,6 +35,7 @@ quiz:[{q:"McRae: if the patient with a suspected infected prosthesis is systemic
 <li>Tibia — [[felix|Felix]] types in ${XL("o8i","L8.9")}.</li>
 <li>Distal femur — McRae chapter 18 (book pages 412–413): a posterior-cruciate-sparing prosthesis may leave a channel for retrograde nailing, but many posterior-cruciate-sacrificing designs block the canal; check implant geometry. Watch the ‘broomstick in a bucket’ failure mode if the metaphysis is weak around a nail; locked plating is often preferred when canal access is blocked.</li>
 </ul>
+${FIG('okr-periprosthetic-xray')}
 <p><b>Partial-knee specific.</b> Progression of osteoarthritis in retained compartments; bearing dislocation (mobile bearings); unexplained pain. TOPKAT still showed comparable revision counts in its selected trial population — registries show the wider revision burden (${XL("okr2","KR.2")}).</p>
 <p><b>Persistent pain.</b> Infection, loosening, instability, soft-tissue overload, referred hip/spine pain, and complex regional pain all enter the differential — NG157 asks primary care to refer new or worsening pain, limp or loss of function.</p>
 <div data-widget="pickset" data-set="krcomp"></div>
