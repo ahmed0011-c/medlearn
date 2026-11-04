@@ -23,6 +23,7 @@ quiz:[{q:"Minimum ligament definition of knee dislocation in the lecture?",o:["A
 <div class="scene"><b>The scene:</b> Pulses are present after reduction, but two hours later the calf is rock-hard and pain on passive toe stretch is extreme.</div>
 <p>Reduce as soon as possible; hold with brace, plaster or external fixator; pull in the line of the leg; <b>avoid hyperextension</b> because of the popliteal vessels (page 64). Definitive care has moved away from purely non-operative traditions toward staged ligament reconstruction once the limb is safe.</p>
 <p>Early complications (pages 65–66): [[poplart|popliteal artery]] injury — serial assessment ± angiography; neurological injury — tibial and [[peronealn|common peroneal]] nerves; [[compsyn|compartment syndrome]]. Late: stiffness, chronic instability, post-traumatic arthritis (McRae).</p>
+${FIG('o8-knee-dislocate-vessel')}
 <div data-widget="tree" data-set="kndis"></div>
 <div class="hint">💡 <b>"Pulse present ≠ artery innocent. Pain on stretch ≠ 'just sore'."</b></div>
 <div class="exam"><b>🎓 For exams:</b> reduce without hyperextension; popliteal artery; common peroneal nerve; compartment syndrome.</div>

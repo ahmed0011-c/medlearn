@@ -155,8 +155,26 @@ Same rules: calm illustrated or atlas style, clothed adults only, no unwell chil
   </details>
 - **`m5-salt-wasting-newborn-v2`** (Module 5, step k1, and 2.5): set aside after 2 attempts. The new version still shows no dehydration signs (rosy, plump baby; eyes not sunken; no dry lips or sunken fontanelle). Keep the live `images/m5-salt-wasting-newborn-labelled.jpg` and its existing honest Image check.
 
-Orthopaedics plates set aside with this publish (do not generate again). These fourteen were tried on PR #31 and, where noted, again on the redo. None is published. The lesson keeps its existing diagram or text.
-- **`o7-pipkin`** — set aside after 2 attempts (PR #31 and the redo). Drawn as a shoulder both times. Lecture 7.2 keeps the existing Pipkin diagram.
+- **`o7-pfn`** (Lecture 7 L7.5/L7.6): set aside after 3 attempts. The lag screw into the femoral head was missing, or did not reach the head and stuck out laterally. Lectures 7.5 and 7.6 keep the dynamic hip screw plate and the text.
+  <details><summary>Original request</summary>
+
+  - [-] **id:** `o7-pfn`
+    - **Save as:** `images/o7-pfn.png`
+    - **Used in:** L7.5/L7.6.
+    - **Prompt:** Atlas-style illustration of a cephalomedullary proximal femoral nail with a head lag screw for an unstable trochanteric or subtrochanteric fracture. No brand logos, plain background, space for labels. No text, letters, numbers, arrows or labels.
+
+  </details>
+- **`o7-dislocate-xray`** (Lecture 7 L7.7 card hg1): set aside after 3 attempts. First a normal pelvis, then a stray extra femur, then a pencil drawing with a small floating head rather than an X-ray-style image. Lecture 7.7 keeps the diagram and `o7-reduce-hip`.
+  <details><summary>Original request</summary>
+
+  - [-] **id:** `o7-dislocate-xray`
+    - **Save as:** `images/o7-dislocate-xray.png`
+    - **Used in:** L7.7 card hg1.
+    - **Prompt:** Clean grayscale illustration in textbook AP pelvis radiograph style (not a real patient scan): femoral head lying superior-posterior to the acetabulum (posterior dislocation). Schematic, educational. No text, letters, numbers, arrows or labels.
+
+  </details>
+
+- **`o7-pipkin`** — set aside after 2 attempts (PR #31 and the redo). Drawn as a shoulder both times. Lecture 7.2 keeps the Pipkin diagram.
   <details><summary>Original request</summary>
 
 - [-] **id:** `o7-pipkin`
@@ -165,16 +183,17 @@ Orthopaedics plates set aside with this publish (do not generate again). These f
   - **Prompt:** Four-panel atlas-style schematic of Pipkin femoral head fracture types I–IV on one row: I fragment below fovea; II fragment through weight-bearing dome above fovea; III head fracture plus neck fracture; IV head fracture plus acetabular wall fragment. Identical viewing angle, restrained red fracture lines, plain background. No text, letters, numbers, arrows or labels.
 
   </details>
-- **`o7-pipkin-ct`** — set aside after 2 attempts. The first looked like a knee. The second shows a ring around the head with no clear cleft through the lower head or chip off the back of the socket rim. Lecture 7.2 keeps the existing diagram.
+- **`o7-pipkin-ct`** — set aside after 2 attempts. The first looked like a knee. The second shows a ring around the head with no clear cleft through the lower head or chip off the back of the socket rim. Lecture 7.2 keeps the diagram.
   <details><summary>Original request</summary>
 
 - [-] **id:** `o7-pipkin-ct`
+  - **Redo requested (review of PR #31):** the picture shows a knee, not a hip.
   - **Save as:** `images/o7-pipkin-ct.png`
   - **Used in:** L7.2 card hb1.
   - **Prompt:** Clean grayscale illustration in the style of a CT teaching plate of the hip (not a real patient scan): coronal or axial view showing a femoral head fragment cleft and optional posterior wall chip. Calm, schematic, educational. No text, letters, numbers, arrows, rulers or labels.
 
   </details>
-- **`o7-pipkin-fix`** — set aside after 2 attempts. The head shape looks like a shoulder (humeral head), not a hip. Lecture 7.2 keeps the existing diagram.
+- **`o7-pipkin-fix`** — set aside after 2 attempts. The head shape looks like a shoulder (humeral head), not a hip. Lecture 7.2 keeps the diagram.
   <details><summary>Original request</summary>
 
 - [-] **id:** `o7-pipkin-fix`
@@ -183,52 +202,37 @@ Orthopaedics plates set aside with this publish (do not generate again). These f
   - **Prompt:** Atlas-style operative concept illustration: anterior hip exposure with a large femoral head fragment reduced and held with two countersunk screws, no gore, calm lighting, plain background, space for labels. No text, letters, numbers, arrows or labels.
 
   </details>
-- **`o7-dislocate-clinic`** — set aside after 2 attempts. The leg was externally rotated instead of shortened, flexed, adducted and internally rotated. Lecture 7.7 keeps the existing diagram.
+- **`o7-dislocate-clinic`** — set aside after 2 attempts. The leg was externally rotated instead of shortened, flexed, adducted and internally rotated. Lecture 7.7 keeps the diagram.
   <details><summary>Original request</summary>
 
 - [-] **id:** `o7-dislocate-clinic`
+  - **Redo requested (review of PR #31):** the leg is not shortened and internally rotated.
   - **Save as:** `images/o7-dislocate-clinic.png`
   - **Used in:** L7.7 card hg1.
   - **Prompt:** Illustrated clinical scene: fully clothed adult on a stretcher with one hip dislocated — leg shortened, flexed and internally rotated; calm emergency mood; no wounds. No text, letters, numbers, logos or labels.
 
   </details>
-- **`o7-dislocate-xray`** — set aside after 3 attempts. First a normal pelvis, then a stray extra femur, then a pencil drawing with a small floating head rather than an X-ray-style image. Lecture 7.7 keeps the existing diagram.
-  <details><summary>Original request</summary>
-
-- [-] **id:** `o7-dislocate-xray`
-  - **Save as:** `images/o7-dislocate-xray.png`
-  - **Used in:** L7.7 card hg1.
-  - **Prompt:** Clean grayscale illustration in textbook AP pelvis radiograph style (not a real patient scan): femoral head lying superior-posterior to the acetabulum (posterior dislocation). Schematic, educational. No text, letters, numbers, arrows or labels.
-
-  </details>
-- **`o7-pfn`** — set aside after 3 attempts. The lag screw into the femoral head was missing, or did not reach the head and stuck out laterally. Lectures 7.5 and 7.6 keep the existing nail diagram.
-  <details><summary>Original request</summary>
-
-- [-] **id:** `o7-pfn`
-  - **Save as:** `images/o7-pfn.png`
-  - **Used in:** L7.5/L7.6.
-  - **Prompt:** Atlas-style illustration of a cephalomedullary proximal femoral nail with a head lag screw for an unstable trochanteric or subtrochanteric fracture. No brand logos, plain background, space for labels. No text, letters, numbers, arrows or labels.
-
-  </details>
-- **`o7-neck-mri`** — set aside after 2 attempts. The dark line runs all the way across the neck, there is no pale band around it, and the anatomy is stylised. Lecture 7.3 keeps the existing text.
+- **`o7-neck-mri`** — set aside after 2 attempts. The dark line runs all the way across the neck, there is no pale band around it, and the anatomy is stylised. Lecture 7.3 keeps the text.
   <details><summary>Original request</summary>
 
 - [-] **id:** `o7-neck-mri`
+  - **Redo requested (review of PR #31):** no fracture line or marrow oedema is shown.
   - **Save as:** `images/o7-neck-mri.png`
   - **Used in:** L7.3 card hc1.
   - **Prompt:** Clean grayscale illustration in the style of a coronal MRI teaching plate of the hip (not a real patient scan): occult incomplete femoral neck fracture line with bone-marrow oedema suggested as a pale band, otherwise intact contours. Calm, schematic. No text, letters, numbers, arrows or labels.
 
   </details>
-- **`o7-atypical`** — set aside after 2 attempts. No localised beak of the outer cortex at the crack, and extra bumps on the shaft. Lecture 7.6 keeps the existing text.
+- **`o7-atypical`** — set aside after 2 attempts. No localised beak of the outer cortex at the crack, and extra bumps on the shaft. Lecture 7.6 keeps the text.
   <details><summary>Original request</summary>
 
 - [-] **id:** `o7-atypical`
+  - **Redo requested (review of PR #31):** the lateral cortical beak is in the wrong place.
   - **Save as:** `images/o7-atypical.png`
   - **Used in:** L7.6 card hf2.
   - **Prompt:** Atlas-style illustration of an atypical subtrochanteric fracture: transverse crack, lateral cortical thickening/beaking, little comminution. Plain background. No text, letters, numbers, arrows or labels.
 
   </details>
-- **`o7-atypical-xray`** — set aside after 2 attempts. The crack sits at lesser-trochanter level rather than below it, and the beak is barely visible. Lecture 7.6 keeps the existing text.
+- **`o7-atypical-xray`** — set aside after 2 attempts. The crack sits at lesser-trochanter level rather than below it, and the beak is barely visible. The plate published from PR #31 was removed. Lecture 7.6 keeps the text.
   <details><summary>Original request</summary>
 
 - [-] **id:** `o7-atypical-xray`
@@ -237,49 +241,64 @@ Orthopaedics plates set aside with this publish (do not generate again). These f
   - **Prompt:** Clean grayscale illustration in textbook AP femur radiograph style (not a real patient scan): lateral cortical beak and transverse subtrochanteric atypical fracture. Schematic, educational. No text, letters, numbers, arrows or labels.
 
   </details>
-- **`o7-distal-ao`** — set aside after 2 attempts. Panel 2 does not show one condyle split off with the other still joined to the shaft. Lecture 7.10 keeps the existing diagram.
+- **`o7-distal-ao`** — set aside after 2 attempts. Panel 2 does not show one condyle split off with the other still joined to the shaft. Lecture 7.10 keeps the diagram.
   <details><summary>Original request</summary>
 
 - [-] **id:** `o7-distal-ao`
+  - **Redo requested (review of PR #31):** six panels were drawn, not the four that were requested.
   - **Save as:** `images/o7-distal-ao.png`
   - **Used in:** L7.10 card hj1.
   - **Prompt:** Four-panel atlas-style distal femur schematics: AO A extra-articular; B partial articular; C complete articular; and a Hoffa coronal condyle shear panel. Restrained fracture lines. No text, letters, numbers, arrows or labels.
 
   </details>
-- **`o7-hoffa`** — set aside after 2 attempts. The back fragment floats far from the bone instead of a frontal-plane split. Lecture 7.10 keeps the Hoffa computed-tomography plate that passed review, and the existing diagram.
+- **`o7-hoffa`** — set aside after 2 attempts. The back fragment floats far from the bone instead of a frontal-plane split. Lecture 7.10 keeps the diagram and the Hoffa computed-tomography plate that passed review.
   <details><summary>Original request</summary>
 
 - [-] **id:** `o7-hoffa`
+  - **Redo requested (review of PR #31):** the fragment is at the front of the condyle, not the back.
   - **Save as:** `images/o7-hoffa.png`
   - **Used in:** L7.10 card hj1.
   - **Prompt:** Atlas-style sagittal/oblique illustration of a Hoffa coronal shear fracture through a femoral condyle, plain background, space for labels. No text, letters, numbers, arrows or labels.
 
   </details>
-- **`o8-quad-rupture`** — set aside after 2 attempts. The patella was misplaced. Lecture 8.2 keeps the existing extensor-chain diagram.
+- **`o8-quad-rupture`** — set aside after 2 attempts. The patella was misplaced. Lecture 8.2 keeps the diagram.
   <details><summary>Original request</summary>
 
 - [-] **id:** `o8-quad-rupture`
+  - **Redo requested (review of PR #31):** the patella and femur are misplaced.
   - **Save as:** `images/o8-quad-rupture.png`
   - **Used in:** L8.2 quadriceps or patellar tendon rupture. Planned placement: after the scene.
   - **Prompt:** Atlas-style sagittal illustration of a knee with a complete quadriceps tendon rupture: the quadriceps muscle and tendon retracted upward leaving a visible gap above the patella, the patella sitting slightly low, the patellar tendon intact to the tibial tubercle. No skin, no blood, calm educational style, plain background, space for later labels. No text, letters, numbers, arrows or labels.
 
   </details>
-- **`o8-acl-mri`** — set aside after 2 attempts. No clear posterior cruciate ligament band, and the femur outline is wrong. Lecture 8.5 keeps the existing text.
+- **`o8-acl-mri`** — set aside after 2 attempts. No clear posterior cruciate ligament band, and the femur outline is wrong. Lecture 8.5 keeps the text.
   <details><summary>Original request</summary>
 
 - [-] **id:** `o8-acl-mri`
+  - **Redo requested (review of PR #31):** the anatomy is unclear.
   - **Save as:** `images/o8-acl-mri.png`
   - **Used in:** L8.5 ACL diagnosis. Planned placement: after the imaging paragraph.
   - **Prompt:** Clean grayscale illustration in the style of a sagittal proton-density MRI teaching plate of the knee (not a real patient scan): distal femur and proximal tibia with the ACL midsubstance clearly discontinuous and wavy (complete tear), PCL intact and dark, femoral condyle and tibial plateau outlines correct, small joint effusion suggested as a pale pocket. Calm, schematic, educational. No text, letters, numbers, arrows or labels.
 
   </details>
-- **`o8-patella-dislocate`** — set aside after 2 attempts. The kneecap is displaced to the inner (medial, away from the fibula) side, and the knee is barely bent. Lecture 8.4 keeps the existing text.
+- **`o8-patella-dislocate`** — set aside after 2 attempts. The kneecap is displaced to the inner (medial, away from the fibula) side, and the knee is barely bent. Lecture 8.4 keeps the text.
   <details><summary>Original request</summary>
 
 - [-] **id:** `o8-patella-dislocate`
+  - **Redo requested (review of PR #31):** the patella is not visibly lateral.
   - **Save as:** `images/o8-patella-dislocate.png`
   - **Used in:** L8.4 card `od1` scene. Planned placement: after the scene.
   - **Prompt:** Atlas-style clinical illustration of a flexed human knee from the front, skin intact, fully clothed torso cropped out of frame. The patella is clearly displaced to the lateral side of the knee; the uncovered medial femoral condyle is visible as a rounded prominence on the inner side. Calm, non-graphic, no wounds, no blood. Soft clinical lighting, plain background. No text, letters, numbers or labels.
+
+  </details>
+- **`o8-schatzker-ct`** — set aside after 2 attempts. The lateral joint-surface depression is not visible, so the plate does not teach a split-depression. Lecture 8.9 keeps the Schatzker diagram.
+  <details><summary>Original request</summary>
+
+- [-] **id:** `o8-schatzker-ct`
+  - **Redo requested (review of PR #31):** the split is on the medial side.
+  - **Save as:** `images/o8-schatzker-ct.png`
+  - **Used in:** L8.9 tibial plateau. Planned placement: beside or under the Schatzker schematic.
+  - **Prompt:** Clean grayscale illustration in the style of a coronal CT teaching plate of the proximal tibia (not a real patient scan): a Schatzker II pattern with a lateral split plus depression of the lateral tibial plateau articular surface, intact medial plateau, fibular head visible. Calm, schematic, educational, even lighting. No text, letters, numbers, arrows, rulers or labels.
 
   </details>
 
@@ -477,6 +496,7 @@ Same rules: atlas-style realistic medical illustration, fully clothed people whe
   - **Prompt:** Atlas-style realistic exploded illustration of a cemented total knee replacement on a plain off-white background: metallic femoral component, polyethylene tibial insert on a metal tibial tray, and a polyethylene patellar button, shown in anatomical orientation relative to a ghosted distal femur and proximal tibia. Restrained naturalistic metal and polyethylene colours, even lighting, generous space for later labels. No text, letters, numbers, arrows or labels.
 
 - [x] **id:** `okr-ukr-medial`
+  - **Redo requested (review of PR #31):** the implant is drawn on both sides.
   - **Save as:** `images/okr-ukr-medial.png`
   - **Used in:** KR.5 card `kr5a` / step diagram `ukrsteps`. Planned placement: beside the partial-knee step map.
   - **Prompt:** Atlas-style realistic illustration of a medial unicompartmental knee replacement in place: small metallic femoral runner and tibial tray with polyethylene bearing only on the medial side; lateral compartment cartilage intact; cruciate ligaments faintly suggested in the notch. Plain background, space for later labels. No text, letters, numbers, arrows or labels.
@@ -521,13 +541,9 @@ Same rules and imaging rule as the Lecture 8 and Knee replacement sections above
   - **Used in:** L8.3 patella fracture. Planned placement: after the fracture-pattern paragraph.
   - **Prompt:** Clean two-panel grayscale illustration in the style of textbook knee radiographs (not real patient scans): left panel lateral view showing a displaced transverse patella fracture with a clear gap between upper and lower fragments and the knee slightly flexed; right panel anteroposterior view of the same transverse patella fracture. Soft-tissue outline present, calm schematic lighting, educational. No text, letters, numbers, arrows or labels.
 
-- [x] **id:** `o8-schatzker-ct`
-  - **Save as:** `images/o8-schatzker-ct.png`
-  - **Used in:** L8.9 tibial plateau. Planned placement: beside or under the Schatzker schematic.
-  - **Prompt:** Clean grayscale illustration in the style of a coronal CT teaching plate of the proximal tibia (not a real patient scan): a Schatzker II pattern with a lateral split plus depression of the lateral tibial plateau articular surface, intact medial plateau, fibular head visible. Calm, schematic, educational, even lighting. No text, letters, numbers, arrows, rulers or labels.
-
 
 - [x] **id:** `okr-tkr-cuts`
+  - **Redo requested (review of PR #31):** the femur is hollowed out, not box-cut.
   - **Save as:** `images/okr-tkr-cuts.png`
   - **Used in:** KR.4 total knee steps. Planned placement: beside the bone-cut step of `tkrsteps`.
   - **Prompt:** Atlas-style realistic illustration of distal femur and proximal tibia prepared for a cemented total knee replacement on a plain background: distal femoral cut, anterior and posterior chamfer cuts, and a flat proximal tibial cut with a central keel slot, cartilage removed from the cut surfaces, no implants yet. Correct alignment and proportions, restrained bone colour, generous space for later labels. No text, letters, numbers, arrows or labels.
@@ -538,6 +554,7 @@ Same rules and imaging rule as the Lecture 8 and Knee replacement sections above
   - **Prompt:** Clean two-panel grayscale illustration in the style of textbook postoperative knee radiographs (not real patient scans): left panel anteroposterior view of a cemented total knee replacement with femoral and tibial components well aligned; right panel lateral view showing femoral component, tibial tray with polyethylene space, and a patellar button. Calm, schematic, educational. No text, letters, numbers, arrows, side markers or labels.
 
 - [x] **id:** `okr-ukr-xray`
+  - **Redo requested (review of PR #31):** tibial trays are drawn on both sides.
   - **Save as:** `images/okr-ukr-xray.png`
   - **Used in:** KR.5 partial knee. Planned placement: after the Oxford / medial UKR step map.
   - **Prompt:** Clean grayscale illustration in the style of a textbook anteroposterior knee radiograph (not a real patient scan): a medial unicompartmental knee replacement in place (small femoral runner and tibial tray only on the medial side), lateral joint space preserved, no total-knee hardware. Calm, schematic, educational. No text, letters, numbers, arrows or labels.
@@ -580,6 +597,7 @@ Same rules as the Lecture 8 / knee-replacement batches: atlas-style realistic me
   - **Prompt:** Three-panel atlas-style schematic of femoral neck fractures with progressively steeper fracture lines relative to horizontal (Pauwels concept), plain background, identical femurs. No text, letters, numbers, arrows or labels.
 
 - [x] **id:** `o7-neck-clinic`
+  - **Redo requested (review of PR #31):** the leg is not shortened or externally rotated.
   - **Save as:** `images/o7-neck-clinic.png`
   - **Used in:** L7.3 card hc1.
   - **Prompt:** Illustrated clinical scene: fully clothed elderly man on a trolley with one leg shortened and externally rotated after a fall; calm respectful emergency-bay mood; no wounds. No text, letters, numbers, logos or labels.
@@ -591,6 +609,7 @@ Same rules as the Lecture 8 / knee-replacement batches: atlas-style realistic me
 
 
 - [x] **id:** `o7-neck-screws`
+  - **Redo requested (review of PR #31):** extra screws and a hole are drawn.
   - **Save as:** `images/o7-neck-screws.png`
   - **Used in:** L7.4 card hd1.
   - **Prompt:** Atlas-style illustration of three parallel cannulated screws fixing an undisplaced femoral neck fracture, tips short of the joint, plain background, space for labels. No text, letters, numbers, arrows or labels.
@@ -611,6 +630,7 @@ Same rules as the Lecture 8 / knee-replacement batches: atlas-style realistic me
   - **Prompt:** Two-panel clean grayscale illustration in textbook radiograph style (not real scans): AP and lateral hip with a lag screw in the head; clear space near the head apex for later tip–apex distance labels. Schematic, educational. No text, letters, numbers, arrows or labels.
 
 - [x] **id:** `o7-intertroch`
+  - **Redo requested (review of PR #31):** the unstable panel breaks the shaft.
   - **Save as:** `images/o7-intertroch.png`
   - **Used in:** L7.5 card he1.
   - **Prompt:** Two-panel atlas-style proximal femur schematic: left stable two-part intertrochanteric fracture with medial contact; right unstable four-part pattern with free lesser trochanter. Restrained red fracture lines. No text, letters, numbers, arrows or labels.
@@ -674,6 +694,7 @@ Same rules as the Lecture 8 / knee-replacement batches: atlas-style realistic me
   - **Prompt:** Atlas-style illustration of a femur with a hip stem above and a knee replacement below and a fracture in the intervening shaft (interprosthetic fracture). Plain background, space for labels. No text, letters, numbers, arrows or labels.
 
 - [x] **id:** `o7-shaft-patterns`
+  - **Redo requested (review of PR #31):** the four patterns are wrong.
   - **Save as:** `images/o7-shaft-patterns.png`
   - **Used in:** L7.9 card hi1.
   - **Prompt:** Four-panel atlas-style femoral shaft schematics: spiral; transverse/oblique; segmental; and a panel hinting an ipsilateral neck crack. Identical scale, restrained fracture lines. No text, letters, numbers, arrows or labels.
@@ -689,12 +710,14 @@ Same rules as the Lecture 8 / knee-replacement batches: atlas-style realistic me
   - **Prompt:** Atlas-style illustration of a locked antegrade intramedullary femoral nail with proximal and distal interlocking screws. Plain background, no brand logos. No text, letters, numbers, arrows or labels.
 
 - [x] **id:** `o7-open-gustilo`
+  - **Redo requested (review of PR #31):** the picture is too graphic.
   - **Save as:** `images/o7-open-gustilo.png`
   - **Used in:** L7.9 card hi1.
   - **Prompt:** Three-panel non-graphic atlas-style concept of increasing open-fracture soft-tissue severity (small clean wound → larger wound → severe periosteal strip), draped limbs, no gore, no blood pools. Educational restraint. No text, letters, numbers or labels.
 
 
 - [x] **id:** `o7-hoffa-ct`
+  - **Redo requested (review of PR #31):** the slice is axial, not sagittal or coronal.
   - **Save as:** `images/o7-hoffa-ct.png`
   - **Used in:** L7.10 card hj1.
   - **Prompt:** Clean grayscale illustration in the style of a CT teaching plate (not a real patient scan): coronal or sagittal view of a Hoffa distal femoral condyle fracture. Schematic, educational. No text, letters, numbers, arrows, rulers or labels.
