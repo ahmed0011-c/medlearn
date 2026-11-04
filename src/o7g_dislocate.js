@@ -35,7 +35,6 @@ quiz:[{q:"Classic posterior dislocation posture?",o:["Short, flexed, internally 
 <div class="scene"><b>The scene:</b> Sixty minutes after arrival the hip is still out. CT later shows a Pipkin chip and a posterior wall fragment.</div>
 <p>Treat (page 43): closed reduction and stability test; open reduction if closed fails or fragments block; treat Pipkin/acetabular companions; revision surgery for failed arthroplasty. Complications (page 45): sciatic palsy in ~10% of native dislocations — about one-third recover fully, one-third partially, one-third permanent (lecture); [[avn|avascular necrosis]] up to ~10%, reduced by reduction within 6 hours; osteoarthritis ~25% within 8 years (lecture).</p>
 ${FIG('o7-reduce-hip')}
-${FIG('o7-pipkin')}
 <div data-widget="pickset" data-set="disrx"></div>
 <div class="hint">💡 <b>"Six-hour golden window for the head’s blood — reduce, then CT for hitchhikers."</b></div>
 <div class="exam"><b>🎓 For exams:</b> reduce &lt;6 h; sciatic 10% with 1/3–1/3–1/3 recovery; AVN ≤10%; OA ~25%/8 years (lecture figures).</div>
