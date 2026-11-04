@@ -30,12 +30,12 @@ quiz:[{q:"McRae: if the patient with a suspected infected prosthesis is systemic
 <div class="scene"><b>The scene:</b> Four years after a medial partial knee, lateral pain returns. Separately, an 82-year-old with a total knee falls; the tibia cracks beside the stem.</div>
 <p><b>[[aseploose|Aseptic loosening]] and wear.</b> Start-up pain, radiolucent lines, osteolysis — always exclude infection first. Registries list loosening and infection among leading revision indications.</p>
 <p><b>Periprosthetic fracture.</b> McRae notes an increasing incidence of periprosthetic fractures related to hip or knee arthroplasty (chapter 17, book page 350) and to hip and knee replacements in osteoporotic fallers (chapter 18). Around a total knee:</p>
-${FIG('okr-periprosthetic-xray')}
 <ul>
 <li>Patella — Goldberg / Ortiguera–Berry logic in ${XL("o8c","L8.3")}.</li>
 <li>Tibia — [[felix|Felix]] types in ${XL("o8i","L8.9")}.</li>
 <li>Distal femur — McRae chapter 18 (book pages 412–413): a posterior-cruciate-sparing prosthesis may leave a channel for retrograde nailing, but many posterior-cruciate-sacrificing designs block the canal; check implant geometry. Watch the ‘broomstick in a bucket’ failure mode if the metaphysis is weak around a nail; locked plating is often preferred when canal access is blocked.</li>
 </ul>
+${FIG('okr-periprosthetic-xray')}
 <p><b>Partial-knee specific.</b> Progression of osteoarthritis in retained compartments; bearing dislocation (mobile bearings); unexplained pain. TOPKAT still showed comparable revision counts in its selected trial population — registries show the wider revision burden (${XL("okr2","KR.2")}).</p>
 <p><b>Persistent pain.</b> Infection, loosening, instability, soft-tissue overload, referred hip/spine pain, and complex regional pain all enter the differential — NG157 asks primary care to refer new or worsening pain, limp or loss of function.</p>
 <div data-widget="pickset" data-set="krcomp"></div>

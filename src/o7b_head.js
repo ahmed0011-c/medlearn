@@ -22,7 +22,6 @@ cards:[
 <div class="scene"><b>The scene:</b> Jonas, 24, was the belted driver in a head-on crash. His right hip screams; the knee that hit the dash is bruised. The leg sits flexed and internally rotated. You reduce the hip in theatre — and the head’s contour still looks wrong.</div>
 <p>Picture the femoral head as a polished globe. [[hipdisloc|Dislocation]] yanks it out the back door; a shear plane slices cartilage and bone. [[pipkin|Pipkin I]] cuts below the fovea — often a non-weight-bearing chip. [[pipkin|Pipkin II]] cuts above the fovea through the roof you stand on. [[pipkin|Pipkin III]] adds a neck fracture. [[pipkin|Pipkin IV]] adds an acetabular break. Imaging (lecture page 7): X-ray first, then computed tomography before you celebrate.</p>
 ${FIG('o7-pipkin-xray')}
-${FIG('o7-pipkin-ct')}
 <div data-widget="stepsvg" data-set="pipkin"></div>
 <div class="hint">💡 <b>"Dashboard → posterior hip out → ask: head chip? neck crack? back wall missing? sciatic nerve?"</b></div>
 <div class="exam"><b>🎓 For exams:</b> Pipkin I–IV; CT after reduction; link to posterior dislocation.</div>

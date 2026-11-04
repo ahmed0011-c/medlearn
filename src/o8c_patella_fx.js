@@ -22,8 +22,8 @@ cards:[
 {id:"oc1",title:"Patella fracture: mechanism, picture, treatment (pages 18–27)",min:9,goal:0,obj:["Describe direct vs indirect injury and treatment thresholds"],html:`
 <div class="scene"><b>The scene:</b> Elena, 67, slips on ice onto the front of her knee. X-ray shows a stellate crack without a gap. She can still lift the straight leg against gravity.</div>
 <p>Anatomy: [[sesamoid|patella]] with vastus insertions and [[retinac|retinacula]] completing the strap (page 22). Direct injury → crack or stellate, expansions often intact. Indirect → transverse with gap (page 23). Imaging: fine lines, stellate displacement, or transverse gap (page 24). Classification: descriptive / AO classification (Arbeitsgemeinschaft für Osteosynthesefragen) (page 25).</p>
-<p><b>Treatment (page 26):</b> undisplaced or minimally displaced — orthesis (free extension, limited flexion, full weight-bearing) if the patient can straight-leg raise. Longitudinal — often full weight-bearing. Displaced with failed extensor mechanism — fixation (lecture demonstrates plating, page 27). McRae: restore the articular surface and the extensor mechanism.</p>
 ${FIG('o8-patella-fx-xray')}
+<p><b>Treatment (page 26):</b> undisplaced or minimally displaced — orthesis (free extension, limited flexion, full weight-bearing) if the patient can straight-leg raise. Longitudinal — often full weight-bearing. Displaced with failed extensor mechanism — fixation (lecture demonstrates plating, page 27). McRae: restore the articular surface and the extensor mechanism.</p>
 <div data-widget="stepsvg" data-set="patfxmech"></div>
 <div class="hint">💡 <b>"Can they straight-leg raise? If yes and the bits are nearly together → brace. If no or a gap → fix."</b></div>
 <div class="exam"><b>🎓 For exams:</b> lecture epidemiology (1%, 14.1/100 000, median 67, ~70% low impact); direct vs indirect; retinacula; raise test decides bracing.</div>

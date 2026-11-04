@@ -15,6 +15,7 @@ cards:[
 {id:"of1",title:"Mechanism, features, imaging (pages 54–57)",min:6,goal:0,obj:["Recognise the meniscal story"],html:`
 <div class="scene"><b>The scene:</b> After a sudden twist with the boot planted, Sam cannot fully straighten the knee. It stiffens and hurts along the joint line. X-ray is normal.</div>
 <p>Mechanism (page 56): sudden twisting or rotating with the foot anchored. Features: difficulty fully extending, stiffness, pain, restricted motion soon after injury. Imaging (page 57): X-ray to exclude fracture; [[meniscus|magnetic resonance imaging]] for the meniscus (and ligaments).</p>
+${FIG('o8-ligaments-menisci')}
 <div class="hint">💡 <b>"Planted foot + twist + joint-line pain ± locking = meniscus until magnetic resonance imaging says no."</b></div>
 <div class="exam"><b>🎓 For exams:</b> mechanism; mechanical block to extension; magnetic resonance imaging after plain films.</div>
 <details class="chk"><summary>✅ Checkpoint: answer the scene.</summary><p>Suspect meniscal tear — arrange magnetic resonance imaging; do not force the locked knee.</p></details>`,

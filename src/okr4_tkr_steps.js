@@ -27,8 +27,9 @@ cards:[
 <p><b>Bone cuts and alignment.</b> Measured resection of the distal femur and proximal tibia restores a planned mechanical or kinematic alignment per the chosen philosophy; femoral rotation references (posterior condyles, transepicondylar axis, Whiteside) set the flexion gap. Remove osteophytes that tension ligaments falsely.</p>
 <p><b>Ligament balancing.</b> Create rectangular, equal flexion and extension gaps with stable varus–valgus balance through the arc. Posterior cruciate retaining versus substituting designs change how the gap is managed. Trials must track centrally without lift-off or trapping.</p>
 <div data-widget="stepsvg" data-set="tkrsteps"></div>
-${FIG('okr-tkr-components')}
 ${FIG('okr-tkr-cuts')}
+${FIG('okr-tkr-components')}
+${FIG('okr-tkr-xray')}
 <div class="hint">💡 <b>"Cut bone to a plan; then tune soft tissues until the trial knee behaves like a stable hinge."</b></div>
 <div class="exam"><b>🎓 For exams:</b> medial parapatellar approach; measured cuts; balance flexion/extension gaps; know cruciate-retaining versus substituting concept.</div>
 <details class="chk"><summary>✅ Checkpoint: first three chapters of the trainee's narration?</summary><p>Anaesthetic plan with local infiltration analgesia → expose via medial parapatellar approach → measured femoral and tibial cuts → soft-tissue balance before cementing.</p></details>`,
@@ -40,7 +41,6 @@ quiz:[{q:"NG157 anaesthetic offer for primary elective knee replacement includes
 <p><b>Patella.</b> NG157 1.7.2: offer [[patsurf|resurfacing of the patella]] in primary elective total knee replacement. If resurfacing, avoid overstuffing; if not resurfacing (patient choice after discussion in some units despite the offer), document why and ensure smooth tracking.</p>
 <p><b>Tranexamic acid.</b> NG157 1.4.1 for primary elective hip or knee replacement: give intravenous [[txa|tranexamic acid]]; if no renal impairment, also apply 1–2 g topical (intra-articular) diluted in saline after final wash-out, keeping the combined dose ≤3 g; if renal impairment, use a reduced intravenous dose alone. (Topical use was off-label when NG157 published — follow current product advice.)</p>
 <p><b>Safety.</b> Two stop moments before implantation and before closure check component compatibility (NG157 1.6). Ultra-clean air. Antibiotics per protocol. McRae does not script this elective sequence; where McRae matters later is infection and fractures around the implant (${XL("okr7","KR.7")}, ${XL("o8c","L8.3")}, ${XL("o8i","L8.9")}).</p>
-${FIG('okr-tkr-xray')}
 <div data-widget="sortset" data-set="tkrorder"></div>
 <div class="hint">💡 <b>"Cement loves a dry field. Tranexamic acid buys you that field without relying only on a tourniquet."</b></div>
 <div class="exam"><b>🎓 For exams:</b> offer patella resurfacing; IV ± topical tranexamic acid rules; two implant stop moments; cemented still dominant in NJR.</div>
