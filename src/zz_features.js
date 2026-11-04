@@ -181,7 +181,30 @@ const REL=[
 ["o7j","o8i","Distal periprosthetic femur meets tibial periprosthetic maps at the knee"],
 ["o7j","okr7","Distal femur around a knee replacement cross-links to knee-replacement complications"],
 ["o7a","o8a","Hip–femur lecture sits beside knee–leg anatomy in Orthopaedics"],
-["o7d","okr1","Trauma arthroplasty decisions differ from elective osteoarthritis pathways"]
+["o7d","okr1","Trauma arthroplasty decisions differ from elective osteoarthritis pathways"],
+["omh1","omh2","Assessment leads into epidemiology and blood-supply logic"],
+["omh2","omh3","Blood supply makes Garden displacement matter"],
+["omh3","omh4","Classifications meet extracapsular types and the ED pathway"],
+["omh4","omh5","Occult cleared, Box 17.1 chooses the implant"],
+["omh5","omh6","Undisplaced fixation sits beside elderly displaced arthroplasty"],
+["omh6","omh7","Hemi versus total choice then hemi technique"],
+["omh6","omh8","Elderly replace pathway contrasts with young fix pathway"],
+["omh8","omh9","Young neck fixation sits beside extracapsular pattern choice"],
+["omh9","omh10","Pattern choice becomes DHS or nail technique"],
+["omh10","omh11","Technique then follow-up and complications"],
+["omh11","omh12","Fracture complications sit beside native dislocation"],
+["omh12","omh13","Dislocation often brings Pipkin head fragments"],
+["omh13","omh14","Head fractures sit beside periprosthetic and atypical cracks"],
+["omh1","o7a","Book assessment deep-dive beside Lecture 7 proximal map"],
+["omh2","o7a","McRae blood supply enriches Lecture 7 capsule map"],
+["omh3","o7c","Garden and Pauwels book pages beside Lecture 7 neck class"],
+["omh5","o7d","Box 17.1 and screws beside Lecture 7 neck treatment"],
+["omh6","o7d","Elderly arthroplasty choice mirrors Lecture 7 fix-versus-replace"],
+["omh9","o7e","Evans/DHS/nail beside Lecture 7 intertrochanteric"],
+["omh9","o7f","Subtrochanteric and atypical cross to Lecture 7"],
+["omh12","o7g","Dislocation book deep-dive beside Lecture 7 dislocation"],
+["omh13","o7b","Pipkin book page beside Lecture 7 head fractures"],
+["omh14","o7h","Vancouver and atypical beside Lecture 7 periprosthetic"]
 ];
 const RELMAP={};REL.forEach(([a,b,w])=>{(RELMAP[a]=RELMAP[a]||[]).push([b,w]);(RELMAP[b]=RELMAP[b]||[]).push([a,w])});
 function relatedCard(id){const R=(RELMAP[id]||[]).filter(([b])=>OK(b));if(!R.length)return "";const m=MOD(id);

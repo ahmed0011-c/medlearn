@@ -64,7 +64,7 @@ const CATS={enzyme:"Enzymes",hormone:"Hormones and steroid molecules",cell:"Cell
 /* ===== SPECIALTIES: hub tiles on the front page. Add a new specialty here + tag its first module with area2 belonging to one of its areas. ===== */
 const SPECIALTIES=[
 {id:"endo",label:"Endocrinology",emoji:"🩺",blurb:"Adrenal gland, thyroid gland, hypothalamus and pituitary.",areas:["🫘 Adrenal gland","🦋 Thyroid gland","🧠 Hypothalamus and pituitary gland"]},
-{id:"ortho",label:"Orthopaedics",emoji:"🦴",blurb:"Hip and femur (Lecture 7), knee and leg (Lecture 8), and knee replacement.",areas:["🦴 Orthopaedics · Hip and femur","🦴 Orthopaedics · Knee and leg","🦴 Orthopaedics · Knee replacement"]},
+{id:"ortho",label:"Orthopaedics",emoji:"🦴",blurb:"Hip and femur (Lecture 7), McRae Ch. 17 hip deep-dive, knee and leg (Lecture 8), and knee replacement.",areas:["🦴 Orthopaedics · Hip and femur","🦴 Orthopaedics · McRae Ch. 17: Hip","🦴 Orthopaedics · Knee and leg","🦴 Orthopaedics · Knee replacement"]},
 {id:"gsurg",label:"General Surgery",emoji:"🏥",blurb:"Coming soon — lectures will land here.",comingSoon:true,areas:[]}
 ];
 
@@ -172,4 +172,19 @@ modules:[
 {id:"okr6",n:"KR.6",grp:"Knee replacement",title:"Aftercare, clot prevention and rehabilitation",summary:"Enhanced recovery, NICE NG89 options after elective knee replacement, and discharge red flags.",built:true},
 {id:"okr7",n:"KR.7",grp:"Knee replacement",title:"Complications early and late",summary:"Infection (McRae), clots, stiffness, nerve injury, periprosthetic fracture cross-links, partial-knee progression.",built:true},
 {id:"okr8",n:"KR.8",grp:"Knee replacement",title:"Outcomes and shared decisions",summary:"Verified PROMs and revision figures, counselling script, and when to refer back.",built:true}
+,
+{id:"omh1",n:"MH.1",grp:"McRae Ch. 17: Hip (book deep-dive)",area2:"🦴 Orthopaedics · McRae Ch. 17: Hip",lec:"McRae Ch. 17: Hip — book deep-dive",teacher:"McRae's Orthopaedic Trauma 3rd ed · White, Mackenzie, Gray 2016",title:"General principles: assess the painful hip",summary:"Look–feel–move, neurovascular check, postures, Shenton's arc and the occult pathway.",pages:"book pages 350–351",built:true},
+{id:"omh2",n:"MH.2",grp:"McRae Ch. 17: Hip (book deep-dive)",title:"Epidemiology, anatomy and blood supply",summary:"1.6 M to 6 M projection, frailty, retinacular vessels and why intracapsular displacement threatens the head.",pages:"book pages 352–354",built:true},
+{id:"omh3",n:"MH.3",grp:"McRae Ch. 17: Hip (book deep-dive)",title:"Garden and Pauwels classifications",summary:"Garden 1–4 collapsed to undisplaced/displaced, >10° posterior tilt, and Pauwels shear.",pages:"book pages 353–354",built:true},
+{id:"omh4",n:"MH.4",grp:"McRae Ch. 17: Hip (book deep-dive)",title:"Extracapsular types, emergency care and occult fracture",summary:"Basicervical, intertrochanteric and subtrochanteric map; ED signs; MRI/CT occult rules.",pages:"book pages 354–356",built:true},
+{id:"omh5",n:"MH.5",grp:"McRae Ch. 17: Hip (book deep-dive)",title:"Box 17.1 and cannulated screw fixation",summary:"Surgical strategy pocket card and percutaneous cannulated-screw technique for undisplaced necks.",pages:"book pages 356–357",built:true},
+{id:"omh6",n:"MH.6",grp:"McRae Ch. 17: Hip (book deep-dive)",title:"Elderly displaced neck: hemiarthroplasty versus total hip",summary:"Demand-based arthroplasty choice and contraindications to fixation.",pages:"book pages 357–358",built:true},
+{id:"omh7",n:"MH.7",grp:"McRae Ch. 17: Hip (book deep-dive)",title:"Hemiarthroplasty technique",summary:"Set-up, approach, head sizing, cementing and soft-tissue repair step by step.",pages:"book pages 358–363",built:true},
+{id:"omh8",n:"MH.8",grp:"McRae Ch. 17: Hip (book deep-dive)",title:"Young displaced neck: urgent reduction and fixation",summary:"Time pressure, open versus closed reduction and implant choices in the young.",pages:"book page 364",built:true},
+{id:"omh9",n:"MH.9",grp:"McRae Ch. 17: Hip (book deep-dive)",title:"Evans/AO patterns, DHS versus nail, tip–apex distance",summary:"Stable versus unstable extracapsular patterns and Baumgaertner tip–apex distance under 25 mm.",pages:"book pages 364–367",built:true},
+{id:"omh10",n:"MH.10",grp:"McRae Ch. 17: Hip (book deep-dive)",title:"Dynamic hip screw and nail techniques",summary:"Set-up, reduction, lag-screw placement and nailing steps from the book.",pages:"book pages 367–372",built:true},
+{id:"omh11",n:"MH.11",grp:"McRae Ch. 17: Hip (book deep-dive)",title:"Follow-up and complications of hip fracture care",summary:"Weight-bearing, failure modes, avascular necrosis, non-union and medical complications.",pages:"book pages 373–374",built:true},
+{id:"omh12",n:"MH.12",grp:"McRae Ch. 17: Hip (book deep-dive)",title:"Hip dislocation",summary:"Posterior dashboard pattern, reduction urgency, sciatic nerve and post-reduction imaging.",pages:"book pages 375–377",built:true},
+{id:"omh13",n:"MH.13",grp:"McRae Ch. 17: Hip (book deep-dive)",title:"Femoral head (Pipkin) fractures",summary:"Pipkin I–IV with dislocation, CT after reduction, fixation versus excision.",pages:"book page 378",built:true},
+{id:"omh14",n:"MH.14",grp:"McRae Ch. 17: Hip (book deep-dive)",title:"Periprosthetic Vancouver and atypical hip fractures",summary:"Vancouver A–C around a stem, and bisphosphonate-related atypical patterns.",pages:"book pages 379–384",built:true}
 ]};
