@@ -21,7 +21,6 @@ cards:[
 {id:"hc1",title:"Clinical findings and imaging (pages 11–12, 16)",min:8,goal:0,obj:["Describe posture, bedside signs, imaging ladder"],html:`
 <div class="scene"><b>The scene:</b> Mr Braun, 79, stood up from the toilet, felt his right hip give, and folded to the floor. On the trolley the leg is shorter and rolled out. He winces when you ‘roll the pin’ of his thigh between your palms. He cannot lift the straight leg.</div>
 <p>Lecture page 12 paints the classic: most elderly hip fractures follow a simple fall from standing; the limb is shortened and externally rotated if displaced; groin tenderness; pain on passive rotation; lost straight-leg raise. Think of the neck as a twisted twig inside a wet sleeve — rotate the sleeve and the twig screams. Imaging ladder (page 16): X-ray (anteroposterior pelvis + lateral hip); computed tomography if the pattern is unclear; magnetic resonance imaging for occult fractures when films are kind but the patient is not.</p>
-${FIG('o7-neck-clinic')}
 ${FIG('o7-neck-xray')}
 ${FIG('o7-neck-mri')}
 <div class="hint">💡 <b>"Short, out-toed, cannot straight-leg raise — hip fracture until the pictures say otherwise."</b></div>

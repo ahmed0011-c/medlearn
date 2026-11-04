@@ -155,6 +155,24 @@ Same rules: calm illustrated or atlas style, clothed adults only, no unwell chil
   </details>
 - **`m5-salt-wasting-newborn-v2`** (Module 5, step k1, and 2.5): set aside after 2 attempts. The new version still shows no dehydration signs (rosy, plump baby; eyes not sunken; no dry lips or sunken fontanelle). Keep the live `images/m5-salt-wasting-newborn-labelled.jpg` and its existing honest Image check.
 
+- **`o7-neck-screws`** (Lecture 7 L7.4 card hd1): set aside after 2 attempts. Screw tips stop at the fracture line and do not enter the femoral head. Removed from the lesson; the step text remains.
+  <details><summary>Original request</summary>
+
+  - [-] **id:** `o7-neck-screws`
+    - **Save as:** `images/o7-neck-screws.png`
+    - **Used in:** L7.4 card hd1.
+    - **Prompt:** Atlas-style illustration of three parallel cannulated screws fixing an undisplaced femoral neck fracture, tips short of the joint, plain background, space for labels. No text, letters, numbers, arrows or labels.
+
+  </details>
+- **`o7-neck-clinic`** (Lecture 7 L7.3 card hc1): set aside after 2 attempts. No visible leg shortening, and the 'foot rolled outward' / 'other foot pointing up' labels point at the wrong feet. Removed from the lesson; the step text remains.
+  <details><summary>Original request</summary>
+
+  - [-] **id:** `o7-neck-clinic`
+    - **Save as:** `images/o7-neck-clinic.png`
+    - **Used in:** L7.3 card hc1.
+    - **Prompt:** Illustrated clinical scene: fully clothed elderly man on a trolley with one leg shortened and externally rotated after a fall; calm respectful emergency-bay mood; no wounds. No text, letters, numbers, logos or labels.
+
+  </details>
 
 ## Done — MedLearn hand diagrams (publish32, November 2026)
 
