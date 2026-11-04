@@ -445,7 +445,7 @@ Same rules as above: atlas-style realistic medical illustration, fully clothed p
   - **Used in:** L8.1 card `oa2` (extensor chain). Planned placement: beside the `extchain` step-through diagram.
   - **Prompt:** Atlas-style realistic sagittal illustration of the human knee extensor mechanism on a plain off-white background. Show the quadriceps muscle belly above, the quadriceps tendon attaching to the upper pole of the patella, the oval patella sesamoid, the patellar tendon running to the tibial tubercle, and thin medial and lateral retinacular bands bypassing the patella to the proximal tibia. Bones of distal femur and proximal tibia in realistic proportion, cartilage surfaces visible, no skin. Generous clear space around each structure for later labels. Restrained naturalistic colour, even lighting. No text, letters, numbers, arrows or labels.
 
-- [x] **id:** `o8-patella-dislocate` (live)
+- [x] **id:** `o8-patella-dislocate` (PR #34, live)
   - **Save as:** `images/o8-patella-dislocate.png`
   - **Used in:** L8.4 card `od1` scene. Planned placement: after the scene.
   - **Prompt:** Atlas-style clinical illustration of a flexed human knee from the front, skin intact, fully clothed torso cropped out of frame. The patella is clearly displaced to the lateral side of the knee; the uncovered medial femoral condyle is visible as a rounded prominence on the inner side. Calm, non-graphic, no wounds, no blood. Soft clinical lighting, plain background. No text, letters, numbers or labels.
@@ -492,7 +492,7 @@ Same rules: atlas-style realistic medical illustration, fully clothed people whe
   - **Used in:** KR.4 card `kr4a` / step diagram `tkrsteps`. Planned placement: beside the total-knee step map.
   - **Prompt:** Atlas-style realistic exploded illustration of a cemented total knee replacement on a plain off-white background: metallic femoral component, polyethylene tibial insert on a metal tibial tray, and a polyethylene patellar button, shown in anatomical orientation relative to a ghosted distal femur and proximal tibia. Restrained naturalistic metal and polyethylene colours, even lighting, generous space for later labels. No text, letters, numbers, arrows or labels.
 
-- [x] **id:** `okr-ukr-medial` (live)
+- [x] **id:** `okr-ukr-medial` (PR #34, live)
   - **Save as:** `images/okr-ukr-medial.png`
   - **Used in:** KR.5 card `kr5a` / step diagram `ukrsteps`. Planned placement: beside the partial-knee step map.
   - **Prompt:** Atlas-style realistic illustration of a medial unicompartmental knee replacement in place: small metallic femoral runner and tibial tray with polyethylene bearing only on the medial side; lateral compartment cartilage intact; cruciate ligaments faintly suggested in the notch. Plain background, space for later labels. No text, letters, numbers, arrows or labels.
@@ -537,12 +537,12 @@ Same rules and imaging rule as the Lecture 8 and Knee replacement sections above
   - **Used in:** L8.3 patella fracture. Planned placement: after the fracture-pattern paragraph.
   - **Prompt:** Clean two-panel grayscale illustration in the style of textbook knee radiographs (not real patient scans): left panel lateral view showing a displaced transverse patella fracture with a clear gap between upper and lower fragments and the knee slightly flexed; right panel anteroposterior view of the same transverse patella fracture. Soft-tissue outline present, calm schematic lighting, educational. No text, letters, numbers, arrows or labels.
 
-- [x] **id:** `o8-acl-mri` (live)
+- [x] **id:** `o8-acl-mri` (PR #34, live)
   - **Save as:** `images/o8-acl-mri.png`
   - **Used in:** L8.5 ACL diagnosis. Planned placement: after the imaging paragraph.
   - **Prompt:** Clean grayscale illustration in the style of a sagittal proton-density MRI teaching plate of the knee (not a real patient scan): distal femur and proximal tibia with the ACL midsubstance clearly discontinuous and wavy (complete tear), PCL intact and dark, femoral condyle and tibial plateau outlines correct, small joint effusion suggested as a pale pocket. Calm, schematic, educational. No text, letters, numbers, arrows or labels.
 
-- [x] **id:** `okr-tkr-cuts` (live)
+- [x] **id:** `okr-tkr-cuts` (PR #34, live)
   - **Save as:** `images/okr-tkr-cuts.png`
   - **Used in:** KR.4 total knee steps. Planned placement: beside the bone-cut step of `tkrsteps`.
   - **Prompt:** Atlas-style realistic illustration of distal femur and proximal tibia prepared for a cemented total knee replacement on a plain background: distal femoral cut, anterior and posterior chamfer cuts, and a flat proximal tibial cut with a central keel slot, cartilage removed from the cut surfaces, no implants yet. Correct alignment and proportions, restrained bone colour, generous space for later labels. No text, letters, numbers, arrows or labels.
@@ -552,7 +552,7 @@ Same rules and imaging rule as the Lecture 8 and Knee replacement sections above
   - **Used in:** KR.4 / KR.8 outcomes. Planned placement: after the implant overview.
   - **Prompt:** Clean two-panel grayscale illustration in the style of textbook postoperative knee radiographs (not real patient scans): left panel anteroposterior view of a cemented total knee replacement with femoral and tibial components well aligned; right panel lateral view showing femoral component, tibial tray with polyethylene space, and a patellar button. Calm, schematic, educational. No text, letters, numbers, arrows, side markers or labels.
 
-- [x] **id:** `okr-ukr-xray` (live)
+- [x] **id:** `okr-ukr-xray` (PR #34, live)
   - **Save as:** `images/okr-ukr-xray.png`
   - **Used in:** KR.5 partial knee. Planned placement: after the Oxford / medial UKR step map.
   - **Prompt:** Clean grayscale illustration in the style of a textbook anteroposterior knee radiograph (not a real patient scan): a medial unicompartmental knee replacement in place (small femoral runner and tibial tray only on the medial side), lateral joint space preserved, no total-knee hardware. Calm, schematic, educational. No text, letters, numbers, arrows or labels.
@@ -582,7 +582,7 @@ Same rules as the Lecture 8 / knee-replacement batches: atlas-style realistic me
   - **Used in:** L7.2 card hb1.
   - **Prompt:** Clean grayscale illustration in the style of a textbook AP pelvis radiograph teaching plate (not a real patient scan): femoral head contour irregular after injury suggesting a head fragment, hip reduced or slightly incongruent, soft-tissue outline only. Calm, schematic, educational. No text, letters, numbers, arrows, side markers or labels.
 
-- [x] **id:** `o7-pipkin-ct` (live)
+- [x] **id:** `o7-pipkin-ct` (PR #34, live)
   - **Save as:** `images/o7-pipkin-ct.png`
   - **Used in:** L7.2 card hb1.
   - **Prompt:** Clean grayscale illustration in the style of a CT teaching plate of the hip (not a real patient scan): coronal or axial view showing a femoral head fragment cleft and optional posterior wall chip. Calm, schematic, educational. No text, letters, numbers, arrows, rulers or labels.
@@ -597,7 +597,7 @@ Same rules as the Lecture 8 / knee-replacement batches: atlas-style realistic me
   - **Used in:** L7.3 card hc1.
   - **Prompt:** Clean grayscale illustration in the style of a textbook AP hip radiograph (not a real patient scan): displaced intracapsular femoral neck fracture with varus head. Soft-tissue outline, schematic, educational. No text, letters, numbers, arrows or labels.
 
-- [x] **id:** `o7-neck-screws` (live)
+- [x] **id:** `o7-neck-screws` (PR #34, live)
   - **Save as:** `images/o7-neck-screws.png`
   - **Used in:** L7.4 card hd1.
   - **Prompt:** Atlas-style illustration of three parallel cannulated screws fixing an undisplaced femoral neck fracture, tips short of the joint, plain background, space for labels. No text, letters, numbers, arrows or labels.
@@ -617,7 +617,7 @@ Same rules as the Lecture 8 / knee-replacement batches: atlas-style realistic me
   - **Used in:** L7.4 card hd2.
   - **Prompt:** Two-panel clean grayscale illustration in textbook radiograph style (not real scans): AP and lateral hip with a lag screw in the head; clear space near the head apex for later tip–apex distance labels. Schematic, educational. No text, letters, numbers, arrows or labels.
 
-- [x] **id:** `o7-intertroch` (live)
+- [x] **id:** `o7-intertroch` (PR #34, live)
   - **Save as:** `images/o7-intertroch.png`
   - **Used in:** L7.5 card he1.
   - **Prompt:** Two-panel atlas-style proximal femur schematic: left stable two-part intertrochanteric fracture with medial contact; right unstable four-part pattern with free lesser trochanter. Restrained red fracture lines. No text, letters, numbers, arrows or labels.
@@ -632,7 +632,7 @@ Same rules as the Lecture 8 / knee-replacement batches: atlas-style realistic me
   - **Used in:** L7.5 card he1.
   - **Prompt:** Clean grayscale illustration in textbook AP hip radiograph style (not a real patient scan): intertrochanteric fracture through the mass between trochanters. Schematic, educational. No text, letters, numbers, arrows or labels.
 
-- [x] **id:** `o7-pfn` (live)
+- [x] **id:** `o7-pfn` (PR #34, live)
   - **Save as:** `images/o7-pfn.png`
   - **Used in:** L7.5/L7.6.
   - **Prompt:** Atlas-style illustration of a cephalomedullary proximal femoral nail with a head lag screw for an unstable trochanteric or subtrochanteric fracture. No brand logos, plain background, space for labels. No text, letters, numbers, arrows or labels.
@@ -652,7 +652,7 @@ Same rules as the Lecture 8 / knee-replacement batches: atlas-style realistic me
   - **Used in:** L7.7 card hg2.
   - **Prompt:** Atlas-style clinical illustration of closed reduction of a posterior hip dislocation under sedation: controlled traction and flexion, respectful non-graphic scene, fully draped or clothed as appropriate. No text, letters, numbers or labels.
 
-- [x] **id:** `o7-vancouver` (live)
+- [x] **id:** `o7-vancouver` (PR #34, live)
   - **Save as:** `images/o7-vancouver.png`
   - **Used in:** L7.8 card hh1.
   - **Prompt:** Four-panel atlas-style schematic of Vancouver periprosthetic hip fractures: A trochanteric; B1 around a well-fixed stem; B2 around a loose stem; C below the stem. Simple stem+bone drawings, restrained fracture lines. No text, letters, numbers, arrows or labels.
@@ -667,7 +667,7 @@ Same rules as the Lecture 8 / knee-replacement batches: atlas-style realistic me
   - **Used in:** L7.8 card hh2.
   - **Prompt:** Atlas-style construct illustration: well-fixed hip stem retained with a lateral locking plate and cerclage cables bridging a Vancouver B1 fracture. Plain background, no brand logos. No text, letters, numbers, arrows or labels.
 
-- [x] **id:** `o7-vancouver-b2-rev` (live)
+- [x] **id:** `o7-vancouver-b2-rev` (PR #34, live)
   - **Save as:** `images/o7-vancouver-b2-rev.png`
   - **Used in:** L7.8 card hh2.
   - **Prompt:** Atlas-style illustration of revision to a longer femoral stem bypassing a Vancouver B2 fracture, optional cables. Plain background, no brand logos. No text, letters, numbers, arrows or labels.
@@ -677,7 +677,7 @@ Same rules as the Lecture 8 / knee-replacement batches: atlas-style realistic me
   - **Used in:** L7.8 card hh2.
   - **Prompt:** Atlas-style illustration of a femur with a hip stem above and a knee replacement below and a fracture in the intervening shaft (interprosthetic fracture). Plain background, space for labels. No text, letters, numbers, arrows or labels.
 
-- [x] **id:** `o7-shaft-patterns` (live)
+- [x] **id:** `o7-shaft-patterns` (PR #34, live)
   - **Save as:** `images/o7-shaft-patterns.png`
   - **Used in:** L7.9 card hi1.
   - **Prompt:** Four-panel atlas-style femoral shaft schematics: spiral; transverse/oblique; segmental; and a panel hinting an ipsilateral neck crack. Identical scale, restrained fracture lines. No text, letters, numbers, arrows or labels.
@@ -692,12 +692,12 @@ Same rules as the Lecture 8 / knee-replacement batches: atlas-style realistic me
   - **Used in:** L7.9 card hi2.
   - **Prompt:** Atlas-style illustration of a locked antegrade intramedullary femoral nail with proximal and distal interlocking screws. Plain background, no brand logos. No text, letters, numbers, arrows or labels.
 
-- [x] **id:** `o7-open-gustilo` (live)
+- [x] **id:** `o7-open-gustilo` (PR #34, live)
   - **Save as:** `images/o7-open-gustilo.png`
   - **Used in:** L7.9 card hi1.
   - **Prompt:** Three-panel non-graphic atlas-style concept of increasing open-fracture soft-tissue severity (small clean wound → larger wound → severe periosteal strip), draped limbs, no gore, no blood pools. Educational restraint. No text, letters, numbers or labels.
 
-- [x] **id:** `o7-hoffa-ct` (live)
+- [x] **id:** `o7-hoffa-ct` (PR #34, live)
   - **Save as:** `images/o7-hoffa-ct.png`
   - **Used in:** L7.10 card hj1.
   - **Prompt:** Clean grayscale illustration in the style of a CT teaching plate (not a real patient scan): coronal or sagittal view of a Hoffa distal femoral condyle fracture. Schematic, educational. No text, letters, numbers, arrows, rulers or labels.
