@@ -26,6 +26,7 @@ button:hover{border-color:var(--acc)}button.pri{background:var(--acc);color:#fff
 body.focus .card{opacity:.22}body.focus .card.active{opacity:1;box-shadow:0 0 0 3px var(--acc)}
 .scene{border-left:5px solid var(--c-hormone);background:color-mix(in srgb,var(--c-hormone) 9%,transparent);padding:10px 16px;border-radius:0 10px 10px 0;margin:12px 0}
 .hint{background:color-mix(in srgb,#f5c518 18%,transparent);border-radius:10px;padding:10px 14px;margin:12px 0}
+.bookref{background:color-mix(in srgb,#6b8cae 12%,transparent);border-left:4px solid #6b8cae;border-radius:0 10px 10px 0;padding:10px 14px;margin:12px 0;font-size:15px;line-height:1.45}
 .corr{background:color-mix(in srgb,var(--c-disease) 10%,transparent);border:1px dashed var(--c-disease);border-radius:10px;padding:10px 14px;margin:12px 0;font-size:15px}
 .exam{background:color-mix(in srgb,var(--acc) 12%,transparent);border:2px solid var(--acc);border-radius:12px;padding:12px 18px;margin:14px 0}
 .recap{background:color-mix(in srgb,var(--ok) 10%,transparent);border-radius:10px;padding:8px 16px;margin:12px 0;display:none}.recap.show{display:block}
@@ -315,7 +316,7 @@ const CATS={enzyme:"Enzymes",hormone:"Hormones and steroid molecules",cell:"Cell
 /* ===== SPECIALTIES: hub tiles on the front page. Add a new specialty here + tag its first module with area2 belonging to one of its areas. ===== */
 const SPECIALTIES=[
 {id:"endo",label:"Endocrinology",emoji:"🩺",blurb:"Adrenal gland, thyroid gland, hypothalamus and pituitary.",areas:["🫘 Adrenal gland","🦋 Thyroid gland","🧠 Hypothalamus and pituitary gland"]},
-{id:"ortho",label:"Orthopaedics",emoji:"🦴",blurb:"Hip and femur (Lecture 7), knee and leg (Lecture 8), and knee replacement.",areas:["🦴 Orthopaedics · Hip and femur","🦴 Orthopaedics · Knee and leg","🦴 Orthopaedics · Knee replacement"]},
+{id:"ortho",label:"Orthopaedics",emoji:"🦴",blurb:"Hip and femur (Lecture 7), McRae Ch. 17 hip deep-dive, knee and leg (Lecture 8), and knee replacement.",areas:["🦴 Orthopaedics · Hip and femur","🦴 Orthopaedics · McRae Ch. 17: Hip","🦴 Orthopaedics · Knee and leg","🦴 Orthopaedics · Knee replacement"]},
 {id:"gsurg",label:"General Surgery",emoji:"🏥",blurb:"Coming soon — lectures will land here.",comingSoon:true,areas:[]}
 ];
 
@@ -423,6 +424,21 @@ modules:[
 {id:"okr6",n:"KR.6",grp:"Knee replacement",title:"Aftercare, clot prevention and rehabilitation",summary:"Enhanced recovery, NICE NG89 options after elective knee replacement, and discharge red flags.",built:true},
 {id:"okr7",n:"KR.7",grp:"Knee replacement",title:"Complications early and late",summary:"Infection (McRae), clots, stiffness, nerve injury, periprosthetic fracture cross-links, partial-knee progression.",built:true},
 {id:"okr8",n:"KR.8",grp:"Knee replacement",title:"Outcomes and shared decisions",summary:"Verified PROMs and revision figures, counselling script, and when to refer back.",built:true}
+,
+{id:"omh1",n:"MH.1",grp:"McRae Ch. 17: Hip (book deep-dive)",area2:"🦴 Orthopaedics · McRae Ch. 17: Hip",lec:"McRae Ch. 17: Hip — book deep-dive",teacher:"McRae's Orthopaedic Trauma 3rd ed · White, Mackenzie, Gray 2016",title:"General principles: assess the painful hip",summary:"Look–feel–move, neurovascular check, postures, Shenton's arc and the occult pathway.",pages:"book pages 350–351",built:true},
+{id:"omh2",n:"MH.2",grp:"McRae Ch. 17: Hip (book deep-dive)",title:"Epidemiology, anatomy and blood supply",summary:"1.6 M to 6 M projection, frailty, retinacular vessels and why intracapsular displacement threatens the head.",pages:"book pages 352–354",built:true},
+{id:"omh3",n:"MH.3",grp:"McRae Ch. 17: Hip (book deep-dive)",title:"Garden and Pauwels classifications",summary:"Garden 1–4 collapsed to undisplaced/displaced, >10° posterior tilt, and Pauwels shear.",pages:"book pages 353–354",built:true},
+{id:"omh4",n:"MH.4",grp:"McRae Ch. 17: Hip (book deep-dive)",title:"Extracapsular types, emergency care and occult fracture",summary:"Basicervical, intertrochanteric and subtrochanteric map; ED signs; MRI/CT occult rules.",pages:"book pages 354–356",built:true},
+{id:"omh5",n:"MH.5",grp:"McRae Ch. 17: Hip (book deep-dive)",title:"Box 17.1 and cannulated screw fixation",summary:"Surgical strategy pocket card and percutaneous cannulated-screw technique for undisplaced necks.",pages:"book pages 356–357",built:true},
+{id:"omh6",n:"MH.6",grp:"McRae Ch. 17: Hip (book deep-dive)",title:"Elderly displaced neck: hemiarthroplasty versus total hip",summary:"Demand-based arthroplasty choice and contraindications to fixation.",pages:"book pages 357–358",built:true},
+{id:"omh7",n:"MH.7",grp:"McRae Ch. 17: Hip (book deep-dive)",title:"Hemiarthroplasty technique",summary:"Set-up, approach, head sizing, cementing and soft-tissue repair step by step.",pages:"book pages 358–363",built:true},
+{id:"omh8",n:"MH.8",grp:"McRae Ch. 17: Hip (book deep-dive)",title:"Young displaced neck: urgent reduction and fixation",summary:"Time pressure, open versus closed reduction and implant choices in the young.",pages:"book page 364",built:true},
+{id:"omh9",n:"MH.9",grp:"McRae Ch. 17: Hip (book deep-dive)",title:"Evans/AO patterns, DHS versus nail, tip–apex distance",summary:"Stable versus unstable extracapsular patterns and Baumgaertner tip–apex distance under 25 mm.",pages:"book pages 364–367",built:true},
+{id:"omh10",n:"MH.10",grp:"McRae Ch. 17: Hip (book deep-dive)",title:"Dynamic hip screw and nail techniques",summary:"Set-up, reduction, lag-screw placement and nailing steps from the book.",pages:"book pages 367–372",built:true},
+{id:"omh11",n:"MH.11",grp:"McRae Ch. 17: Hip (book deep-dive)",title:"Follow-up and complications of hip fracture care",summary:"Weight-bearing, failure modes, avascular necrosis, non-union and medical complications.",pages:"book pages 373–374",built:true},
+{id:"omh12",n:"MH.12",grp:"McRae Ch. 17: Hip (book deep-dive)",title:"Hip dislocation",summary:"Posterior dashboard pattern, reduction urgency, sciatic nerve and post-reduction imaging.",pages:"book pages 375–377",built:true},
+{id:"omh13",n:"MH.13",grp:"McRae Ch. 17: Hip (book deep-dive)",title:"Femoral head (Pipkin) fractures",summary:"Pipkin I–IV with dislocation, CT after reduction, fixation versus excision.",pages:"book page 378",built:true},
+{id:"omh14",n:"MH.14",grp:"McRae Ch. 17: Hip (book deep-dive)",title:"Periprosthetic Vancouver and atypical hip fractures",summary:"Vancouver A–C around a stem, and bisphosphonate-related atypical patterns.",pages:"book pages 379–384",built:true}
 ]};
 
 const M5={
@@ -8761,6 +8777,689 @@ sources:"Sources: NJR executive summary https://reports.njrcentre.org.uk/AR-Exec
 casesHead:"🏥 Cases",casesIntro:"Answer to reveal the next part."};
 LESSONS.okr8=OKR8;
 
+/* McRae Ch.17 Hip deep-dive glossary */
+Object.assign(GLOSSARY,{
+atypical:{l:"atypical femoral fracture",c:"concept",d:"Low-energy subtrochanteric or diaphyseal fracture linked to prolonged bisphosphonate use; prodromal thigh pain and lateral cortical beaking are clues (McRae pp 383–384).",w:"Ask about bisphosphonates when a low-energy subtrochanteric crack appears."},
+
+shenton:{l:"Shenton's arc",c:"concept",d:"A smooth radiographic curve on the anteroposterior pelvis formed by the medial femoral neck cortex continuing into the superior border of the obturator foramen (McRae Fig. 17.2).",w:"A break in Shenton's arc can unmask a subtle intracapsular fracture."},
+conedap:{l:"coned anteroposterior hip radiograph",c:"concept",d:"A focused anteroposterior radiograph of the hip taken with the limb held in internal rotation to improve quality when the resting film is rotated (McRae book page 355).",w:"Use analgesia and gentle internal rotation when the first film is unclear."},
+occulthip:{l:"occult hip fracture",c:"disease",d:"A clinically suspected hip fracture with normal plain radiographs; confirmed with magnetic resonance imaging or computed tomography (McRae book pages 355–356).",w:"If the patient cannot walk for pain, do not discharge on a normal X-ray alone."},
+box171:{l:"McRae Box 17.1",c:"concept",d:"Summary table of surgical strategies for hip fracture: undisplaced intracapsular → fixation; displaced young → urgent reduction and fixation; displaced elderly high demand → total hip replacement; low demand → hemiarthroplasty; simple intertrochanteric → dynamic hip screw; reverse oblique / subtrochanteric → nail.",w:"Learn this table cold — it is the decision skeleton of the chapter."},
+garden12:{l:"undisplaced Garden fracture (types 1–2)",c:"concept",d:"Garden 1 (valgus impacted) and Garden 2 (complete but undisplaced with aligned trabeculae). McRae advises treating Garden 1–2 as 'undisplaced' for practical decisions (book page 353).",w:"Usually fixed in situ if bone quality allows."},
+garden34:{l:"displaced Garden fracture (types 3–4)",c:"concept",d:"Garden 3 (moderately displaced with trabecular disturbance) and Garden 4 (displaced with head in neutral rotation). Practical label: 'displaced' (McRae book page 353).",w:"Higher avascular necrosis and non-union risk; elderly usually receive arthroplasty."},
+posttilt:{l:"posterior tilt on the lateral hip radiograph",c:"concept",d:"Posterior angulation of the femoral head relative to the neck on the lateral film. McRae notes no firm consensus, but posterior tilt greater than 10° should be viewed as displaced (book page 354).",w:"Always read the lateral — an 'undisplaced' anteroposterior film can hide tilt."},
+basicerv:{l:"basicervical femoral neck fracture",c:"disease",d:"Fracture at the base of the femoral neck that is extracapsular and does not impair femoral-head blood supply (McRae book page 354).",w:"Treated like a stable intertrochanteric pattern — usually a dynamic hip screw."},
+evans:{l:"modified Evans classification",c:"concept",d:"Morphology guide for extracapsular fractures (McRae Fig. 17.19): basicervical/simple intertrochanteric → dynamic hip screw; comminuted → dynamic hip screw or nail; reverse oblique → nail; subtrochanteric → nail.",w:"Stability of the reduced pattern chooses the implant."},
+aoa123:{l:"AO A1 A2 A3 proximal femur groups",c:"concept",d:"AO grouping for extracapsular fractures: A1 simple intertrochanteric; A2 comminuted intertrochanteric; A3 reverse oblique and subtrochanteric (McRae book page 365).",w:"A3 patterns need a nail."},
+cephalonail:{l:"cephalomedullary nail",c:"concept",d:"Intramedullary nail that extends from the femoral head (cephalus) into the medullary canal, with a lag screw into the head (McRae book pages 366–367).",w:"Preferred for reverse-oblique and subtrochanteric patterns; shorter lever arm than a side-plate."},
+cannscrew:{l:"cannulated screw fixation of the femoral neck",c:"concept",d:"Percutaneous three-screw construct for undisplaced intracapsular fractures: inferior (calcar cantilever), posterior, and anterosuperior screws (McRae Fig. 17.9, book page 357).",w:"Entry at lesser-trochanter level — too distal creates a subtrochanteric stress riser."},
+unipolar:{l:"unipolar hemiarthroplasty head",c:"concept",d:"Single-block prosthetic femoral head that articulates directly with the native acetabulum (McRae Fig. 17.10B).",w:"Simpler construct; chosen for many low-demand older adults."},
+bipolar:{l:"bipolar hemiarthroplasty head",c:"concept",d:"Prosthetic head with an inner small articulation and an outer shell that seats in the acetabulum; theoretically reduces acetabular wear, not conclusively proven (McRae book page 358).",w:"Do not oversell the bipolar advantage beyond what the evidence supports."},
+cementedstem:{l:"cemented femoral stem",c:"concept",d:"Stem fixed with acrylic cement as a grout distributing load between stem and irregular bone. McRae: overall survival higher with cemented implants in hip-fracture patients despite fat-embolism concern (book page 358).",w:"Preferred in osteoporotic hip-fracture bone; warn the anaesthetist before pressurisation."},
+offset:{l:"femoral offset",c:"concept",d:"Distance between the centre of the femoral head and a line down the anatomical axis of the femur (McRae book page 359).",w:"Template preoperatively; wrong offset makes reduction hard or unstable."},
+vasto:{l:"vastogluteal sling",c:"concept",d:"Continuous musculotendinous unit of gluteus medius, intervening tendon on the greater trochanter, and vastus lateralis that controls hip stability (McRae book page 359).",w:"Divide longitudinally for the anterolateral approach and repair carefully."},
+antever:{l:"femoral stem anteversion",c:"concept",d:"Forward twist of the femoral component relative to the posterior condylar axis; McRae targets 10–15° during broaching and stem insertion (book page 360).",w:"Do not twist the stem after cement has set — that leaves metal–cement gaps."},
+smithp:{l:"Smith-Petersen approach",c:"concept",d:"Anterior hip approach used for open reduction of young displaced neck fractures and for some femoral-head fragment work (McRae book pages 364, 378).",w:"Gives direct view of the head and anterior neck."},
+kocher:{l:"Kocher–Langenbeck approach",c:"concept",d:"Posterior hip approach used for open reduction of native dislocation, posterior-wall acetabular fixation, and sciatic-nerve exposure (McRae book page 377).",w:"Useful when the wall needs plating after a dashboard injury."},
+kissing:{l:"kissing implants",c:"concept",d:"Two implants ending close together in the same bone (for example a hip stem and a nail tip), creating a stress riser in the intervening segment (McRae book page 381).",w:"For Vancouver C, plate and overlap the stem rather than nail beside it."},
+barrelstave:{l:"barrel-staved periprosthetic fracture",c:"concept",d:"Multifragmentary cortical strips around a stem resembling the staves of a barrel; often fixed with cerclage then a lateral plate (McRae book page 382).",w:"Restore the medial cortex and calcar — they carry load."},
+prodromal:{l:"prodromal thigh pain (atypical fracture)",c:"concept",d:"Thigh or hip pain before an atypical femoral fracture completes; present in about 30% of McRae's atypical cases (book page 383).",w:"Image both femurs; consider prophylactic nailing of an incomplete painful lesion."},
+beaking:{l:"cortical beaking",c:"concept",d:"Focal thickening and beak-like prominence of the lateral cortex at an atypical subtrochanteric fracture site (McRae Fig. 17.41).",w:"A radiographic clue linking bisphosphonate therapy to atypical morphology."},
+teriparat:{l:"teriparatide (recombinant parathyroid hormone)",c:"drug",d:"Anabolic agent sometimes considered after atypical femoral fracture once the bisphosphonate is stopped, alongside calcium and vitamin D (McRae book page 384).",w:"Rheumatology advice; not a DIY addition."},
+});
+
+/* McRae Ch.17 Hip deep-dive figure registry — PNGs pending from ChatGPT; FIG() shows pending until images/ files exist. */
+Object.assign(FIGS,{
+"omh-extracapsular":{f:"omh-extracapsular.png",w:1400,h:900,alt:"Basicervical, intertrochanteric and subtrochanteric extracapsular fracture zones",cap:"<b>Outside the capsule.</b> Basicervical, intertrochanteric and subtrochanteric zones — fix, do not routinely replace (McRae Fig. 17.5)."},
+
+"omh-clinical-signs":{f:"omh-clinical-signs.png",w:1400,h:900,alt:"Clinical signs of hip fracture: shortened externally rotated limb, groin tenderness, pain on passive rotation",cap:"<b>Three bedside clues.</b> Short + external rotation, groin tenderness, and pain on gentle passive rotation (McRae Fig. 17.8)."},
+
+"omh-assess-posture":{f:"omh-assess-posture.png",w:1400,h:900,alt:'Shortened externally rotated limb of hip fracture versus internally rotated dislocation',cap:'<b>Posture tells a story.</b> Short and externally rotated after a fall → think hip fracture (McRae Fig. 17.8). Short, flexed and internally rotated → think posterior dislocation (Fig. 17.35).',chk:'fully clothed lower limbs only; calm emergency-bay mood.'},
+"omh-shenton":{f:"omh-shenton.png",w:1400,h:900,alt:"Shenton's arc on an anteroposterior pelvis teaching plate",cap:"<b>Shenton's arc (McRae Fig. 17.2 teaching redraw).</b> Follow the medial neck into the obturator border — a break flags a subtle intracapsular crack.",chk:'schematic AP pelvis; not a real patient scan.'},
+"omh-blood-supply":{f:"omh-blood-supply.png",w:1400,h:900,alt:'Vascular ring and retinacular vessels of the femoral head',cap:'<b>McRae Fig. 17.4 teaching redraw.</b> Medial and lateral circumflex arteries → capsular ring → retinacular vessels into the head; medullary contribution small; ligamentum teres negligible in adults.',chk:'atlas vessel drawing; no text in image.'},
+"omh-prox-regions":{f:"omh-prox-regions.png",w:1400,h:900,alt:'Proximal femur regions intracapsular and extracapsular',cap:'<b>McRae Fig. 17.5 teaching redraw.</b> Head and neck inside the capsule; basicervical, intertrochanteric and subtrochanteric (5 cm) outside.',chk:'clear region boundaries; label space only.'},
+"omh-garden":{f:"omh-garden.png",w:1400,h:900,alt:'Garden classification types 1 to 4',cap:'<b>McRae Fig. 17.6 teaching redraw.</b> 1 valgus impacted; 2 complete undisplaced; 3 moderately displaced; 4 displaced with head neutrally rotated. Practically: 1–2 undisplaced, 3–4 displaced.',chk:'four AP neck schematics.'},
+"omh-pauwels":{f:"omh-pauwels.png",w:1400,h:900,alt:'Pauwels classification fracture angles 30 50 70 degrees',cap:'<b>McRae Fig. 17.7 teaching redraw.</b> Type 1 ~30°, type 2 ~50°, type 3 ~70° to the horizontal — steeper means more shear.',chk:'three angled neck cracks; no numbers drawn in the image itself.'},
+"omh-screws":{f:"omh-screws.png",w:1400,h:900,alt:'Three cannulated screws in inverted triangle in femoral neck',cap:'<b>McRae Fig. 17.9 teaching redraw.</b> Inferior screw above the calcar, posterior screw on the posterior cortex, anterosuperior third screw; entry at lesser-trochanter level.',chk:'cross-section inset of neck allowed without text.'},
+"omh-arthroplasty":{f:"omh-arthroplasty.png",w:1400,h:900,alt:'Total hip replacement unipolar and bipolar hemiarthroplasty',cap:'<b>McRae Fig. 17.10 teaching redraw.</b> A total hip; B unipolar hemi; C bipolar hemi with inner articulation.',chk:'three implant schematics side by side.'},
+"omh-hemi-setup":{f:"omh-hemi-setup.png",w:1400,h:900,alt:'Lateral position hemiarthroplasty theatre set-up',cap:'<b>McRae Fig. 17.11 teaching redraw.</b> Lateral position, pelvic supports on sacrum and anterior superior iliac spine, leg bag anterior for flexion and external rotation.',chk:'clothed schematic OR; no faces in distress.'},
+"omh-anterolateral":{f:"omh-anterolateral.png",w:1400,h:900,alt:'Anterolateral approach vastogluteal sling split',cap:'<b>McRae Figs 17.12–17.14 teaching redraw.</b> Incision over greater trochanter; vastogluteal sling split at anterior-third mark; capsule opened to acetabular margin.',chk:'calm layered anatomy; no gore.'},
+"omh-cement":{f:"omh-cement.png",w:1400,h:900,alt:'Cement pressurisation phases above mean arterial pressure',cap:'<b>McRae Fig. 17.17 teaching redraw.</b> Rapid retrograde fill, then pressurisation above mean arterial pressure, then stem insertion maintaining pressure.',chk:'simple pressure-vs-time concept drawing.'},
+"omh-young-fix":{f:"omh-young-fix.png",w:1400,h:900,alt:'Open reduction of young displaced neck with joysticks and dynamic hip screw',cap:'<b>McRae Fig. 17.18 teaching redraw.</b> Closed fail → Smith-Petersen joysticks + lateral dynamic hip screw with anti-rotation screw for vertical Pauwel type 3.',chk:'four-panel schematic.'},
+"omh-evans":{f:"omh-evans.png",w:1400,h:900,alt:'Modified Evans extracapsular fracture types 1 to 5',cap:'<b>McRae Fig. 17.19 teaching redraw.</b> Simple/basicervical; simple intertrochanteric; comminuted; reverse oblique; subtrochanteric.',chk:'five proximal-femur patterns.'},
+"omh-dhs":{f:"omh-dhs.png",w:1400,h:900,alt:'Dynamic hip screw lag screw barrel and side plate',cap:'<b>McRae Figs 17.20–17.21 teaching redraw.</b> Lag screw with flat sides sliding in a barrel; side-plate on the shaft; controlled collapse.',chk:'implant anatomy clear.'},
+"omh-tad":{f:"omh-tad.png",w:1400,h:900,alt:'Tip-apex distance sum under 25 millimetres',cap:'<b>McRae Fig. 17.22 teaching redraw.</b> Distances from lag-screw tip to head apex on anteroposterior and lateral views; keep the sum under 25 mm.',chk:'two-view schematic; no numerals in the artwork.'},
+"omh-nail-vs-dhs":{f:"omh-nail-vs-dhs.png",w:1400,h:900,alt:'Cephalomedullary nail versus dynamic hip screw lever arms',cap:'<b>McRae Figs 17.23–17.24 teaching redraw.</b> Nail shortens the lever arm and sliding distance versus a side-plate — helpful in reverse oblique and subtrochanteric patterns.',chk:'side-by-side constructs.'},
+"omh-traction-setup":{f:"omh-traction-setup.png",w:1400,h:900,alt:'Radiolucent traction table set-up for hip fixation',cap:'<b>McRae Fig. 17.25 teaching redraw.</b> Injured foot in traction boot; opposite leg flexed out of the beam or dropped; banana trunk position for nailing access.',chk:'calm schematic; clothed.'},
+"omh-true-lateral":{f:"omh-true-lateral.png",w:1400,h:900,alt:'True lateral image intensifier with trochanter over neck',cap:'<b>McRae Fig. 17.26 teaching redraw.</b> Rotate the screen so the groin post is vertical, then obtain a true lateral with greater trochanter superimposed on the neck.',chk:'C-arm concept; no brand logos.'},
+"omh-subtroch-forces":{f:"omh-subtroch-forces.png",w:1400,h:900,alt:'Muscle forces deforming a subtrochanteric fracture',cap:'<b>McRae Fig. 17.28 teaching redraw.</b> Glutei abduct; iliopsoas flexes and externally rotates; adductors and hamstrings shorten and translate the shaft medially.',chk:'force arrows on a cracked proximal femur.'},
+"omh-nail-start":{f:"omh-nail-start.png",w:1400,h:900,alt:'Trochanteric versus piriformis nail start points',cap:'<b>McRae Figs 17.29–17.31 teaching redraw.</b> Too-lateral start → varus and high screw; posterior start into a fracture extension can miss the proximal fragment.',chk:'entry-point caution panels.'},
+"omh-dashboard":{f:"omh-dashboard.png",w:1400,h:900,alt:'Dashboard injury force chain to hip and sciatic nerve',cap:'<b>McRae Fig. 17.33 teaching redraw.</b> Knee hit → possible patella, shaft, hip, posterior acetabular wall and sciatic nerve injuries together.',chk:'clothed occupant or skeletal force diagram; non-graphic.'},
+"omh-dislocate":{f:"omh-dislocate.png",w:1400,h:900,alt:'Posterior native hip dislocation radiograph style and posture',cap:'<b>McRae Figs 17.35–17.36 teaching redraw.</b> Short flexed internally rotated posture; head appears small and overlaps the roof on the anteroposterior film.',chk:'schematic teaching plate + clothed posture.'},
+"omh-reduce":{f:"omh-reduce.png",w:1400,h:900,alt:'Closed reduction manoeuvre for posterior hip dislocation',cap:'<b>McRae Fig. 17.37 teaching redraw.</b> Assistant stabilises pelvis; hip flexed 90°; inline lift with gentle rotation until a clunk.',chk:'respectful clinical illustration.'},
+"omh-pipkin":{f:"omh-pipkin.png",w:1400,h:900,alt:'Pipkin femoral head fracture types I to IV',cap:'<b>McRae Fig. 17.38 teaching redraw.</b> I infrafoveal; II suprafoveal weight-bearing; III with neck; IV with acetabulum.',chk:'four identical-angle head schematics.'},
+"omh-vancouver":{f:"omh-vancouver.png",w:1400,h:900,alt:'Vancouver A B C periprosthetic hip fracture map',cap:'<b>McRae Fig. 17.39 teaching redraw.</b> AG/AL trochanters; B1 stem fixed; B2 stem loose; B3 loose plus poor bone; C below a stable stem.',chk:'multi-panel implant+bone.'},
+"omh-vancouver-fix":{f:"omh-vancouver-fix.png",w:1400,h:900,alt:'Cerclage and plate fixation of Vancouver B barrel-staved fracture',cap:'<b>McRae Fig. 17.40 teaching redraw.</b> Cerclage wires gather barrel staves; lateral plate overlaps; protect medial cortex and calcar.',chk:'construct drawing.'},
+"omh-atypical":{f:"omh-atypical.png",w:1400,h:900,alt:'Atypical subtrochanteric fracture with lateral cortical beaking',cap:'<b>McRae Fig. 17.41 teaching redraw.</b> Transverse/short-oblique low-energy crack with thickened beaked lateral cortex; fixed with a cephalomedullary nail.',chk:'before/after schematic.'},
+});
+
+XSTEP.omhlook={t:"Look, feel, move (McRae pp 350–351)",dim:.1,svg:`<svg viewBox="0 0 700 280" style="width:100%" role="img" aria-label="Exam map">
+<g data-k="look"><rect x="20" y="30" width="200" height="60" rx="10" fill="#e8f0fb" stroke="#2f6db3"/><text x="120" y="65" text-anchor="middle" font-size="14" font-weight="700">LOOK posture</text></g>
+<g data-k="feel"><rect x="250" y="30" width="200" height="60" rx="10" fill="#fff3cd" stroke="#d9730d"/><text x="350" y="65" text-anchor="middle" font-size="14" font-weight="700">FEEL landmarks</text></g>
+<g data-k="move"><rect x="480" y="30" width="200" height="60" rx="10" fill="#e8f6ee" stroke="#1f9d55"/><text x="580" y="65" text-anchor="middle" font-size="14" font-weight="700">MOVE gently</text></g>
+<g data-k="nv"><rect x="200" y="150" width="300" height="60" rx="10" fill="#fde2ea" stroke="#b3476d"/><text x="350" y="185" text-anchor="middle" font-size="14" font-weight="700">Neurovascular check</text></g>
+</svg>`,
+steps:[["Look","Short + external rotation → fracture; short + flexion + internal rotation → posterior dislocation.",["look"]],["Feel","Pubic ramus, mid-inguinal hip point, ischial tuberosity.",["look","feel"]],["Move","Straight-leg raise; painful passive rotation and axial load favour hip fracture over ramus crack.",["look","feel","move"]],["Nerves and vessels","Ankle motion, foot sensation, foot pulses, capillary refill.",["look","feel","move","nv"]]]};
+XSORT.omhposture={t:"Which posture matches which injury?",labels:["Hip fracture pattern","Posterior dislocation pattern","Think elsewhere first"],items:[
+["Shortened, externally rotated leg after a standing-height fall",0,"Fig. 17.8."],
+["Shortened, flexed, internally rotated leg after a dashboard hit",1,"Fig. 17.35."],
+["Comfortable active hip movement through a full range",2,"Usually excludes hip/acetabular fracture (p. 350)."],
+["Fever, rigors and an irritable prosthetic hip",2,"Exclude septic arthritis first (p. 350)."]]};
+
+XS.omh1=["Spot the error",[["A break in Shenton's arc can reveal a subtle intracapsular fracture (Fig. 17.2).",1],["Comfortable full active hip movement usually excludes hip/acetabular fracture.",1],["Always force full passive exam before any radiograph.",0,"Wrong: causes unnecessary pain (p. 350)."],["Ask about previous hip or pelvic surgery.",1]]];
+XT.omh1='shenton,conedap,occulthip,hipdisloc,garden';
+const OMH1={
+meta:'Orthopaedics › McRae Ch. 17: Hip › MH.1 · Book pages 350–351 · ⏱ about 18 minutes in 2 steps',
+intro:`<p>Book deep-dive through McRae's Orthopaedic Trauma and Emergency Fracture Management, <b>3rd edition</b> (White, Mackenzie, Gray, 2016), chapter 17 Hip (book pages 350–384). Lecture 7 cites the <b>4th</b> edition — this module sticks to the attached 3rd edition and says so when they diverge. Start with assessing any painful hip.</p>`,
+goals:['Run look–feel–move and neurovascular assessment', "Choose first radiographs and recognise Shenton's arc"],
+cards:[{id:'mh1a',title:'History and examination (pages 350–351)',min:9,goal:0,obj:['Match energy and age to injury', 'Perform look/feel/move/NV'],html:`
+<div class="scene"><b>The scene:</b> Mrs Novak, 84, after a kitchen trip. Mr Okonkwo, 29, after a dashboard crash. Same joint — different energy.</div>
+<p>Age and energy decide the menu (McRae p. 350): older low-energy falls → hip fractures and rising [[vancouver|periprosthetic fractures]]; younger high-energy → hip/head fractures or [[hipdisloc|dislocation]]. High-energy needs primary/secondary survey; older fallers need medical optimisation (p. 35). Ask about previous hip/pelvic surgery. Atraumatic pain: exclude septic arthritis (p. 103) — fever, rigors, irritable hip; for prostheses ask about prior infection or wound problems.</p>
+${FIG('omh-assess-posture')}
+<div class="bookref">📖 <b>Open McRae Fig 17.8, p. 355:</b> short + external rotation (a), groin tenderness (b), pain on passive rotation (c).</div>
+<div data-widget="stepsvg" data-set="omhlook"></div>
+<div data-widget="sortset" data-set="omhposture"></div>
+<div class="hint">💡 <b>"Energy first. Posture second. Never wrench a hip before the film."</b></div>
+<div class="exam"><b>🎓 For exams:</b> short+ER = fracture; short+flex+IR = posterior dislocation; septic arthritis tops atraumatic differential.</div>
+<details class="chk"><summary>✅ Checkpoint: three “feel” landmarks?</summary><p>Superior pubic ramus; hip just inferior to mid-inguinal point; ischial tuberosity (p. 350).</p></details>`,recap:['Age + energy.', 'Look/feel/move/NV.', 'Septic arthritis trap.'],quiz:[{q:'Posterior dislocation posture?',o:['Shortened, flexed, internally rotated', 'Shortened and externally rotated after a rug trip'],a:0,e:'Fig. 17.35.'},{q:'Passive testing before radiographs?',o:['Beyond gentle rotation/limited flexion causes unnecessary pain', 'Always force a full range first'],a:0,e:'p. 350.'}]},{id:'mh1b',title:"Radiographs and Shenton's arc (pages 350–351)",min:9,goal:1,obj:['List views', 'Explain Shenton and occult pathway'],html:`
+<div class="scene"><b>The scene:</b> AP pelvis “fine”, patient cannot lift the leg. Trace [[shenton|Shenton's arc]] and demand the lateral.</div>
+<p>Films: AP pelvis; lateral hip (Fig. 17.1); add femur views if malignancy or nailing planned. Trace Shenton's arcs (Fig. 17.2). If limb externally rotated, repeat [[conedap|coned AP]] in internal rotation. Lateral often shows displacement the AP hides (Fig. 17.3B). Posterior tilt &gt;10° should be viewed as displaced (p. 354, no firm consensus). Assess bone for Paget/tumour (metastases love lesser trochanter). CT for complex injury; MRI/CT for occult fracture and soft-tissue mimics such as psoas abscess (pp 351–352, 355–356). Ambultant + normal films may go home with return advice; non-ambulant from pain → further imaging. Bone scan insensitive first 3 days.</p>
+${FIG('omh-shenton')}
+<div class="bookref">📖 <b>Open McRae Fig 17.1, p. 351:</b> lateral hip radiograph.</div>
+<div class="bookref">📖 <b>Open McRae Fig 17.2, p. 351:</b> Shenton's arcs — a break flags a subtle intracapsular crack.</div>
+<div class="bookref">📖 <b>Open McRae Fig 17.3, p. 352:</b> normal-looking AP; lateral reveals the neck fracture.</div>
+<div class="hint">💡 <b>"Trace Shenton. Read the lateral. Occult if cannot walk."</b></div>
+<div class="exam"><b>🎓 For exams:</b> AP pelvis + lateral; Shenton; coned IR view; occult → MRI/CT.</div>
+<div class="corr">📝 Edition note: Lecture 7 cites 4th ed; this deep-dive uses 3rd-ed pages. Cross-link ${XL('o7c','L7.3')}.</div>
+<details class="chk"><summary>✅ Checkpoint: normal films, cannot walk — next?</summary><p>[[occulthip|Occult]] pathway — MRI or CT (pp 355–356).</p></details>`,recap:['AP + lateral.', 'Shenton + trabeculae.', 'Occult pathway.'],quiz:[{q:'Cannot walk, normal X-rays — next?',o:['MRI or CT for occult fracture', 'Discharge without imaging'],a:0,e:'pp 355–356.'},{q:"Break in Shenton's arc suggests?",o:['Possible subtle intracapsular fracture', 'Guaranteed septic arthritis'],a:0,e:'Fig. 17.2.'}]}],
+cases:[{id:'mh1k1',title:'Case: Floor versus dashboard',steps:[{t:`84-year-old shortened ER leg after fall.`,q:'First films?',o:['AP pelvis and lateral hip', 'MRI before any plain film'],a:0,e:'Start with X-rays.'},{t:`29-year-old short-flex-IR after dashboard.`,q:'Priority after primary survey?',o:['Urgent closed reduction once recognised', 'Wait overnight without reduction'],a:0,e:'Native dislocation — reduce on recognition.'}],take:['Posture + energy choose the pathway.']}],
+flash:[['Short + ER', 'Hip fracture.'], ['Short + flex + IR', 'Posterior dislocation.'], ["Shenton's arc", 'Break → subtle neck crack.'], ['Occult', 'Normal X-ray + cannot walk → MRI/CT.']],
+exam:['Two postures.', 'Mandatory films.', 'Shenton.', 'Occult rules.'],
+finalHtml:`<div data-widget="spot" data-set="omh1"></div><div data-widget="termdeck" data-set="omh1"></div><div class="exam" style="border-color:var(--ok)"><b>➡️ Next</b><br><b>MH.2 Epidemiology, anatomy and blood supply.</b><br><button class="pri" style="margin-top:8px" onclick="showModule('omh2')">→ Open</button></div>`,
+sources:'Sources: McRae 3rd edition chapter 17 General principles (book pages 350–351) into Hip fractures (352). Teaching questions by MedLearn.',
+casesHead:"🏥 Cases",casesIntro:"Answer to reveal the next part."};
+LESSONS.omh1=OMH1;
+
+XSTEP.omhblood={t:"Femoral-head blood supply (McRae Fig. 17.4)",dim:.1,svg:`<svg viewBox="0 0 700 300" style="width:100%" role="img" aria-label="Blood supply">
+<g data-k="circ"><ellipse cx="350" cy="70" rx="55" ry="50" fill="#fde2ea" stroke="#b3476d"/><text x="350" y="75" text-anchor="middle" font-size="12">head</text></g>
+<g data-k="ring"><rect x="320" y="115" width="60" height="80" rx="8" fill="#fff3cd" stroke="#d9730d"/><ellipse cx="350" cy="210" rx="90" ry="28" fill="none" stroke="#2f6db3" stroke-width="3"/><text x="350" y="215" text-anchor="middle" font-size="11">vascular ring</text></g>
+<g data-k="ret"><text x="460" y="160" font-size="13" font-weight="700" fill="#8a2f52">retinacular vessels</text></g>
+<g data-k="lt"><text x="80" y="70" font-size="12" fill="#666">ligamentum teres (negligible in adults)</text></g>
+</svg>`,
+steps:[["Circumflex arteries","Lateral and medial circumflex (from profunda femoris) form the vascular ring inside the capsule.",["circ","ring"]],["Retinacular vessels","Climb the neck surface under the retinaculum into the head — the main adult supply.",["circ","ring","ret"]],["Other sources","Medullary canal contributes a little; ligamentum teres is negligible in adults.",["circ","ring","ret","lt"]],["Capsule line","Capsule inserts at the intertrochanteric line/crest near the ring — intracapsular cracks threaten retinacular vessels.",["circ","ring","ret","lt"]]]};
+XSORT.omhregion={t:"Region → blood-supply worry",labels:["Threatens head blood supply","Usually spares head blood supply"],items:[
+["Displaced Garden 3–4 neck fracture",0,"Intracapsular + displaced → retinacular risk."],
+["Simple intertrochanteric fracture",1,"Extracapsular — fix, do not routinely replace."],
+["Basicervical fracture",1,"Extracapsular at neck base — head supply usually intact."],
+["Subtrochanteric fracture",1,"Outside capsule; separate biomechanics (p. 354)."]]};
+
+XS.omh2=["Spot the error",[["Ligamentum teres is the main adult blood supply to the femoral head.",0,"Wrong: negligible in adults (Fig. 17.4)."],["Worldwide hip-fracture incidence is projected toward about 6 million by 2050.",1],["Extracapsular fractures rarely threaten femoral-head blood supply.",1],["Around 30% of patients die within a year of their hip-fracture fall.",1]]];
+XT.omh2='retinacv,intracap,extracap,avn,calcar,garden';
+const OMH2={
+meta:'Orthopaedics › McRae Ch. 17: Hip › MH.2 · Book pages 352–354 · ⏱ about 18 minutes in 2 steps',
+intro:`<p>Hip fracture is the commonest fracture needing surgery. This subsection covers the epidemiology McRae quotes, why the fracture marks frailty, and the three-source blood supply that decides fix versus replace.</p>`,
+goals:['Quote McRae epidemiology figures correctly', 'Explain the three femoral-head blood sources and why intracapsular displacement matters'],
+cards:[{id:'mh2a',title:'Epidemiology and the frail faller (page 352)',min:9,goal:0,obj:['State incidence projection and 1-year outcomes', 'Link fall to intercurrent illness'],html:`
+<div class="scene"><b>The scene:</b> Mrs Novak is not just a broken neck of femur. McRae frames her as a medically and socially vulnerable person whose fall often follows an intercurrent illness such as a urinary tract infection.</div>
+<p>Hip fracture is the most common fracture requiring surgical treatment (McRae p. 352). Worldwide annual incidence is projected to rise from <b>1.6 million</b> patients in 1990 to a predicted <b>6 million in 2050</b>. Up to <b>50% of women</b> can expect to suffer a hip fracture in their lifetime. It is a typical fragility fracture from osteoporosis, advancing age or chronic disease, and often marks decline in cognition, balance, muscle power and eyesight. Around <b>30%</b> die within a year of their fall and <b>25% of the remainder</b> never return to independent living. Prompt surgical and medical care improves that prognosis. Cross-link the capsule map in ${XL('o7a','L7.1')}.</p>
+<div class="hint">💡 <b>"Treat the fracture and the frail person who fell."</b></div>
+<div class="exam"><b>🎓 For exams:</b> 1.6 M → 6 M by 2050; ~30% die within 1 year; 25% of survivors lose independence; fragility + intercurrent illness.</div>
+<details class="chk"><summary>✅ Checkpoint: three McRae numbers to quote?</summary><p>1.6 million (1990) → 6 million (2050); ~30% 1-year mortality; 25% of remaining lose independence (p. 352).</p></details>`,recap:['Commonest surgical fracture.', 'Frailty marker.', '~30% die within a year.'],quiz:[{q:'McRae’s projected worldwide incidence by 2050?',o:['About 6 million patients per year', 'About 160 000'],a:0,e:'p. 352.'},{q:'About what fraction die within a year of the fall?',o:['Around 30%', 'Around 3%'],a:0,e:'p. 352.'}]},{id:'mh2b',title:'Anatomy and vascular supply (pages 352–354)',min:9,goal:1,obj:['Name three blood sources', 'Contrast intracapsular vs extracapsular fate'],html:`
+<div class="scene"><b>The scene:</b> Same fall, two X-rays. One cracks the neck inside the capsule; one smashes between the trochanters. Only the first puts the head’s blood on the table.</div>
+<p>Classification hinges on proximal-femur vascular anatomy (McRae pp 352–353). Three sources feed the femoral head: (1) <b>most important</b> — lateral and medial circumflex arteries (branches of profunda femoris) form a vascular ring inside the capsule; retinacular vessels run on the neck surface into the head; (2) small medullary contribution; (3) <b>negligible</b> ligamentum teres in adults (Fig. 17.4). Capsule inserts into the intertrochanteric line (anterior) and crest (posterior) near that ring. <b>Intracapsular</b> fractures disrupt retinacular vessels → [[avn|avascular necrosis]] risk → displaced ones in the elderly usually treated by removing the head and arthroplasty. <b>Extracapsular</b> fractures rarely affect this supply → usually fixed. Regions: intracapsular neck, basicervical, intertrochanteric, subtrochanteric (5 cm distal to lesser trochanter) — Fig. 17.5.</p>
+${FIG('omh-blood-supply')}
+${FIG('omh-prox-regions')}
+<div class="bookref">📖 <b>Open McRae Fig 17.4, p. 352:</b> vascular ring (c), retinacular vessels (d), ligamentum teres (e).</div>
+<div class="bookref">📖 <b>Open McRae Fig 17.5, p. 353:</b> intracapsular, basicervical, intertrochanteric, subtrochanteric zones.</div>
+<div data-widget="stepsvg" data-set="omhblood"></div>
+<div data-widget="sortset" data-set="omhregion"></div>
+<div class="hint">💡 <b>"Ring → retinacular climb → head. Break the climb and the apple dies."</b></div>
+<div class="exam"><b>🎓 For exams:</b> main supply = retinacular from medial/lateral circumflex; ligamentum teres negligible in adults; intracapsular displaced elderly → arthroplasty; extracapsular → fix.</div>
+<details class="chk"><summary>✅ Checkpoint: why replace a displaced elderly neck but fix an intertrochanteric?</summary><p>Displaced intracapsular threatens retinacular vessels / AVN so head is removed; extracapsular rarely kills supply so fixation heals the bone (pp 353–354).</p></details>`,recap:['Circumflex ring + retinacular = main supply.', 'Intracapsular displacement → AVN risk.', 'Extracapsular → usually fix.'],quiz:[{q:'Main adult femoral-head blood supply?',o:['Retinacular vessels from the circumflex ring', 'Ligamentum teres alone'],a:0,e:'Fig. 17.4.'},{q:'Subtrochanteric region extent?',o:['5 cm distal to the lesser trochanter', 'Only inside the capsule'],a:0,e:'Fig. 17.5; p. 354.'}]}],
+cases:[{id:'mh2k1',title:'Case: Two X-rays, one night',steps:[{t:`82-year-old after rug trip; film shows Garden 4 neck.`,q:'Default elderly pathway?',o:['Arthroplasty (remove threatened head)', 'Always cannulated screws in situ'],a:0,e:'Displaced intracapsular elderly → replace (Box 17.1).'},{t:`Same age; film shows four-part intertrochanteric smash.`,q:'Blood-supply worry for the head?',o:['Usually low — extracapsular', 'Inevitable avascular necrosis'],a:0,e:'Extracapsular rarely kills supply.'}],take:['Capsule line decides physiology; age and demand decide implant.']}],
+flash:[['1.6 M → 6 M', '1990 to 2050 incidence projection.'], ['~30% / 25%', '1-year death / remaining lose independence.'], ['Retinacular vessels', 'Main adult head supply along the neck.'], ['Ligamentum teres', 'Negligible in adults.']],
+exam:['Quote epidemiology triad.', 'Three blood sources.', 'Intracapsular vs extracapsular fate.'],
+finalHtml:`<div data-widget="spot" data-set="omh2"></div><div data-widget="termdeck" data-set="omh2"></div><div class="exam" style="border-color:var(--ok)"><b>➡️ Next</b><br><b>MH.3 Garden and Pauwels classifications.</b><br><button class="pri" style="margin-top:8px" onclick="showModule('omh3')">→ Open</button></div>`,
+sources:'Sources: McRae 3rd edition chapter 17 Hip fractures (book pages 352–354), Figs 17.4–17.5. Teaching questions by MedLearn.',
+casesHead:"🏥 Cases",casesIntro:"Answer to reveal the next part."};
+LESSONS.omh2=OMH2;
+
+XSTEP.omhgarden={t:"Garden 1–4 → practical binary (McRae Fig. 17.6)",dim:.1,svg:`<svg viewBox="0 0 700 260" style="width:100%" role="img">
+<g data-k="g12"><rect x="40" y="40" width="280" height="80" rx="12" fill="#e8f6ee" stroke="#1f9d55"/><text x="180" y="75" text-anchor="middle" font-size="14" font-weight="700">Garden 1–2 = undisplaced</text><text x="180" y="98" text-anchor="middle" font-size="12">valgus impact / complete aligned</text></g>
+<g data-k="g34"><rect x="380" y="40" width="280" height="80" rx="12" fill="#fde2ea" stroke="#b3476d"/><text x="520" y="75" text-anchor="middle" font-size="14" font-weight="700">Garden 3–4 = displaced</text><text x="520" y="98" text-anchor="middle" font-size="12">trabeculae disturbed / head neutral</text></g>
+<g data-k="lat"><rect x="180" y="160" width="340" height="60" rx="12" fill="#fff3cd" stroke="#d9730d"/><text x="350" y="195" text-anchor="middle" font-size="13" font-weight="700">Lateral: posterior tilt &gt;10° → treat as displaced</text></g>
+</svg>`,
+steps:[["Garden 1","Valgus impacted; medial cortical crack often invisible on AP.",["g12"]],["Garden 2","Complete but undisplaced; trabeculae still aligned.",["g12"]],["Garden 3–4","Moderately or fully displaced; retinacular vessels at risk.",["g12","g34"]],["Lateral rule","Garden ignores posterior tilt — &gt;10° on lateral = displaced (no firm consensus).",["g12","g34","lat"]]]};
+XSORT.omhpauwel={t:"Pauwels orientation → stability",labels:["More stable (screws often OK)","High shear (consider angle-stable / DHS)"],items:[
+["Pauwels 1 (~30° from horizontal)",0,"Type 1 relatively stable."],
+["Pauwels 2 (~50°) — typical fragility",0,"Most fragility fractures; relatively stable."],
+["Pauwels 3 (~70°) — vertical, often young high-energy",1,"Shear — may prefer DHS (p. 354)."],
+["Posterior tilt 15° on lateral with 'Garden 2' AP",1,"Treat as displaced despite AP look."] ]};
+
+XS.omh3=["Spot the error",[["Garden grading is perfectly reproducible into four types in daily practice.",0,"Wrong: McRae says neither possible nor very useful (p. 353)."],["Posterior tilt &gt;10° on the lateral should be viewed as displaced.",1],["Pauwels 3 fractures are subject to shear.",1],["Basicervical fractures impair femoral-head blood supply like Garden 4.",0,"Wrong: basicervical is extracapsular (p. 354)."]]];
+XT.omh3='garden,pauwels,dhs,intracap,extracap,occulthip';
+const OMH3={
+meta:'Orthopaedics › McRae Ch. 17: Hip › MH.3 · Book pages 353–354 · ⏱ about 18 minutes in 2 steps',
+intro:`<p>Garden sorts displacement on the anteroposterior film; Pauwels sorts fracture angle and shear. McRae says the four Garden grades are hard to use reliably — what matters is undisplaced versus displaced, and posterior tilt on the lateral.</p>`,
+goals:['Define Garden 1–4 then collapse to undisplaced/displaced', 'Apply Pauwels 1–3 and the >10° posterior-tilt rule'],
+cards:[{id:'mh3a',title:'Garden classification (pages 353–354)',min:9,goal:0,obj:['List Garden 1–4', 'Use undisplaced vs displaced in practice'],html:`
+<div class="scene"><b>The scene:</b> Four neck films on the board. The registrar wants Garden grades; the consultant asks one question — displaced or not?</div>
+<p>Garden (Fig. 17.6) describes four intracapsular patterns on the <b>AP</b> radiograph (McRae p. 353): <b>Garden 1</b> valgus impacted (apex points medially; medial cortical fracture classically not seen); <b>Garden 2</b> complete but undisplaced, trabeculae aligned; <b>Garden 3</b> moderately displaced with trabecular disturbance; <b>Garden 4</b> displaced but trabeculae line up showing the head in neutral rotation. In practice it is neither possible nor very useful to differentiate all four reliably. Identifying <b>displacement</b> (and therefore retinacular vessel disruption) is crucial: Garden 1–2 = undisplaced; Garden 3–4 = displaced. Garden does <b>not</b> account for posterior tilt on the lateral — although there is no current consensus, posterior tilt <b>&gt;10°</b> should be viewed as displaced (see Fig. 17.3B). Cross-link ${XL('o7c','L7.3')}.</p>
+${FIG('omh-garden')}
+<div class="bookref">📖 <b>Open McRae Fig 17.6, p. 353:</b> Garden 1–4 on the AP; group as undisplaced vs displaced.</div>
+<div class="bookref">📖 <b>Open McRae Fig 17.3, p. 352:</b> AP may look quiet; lateral shows the crack / tilt.</div>
+<div data-widget="stepsvg" data-set="omhgarden"></div>
+<div class="hint">💡 <b>"Four grades for textbooks. Two buckets for theatre: undisplaced or displaced."</b></div>
+<div class="exam"><b>🎓 For exams:</b> recite 1–4 then collapse to binary; quote &gt;10° posterior tilt rule and “no firm consensus”.</div>
+<details class="chk"><summary>✅ Checkpoint: Garden 2 AP but 15° posterior tilt — label?</summary><p>Treat as <b>displaced</b> (McRae p. 354).</p></details>`,recap:['Garden on AP.', '1–2 undisplaced; 3–4 displaced.', 'Lateral tilt &gt;10° counts.'],quiz:[{q:'Garden 1 pattern?',o:['Valgus impacted; medial cortex often invisible', 'Fully displaced with neutral head'],a:0,e:'p. 353.'},{q:'Why collapse Garden to two groups?',o:['Reliable four-way grading is hard; displacement drives AVN risk', 'Because screws are banned'],a:0,e:'p. 353.'}]},{id:'mh3b',title:'Pauwels classification (page 354)',min:9,goal:1,obj:['State Pauwels angles', 'Link type 3 shear to DHS thinking'],html:`
+<div class="scene"><b>The scene:</b> A 28-year-old after a motorbike crash — nearly vertical neck crack. Screws alone may shear apart.</div>
+<p>Pauwels indicates fracture orientation (Fig. 17.7). Most fragility fractures are <b>type 2</b>; young high-energy patients often have more vertical <b>Pauwels 3</b>. Types 1 and 2 are relatively stable and can be fixed with screws; type 3 is subject to shear and may be better with angle-stable fixation such as a [[dhs|dynamic hip screw]] (McRae p. 354). Extracapsular types (basicervical, intertrochanteric/pertrochanteric, subtrochanteric) are introduced here and unpacked in MH.4 and MH.9 — basicervical sits at neck base but outside the capsule; intertrochanteric is commonest; subtrochanteric = 5 cm distal to lesser trochanter (~5% of extracapsular) with metastases predilection and atypical-fracture overlap (p. 383).</p>
+${FIG('omh-pauwels')}
+<div class="bookref">📖 <b>Open McRae Fig 17.7, p. 354:</b> Pauwels 1 (~30°), 2 (~50°), 3 (~70°) from horizontal.</div>
+<div data-widget="sortset" data-set="omhpauwel"></div>
+<div class="hint">💡 <b>"Vertical neck = shear. Think angle-stable, not three screws alone."</b></div>
+<div class="exam"><b>🎓 For exams:</b> Pauwels 3 → shear → consider DHS; intertrochanteric vs pertrochanteric terms often used interchangeably (p. 354).</div>
+<details class="chk"><summary>✅ Checkpoint: young vertical neck — implant bias?</summary><p>Angle-stable device such as DHS rather than screws alone (p. 354).</p></details>`,recap:['Pauwels = orientation.', 'Type 3 = shear.', 'Basicervical still extracapsular.'],quiz:[{q:'Most fragility intracapsular fractures are Pauwels…?',o:['Type 2', 'Type 3 only'],a:0,e:'p. 354.'},{q:'Why may Pauwels 3 prefer a dynamic hip screw?',o:['Vertical shear forces', 'Because arthroplasty is forbidden under 40'],a:0,e:'p. 354.'}]}],
+cases:[{id:'mh3k1',title:'Case: Quiet AP, loud lateral',steps:[{t:`AP labelled Garden 2; lateral shows 18° posterior tilt.`,q:'Practical label?',o:['Displaced — tilt rule', 'Undisplaced forever'],a:0,e:'&gt;10° posterior tilt → displaced (p. 354).'},{t:`Young adult, Pauwels 3 neck, after reduction.`,q:'Fixation bias from McRae?',o:['Angle-stable (e.g. DHS)', 'Always three screws alone'],a:0,e:'Type 3 shear — DHS consideration.'}],take:['Binary displacement + angle drive the implant chat.']}],
+flash:[['Garden 1–2', 'Undisplaced.'], ['Garden 3–4', 'Displaced.'], ['>10° posterior tilt', 'Treat as displaced.'], ['Pauwels 3', 'Vertical shear → DHS thinking.']],
+exam:['Garden 1–4 then binary.', 'Tilt rule.', 'Pauwels 1–3 implications.'],
+finalHtml:`<div data-widget="spot" data-set="omh3"></div><div data-widget="termdeck" data-set="omh3"></div><div class="exam" style="border-color:var(--ok)"><b>➡️ Next</b><br><b>MH.4 Extracapsular types, emergency care and occult fracture.</b><br><button class="pri" style="margin-top:8px" onclick="showModule('omh4')">→ Open</button></div>`,
+sources:'Sources: McRae 3rd edition chapter 17 (book pages 353–354), Figs 17.6–17.7. Teaching questions by MedLearn.',
+casesHead:"🏥 Cases",casesIntro:"Answer to reveal the next part."};
+LESSONS.omh3=OMH3;
+
+XSTEP.omhed={t:"Emergency pathway for suspected hip fracture",dim:.1,svg:`<svg viewBox="0 0 700 280" style="width:100%" role="img">
+<g data-k="clin"><rect x="20" y="30" width="150" height="70" rx="10" fill="#e8f0fb" stroke="#2f6db3"/><text x="95" y="70" text-anchor="middle" font-size="13" font-weight="700">Clinical</text></g>
+<g data-k="xr"><rect x="190" y="30" width="150" height="70" rx="10" fill="#fff3cd" stroke="#d9730d"/><text x="265" y="70" text-anchor="middle" font-size="13" font-weight="700">X-rays</text></g>
+<g data-k="occ"><rect x="360" y="30" width="150" height="70" rx="10" fill="#fde2ea" stroke="#b3476d"/><text x="435" y="70" text-anchor="middle" font-size="13" font-weight="700">Occult?</text></g>
+<g data-k="opt"><rect x="530" y="30" width="150" height="70" rx="10" fill="#e8f6ee" stroke="#1f9d55"/><text x="605" y="70" text-anchor="middle" font-size="13" font-weight="700">Optimise</text></g>
+<g data-k="box"><rect x="200" y="160" width="300" height="70" rx="10" fill="#efe8fb" stroke="#6b4cae"/><text x="350" y="200" text-anchor="middle" font-size="13" font-weight="700">Box 17.1 theatre plan</text></g>
+</svg>`,
+steps:[["Clinical","Standing-height fall (~5% without fall); short+ER; groin pain; cannot SLR; pain on rotation/axial load.",["clin"]],["X-rays","AP pelvis + lateral; coned IR view if uncertain; full femur if pathology/nailing.",["clin","xr"]],["Occult","Cannot walk + normal films → MRI or CT; bone scan insensitive first 3 days.",["clin","xr","occ"]],["Optimise + plan","Medical work-up (p. 35); operate when safe; Box 17.1 chooses implant.",["clin","xr","occ","opt","box"]]]};
+XSORT.omhoccult={t:"Occult pathway decisions",labels:["Further imaging now","May observe / other path"],items:[
+["Non-ambulant from pain, normal X-rays",0,"Occult fracture until proven otherwise."],
+["Ambulant, mild pain, normal films, clear advice given",1,"May go home with return advice (p. 351–356)."],
+["Suspected psoas abscess as pain mimic",0,"MRI helps soft-tissue mimics too."],
+["Day-0 bone scan as first occult test",1,"Insensitive in first 3 days — prefer MRI/CT."]]};
+
+XS.omh4=["Spot the error",[["About 5% of hip fractures occur without a fall.",1],["Formal traction is required for every neck fracture.",0,"Wrong: no formal immobilisation for most (p. 355)."],["Bone scanning is insensitive in the first 3 days.",1],["Non-ambulant patients with normal X-rays still need further imaging.",1]]];
+XT.omh4='occulthip,conedap,dhs,extracap,atypical,box171';
+const OMH4={
+meta:'Orthopaedics › McRae Ch. 17: Hip › MH.4 · Book pages 354–356 · ⏱ about 20 minutes in 2 steps',
+intro:`<p>Finish the extracapsular map, then run the emergency-department pathway: clinical signs, films, immobilisation, occult fracture rules, and medical optimisation before the Box 17.1 theatre plan.</p>`,
+goals:['Distinguish basicervical, intertrochanteric and subtrochanteric', 'Run ED assessment and occult-fracture pathway'],
+cards:[{id:'mh4a',title:'Extracapsular types in detail (page 354)',min:9,goal:0,obj:['Define basicervical, IT/pertrochanteric, subtrochanteric', 'Note Evans comes later'],html:`
+<div class="scene"><b>The scene:</b> Three extracapsular films. One sits at the neck base, one zigzags the trochanters, one starts below the lesser trochanter — same “outside capsule” club, different mechanics.</div>
+<p><b>Basicervical:</b> base of femoral neck, extracapsular, does not impair head blood supply. <b>Intertrochanteric:</b> most common. “Intertrochanteric” (transverse between trochanters) and “pertrochanteric” (oblique trochanter-to-trochanter) have subtle differences but are often used interchangeably (p. 354). <b>Subtrochanteric:</b> originate in the 5 cm distal to the lesser trochanter; only ~<b>5%</b> of extracapsular fractures but separate biomechanics; metastases love this region; some low-energy cracks are [[atypical|atypical fractures]] (p. 383). Fixation depends on pattern stability — Evans modifications appear on p. 364 (MH.9). Cross-link ${XL('o7e','L7.5')} and ${XL('o7f','L7.6')}.</p>
+${FIG('omh-extracapsular')}
+<div class="bookref">📖 <b>Open McRae Fig 17.5, p. 353:</b> map basicervical / intertrochanteric / subtrochanteric again with extracapsular bracket.</div>
+<div class="hint">💡 <b>"Outside the capsule you fix bone. Pattern tells you plate versus nail."</b></div>
+<div class="exam"><b>🎓 For exams:</b> basicervical = extracapsular; IT most common; subtrochanteric = 5 cm zone, ~5%, metastasis + atypical overlap.</div>
+<details class="chk"><summary>✅ Checkpoint: why separate subtrochanteric fractures?</summary><p>Different biomechanics; metastasis predilection; atypical-fracture link (p. 354, 383).</p></details>`,recap:['Basicervical spares head supply.', 'IT commonest.', 'Subtroch ~5% but special.'],quiz:[{q:'Basicervical fractures impair head blood supply?',o:['No — extracapsular', 'Yes — always AVN'],a:0,e:'p. 354.'},{q:'Subtrochanteric share of extracapsular fractures?',o:['About 5%', 'About 50%'],a:0,e:'p. 354.'}]},{id:'mh4b',title:'Emergency department and occult fracture (pages 354–356)',min:11,goal:1,obj:['List clinical features and films', 'Apply occult and immobilisation rules'],html:`
+<div class="scene"><b>The scene:</b> Night shift. Frail faller cannot walk; AP “normal”. Do you send her home or open the occult pathway?</div>
+<p><b>ED management:</b> most hip fractures follow a simple fall in a frail elder with comorbidities — thorough medical assessment for cause of fall and remediable problems (p. 35). Young high-energy → full primary/secondary survey (p. 350). Clinical: standing-height fall (although <b>5%</b> occur without a fall); shortened externally rotated limb (Fig. 17.8); groin/hip pain; inability to straight-leg raise; pain on gentle rotation and axial loading (helps separate hip fracture from pubic ramus crack). Films: AP pelvis + lateral hip; if limb ER, repeat [[conedap|coned AP]] in internal rotation; AP/lateral femur if pathological lesion or nailing planned. Immobilisation: no formal traction for most; rare extensive subtrochanteric may need temporary traction for soft tissues (p. 355). <b>Occult:</b> non-ambulant from pain with normal films → MRI or CT; MRI also shows soft-tissue mimics (psoas abscess); bone scan insensitive first <b>3 days</b>. Ambulant + normal films may go home with return advice. Aim for surgery within 24–48 hours that allows immediate weight-bearing when medically ready — technique from Box 17.1 (next subsection).</p>
+${FIG('omh-clinical-signs')}
+<div class="bookref">📖 <b>Open McRae Fig 17.8, p. 355:</b> short + ER (a), groin tenderness (b), pain on passive rotation (c).</div>
+<div data-widget="stepsvg" data-set="omhed"></div>
+<div data-widget="sortset" data-set="omhoccult"></div>
+<div class="hint">💡 <b>"Cannot walk + quiet films = occult until MRI/CT says otherwise."</b></div>
+<div class="exam"><b>🎓 For exams:</b> 5% without fall; coned IR view; no routine traction; occult → MRI/CT; bone scan weak first 3 days; operate 24–48 h when safe.</div>
+<div class="corr">📝 Cross-link ${XL('o7c','L7.3')} occult ladder; edition note — 3rd-ed pages here.</div>
+<details class="chk"><summary>✅ Checkpoint: when is formal traction indicated?</summary><p>Usually never; occasionally extensive subtrochanteric fractures with soft-tissue compromise (p. 355).</p></details>`,recap:['Medical + trauma survey as needed.', 'AP + lateral ± coned IR.', 'Occult pathway.', '24–48 h target.'],quiz:[{q:'Bone scan early after occult suspicion?',o:['Insensitive in the first 3 days — prefer MRI/CT', 'Always first-line day 0'],a:0,e:'pp 355–356.'},{q:'Share of hip fractures without a fall (McRae)?',o:['About 5%', 'About 50%'],a:0,e:'p. 355.'}]}],
+cases:[{id:'mh4k1',title:'Case: Quiet films, loud limp',steps:[{t:`84-year-old, cannot walk after fall; AP and lateral reported normal.`,q:'Next?',o:['MRI or CT for occult hip fracture', 'Discharge without imaging or advice'],a:0,e:'Occult pathway.'},{t:`Film later shows reverse-oblique pertrochanteric pattern.`,q:'Box 17.1 headline implant?',o:['Nail', 'Always hemiarthroplasty'],a:0,e:'Reverse oblique → nail (Box 17.1).'}],take:['ED clarity prevents missed occult and wrong implant family.']}],
+flash:[['5% no fall', 'Still can be hip fracture.'], ['Coned IR view', 'When ER obscures the neck.'], ['Occult', 'Cannot walk + normal XR → MRI/CT.'], ['24–48 h', 'Operate when medically ready.']],
+exam:['Extracapsular triad.', 'ED clinical + films.', 'Occult rules.', 'No routine traction.'],
+finalHtml:`<div data-widget="spot" data-set="omh4"></div><div data-widget="termdeck" data-set="omh4"></div><div class="exam" style="border-color:var(--ok)"><b>➡️ Next</b><br><b>MH.5 Box 17.1 and cannulated screw fixation.</b><br><button class="pri" style="margin-top:8px" onclick="showModule('omh5')">→ Open</button></div>`,
+sources:'Sources: McRae 3rd edition chapter 17 (book pages 354–356), Fig. 17.8, into Box 17.1. Teaching questions by MedLearn.',
+casesHead:"🏥 Cases",casesIntro:"Answer to reveal the next part."};
+LESSONS.omh4=OMH4;
+
+XPK.omhbox={t:"Box 17.1 — pick the strategy",opts:["Fixation (screws/DHS)","Urgent reduction and fixation","Total hip replacement","Hemiarthroplasty","Dynamic hip screw","Nail"],items:[
+["Undisplaced intracapsular",0,"Box 17.1 — fixation.",""],
+["Displaced intracapsular, young",1,"Urgent reduction and fixation.",""],
+["Displaced intracapsular, elderly high demand",2,"Total hip replacement.",""],
+["Displaced intracapsular, elderly low demand",3,"Hemiarthroplasty.",""],
+["Simple intertrochanteric / basicervical",4,"Dynamic hip screw.",""],
+["Reverse oblique or subtrochanteric",5,"Nail.",""]]};
+XSTEP.omhscrews={t:"Three cannulated screws (McRae Fig. 17.9)",dim:.1,svg:`<svg viewBox="0 0 640 300" style="width:100%" role="img" aria-label="Screw positions">
+<g data-k="inf"><rect x="40" y="40" width="180" height="50" rx="8" fill="#e8f6ee" stroke="#1f9d55"/><text x="130" y="70" text-anchor="middle" font-size="12" font-weight="700">1 Inferior / calcar</text></g>
+<g data-k="post"><rect x="240" y="40" width="180" height="50" rx="8" fill="#e8f0fb" stroke="#2f6db3"/><text x="330" y="70" text-anchor="middle" font-size="12" font-weight="700">2 Posterior</text></g>
+<g data-k="ant"><rect x="440" y="40" width="180" height="50" rx="8" fill="#fff3cd" stroke="#d9730d"/><text x="530" y="70" text-anchor="middle" font-size="12" font-weight="700">3 Anterosuperior</text></g>
+<g data-k="entry"><rect x="160" y="160" width="320" height="50" rx="8" fill="#fde2ea" stroke="#b3476d"/><text x="320" y="190" text-anchor="middle" font-size="12" font-weight="700">Entry at lesser-trochanter level</text></g>
+</svg>`,
+steps:[["Entry","Guide-wire entry at lesser-trochanter level — more distal = lateral-cortex stress riser and possible subtrochanteric smash.",["entry"]],["Inferior screw","Low in the neck above the calcar — standing cantilever.",["entry","inf"]],["Posterior screw","Against posterior cortex — sitting/rising cantilever.",["entry","inf","post"]],["Anterosuperior screw","Well away from the first two.",["entry","inf","post","ant"]]]};
+
+XS.omh5=["Spot the error",[["Box 17.1 sends reverse-oblique extracapsular fractures to a nail.",1],["Cannulated-screw entry should sit at lesser-trochanter level (McRae p. 357).",1],["Compression after cannulated screws comes mainly from intraoperative cranking, not mobilisation.",0,"Wrong: McRae says compression is principally produced during mobilisation (p. 357)."],["Full weight-bearing is permitted after cannulated screws.",1]]];
+XT.omh5='box171,cannscrew,calcar,hemiarthro,thr,dhs';
+const OMH5={
+meta:'Orthopaedics › McRae Ch. 17: Hip › MH.5 · Book pages 356–357 · ⏱ about 18 minutes in 2 steps',
+intro:`<p>[[box171|Box 17.1]] is the pocket card for the whole chapter. Then the craft of three [[cannscrew|cannulated screws]] for undisplaced necks. Lecture twin: ${XL('o7d','L7.4')}.</p>`,
+goals:['Recite Box 17.1 pathways', 'Describe cannulated-screw set-up and three-wire positions'],
+cards:[{id:'mh5a',title:'Box 17.1 and undisplaced intracapsular strategy (page 356)',min:8,goal:0,obj:['Recite Box 17.1', 'List contraindications to screw fixation'],html:`
+<div class="scene"><b>The scene:</b> Theatre list: one quiet Garden 1, one reverse-oblique trochanteric, one fit 72-year-old Garden 4. Box 17.1 sorts them before the first skin mark.</div>
+<p>Management is surgical except when the patient is too physiologically compromised for anaesthesia. Aim: optimise physiology, then a single definitive procedure within 24–48 hours allowing immediate weight-bearing and early rehabilitation. Strategy follows fracture pattern, age and physiology ([[box171|Box 17.1]], p. 356): intracapsular undisplaced → fixation; displaced young → urgent reduction and fixation; displaced elderly high demand → [[thr|total hip replacement]]; low demand → [[hemiarthro|hemiarthroplasty]]; extracapsular simple intertrochanteric/basicervical → [[dhs|dynamic hip screw]]; highly comminuted → DHS or nail; reverse oblique → nail; subtrochanteric → nail.</p>
+<p>Undisplaced and valgus-impacted fractures are most commonly fixed in situ with cannulated screws or a DHS, though some prefer definitive arthroplasty. Contraindications to screw fixation: abnormal bone quality (rheumatoid arthritis, renal failure, osteomalacia) or a hip already symptomatic with osteoarthritis.</p>
+<div data-widget="pickset" data-set="omhbox"></div>
+<div class="hint">💡 <b>"Box 17.1 first. Exceptions for bad bone or a painful arthritic hip already destined for replacement."</b></div>
+<div class="exam"><b>🎓 For exams:</b> recite Box 17.1 cold; 24–48 hour target; screw contraindications.</div>
+<details class="chk"><summary>✅ Checkpoint: name two contraindications to cannulated screws for an undisplaced neck.</summary><p>Abnormal bone quality (e.g. rheumatoid arthritis, renal failure, osteomalacia) or symptomatic osteoarthritis already present (p. 356).</p></details>`,recap:['Box 17.1 pathways.', '24–48 h definitive surgery.', 'Screw contraindications.'],quiz:[{q:'Displaced elderly high-demand neck — Box 17.1?',o:['Total hip replacement', 'Always non-operative'],a:0,e:'Box 17.1.'},{q:'Target timing for definitive hip-fracture surgery (McRae)?',o:['Within 24–48 hours', 'Within 3 months'],a:0,e:'p. 356.'}]},{id:'mh5b',title:'Cannulated screw technique (pages 356–357)',min:10,goal:1,obj:['Describe set-up, entry, three wires, postop rules'],html:`
+<div class="scene"><b>The scene:</b> A guide wire starts too far down the lateral cortex. Weeks later a subtrochanteric fracture blooms under the screw holes. McRae warned you on page 357.</div>
+<p><b>Set-up:</b> as Fig. 17.25; confirm image intensifier can give AP and true lateral (Fig. 17.26); confirm fracture still undisplaced before proceeding. No reduction manoeuvre — avoid displacing while positioning. Percutaneous ~3 cm incision at lesser-trochanter level.</p>
+<p><b>Entry:</b> at lesser-trochanter level (Fig. 17.9). More distal creates a lateral-cortex stress riser → possible comminuted subtrochanteric fracture. Central neck bone is soft — screws should rest against or near cortex. Wire 1 low above [[calcar|calcar]] (standing cantilever); wire 2 posterior near posterior cortex (sitting/rising cantilever); wire 3 anterosuperior, well away. Measure; drill only lateral cortex (screws self-cutting/self-tapping); insert all three before removing wires; washers often used; compression mainly from mobilisation. <b>Post-op:</b> no movement restrictions; full weight-bearing permitted.</p>
+${FIG('omh-screws')}
+${FIG('omh-traction-setup')}
+<div class="bookref">📖 <b>Open McRae Fig 17.9, p. 357:</b> three-wire inverted constellation — inferior, posterior, anterosuperior; entry level marked.</div>
+<div data-widget="stepsvg" data-set="omhscrews"></div>
+<div class="hint">💡 <b>"Entry at the lesser trochanter. Cortex hugging. Full weight-bearing after."</b></div>
+<div class="exam"><b>🎓 For exams:</b> three positions + why; distal entry = stress riser; full WB; no movement limits.</div>
+<details class="chk"><summary>✅ Checkpoint: why not start the guide wire well below the lesser trochanter?</summary><p>Distal lateral-cortex holes act as a stress riser and can cause a comminuted subtrochanteric fracture (p. 357).</p></details>`,recap:['Confirm undisplaced.', 'Lesser-trochanter entry.', 'Three cortical cantilevers.'],quiz:[{q:'First (inferior) screw role?',o:['Calcar cantilever for standing', 'Decoration only'],a:0,e:'Fig. 17.9.'},{q:'Post-op weight-bearing after cannulated screws?',o:['Full weight-bearing permitted', 'Non-weight-bearing for 3 months always'],a:0,e:'p. 357.'}]}],
+cases:[{id:'mh5k1',title:'Case: Quiet Garden 1',steps:[{t:`68-year-old Garden 1, good bone, no osteoarthritis.`,q:'Box 17.1 plan?',o:['In-situ fixation with screws or DHS', 'Hemiarthroplasty for every Garden 1'],a:0,e:'Undisplaced → fixation.'}],take:['Quiet necks get quiet screws — if bone allows.']}],
+flash:[['Box 17.1', 'Fix / hemi / total / DHS / nail map.'], ['Screw entry', 'Lesser-trochanter level.'], ['Three wires', 'Inferior, posterior, anterosuperior.'], ['Full WB', 'After cannulated screws.']],
+exam:['Box 17.1.', 'Screw contraindications.', 'Wire positions and stress-riser warning.'],
+finalHtml:`<div data-widget="spot" data-set="omh5"></div><div data-widget="termdeck" data-set="omh5"></div><div class="exam" style="border-color:var(--ok)"><b>➡️ Next</b><br><b>MH.6 Displaced elderly necks: hemiarthroplasty versus total hip.</b><br><button class="pri" style="margin-top:8px" onclick="showModule('omh6')">→ Open</button></div>`,
+sources:'Sources: McRae 3rd edition chapter 17 Box 17.1 and cannulated screw fixation (book pages 356–357), Fig. 17.9. Teaching questions by MedLearn.',
+casesHead:"🏥 Cases",casesIntro:"Answer to reveal the next part."};
+LESSONS.omh5=OMH5;
+
+XPK.omharthro={t:"Hemi or total?",opts:["Hemiarthroplasty","Total hip replacement","Try fixation first despite displacement"],items:[
+["84-year-old housebound with a frame, Garden IV",0,"Low demand → hemi (McRae p. 358).",""],
+["71-year-old independent, cognitively intact, walks outdoors, Garden IV",1,"High demand → total hip replacement.",""],
+["Garden IV in osteoporotic bone — uncemented press-fit stem preferred?",2,"No — McRae prefers cemented; uncemented risky in weak cancellous bone.",""]]};
+
+XS.omh6=["Spot the error",[["High-demand cognitively intact elderly with displaced necks benefit from total hip replacement (McRae p. 358).",1],["Hemiarthroplasty has a lower dislocation rate than total hip replacement in this fracture setting (McRae p. 358).",1],["Bipolar heads have conclusively proven less acetabular wear in all trials McRae cites as settled fact.",0,"Wrong: advantage not proven conclusively (p. 358)."],["Cemented stems are preferred in hip-fracture arthroplasty.",1]]];
+XT.omh6='hemiarthro,thr,unipolar,bipolar,cementedstem,avn';
+const OMH6={
+meta:'Orthopaedics › McRae Ch. 17: Hip › MH.6 · Book pages 357–358 · ⏱ about 16 minutes in 2 steps',
+intro:`<p>Displaced necks in older adults: why replace, who gets [[hemiarthro|hemiarthroplasty]] versus [[thr|total hip replacement]], and why cemented stems win in osteoporotic bone. Lecture twin: ${XL('o7d','L7.4')}.</p>`,
+goals:['Choose hemi versus total by demand', 'Explain cemented versus uncemented logic in hip-fracture bone'],
+cards:[{id:'mh6a',title:'Why replace displaced elderly necks (pages 357–358)',min:8,goal:0,obj:['State AVN/non-union rationale', 'Match demand to hemi vs total'],html:`
+<div class="scene"><b>The scene:</b> Two Garden IV necks. One patient still gardens and climbs stairs. One walks only to the toilet with a frame. Same fracture — different implants.</div>
+<p>Displaced hip fractures have a much higher risk of [[avn|avascular necrosis]], non-union and construct failure after attempted fixation than undisplaced fractures. In elderly patients the advantages of definitive arthroplasty outweigh preserving the head. A high-demand patient who is cognitively intact, independently mobile and active benefits from [[thr|total hip replacement]] (Fig. 17.10A). Less active, socially dependent patients who do not walk independently outside the home are better served by [[hemiarthro|hemiarthroplasty]] — faster, simpler, safer, more predictable, lower dislocation rate. Choose an implant with satisfactory long-term joint-registry survival. Hemiarthroplasty head may be [[unipolar|unipolar]] (single block, Fig. 17.10B) or [[bipolar|bipolar]] (inner articulation + outer shell, Fig. 17.10C); bipolar theoretically reduces acetabular wear but this advantage is not proven conclusively.</p>
+${FIG('omh-arthroplasty')}
+<div class="bookref">📖 <b>Open McRae Fig 17.10, p. 358:</b> A total hip; B unipolar hemi; C bipolar hemi — compare articulations.</div>
+<div data-widget="pickset" data-set="omharthro"></div>
+<div class="hint">💡 <b>"Displaced + old → replace. Fit and independent → total. Frail and indoor → hemi."</b></div>
+<div class="exam"><b>🎓 For exams:</b> high vs low demand rule; hemi lower dislocation than THR in this context; bipolar wear advantage unproven.</div>
+<details class="chk"><summary>✅ Checkpoint: name McRae's three high-demand cues for total hip after a displaced neck.</summary><p>Cognitively intact, independently mobile, and active (p. 358).</p></details>`,recap:['Displaced elderly → arthroplasty.', 'Demand picks hemi vs total.', 'Bipolar advantage unproven.'],quiz:[{q:'Low-demand displaced elderly neck — McRae preference?',o:['Hemiarthroplasty', 'Always total hip'],a:0,e:'p. 358.'},{q:'Bipolar vs unipolar acetabular wear?',o:['Theoretical bipolar benefit not conclusively proven', 'Proven to eliminate all wear'],a:0,e:'p. 358.'}]},{id:'mh6b',title:'Cemented stems in hip-fracture bone (page 358)',min:8,goal:1,obj:['Explain cement as grout', 'State why uncemented stems are cautious in this group'],html:`
+<div class="scene"><b>The scene:</b> Someone pushes an uncemented stem into chalky metaphyseal foam. It rotates in your fingers. McRae already wrote the ending: poor initial stability — or a cracked femur.</div>
+<p>A [[cementedstem|cemented stem]] is preferred in this patient group. Cement acts as a grout distributing load between the smooth stem and irregular bone. Principal concern has been hypoxaemia from fat embolism; however overall survival is higher with cemented implants. Uncemented stems obtain initial stability by impacting into cancellous bone (interference fit). In hip-fracture patients that cancellous bone may be inadequate → poor stability; impacting weak osteoporotic bone also risks femoral fracture. View uncemented stems with caution here (McRae p. 358).</p>
+${FIG('omh-cement')}
+<div class="hint">💡 <b>"Cement is the grout osteoporotic bone needs — warn the anaesthetist before you pressurise."</b></div>
+<div class="exam"><b>🎓 For exams:</b> cemented preferred; survival higher despite embolism concern; uncemented = caution in fracture bone.</div>
+<div class="corr">📝 Lecture 7 agrees on hemi vs total by demand; keep McRae's explicit uncemented caution and bipolar-evidence honesty when slides are shorter.</div>
+<details class="chk"><summary>✅ Checkpoint: why might uncemented stems fail early after hip fracture?</summary><p>Poor cancellous bone prevents a tight interference fit and may fracture during impaction (p. 358).</p></details>`,recap:['Cement = grout.', 'Survival favour cemented.', 'Uncemented caution.'],quiz:[{q:'McRae on cemented vs uncemented in hip-fracture arthroplasty?',o:['Cemented preferred; overall survival higher', 'Uncemented always safer in osteoporosis'],a:0,e:'p. 358.'},{q:'Main historical worry about cementation?',o:['Fat embolism / hypoxaemia during pressurisation', 'That cement dissolves bone instantly'],a:0,e:'p. 358.'}]}],
+cases:[{id:'mh6k1',title:'Case: Two Garden IVs',steps:[{t:`Independent 74-year-old golfer, Garden IV.`,q:'Implant family?',o:['Total hip replacement', 'Expectant traction only'],a:0,e:'High demand.'}],take:['Demand is a clinical judgement, not a birthday.']}],
+flash:[['High demand', 'THR after displaced neck.'], ['Low demand', 'Hemi.'], ['Cemented', 'Preferred in fracture bone.'], ['Bipolar', 'Unproven wear advantage.']],
+exam:['Hemi vs total cues.', 'Cement logic.', 'Uncemented risks.'],
+finalHtml:`<div data-widget="spot" data-set="omh6"></div><div data-widget="termdeck" data-set="omh6"></div><div class="exam" style="border-color:var(--ok)"><b>➡️ Next</b><br><b>MH.7 Hemiarthroplasty surgical technique deep-dive.</b><br><button class="pri" style="margin-top:8px" onclick="showModule('omh7')">→ Open</button></div>`,
+sources:'Sources: McRae 3rd edition chapter 17, Displaced intracapsular fractures in elderly patients (book pages 357–358), Fig. 17.10. Teaching questions by MedLearn.',
+casesHead:"🏥 Cases",casesIntro:"Answer to reveal the next part."};
+LESSONS.omh6=OMH6;
+
+XSTEP.omhhemi={t:"Hemiarthroplasty sequence (McRae pp 359–361)",dim:.08,svg:`<svg viewBox="0 0 720 300" style="width:100%" role="img" aria-label="Hemi steps">
+<g data-k="s1"><rect x="10" y="30" width="110" height="45" rx="6" fill="#e8f0fb" stroke="#2f6db3"/><text x="65" y="58" text-anchor="middle" font-size="11" font-weight="700">Approach</text></g>
+<g data-k="s2"><rect x="130" y="30" width="110" height="45" rx="6" fill="#e8f0fb" stroke="#2f6db3"/><text x="185" y="58" text-anchor="middle" font-size="11" font-weight="700">Neck cut</text></g>
+<g data-k="s3"><rect x="250" y="30" width="110" height="45" rx="6" fill="#e8f0fb" stroke="#2f6db3"/><text x="305" y="58" text-anchor="middle" font-size="11" font-weight="700">Head out</text></g>
+<g data-k="s4"><rect x="370" y="30" width="110" height="45" rx="6" fill="#fff3cd" stroke="#d9730d"/><text x="425" y="58" text-anchor="middle" font-size="11" font-weight="700">Canal prep</text></g>
+<g data-k="s5"><rect x="490" y="30" width="110" height="45" rx="6" fill="#fde2ea" stroke="#b3476d"/><text x="545" y="58" text-anchor="middle" font-size="11" font-weight="700">Cement</text></g>
+<g data-k="s6"><rect x="610" y="30" width="100" height="45" rx="6" fill="#e8f6ee" stroke="#1f9d55"/><text x="660" y="58" text-anchor="middle" font-size="11" font-weight="700">Reduce</text></g>
+<g data-k="av"><rect x="200" y="140" width="320" height="50" rx="8" fill="#f5f5f5" stroke="#333"/><text x="360" y="170" text-anchor="middle" font-size="12" font-weight="700">Broach/stem anteversion 10–15°</text></g>
+</svg>`,
+steps:[["Approach","Lateral position; anterolateral split of vastogluteal sling at anterior-third mark.",["s1"]],["Neck and head","Neck cut ~1 cm above lesser trochanter to superior neck; corkscrew head out; size down if between sizes.",["s1","s2","s3"]],["Canal","Box chisel posterolateral; broach to rotational stability with cancellous rim; 10–15° anteversion; depth = broach neck centre at greater-trochanter tip.",["s1","s2","s3","s4","av"]],["Cement and stem","Restrictor 2 cm beyond stem; lavage/dry; retrograde fill then pressurise above MAP; stem posterolateral with anteversion — do not twist after seating; avoid varus.",["s1","s2","s3","s4","s5","av"]],["Reduce and close","Stability in IR at 90° flexion and ER in extension; repair capsule, vastogluteal sling, fascia; full weight-bearing; THR precautions.",["s1","s2","s3","s4","s5","s6","av"]]]};
+
+XS.omh7=["Spot the error",[["Cement restrictor is inserted about 2 cm beyond stem length (McRae p. 360).",1],["Choose the smaller prosthetic head if between sizes (p. 360).",1],["After seating a cemented stem you should freely twist to adjust anteversion.",0,"Wrong: changing anteversion after seating leaves metal–cement gaps (p. 361)."],["A varus stem has a higher chance of failing early (p. 361).",1]]];
+XT.omh7='vasto,offset,antever,cementedstem,hemiarthro,thr';
+const OMH7={
+meta:'Orthopaedics › McRae Ch. 17: Hip › MH.7 · Book pages 358–363 · ⏱ about 22 minutes in 2 steps',
+intro:`<p>McRae walks the entire anterolateral hemiarthroplasty: set-up, [[vasto|vastogluteal sling]], neck cut, corkscrew, canal prep, cement pressurisation, stem anteversion, closure. This is the book deep-dive — do not skim.</p>`,
+goals:['Describe anterolateral approach landmarks', 'Sequence cementation without losing canal pressure'],
+cards:[{id:'mh7a',title:'Set-up, anterolateral approach and head removal (pages 358–360)',min:11,goal:0,obj:['Describe lateral set-up and vastogluteal sling split', 'Explain neck cut and corkscrew pearls'],html:`
+<div class="scene"><b>The scene:</b> Lateral position, sacrum and anterior superior iliac spine supported, leg bag ready. The incision centres on the greater-trochanter tip. McRae wants the [[vasto|vastogluteal sling]] treated as one unit.</div>
+<p><b>Set-up (Fig. 17.11):</b> lateral position; pelvic supports on sacrum and anterior superior iliac spine; anterior leg bag for flexion/external rotation; surgeon behind, assistant in front. No intraoperative imaging — template stem size, [[offset|offset]] and head size from ED radiographs. Offset = distance from head centre to femoral anatomical axis.</p>
+<p><b>Incision:</b> ~20 cm longitudinal centred on greater-trochanter tip, may curve slightly posterior proximally (Fig. 17.12). <b>Approach:</b> between split gluteal fibres (inferior gluteal nerve to maximus; superior gluteal to medius/minimus) — a plane between branches of related nerves. Divide fascia lata; Charnley retractor; excise trochanteric bursa. [[vasto|Vastogluteal sling]] (gluteus medius + vastus lateralis + intervening tendon) divided longitudinally starting at the anterosuperior greater-trochanter indentation marking anterior third versus posterior two-thirds (Fig. 17.13). Distally develop subperiosteal plane under tendon/vastus; proximally split medius, then divide minimus and capsule as one to the acetabular margin (Fig. 17.14). Progressive external rotation helps. Neck often comes into the wound leaving the head in the socket.</p>
+<p><b>Procedure pearls:</b> Neck cut along superior neck to a spot ~1 cm above lesser trochanter (collarless stems allow leeway; collared stems dictate cut). Corkscrew into centre of head after palpating neck; turn until head spins free of capsule; if stuck, check capsule to acetabular lip then spoon retractor (Fig. 17.15). Measure head — if between sizes choose smaller (oversized risks not seating / dislocation).</p>
+${FIG('omh-hemi-setup')}
+${FIG('omh-anterolateral')}
+<div class="bookref">📖 <b>Open McRae Fig 17.11, p. 362:</b> hemiarthroplasty theatre set-up in the lateral position.</div>
+<div class="bookref">📖 <b>Open McRae Fig 17.12, p. 362:</b> skin incision centred on the greater trochanter.</div>
+<div class="bookref">📖 <b>Open McRae Fig 17.13, p. 362:</b> abductor release — anterior third versus posterior two-thirds mark.</div>
+<div class="bookref">📖 <b>Open McRae Fig 17.14, p. 362:</b> capsular release to the acetabular margin.</div>
+<div class="bookref">📖 <b>Open McRae Fig 17.15, p. 362:</b> corkscrew femoral-head removal.</div>
+<div data-widget="stepsvg" data-set="omhhemi"></div>
+<div class="hint">💡 <b>"Template offset. Split the sling at the one-third mark. Smaller head if between sizes."</b></div>
+<div class="exam"><b>🎓 For exams:</b> lateral set-up; vastogluteal sling; neck-cut landmark; choose smaller head if between sizes.</div>
+<details class="chk"><summary>✅ Checkpoint: where do you start the vastogluteal split on the greater trochanter?</summary><p>At the indentation between the anterior third and posterior two-thirds of the tendon (Fig. 17.13 / p. 359).</p></details>`,recap:['Lateral set-up + template.', 'Vastogluteal one-third split.', 'Smaller head if between sizes.'],quiz:[{q:'If femoral head measures between prosthetic sizes?',o:['Choose the smaller head', 'Always upsize'],a:0,e:'p. 360.'},{q:'Vastogluteal split start landmark?',o:['Anterosuperior greater-trochanter indentation (anterior 1/3 vs posterior 2/3)', 'Random mid-glute stab'],a:0,e:'Fig. 17.13.'}]},{id:'mh7b',title:'Canal preparation, cement pressurisation and closure (pages 360–361)',min:11,goal:1,obj:['State anteversion and depth targets', 'Sequence cementation above mean arterial pressure'],html:`
+<div class="scene"><b>The scene:</b> Cement gun in, anaesthetist warned, pressure rising above mean arterial pressure — then someone fiddles with stem version after it is seated. McRae's verdict: metal–cement gaps and early failure risk.</div>
+<p><b>Canal prep:</b> box chisel posterolateral without hurting gluteus medius insertion (Fig. 17.16A). T-handled reamer down the anatomical axis — hand on the knee guides trajectory in osteoporotic bone. Broach until rotationally stable yet surrounded by millimetres of cancellous bone; insert with [[antever|10–15° anteversion]] (Fig. 17.16B); depth when broach-neck centre aligns with greater-trochanter tip (Fig. 17.16C); mark femur for definitive stem depth. Trial optional (large hemi heads are intrinsically stable). Cement restrictor 2 cm beyond stem length. Pulsed lavage and brush; dry with gauze — cleans interface and reduces fat embolisation.</p>
+<p><b>Cementation (Fig. 17.17):</b> warn anaesthetist. Rapid retrograde fill keeping nozzle below cement surface (low pressure, minimise back-bleeding). Then pressurising collar — slow fill maintaining pressure above mean arterial pressure until cement turns rubbery. Insert stem promptly with centralizer, tip in posterolateral corner, 10–15° anteversion, to marked depth — this restores high pressure. Do <b>not</b> change anteversion after seating. Common error: starting/drifting medial → varus stem → earlier failure. Allow full cement set. Clean trunnion; apply head (± bipolar). Reduce; test stability in maximal internal rotation at 90° flexion and maximal external rotation in full extension. Unstable → consider greater offset.</p>
+<p><b>Closure:</b> capsule 2–3 heavy absorbable interrupted stitches; repair vastogluteal sling (through bone if tendon poor); continuous fascia lata; skin as preferred. Compare leg lengths with heels together. <b>Post-op:</b> standard THR precautions; full weight-bearing.</p>
+${FIG('omh-cement')}
+<div class="bookref">📖 <b>Open McRae Fig 17.16, p. 363:</b> box chisel point; 15° anteversion relative to transcondylar axis; depth mark at trochanter tip.</div>
+<div class="bookref">📖 <b>Open McRae Fig 17.17, p. 363:</b> cement pressure curve — fill, pressurise above MAP, stem insertion.</div>
+<div class="hint">💡 <b>"Antevert 10–15°. Pressurise above MAP. Never twist a seated cemented stem. Avoid varus."</b></div>
+<div class="exam"><b>🎓 For exams:</b> restrictor +2 cm; lavage; pressure &gt; MAP; anteversion 10–15°; varus = bad; full WB + THR precautions.</div>
+<details class="chk"><summary>✅ Checkpoint: why warn the anaesthetist just before cementation?</summary><p>Risk of fat-embolism hypoxaemia during pressurisation (and later when veins straighten on reduction) — team situational awareness (pp 358, 360–361, 374).</p></details>`,recap:['10–15° anteversion.', 'Cement above MAP.', 'No twist after seat; avoid varus.'],quiz:[{q:'Target femoral stem anteversion (McRae)?',o:['10–15°', '0° always', '45° always'],a:0,e:'pp 360–361.'},{q:'After the stem is at depth in curing cement you should…',o:['Not change anteversion', "Freely twist to 'improve' version"],a:0,e:'p. 361.'}]}],
+cases:[{id:'mh7k1',title:'Case: Between sizes',steps:[{t:`Head measures between 46 and 48 mm trials.`,q:'Choose?',o:['46 mm (smaller)', '48 mm always'],a:0,e:'Oversized may not seat / may dislocate.'}],take:['Downsize the head when torn.']}],
+flash:[['Vastogluteal sling', 'Medius–tendon–vastus unit.'], ['Anteversion', '10–15°.'], ['Cement rule', 'Pressure above MAP.'], ['Varus stem', 'Early failure risk.']],
+exam:['Approach landmarks.', 'Cement sequence.', 'Stability tests and precautions.'],
+finalHtml:`<div data-widget="spot" data-set="omh7"></div><div data-widget="termdeck" data-set="omh7"></div><div class="exam" style="border-color:var(--ok)"><b>➡️ Next</b><br><b>MH.8 Displaced intracapsular fractures in the young.</b><br><button class="pri" style="margin-top:8px" onclick="showModule('omh8')">→ Open</button></div>`,
+sources:'Sources: McRae 3rd edition chapter 17, Surgical technique: Hip hemiarthroplasty (book pages 358–363), Figs 17.11–17.17. Teaching questions by MedLearn.',
+casesHead:"🏥 Cases",casesIntro:"Answer to reveal the next part."};
+LESSONS.omh7=OMH7;
+
+XSTEP.omhyoung={t:"Young displaced neck pathway (McRae Fig. 17.18)",dim:.1,svg:`<svg viewBox="0 0 700 280" style="width:100%" role="img" aria-label="Young neck pathway">
+<g data-k="a"><rect x="20" y="40" width="150" height="50" rx="8" fill="#fff3cd" stroke="#d9730d"/><text x="95" y="70" text-anchor="middle" font-size="12" font-weight="700">Closed reduce?</text></g>
+<g data-k="b"><rect x="200" y="40" width="160" height="50" rx="8" fill="#e8f0fb" stroke="#2f6db3"/><text x="280" y="70" text-anchor="middle" font-size="12" font-weight="700">Open + joysticks</text></g>
+<g data-k="c"><rect x="390" y="40" width="140" height="50" rx="8" fill="#e8f6ee" stroke="#1f9d55"/><text x="460" y="70" text-anchor="middle" font-size="12" font-weight="700">DHS + antirot</text></g>
+<g data-k="d"><rect x="560" y="40" width="120" height="50" rx="8" fill="#fde2ea" stroke="#b3476d"/><text x="620" y="70" text-anchor="middle" font-size="12" font-weight="700">TTWB 6 w</text></g>
+</svg>`,
+steps:[["Try closed","Perfect closed reduction preferred if achievable.",["a"]],["Open if needed","Smith-Petersen anterior approach; 2 mm wires as joysticks for rotation/angulation.",["a","b"]],["Fix angle-stable","Lateral DHS with anti-rotation screw — better than cannulated screws for vertical Pauwel 3 shear.",["a","b","c"]],["Aftercare","Toe-touch weight-bearing 6 weeks; aim surgery within 24 h (intuitive, evidence not clear); aspiration theoretical only.",["a","b","c","d"]]]};
+
+XS.omh8=["Spot the error",[["Healthy patients under 55 with displaced necks are normally reduced and fixed (McRae p. 364).",1],["McRae states clear level-1 proof that every case must be fixed within exactly 24 hours.",0,"Wrong: timing is intuitive; evidence not clear (p. 364)."],["Pauwel type 3 vertical necks favour angle-stable DHS constructs over simple screws.",1],["Toe-touch weight-bearing for 6 weeks follows young fixation.",1]]];
+XT.omh8='smithp,dhs,pauwels,avn,cannscrew';
+const OMH8={
+meta:'Orthopaedics › McRae Ch. 17: Hip › MH.8 · Book page 364 · ⏱ about 14 minutes in 2 steps',
+intro:`<p>Healthy patients under about 55 with displaced necks: save the head with urgent reduction and angle-stable fixation. Lecture twin: ${XL('o7d','L7.4')}.</p>`,
+goals:['Explain why young patients are fixed not replaced', 'Describe open reduction with joysticks and DHS plus anti-rotation screw'],
+cards:[{id:'mh8a',title:'Why fix the young displaced neck (page 364)',min:7,goal:0,obj:['State age/context for head-preserving surgery'],html:`
+<div class="scene"><b>The scene:</b> A 42-year-old after high-energy trauma, Garden IV, vertical fracture line. A replacement would outlive its welcome — McRae wants the head saved if reduction can be perfected.</div>
+<p>In healthy patients under the age of 55 who usually sustained high-energy fractures, displaced fractures are normally reduced and fixed because of the limited life-span of a hip replacement (Fig. 17.18A). Femoral head is clearly at risk of [[avn|avascular necrosis]]; intuitively reduce and stabilise within 24 hours, although clear scientific evidence for that timing is lacking. If fixed closed, joint aspiration to decompress intracapsular haematoma has a theoretical advantage, but benefits are not clearly established (McRae p. 364).</p>
+${FIG('omh-young-fix')}
+<div class="bookref">📖 <b>Open McRae Fig 17.18, p. 364:</b> panels A–D — closed attempt, open joysticks, DHS with anti-rotation screw.</div>
+<div class="hint">💡 <b>"Young + displaced = race to a perfect reduction and a fixed-angle construct — evidence on the clock is softer than the intuition."</b></div>
+<div class="exam"><b>🎓 For exams:</b> &lt;55 healthy → fix; 24 h intuitive not proven; aspiration theoretical not proven.</div>
+<details class="chk"><summary>✅ Checkpoint: what does McRae say about evidence for surgery within 24 hours?</summary><p>Intuitively indicated to protect the head, but there is no clear scientific evidence for this timing (p. 364).</p></details>`,recap:['Under ~55 healthy → fix.', 'AVN risk high.', '24 h / aspiration = intuition &gt; hard proof.'],quiz:[{q:'Healthy under-55 displaced neck — McRae default?',o:['Reduce and fix', 'Primary arthroplasty for every case'],a:0,e:'p. 364.'},{q:'Aspiration of intracapsular haematoma after closed fixation?',o:['Theoretical advantage; benefits not clearly established', 'Mandatory proven life-saving step in all trials McRae cites as settled'],a:0,e:'p. 364.'}]},{id:'mh8b',title:'Open reduction craft and weight-bearing (page 364)',min:7,goal:1,obj:['Describe two-incision open reduction and DHS construct'],html:`
+<div class="scene"><b>The scene:</b> Closed traction will not unlock a rotated head. Two wires become joysticks. A dynamic hip screw with an anti-rotation screw locks a vertical Pauwel 3.</div>
+<p>If perfect closed reduction cannot be achieved, perform open reduction — conveniently on traction. Two incisions: anterior [[smithp|Smith-Petersen]] approach exposes fracture and head; two large (2 mm) guide wires in the head act as joysticks for rotational and angulatory reduction (Fig. 17.18B). Through a second lateral incision, a [[dhs|dynamic hip screw]] with an anti-rotation screw stabilises the reduction. These fractures are often vertically orientated (Pauwels type 3) with shear — fixed-angle construct is mechanically more stable than cannulated screws (Fig. 17.18C,D). Patient should be toe-touch weight-bearing for 6 weeks.</p>
+<div data-widget="stepsvg" data-set="omhyoung"></div>
+<div class="hint">💡 <b>"Joysticks up front. Fixed-angle on the side. Toe-touch for six weeks."</b></div>
+<div class="exam"><b>🎓 For exams:</b> Smith-Petersen + lateral DHS/anti-rotation; Pauwel 3 shear; TTWB 6 weeks.</div>
+<div class="corr">📝 Honest conflict note: some Lecture 7 slides compress timing as a hard six-hour or 24-hour rule; McRae labels 24-hour timing as intuitive without clear evidence — teach McRae's wording here.</div>
+<details class="chk"><summary>✅ Checkpoint: why add an anti-rotation screw with the DHS?</summary><p>Unstable/basicervical and vertical patterns can rotate during drilling/screw insertion; the anti-rotation screw is tightened first for compression/stability (also emphasised in DHS technique p. 369).</p></details>`,recap:['Open if closed imperfect.', 'DHS + anti-rotation.', 'TTWB 6 weeks.'],quiz:[{q:'Preferred fixation for young vertical displaced neck (McRae)?',o:['Dynamic hip screw with anti-rotation screw', 'Three cannulated screws alone as first choice for Pauwel 3'],a:0,e:'p. 364.'},{q:'Weight-bearing after fixation of young displaced neck?',o:['Toe-touch for 6 weeks', 'Immediate sprinting'],a:0,e:'p. 364.'}]}],
+cases:[{id:'mh8k1',title:'Case: Motorbike Garden IV',steps:[{t:`35-year-old, closed reduction imperfect.`,q:'Next?',o:['Open reduction (Smith-Petersen joysticks) then DHS + anti-rotation screw', 'Accept malreduction and discharge'],a:0,e:'p. 364.'}],take:['Perfect reduction is the ticket — open if closed fails.']}],
+flash:[['Age cue', 'Healthy &lt;55 → fix.'], ['Smith-Petersen', 'Anterior open reduction.'], ['DHS + antirot', 'Beats screws for Pauwel 3 shear.'], ['TTWB 6 weeks', 'After young fixation.']],
+exam:['Why fix young.', 'Open technique.', 'Evidence honesty on timing/aspiration.'],
+finalHtml:`<div data-widget="spot" data-set="omh8"></div><div data-widget="termdeck" data-set="omh8"></div><div class="exam" style="border-color:var(--ok)"><b>➡️ Next</b><br><b>MH.9 Extracapsular Evans/AO, DHS versus nail, tip–apex distance.</b><br><button class="pri" style="margin-top:8px" onclick="showModule('omh9')">→ Open</button></div>`,
+sources:'Sources: McRae 3rd edition chapter 17, Displaced intracapsular fractures in young patients (book page 364), Fig. 17.18. Teaching questions by MedLearn.',
+casesHead:"🏥 Cases",casesIntro:"Answer to reveal the next part."};
+LESSONS.omh8=OMH8;
+
+XPK.omhevans={t:"Evans / AO → implant",opts:["Dynamic hip screw","Cephalomedullary nail","Either DHS or nail acceptable discussion"],items:[
+["Simple intertrochanteric / basicervical (Evans 1–2; AO A1)",0,"Stable after reduction → DHS (pp 364–365).",""],
+["Reverse oblique (Evans 4; AO A3)",1,"Intrinsically unstable with DHS → nail.",""],
+["Subtrochanteric (Evans 5; AO A3)",1,"Huge medial compression forces → nail.",""],
+["Comminuted intertrochanteric (Evans 3; AO A2)",2,"Usually DHS; nail sometimes to limit neck shortening.",""]]};
+
+XS.omh9=["Spot the error",[["Tip–apex distance should be under 25 mm (McRae Fig. 17.22).",1],["A superior lag-screw position in the head is acceptable if the AP looks pretty.",0,"Wrong: any superior or anterior position increases failure risk and should not be tolerated (p. 366)."],["Reverse oblique fractures require a cephalomedullary nail (p. 365).",1],["McRae finds conclusive proof that nails beat DHS for every simple intertrochanteric fracture.",0,"Wrong: no conclusive better clinical outcome for ordinary IT fractures (pp 366–367)."]]];
+XT.omh9='evans,aoa123,dhs,tad,cephalonail,reverseob';
+const OMH9={
+meta:'Orthopaedics › McRae Ch. 17: Hip › MH.9 · Book pages 364–367 · ⏱ about 18 minutes in 2 steps',
+intro:`<p>Modified [[evans|Evans]], AO A1–A3, why a [[dhs|dynamic hip screw]] slides, when a [[cephalonail|cephalomedullary nail]] wins, and Baumgaertner [[tad|tip–apex distance]] under 25 mm. Lecture twins: ${XL('o7e','L7.5')}, ${XL('o7d','L7.4')}.</p>`,
+goals:['Map Evans/AO patterns to DHS versus nail', 'Define tip–apex distance <25 mm'],
+cards:[{id:'mh9a',title:'Modified Evans and AO grouping (pages 364–365)',min:9,goal:0,obj:['Assign Evans 1–5 and AO A1–A3 to implants'],html:`
+<div class="scene"><b>The scene:</b> Same "intertrochanteric" word on two films. One is a tidy two-part crack. One is reverse-oblique and wants to escape every DHS. Morphology — not the label — picks the metal.</div>
+<p>Aim again: optimise, then definitive surgery within 24–48 hours with immediate weight-bearing. [[evans|Modified Evans]] (Fig. 17.19): (1) basicervical — treat as (2); (2) simple intertrochanteric/basicervical — relatively stable after reduction → [[dhs|dynamic hip screw]]; (3) comminuted intertrochanteric — collapse risk, may separate trochanters or extend subtrochanteric → generally DHS, sometimes [[cephalonail|cephalomedullary nail]] to minimise neck shortening; (4) reverse oblique — intrinsically unstable, progressive displacement after DHS → nail; (5) subtrochanteric — highly unstable, huge medial compressive forces, rotation/collapse → cephalomedullary nailing. [[aoa123|AO]]: A1 simple intertrochanteric; A2 comminuted intertrochanteric; A3 reverse oblique and subtrochanteric.</p>
+${FIG('omh-evans')}
+<div class="bookref">📖 <b>Open McRae Fig 17.19, p. 365:</b> modified Evans types 1–5 — match each silhouette to DHS or nail.</div>
+<div data-widget="pickset" data-set="omhevans"></div>
+<div class="hint">💡 <b>"Simple → DHS. Reverse oblique or subtrochanteric → nail. Comminuted → DHS usually, nail to spare shortening."</b></div>
+<div class="exam"><b>🎓 For exams:</b> Evans 1–5 implants; AO A3 = reverse oblique + subtrochanteric.</div>
+<details class="chk"><summary>✅ Checkpoint: why does reverse oblique defeat a DHS?</summary><p>Fracture orientation is intrinsically unstable and will progressively displace after DHS fixation — needs a cephalomedullary nail (p. 365).</p></details>`,recap:['Evans morphology guide.', 'AO A1/A2/A3.', 'Reverse oblique & subtroch → nail.'],quiz:[{q:'Reverse oblique preferred implant?',o:['Cephalomedullary nail', 'DHS alone'],a:0,e:'p. 365.'},{q:'AO A3 includes…',o:['Reverse oblique and subtrochanteric fractures', 'Only Garden I necks'],a:0,e:'p. 365.'}]},{id:'mh9b',title:'DHS mechanics, nail comparison and tip–apex distance (pages 365–367)',min:9,goal:1,obj:['Explain sliding compression', 'State TAD <25 mm and nail pros/cons'],html:`
+<div class="scene"><b>The scene:</b> A lag screw sits proud and superior in the head. Six weeks later it has cut out into the joint. The missing number was tip–apex distance.</div>
+<p>The [[dhs|dynamic hip screw]] pairs a lag screw in head/neck with a side-plate barrel on the shaft (Fig. 17.20). Flat sides of the screw match the barrel — allow longitudinal sliding, prevent rotation (Fig. 17.21). Maintains neck-shaft angle with controlled collapse/compression during mobilisation. Lag screw must lie centre of the head near the apex. [[tad|Tip–apex distance]] (Baumgaertner, Fig. 17.22) = Xap + Xlat; keep sum &lt;25 mm to minimise cut-out. Slightly inferior/posterior tip may be accepted; any superior or anterior position increases failure risk and should not be tolerated — eccentric position lets the head rotate off during mobilisation.</p>
+<p>[[cephalonail|Cephalomedullary nail]] (Figs 17.23–17.24) also uses a central lag screw and fixed angle for controlled collapse, but with a shorter lever arm (better for comminution/subtrochanteric), reduced sliding distance (less neck shortening — theoretical function benefit), and percutaneous implantation. Disadvantages versus DHS: higher implant-related fracture risk especially at distal tip of short nails; more expensive; technically harder; for ordinary intertrochanteric fractures (excluding reverse oblique/subtrochanteric) no conclusive proof of better clinical outcome than DHS (pp 366–367).</p>
+${FIG('omh-dhs')}
+${FIG('omh-tad')}
+${FIG('omh-nail-vs-dhs')}
+<div class="bookref">📖 <b>Open McRae Fig 17.20, p. 365:</b> dynamic hip screw overview.</div>
+<div class="bookref">📖 <b>Open McRae Fig 17.21, p. 366:</b> DHS components — flat sides inside the barrel.</div>
+<div class="bookref">📖 <b>Open McRae Fig 17.22, p. 366:</b> tip–apex distance — Xap + Xlat &lt;25 mm.</div>
+<div class="bookref">📖 <b>Open McRae Fig 17.23, p. 366:</b> cephalomedullary nail.</div>
+<div class="bookref">📖 <b>Open McRae Fig 17.24, p. 366:</b> DHS versus nail lever arm (a) and sliding distance (b).</div>
+<div class="hint">💡 <b>"Centre-centre, tip–apex under 25 mm. Nail for reverse oblique/subtroch — not automatically for every A2."</b></div>
+<div class="exam"><b>🎓 For exams:</b> TAD = Xap+Xlat &lt;25 mm; no superior/anterior tip; nail pros/cons honesty.</div>
+<details class="chk"><summary>✅ Checkpoint: define tip–apex distance and its cut-out threshold.</summary><p>Sum of tip-to-apex distances on AP and lateral views; keep &lt;25 mm (Fig. 17.22 / p. 366).</p></details>`,recap:['DHS slides, holds angle.', 'TAD &lt;25 mm.', 'Nail: shorter lever; not proven better for simple IT.'],quiz:[{q:'Tip–apex distance target?',o:['Sum &lt;25 mm on AP + lateral', 'Sum &gt;50 mm'],a:0,e:'Baumgaertner / McRae.'},{q:'McRae on nail vs DHS for ordinary intertrochanteric fractures?',o:['No conclusive proof nail is clinically better', 'Nail always mandatory'],a:0,e:'pp 366–367.'}]}],
+cases:[{id:'mh9k1',title:'Case: Reverse oblique',steps:[{t:`Reverse-oblique pertrochanteric fracture.`,q:'Implant?',o:['Cephalomedullary nail', 'Cannulated screws alone'],a:0,e:'Evans 4 / Box 17.1.'}],take:["Morphology beats the word 'intertrochanteric'."]}],
+flash:[['Evans 4–5', 'Nail territory.'], ['TAD', 'Xap+Xlat &lt;25 mm.'], ['Cut-out', 'Screw exits the head.'], ['Nail honesty', 'Not proven better for simple IT.']],
+exam:['Evans/AO map.', 'TAD number.', 'Nail pros/cons.'],
+finalHtml:`<div data-widget="spot" data-set="omh9"></div><div data-widget="termdeck" data-set="omh9"></div><div class="exam" style="border-color:var(--ok)"><b>➡️ Next</b><br><b>MH.10 DHS and cephalomedullary nail surgical techniques.</b><br><button class="pri" style="margin-top:8px" onclick="showModule('omh10')">→ Open</button></div>`,
+sources:'Sources: McRae 3rd edition chapter 17 pp 364–367 (extracapsular management principles; DHS; cephalomedullary nail; TAD), Figs 17.19–17.24. Teaching questions by MedLearn.',
+casesHead:"🏥 Cases",casesIntro:"Answer to reveal the next part."};
+LESSONS.omh9=OMH9;
+
+XSTEP.omhdhs={t:"DHS insertion steps (McRae Fig. 17.27)",dim:.08,svg:`<svg viewBox="0 0 700 260" style="width:100%" role="img" aria-label="DHS steps">
+<g data-k="w"><rect x="20" y="40" width="120" height="45" rx="6" fill="#e8f0fb" stroke="#2f6db3"/><text x="80" y="68" text-anchor="middle" font-size="11" font-weight="700">Guide wire</text></g>
+<g data-k="m"><rect x="160" y="40" width="120" height="45" rx="6" fill="#e8f0fb" stroke="#2f6db3"/><text x="220" y="68" text-anchor="middle" font-size="11" font-weight="700">Measure</text></g>
+<g data-k="d"><rect x="300" y="40" width="120" height="45" rx="6" fill="#fff3cd" stroke="#d9730d"/><text x="360" y="68" text-anchor="middle" font-size="11" font-weight="700">Drill</text></g>
+<g data-k="l"><rect x="440" y="40" width="120" height="45" rx="6" fill="#e8f6ee" stroke="#1f9d55"/><text x="500" y="68" text-anchor="middle" font-size="11" font-weight="700">Lag screw</text></g>
+<g data-k="p"><rect x="580" y="40" width="100" height="45" rx="6" fill="#fde2ea" stroke="#b3476d"/><text x="630" y="68" text-anchor="middle" font-size="11" font-weight="700">Plate</text></g>
+</svg>`,
+steps:[["Wire to apex","Jig on lateral shaft; tip near head apex; anti-rotation wire/screw above if unstable/basicervical — tighten antirot before overdrilling DHS wire.",["w"]],["Measure and drill","Measuring device on lateral cortex; composite drill for screw+barrel channel; tap rarely needed in elderly.",["w","m","d"]],["Lag and plate","Insert lag screw with flats aligned for barrel; seat plate gently — hammering can drive screw into joint/pelvis in weak bone; distal screw first to centralise plate; full WB, no movement limits.",["w","m","d","l","p"]]]};
+
+XS.omh10=["Spot the error",[["A too-lateral cephalomedullary start point risks varus and construct failure (McRae Fig. 17.30).",1],["Tip–apex distance still matters when using a nail (p. 370).",1],["Hammering the DHS plate hard is always safe in osteoporotic bone.",0,"Wrong: can drive the lag screw into the joint or pelvis (p. 369)."],["Elderly patients after nailing are rarely practically kept non-weight-bearing (p. 371).",1]]];
+XT.omh10='dhs,tad,cephalonail,subtroch,calcar';
+const OMH10={
+meta:'Orthopaedics › McRae Ch. 17: Hip › MH.10 · Book pages 367–372 · ⏱ about 20 minutes in 2 steps',
+intro:`<p>Traction-table set-up, true-lateral imaging, step-by-step [[dhs|dynamic hip screw]] insertion, then [[cephalonail|cephalomedullary nail]] craft including start-point disasters.</p>`,
+goals:['Set up traction table and true lateral imaging', 'Avoid varus from a lateral nail start point'],
+cards:[{id:'mh10a',title:'Shared set-up and dynamic hip screw insertion (pages 367–369)',min:10,goal:0,obj:['Describe traction-table and true-lateral tricks', 'List DHS steps and anti-rotation pearl'],html:`
+<div class="scene"><b>The scene:</b> The lateral image is a diagonal mess because anteversion and external rotation of the distal fragment fooled the C-arm. McRae rotates the intensifier until the greater trochanter sits on the neck — a true lateral.</div>
+<p><b>Shared set-up (Fig. 17.25):</b> radiolucent traction table, foot in traction boot; uninjured limb out of the beam (lithotomy or both extended dropping the good leg). Cannulated screws: no reduction — do not displace with traction. Extracapsular: reduce with longitudinal traction then internal rotation until patella points up; rarely need an assistant to lift a sagging proximal femur. Nailing: banana-position the trunk away from the hip for start-point access. Fluoroscopy: rotate screen so groin post is vertical (Fig. 17.26A); then true lateral with greater trochanter superimposed on neck (Fig. 17.26B) — usually lower the surgeon-side C-arm end.</p>
+<p><b>DHS approach:</b> incision from just below greater trochanter distally; no internervous plane (muscle-splitting); pull vastus lateralis forward, incise aponeurosis ~2 cm from intermuscular septum, elevate muscle. <b>Steps (Fig. 17.27):</b> guide wire to apex; anti-rotation wire/screw for unstable/basicervical — insert/tighten antirot before overdrilling DHS wire; measure; drill; lag screw; plate — distal screw first; full weight-bearing, no movement restrictions.</p>
+${FIG('omh-traction-setup')}
+${FIG('omh-true-lateral')}
+${FIG('omh-dhs')}
+<div class="bookref">📖 <b>Open McRae Fig 17.25, p. 367:</b> traction-table set-up shared by screws, DHS and nails.</div>
+<div class="bookref">📖 <b>Open McRae Fig 17.26, p. 368:</b> image-intensifier positioning — groin post vertical, then true lateral.</div>
+<div class="bookref">📖 <b>Open McRae Fig 17.27, p. 369:</b> DHS insertion sequence 1–5 with anti-rotation wire b.</div>
+<div data-widget="stepsvg" data-set="omhdhs"></div>
+<div class="hint">💡 <b>"True lateral = trochanter on neck. Anti-rotation screw before you drill the DHS wire in unstable patterns."</b></div>
+<div class="exam"><b>🎓 For exams:</b> banana position for nails; true lateral; antirot first; gentle plate seating; full WB.</div>
+<details class="chk"><summary>✅ Checkpoint: why place the most distal plate screw first?</summary><p>Ensures the whole plate lies centrally against the femur (p. 369).</p></details>`,recap:['Traction table rules.', 'True lateral imaging.', 'DHS steps + antirot.'],quiz:[{q:'True lateral hip fluoroscopy cue?',o:['Greater trochanter superimposed on the femoral neck', 'Any oblique fog is fine'],a:0,e:'Fig. 17.26B.'},{q:'Unstable basicervical during DHS?',o:['Place and tighten anti-rotation screw before overdrilling the DHS wire', 'Ignore rotation risk'],a:0,e:'p. 369.'}]},{id:'mh10b',title:'Cephalomedullary nail: forces, start point, steps (pages 370–372)',min:10,goal:1,obj:['Name deforming muscles', 'Avoid lateral/posterior start-point failures'],html:`
+<div class="scene"><b>The scene:</b> A nail starts too lateral. The fracture tilts into varus, the lag screw rides high, and cut-out is already writing itself into the follow-up clinic.</div>
+<p><b>Reduction forces (Fig. 17.28):</b> glutei abduct proximal fragment; iliopsoas flexes and externally rotates; adductors/quadriceps/hamstrings shorten and translate the shaft medially — may need open clamp or cerclage. <b>Start points (Fig. 17.29):</b> lateral to tip, tip of trochanter (most cephalomedullary nails), or piriformis (straight nails). Sequential broaching tends to migrate entry laterally — too lateral → varus malalignment, high screw, construct failure (Fig. 17.30). Posterior start into a fracture extension can miss the proximal fragment (Fig. 17.31).</p>
+<p><b>Steps (Fig. 17.32):</b> threaded wire → overdrill; ball-tipped wire to distal segment (reduction spoon helps avoid medial escape); measure/ream; nail on jig so lag-screw holes allow centre-centre head position (rotate nail for lateral plane); TAD still &lt;2.5 cm; lag screw ± set-screw (sliding like DHS or rigid lock); distal free-hand locking with perfect circles. <b>Weight-bearing:</b> elderly rarely restricted; young highly comminuted locked constructs may need restricted weight-bearing ~8 weeks until callus.</p>
+${FIG('omh-subtroch-forces')}
+${FIG('omh-nail-start')}
+<div class="bookref">📖 <b>Open McRae Fig 17.28, p. 371:</b> muscular forces on a subtrochanteric fracture.</div>
+<div class="bookref">📖 <b>Open McRae Fig 17.29, p. 372:</b> start points a lateral, b tip, c piriformis.</div>
+<div class="bookref">📖 <b>Open McRae Fig 17.30, p. 372:</b> too-lateral start → varus.</div>
+<div class="bookref">📖 <b>Open McRae Fig 17.31, p. 372:</b> posterior start misses proximal fragment.</div>
+<div class="bookref">📖 <b>Open McRae Fig 17.32, p. 373:</b> nail technique sequence.</div>
+<div class="hint">💡 <b>"Start at the tip, not lateral. TAD still rules. Perfect circles distally."</b></div>
+<div class="exam"><b>🎓 For exams:</b> three deforming muscle groups; lateral start = varus; TAD &lt;2.5 cm; WB nuances young vs old.</div>
+<details class="chk"><summary>✅ Checkpoint: name the three muscle-force problems around a subtrochanteric fracture.</summary><p>Abduction (glutei); flexion/external rotation (iliopsoas); medial translation/shortening (adductors, quadriceps, hamstrings) (Fig. 17.28).</p></details>`,recap:['Know the deforming forces.', 'Start-point discipline.', 'TAD + distal locks.'],quiz:[{q:'Too-lateral nail start tends to cause…',o:['Varus malalignment and high screw position', 'Automatic perfect valgus'],a:0,e:'Fig. 17.30.'},{q:'TAD target during nailing?',o:['Still under 2.5 cm', 'Ignore TAD once a nail is chosen'],a:0,e:'p. 370.'}]}],
+cases:[{id:'mh10k1',title:'Case: Banana and beam',steps:[{t:`Planning a short cephalomedullary nail.`,q:'Trunk position tip?',o:['Banana the trunk away from the hip for start-point access', 'Ignore access and fight soft tissues'],a:0,e:'p. 367.'}],take:['Set-up prevents start-point disasters.']}],
+flash:[['True lateral', 'Trochanter on neck.'], ['Antirot first', 'Before DHS overdrill.'], ['Lateral start', 'Varus nail.'], ['Perfect circles', 'Distal free-hand locks.']],
+exam:['Set-up.', 'DHS sequence.', 'Nail start-point failures.'],
+finalHtml:`<div data-widget="spot" data-set="omh10"></div><div data-widget="termdeck" data-set="omh10"></div><div class="exam" style="border-color:var(--ok)"><b>➡️ Next</b><br><b>MH.11 Follow-up and complications after hip fracture.</b><br><button class="pri" style="margin-top:8px" onclick="showModule('omh11')">→ Open</button></div>`,
+sources:'Sources: McRae 3rd edition chapter 17 surgical techniques DHS and cephalomedullary nail (book pages 367–372), Figs 17.25–17.32. Teaching questions by MedLearn.',
+casesHead:"🏥 Cases",casesIntro:"Answer to reveal the next part."};
+LESSONS.omh10=OMH10;
+
+XPK.omhcomp={t:"Match the McRae figure",opts:["Up to 10%","Up to 30%","Around 5%","Around 25%","Up to 5%"],items:[
+["AVN after undisplaced neck fracture",0,"Up to 10% (p. 374).",""],
+["AVN after displaced neck fracture",1,"Up to 30%.",""],
+["Non-union undisplaced",2,"5%.",""],
+["Non-union displaced",3,"25%.",""],
+["Infection after arthroplasty (local early)",4,"Up to 5% (very low for screws/nails).",""]]};
+
+XS.omh11=["Spot the error",[["AVN occurs in up to 10% of undisplaced and 30% of displaced intracapsular fractures (McRae p. 374).",1],["Non-union about 5% undisplaced and 25% displaced (p. 374).",1],["Infection is higher after cannulated screws than after arthroplasty according to McRae.",0,"Wrong: infection very low for screws/nails; up to 5% for arthroplasty."],["One-year mortality around 30% reflects frailty (p. 374).",1]]];
+XT.omh11='avn,thr,hemiarthro,cementedstem';
+const OMH11={
+meta:'Orthopaedics › McRae Ch. 17: Hip › MH.11 · Book pages 373–374 · ⏱ about 15 minutes in 2 steps',
+intro:`<p>Who needs clinic radiographs, and the early/late complication list with McRae's percentages — quoted only as the book states them.</p>`,
+goals:['Contrast elderly versus young follow-up philosophy', 'List early and late complications with McRae figures'],
+cards:[{id:'mh11a',title:'Outpatient follow-up: elderly versus young (pages 373–374)',min:7,goal:0,obj:['Explain symptom-triggered elderly review', 'Recall young surveillance timetable'],html:`
+<div class="scene"><b>The scene:</b> An asymptomatic 86-year-old after an uneventful hemiarthroplasty is booked into endless X-ray clinics "just in case". McRae would rather teach her red-flag pain and free the slot for a young fixation patient who needs AVN watch.</div>
+<p><b>Elderly:</b> few advantages to routine review after hip-fracture surgery. Advise that construct failure or [[avn|avascular necrosis]] will cause pain — seek help if comfort deteriorates. Asymptomatic patients rarely need further intervention; painful failure is generally salvaged with arthroplasty.</p>
+<p><b>Young:</b> follow-up recommended because salvage may be offered before symptoms are marked. Example timetable (p. 374): week 2 wound/neurovascular + AP/lateral hip (revise if lag-screw cut-out (linked to tip–apex distance &gt;25 mm — see MH.9), loss of fixation); week 8 range of movement, lift restrictions if uniting, AP/lateral femur; week 26 exclude early AVN on AP/lateral hip (consider protected weight-bearing or salvage if AVN); then 6-monthly or annual review to total 3 years with radiographs to exclude AVN.</p>
+<div class="bookref">📖 <b>Open McRae outpatient management summary, p. 374:</b> week-2 wound/neurovascular check with AP+lateral hip; week-8 range and lifting restrictions with AP+lateral femur; later reviews as symptoms dictate in the elderly.</div>
+<div class="hint">💡 <b>"Old: teach red-flag pain. Young: scheduled AVN surveillance for 3 years."</b></div>
+<div class="exam"><b>🎓 For exams:</b> elderly symptom-triggered; young 2 / 8 / 26 weeks then to 3 years.</div>
+<details class="chk"><summary>✅ Checkpoint: how long does McRae suggest watching young patients for AVN radiographically?</summary><p>To a total of 3 years with check radiographs (p. 374).</p></details>`,recap:['Elderly: symptoms drive review.', 'Young: structured AVN watch.', 'Painful failure → usually arthroplasty salvage.'],quiz:[{q:'Routine asymptomatic review after elderly hip-fracture surgery?',o:['Few advantages — teach red-flag pain instead', 'Mandatory weekly X-rays for life'],a:0,e:'p. 373.'},{q:'Young AVN radiographic surveillance duration (McRae)?',o:['About 3 years total', '48 hours only'],a:0,e:'p. 374.'}]},{id:'mh11b',title:'Complications early and late (page 374)',min:8,goal:1,obj:['Quote McRae complication percentages with labels'],html:`
+<div class="scene"><b>The scene:</b> Viva board: "Percentages for AVN and non-union by displacement?" You answer with McRae's numbers and name the page.</div>
+<p><b>Early local:</b> infection — very low for cannulated screws or intramedullary nailing, up to 5% for arthroplasty. Fixation failure — usually technical error or pathological bone (rheumatoid arthritis, osteomalacia). <b>Early general:</b> fat embolism with arthroplasty and nailing — intraoperative hypoxia during cement pressurisation or when arthroplasty is reduced (femoral veins straighten); minimise by adequate canal lavage and drying.</p>
+<p><b>Late local:</b> metalwork irritation from controlled collapse and screw back-out. [[avn|Avascular necrosis]] — up to 10% undisplaced, 30% displaced; radiographic sclerosis and pain; usually salvaged with [[thr|total hip replacement]]; osteotomy, arthrodesis or core decompression may be considered in young patients. Non-union — 5% undisplaced, 25% displaced. Osteoarthritis — around 25% within 8 years. Dislocation — associated with arthroplasty; more common after THR than hemiarthroplasty and with the posterior approach. <b>Late general:</b> death — mortality around 30% in the first year, reflecting frailty of this population (same figure as epidemiology on p. 352).</p>
+<div data-widget="pickset" data-set="omhcomp"></div>
+<div class="hint">💡 <b>"Displacement multiplies AVN and non-union. Quote McRae's numbers — do not invent new ones."</b></div>
+<div class="exam"><b>🎓 For exams:</b> AVN 10%/30%; non-union 5%/25%; OA ~25% at 8 years; infection ≤5% arthroplasty; 1-year mortality ~30%; THR dislocates more than hemi.</div>
+<div class="corr">📝 Lecture 7 may quote slightly different complication percentages from slides or 4th-edition tables — when they differ, label the source. This card uses only 3rd-edition McRae page 374.</div>
+<details class="chk"><summary>✅ Checkpoint: AVN rates undisplaced versus displaced?</summary><p>Up to 10% versus up to 30% (McRae p. 374).</p></details>`,recap:['Infection/fixation failure/fat embolism early.', 'AVN, non-union, OA, dislocation late.', '30% one-year mortality.'],quiz:[{q:'Non-union after displaced intracapsular fracture (McRae)?',o:['About 25%', 'About 0.1%'],a:0,e:'p. 374.'},{q:'Dislocation risk comparison?',o:['Higher after THR than hemiarthroplasty; higher with posterior approach', 'Higher after cannulated screws than any arthroplasty'],a:0,e:'p. 374.'}]}],
+cases:[{id:'mh11k1',title:'Case: Painful sclerosis at 6 months',steps:[{t:`Young patient, fixed displaced neck, new pain, head sclerosis on X-ray.`,q:'Likely problem?',o:['Avascular necrosis — discuss salvage options', 'Ignore and discharge forever'],a:0,e:'p. 374.'}],take:['Young follow-up exists to catch salvageable AVN early.']}],
+flash:[['AVN 10/30', 'Undisplaced / displaced %.'], ['Non-union 5/25', 'Same split.'], ['Infection ≤5%', 'Arthroplasty.'], ['Death ~30%', 'First-year mortality.']],
+exam:['Follow-up philosophy.', 'Full complication table with sources.'],
+finalHtml:`<div data-widget="spot" data-set="omh11"></div><div data-widget="termdeck" data-set="omh11"></div><div class="exam" style="border-color:var(--ok)"><b>➡️ Next</b><br><b>MH.12 Hip dislocation — native and prosthetic.</b><br><button class="pri" style="margin-top:8px" onclick="showModule('omh12')">→ Open</button></div>`,
+sources:'Sources: McRae 3rd edition chapter 17 outpatient management and complications (book pages 373–374). Teaching questions by MedLearn.',
+casesHead:"🏥 Cases",casesIntro:"Answer to reveal the next part."};
+LESSONS.omh11=OMH11;
+
+XSTEP.omhred={t:"Posterior closed reduction (McRae Fig. 17.37)",dim:.1,svg:`<svg viewBox="0 0 640 260" style="width:100%" role="img" aria-label="Reduction">
+<g data-k="a"><rect x="40" y="40" width="250" height="55" rx="8" fill="#e8f0fb" stroke="#2f6db3"/><text x="165" y="75" text-anchor="middle" font-size="13" font-weight="700">Flex 90° + inline lift</text></g>
+<g data-k="b"><rect x="340" y="40" width="250" height="55" rx="8" fill="#e8f6ee" stroke="#1f9d55"/><text x="465" y="75" text-anchor="middle" font-size="13" font-weight="700">Gentle rotation → clunk</text></g>
+<g data-k="c"><rect x="140" y="140" width="360" height="55" rx="8" fill="#fff3cd" stroke="#d9730d"/><text x="320" y="175" text-anchor="middle" font-size="13" font-weight="700">Test stability — avoid re-dislocating</text></g>
+</svg>`,
+steps:[["Relax","Complete muscle relaxation is the key for native hips.",["a"]],["Lift","Assistant stabilises pelvis; hip flexed 90°; ankle under arm; lift with legs; gentle IR/ER until clunk.",["a","b"]],["Stability","Bring toward 90° with gentle downward pressure; instability → posterior wall may need fixation; then CT for native hips.",["a","b","c"]]]};
+XSORT.omhdis={t:"Native or prosthetic clue?",labels:["Native hip dislocation","Prosthetic hip dislocation"],items:[
+["Dashboard high-energy trauma; possible patella/shaft/acetabular wall/sciatic injuries",0,"Fig. 17.33 cascade."],
+["Flexion + internal rotation tying shoes or rising from a low seat",1,"Low-energy prosthetic posterior dislocation (p. 375)."],
+["Head appears small overlapping acetabular roof on AP pelvis",0,"Magnification cue for posterior native dislocation (Fig. 17.36)."],
+["Light 'clunk' may be head on cup rim — check length/position; may need GA if stuck",1,"Prosthetic reduction pearl (p. 377)."]]};
+
+XS.omh12=["Spot the error",[["Reduction within 6 hours reduces AVN incidence after native dislocation (McRae p. 378).",1],["Sciatic palsy accompanies about 10% of native hip dislocations (p. 378).",1],["CT is unnecessary after reducing a native hip dislocation.",0,"Wrong: CT assesses head/acetabulum and loose bodies (pp 376–377)."],["Prosthetic dislocations are usually high-energy dashboard injuries.",0,"Wrong: usually low-energy flexion/internal rotation (p. 375)."]]];
+XT.omh12='hipdisloc,sciaticn,avn,kocher,pipkin';
+const OMH12={
+meta:'Orthopaedics › McRae Ch. 17: Hip › MH.12 · Book pages 375–377 · ⏱ about 18 minutes in 2 steps',
+intro:`<p>Dashboard native dislocations, prosthetic dislocations from tying shoes, closed reduction craft, and when to open. Lecture twin: ${XL('o7g','L7.7')}.</p>`,
+goals:['Contrast native high-energy versus prosthetic low-energy dislocations', 'Perform closed reduction logic and list open indications'],
+cards:[{id:'mh12a',title:'Mechanisms, posture and imaging (pages 375–376)',min:9,goal:0,obj:['Describe dashboard injury chain', 'Read posture and AP cues'],html:`
+<div class="scene"><b>The scene:</b> Dashboard impact. Knee, shaft, hip, posterior wall and [[sciaticn|sciatic nerve]] can all share the force. The limb is short, flexed and internally rotated — the opposite twist of many neck fractures.</div>
+<p>Native hip dislocation is usually posterior after high-energy trauma (motor vehicle collision or fall from height). Dashboard impact to the knee (Fig. 17.33) may associate patella, femoral shaft, hip, posterior acetabular wall and sciatic nerve injuries. Anterior dislocation is less common after an abduction force. Prosthetic dislocation usually follows flexion and internal rotation (shoes, low seats) and is also mostly posterior (Fig. 17.34). Native = violent trauma → full primary/secondary survey; prosthetic = low energy.</p>
+<p><b>Clinical:</b> shortened, flexed, internally rotated (Fig. 17.35) — less evident if femur also fractured. Severe pain; will not tolerate passive movement. Sciatic palsy common after posterior dislocation; femoral artery/nerve compromise in anterior dislocation. <b>Imaging:</b> AP pelvis usually diagnostic (Fig. 17.36) — posterior: head often appears small (closer to plate, less magnified) overlapping acetabular roof; hunt acetabulum/head/neck fractures. CT after reduction for acetabulum/head integrity and incarcerated loose bodies — small fragments in the cotyloid fossa with soft-tissue attachments may stay; loose intra-articular fragments need removal.</p>
+${FIG('omh-dashboard')}
+${FIG('omh-dislocate')}
+<div class="bookref">📖 <b>Open McRae Fig 17.33, p. 375:</b> dashboard injury force chain a–e.</div>
+<div class="bookref">📖 <b>Open McRae Fig 17.34, p. 375:</b> dislocated total hip replacement.</div>
+<div class="bookref">📖 <b>Open McRae Fig 17.35, p. 375:</b> posterior dislocation posture (may be masked by femoral fracture).</div>
+<div class="bookref">📖 <b>Open McRae Fig 17.36, p. 376:</b> AP appearance of posterior native dislocation.</div>
+<div data-widget="sortset" data-set="omhdis"></div>
+<div class="hint">💡 <b>"Short-flex-IR = posterior dislocation until proven otherwise. CT after native reduction."</b></div>
+<div class="exam"><b>🎓 For exams:</b> dashboard associates; posture; small-head AP cue; CT after reduce; sciatic vs femoral nerve by direction.</div>
+<details class="chk"><summary>✅ Checkpoint: which nerve is classically threatened by posterior dislocation?</summary><p>Sciatic nerve (p. 376); accompanies about 10% of native dislocations (complications box p. 378).</p></details>`,recap:['High-energy native vs low-energy prosthetic.', 'Short-flex-IR posture.', 'CT after native reduction.'],quiz:[{q:'Classic posterior dislocation posture?',o:['Shortened, flexed, internally rotated', 'Shortened and externally rotated only'],a:0,e:'Fig. 17.35.'},{q:'After reducing a native dislocation, next imaging?',o:['Computed tomography of the hip', 'Nothing further ever'],a:0,e:'p. 376.'}]},{id:'mh12b',title:'Reduction, open indications and aftercare (pages 376–377)',min:9,goal:1,obj:['Describe closed reduction and open indications', 'State AVN timing and sciatic prognosis figures'],html:`
+<div class="scene"><b>The scene:</b> Native head still out at hour five. Every extra hour is AVN risk. Complete relaxation, inline lift, clunk — then stability test without bouncing it out again.</div>
+<p>Reduce native dislocation on recognition to minimise [[avn|avascular necrosis]]. Key = complete muscle relaxation. Technique (Fig. 17.37): supine, assistant stabilises pelvis, hip flexed 90°, ankle under arm/forearm under calf, lift with legs, gentle rotation to clunk (less striking if large posterior wall fracture). Floor-stretcher variant for leverage. Then assess stability toward 90° with gentle downward pressure — avoid re-dislocating (further articular scuffing). Instability indicates posterior-wall fixation. Knee extension splint while recovering from sedation to prevent flexion re-dislocation; repeat neurovascular exam; confirm reduction on radiographs; CT for native hips.</p>
+<p><b>Open reduction indications:</b> cannot achieve congruent closed reduction; concurrent femoral head/neck or posterior wall fractures; retained loose bodies. [[kocher|Kocher–Langenbeck]] posterior approach for wall fixation, head and sciatic exposure. Fix neck/shaft first if they block reduction. Anterior dislocation: flex, correct abduction/external rotation — may convert to posterior then treat as above. Prosthetic: ED sedation usually enough; light clunk may be rim contact — check length/position; GA if irreducible; rare open reduction ± revise malpositioned components.</p>
+<p><b>Aftercare:</b> native — full WB if stable without wall fixation but active flexion only to 90° in neutral rotation for 6 weeks for capsule; protected WB 6 weeks if wall fixed. Prosthetic — teach avoid flexion+IR and high-risk manoeuvres; recurrent instability → consider revision.</p>
+<p><b>Complications (p. 378 box):</b> sciatic palsy ~10% native dislocations — expectant unless new after reduction/surgery (entrapment possible); about one-third recover fully, one-third partially, one-third permanent. AVN up to 10%; reduction within 6 hours reduces incidence. Osteoarthritis ~25% within 8 years.</p>
+${FIG('omh-reduce')}
+<div class="bookref">📖 <b>Open McRae Fig 17.37, p. 376:</b> closed reduction steps for posterior dislocation.</div>
+<div data-widget="stepsvg" data-set="omhred"></div>
+<div class="hint">💡 <b>"Relax completely. Lift, do not yank. Stability test gently. Six-hour native reduction window for AVN."</b></div>
+<div class="exam"><b>🎓 For exams:</b> open indications; Kocher–Langenbeck; 6-hour AVN window; sciatic 10% and one-third recovery thirds; OA 25%/8 years.</div>
+<div class="corr">📝 Lecture 7 emphasises the six-hour window strongly; McRae agrees reduction within 6 hours reduces AVN incidence (p. 378) — aligned here.</div>
+<details class="chk"><summary>✅ Checkpoint: list three indications for open reduction of a native dislocation.</summary><p>Failed congruent closed reduction; associated head/neck/posterior-wall fractures; retained loose bodies (p. 377).</p></details>`,recap:['Closed reduction craft.', 'Open if blocked/unstable/fragments.', '6 h AVN; sciatic thirds.'],quiz:[{q:'AVN after native dislocation — McRae?',o:['Up to 10%; lower if reduced within 6 hours', 'Inevitable in every case'],a:0,e:'p. 378.'},{q:'Sciatic palsy recovery split (McRae)?',o:['About one-third full, one-third partial, one-third permanent', 'Always 100% recovery'],a:0,e:'p. 378.'}]}],
+cases:[{id:'mh12k1',title:'Case: Shoes versus dashboard',steps:[{t:`THR patient dislocated tying shoes; reduced in ED with a soft clunk but leg still short.`,q:'Worry?',o:['Incomplete reduction — head may only be on the cup rim; reassess and image', 'Always accept any clunk as perfect'],a:0,e:'p. 377.'}],take:["Prosthetic 'clunk' can lie — confirm with length and radiographs."]}],
+flash:[['Short-flex-IR', 'Posterior dislocation.'], ['6 hours', 'Native AVN window.'], ['Sciatic 10%', 'One-third recovery thirds.'], ['CT after', 'Native reduction rule.']],
+exam:['Mechanisms.', 'Reduction.', 'Complication figures.'],
+finalHtml:`<div data-widget="spot" data-set="omh12"></div><div data-widget="termdeck" data-set="omh12"></div><div class="exam" style="border-color:var(--ok)"><b>➡️ Next</b><br><b>MH.13 Femoral head (Pipkin) fractures.</b><br><button class="pri" style="margin-top:8px" onclick="showModule('omh13')">→ Open</button></div>`,
+sources:'Sources: McRae 3rd edition chapter 17 Hip dislocation (book pages 375–378 complications box), Figs 17.33–17.37. Teaching questions by MedLearn.',
+casesHead:"🏥 Cases",casesIntro:"Answer to reveal the next part."};
+LESSONS.omh12=OMH12;
+
+XPK.omhpip={t:"Pipkin type",opts:["Type 1 infrafoveal","Type 2 suprafoveal (weight-bearing)","Type 3 with neck fracture","Type 4 with acetabular fracture"],items:[
+["Head fragment below the fovea only",0,"Fig. 17.38 type 1.",""],
+["Fragment through the weight-bearing dome above the fovea",1,"Type 2 — usually fix if large.",""],
+["Head fracture plus femoral neck fracture",2,"Type 3.",""],
+["Head fracture plus acetabulum fracture",3,"Type 4 — approach may follow the wall.",""]]};
+
+XS.omh13=["Spot the error",[["Pipkin II involves the weight-bearing (suprafoveal) head (McRae p. 378).",1],["Small comminuted head fragments are generally excised (p. 378).",1],["Large suprafoveal fragments should generally be discarded without fixation.",0,"Wrong: generally reduce and fix (p. 378)."],["Titanium screws reduce later MRI interference versus some alternatives (p. 378).",1]]];
+XT.omh13='pipkin,smithp,avn,hipdisloc';
+const OMH13={
+meta:'Orthopaedics › McRae Ch. 17: Hip › MH.13 · Book page 378 · ⏱ about 14 minutes in 2 steps',
+intro:`<p>[[pipkin|Pipkin]] femoral-head fractures usually ride with dislocation. Classify by fovea and associated injuries, then decide excise versus fix. Lecture twin: ${XL('o7b','L7.2')}.</p>`,
+goals:['Recite Pipkin I–IV', 'Choose excision versus fixation and approach options'],
+cards:[{id:'mh13a',title:'Pipkin classification (page 378)',min:7,goal:0,obj:['Define types 1–4'],html:`
+<div class="scene"><b>The scene:</b> After a dashboard reduction, CT shows a chip off the femoral head. Is it below the fovea junk, or through the weight-bearing roof that must be saved?</div>
+<p>Fractures of the femoral head are generally — but not inevitably — associated with hip dislocation. [[pipkin|Pipkin classification]] (Fig. 17.38) relates fracture-line position and associated injuries: <b>Type 1</b> infrafoveal; <b>Type 2</b> suprafoveal within the weight-bearing portion of the head; <b>Type 3</b> associated femoral neck fracture; <b>Type 4</b> associated acetabular fracture.</p>
+${FIG('omh-pipkin')}
+<div class="bookref">📖 <b>Open McRae Fig 17.38, p. 378:</b> Pipkin 1–4 panels — compare fragment height to the fovea and look for neck or wall company.</div>
+<div data-widget="pickset" data-set="omhpip"></div>
+<div class="hint">💡 <b>"Below fovea = type 1. Through the dome = type 2. Add neck = 3. Add wall = 4."</b></div>
+<div class="exam"><b>🎓 For exams:</b> Pipkin I–IV definitions; usually with dislocation.</div>
+<details class="chk"><summary>✅ Checkpoint: which Pipkin type involves the weight-bearing dome?</summary><p>Type 2 — suprafoveal (p. 378).</p></details>`,recap:['Usually with dislocation.', 'I infra; II supra; III +neck; IV +acetabulum.'],quiz:[{q:'Pipkin II means…',o:['Suprafoveal fragment in the weight-bearing head', 'Infrafoveal only'],a:0,e:'p. 378.'},{q:'Pipkin IV adds…',o:['An acetabular fracture', 'A tibial plateau fracture'],a:0,e:'p. 378.'}]},{id:'mh13b',title:'Management: excise, fix and approaches (page 378)',min:7,goal:1,obj:['State fragment rules and fixation pearls'],html:`
+<div class="scene"><b>The scene:</b> A large suprafoveal fragment after dislocation. Excising it would remove the patient's roof. McRae reaches for low-profile titanium screws and an approach that can also fix the wall if needed.</div>
+<p>Small or comminuted fragments should be excised; large fragments, particularly from the suprafoveal region, should generally be reduced and fixed. Surgical approach may be dictated by the need to fix an associated acetabular or femoral neck fracture. Otherwise, because the fragment is typically superanterior, options include [[smithp|Smith-Petersen]] approach, trochanteric osteotomy, or Ganz surgical dislocation. Fix with 2 mm titanium screws — good compression between low-profile head and subchondral bone, and less interference with later magnetic resonance imaging if [[avn|avascular necrosis]] is suspected. Headless screws may suit fragments with sufficient subchondral depth.</p>
+<div class="hint">💡 <b>"Small junk out. Large dome back in with titanium screws. Approach follows associated fractures."</b></div>
+<div class="exam"><b>🎓 For exams:</b> excise small/comminuted; fix large suprafoveal; Smith-Petersen / trochanteric osteotomy / Ganz; 2 mm titanium screws favour later MRI.</div>
+<div class="corr">📝 Lecture 7 quotes additional Pipkin complication percentages (OA ≈50%, AVN ≈20%, heterotopic ossification ranges) from slides — those are lecture figures, not printed on McRae p. 378. Keep them labelled as lecture data when you revise ${XL('o7b','L7.2')}; this deep-dive stays with McRae's dislocation-box figures on p. 378 for shared AVN/OA context.</div>
+<details class="chk"><summary>✅ Checkpoint: why prefer titanium screws in the head?</summary><p>Low-profile compression and less interference with subsequent MRI if AVN is a concern (p. 378).</p></details>`,recap:['Excise small.', 'Fix large dome.', 'Titanium for MRI friendliness.'],quiz:[{q:'Large suprafoveal fragment — McRae?',o:['Generally reduce and fix', 'Always leave everyone non-operative'],a:0,e:'p. 378.'},{q:'Screw material pearl for later MRI?',o:['2 mm titanium screws', 'Only ferromagnetic steel mandatory'],a:0,e:'p. 378.'}]}],
+cases:[{id:'mh13k1',title:'Case: Dome chip',steps:[{t:`Pipkin II large fragment after reduced posterior dislocation.`,q:'Plan?',o:['Open reduction and internal fixation via suitable anterior/dislocation approach', 'Excise the entire weight-bearing dome routinely'],a:0,e:'p. 378.'}],take:['Save the dome when the fragment is large.']}],
+flash:[['Pipkin I', 'Infrafoveal.'], ['Pipkin II', 'Suprafoveal weight-bearing.'], ['Pipkin III/IV', '+ neck / + acetabulum.'], ['Titanium screws', 'Fix + MRI friendly.']],
+exam:['Classification.', 'Excise vs fix.', 'Approaches.'],
+finalHtml:`<div data-widget="spot" data-set="omh13"></div><div data-widget="termdeck" data-set="omh13"></div><div class="exam" style="border-color:var(--ok)"><b>➡️ Next</b><br><b>MH.14 Periprosthetic Vancouver fractures and atypical hip fractures.</b><br><button class="pri" style="margin-top:8px" onclick="showModule('omh14')">→ Open</button></div>`,
+sources:'Sources: McRae 3rd edition chapter 17 Femoral head (Pipkin) fractures (book page 378), Fig. 17.38. Teaching questions by MedLearn.',
+casesHead:"🏥 Cases",casesIntro:"Answer to reveal the next part."};
+LESSONS.omh13=OMH13;
+
+XPK.omhvanc={t:"Vancouver plan (McRae Table 17.1)",opts:["Conservative","ORIF (keep well-fixed stem) — caution transverse at tip","Revision arthroplasty (loose stem, bone OK)","Revision ± graft or endoprosthesis (loose + poor bone)","Plate overlapping the stem (avoid kissing implants)"],items:[
+["Vancouver A — trochanter, stable implant",0,"Conservative (Table 17.1).",""],
+["Vancouver B1 — stem well fixed",1,"ORIF; beware transverse fractures at stem tip.",""],
+["Vancouver B2 — loose stem, normal bone",2,"Usually long-stem revision; special polished-taper cement reconstruction possible.",""],
+["Vancouver B3 — loose stem, deficient bone",3,"Long stem + graft or proximal femoral endoprosthesis.",""],
+["Vancouver C — shaft below stable stem",4,"Plate overlapping stem; do not nail beside stem ([[kissing|kissing implants]]).",""]]};
+XSORT.omhatyp={t:"Atypical fracture feature?",labels:["Supports atypical pattern","Not a McRae atypical feature"],items:[
+["Long-term bisphosphonate therapy in about 80%",0,"p. 383."],
+["Prodromal thigh pain in about 30%",0,"p. 383."],
+["Lateral cortical beaking / thickening",0,"Fig. 17.41."],
+["High-energy multi-fragment spiral shaft fracture in a young footballer",1,"Opposite personality — not atypical."]]};
+
+XS.omh14=["Spot the error",[["Vancouver C fractures below a stable stem are plated with proximal overlap rather than nailed beside the stem (McRae p. 381).",1],["Average union after periprosthetic fixation about 40 weeks (p. 382).",1],["Atypical fractures are linked to long-term bisphosphonates in about 80% of McRae's described cases (p. 383).",1],["Incomplete atypical lesions are never considered for prophylactic nailing.",0,"Wrong: usually also nailed prophylactically (p. 383)."]]];
+XT.omh14='vancouver,kissing,barrelstave,atypff,beaking,prodromal,teriparat,cephalonail,calcar';
+const OMH14={
+meta:'Orthopaedics › McRae Ch. 17: Hip › MH.14 · Book pages 379–384 · ⏱ about 22 minutes in 2 steps',
+intro:`<p>[[vancouver|Vancouver]] periprosthetic fractures around a hip stem, barrel-stave fixation craft, then [[atypff|atypical]] subtrochanteric fractures with bisphosphonate beaking. Lecture twins: ${XL('o7h','L7.8')}, ${XL('o7f','L7.6')}.</p>`,
+goals:['Apply Vancouver A/B/C treatment table', 'Recognise and nail atypical fractures including the opposite femur'],
+cards:[{id:'mh14a',title:'Vancouver classification and Table 17.1 (pages 379–382)',min:11,goal:0,obj:['Map AG/AL, B1–B3, C to treatment', 'Describe barrel-stave ORIF pearls'],html:`
+<div class="scene"><b>The scene:</b> An 82-year-old with a cemented THR falls. The crack hugs the stem. First question is not "which plate?" — it is "is the stem still married to bone?"</div>
+<p>Periprosthetic fractures rise as prostheses become common in frail osteoporotic patients. Aim: one operation allowing full weight-bearing without delay. [[vancouver|Vancouver]] (Fig. 17.39): <b>A</b> trochanters not affecting implant stability — AG greater, AL lesser; <b>B</b> around the stem — B1 stem stable/well fixed, B2 stem unstable, B3 unstable + deficient bone stock; <b>C</b> below a still-stable prosthesis. Clinical picture like a hip fracture plus prior THR; prodromal hip pain suggests prior stem loosening. Films: AP/lateral hip and femur. Most stable when supine; displaced unstable fractures may need gentle traction realignment after analgesia/block, then skin traction, then reassess neurovascular status and films. Refer all to orthopaedics.</p>
+<p><b>Table 17.1:</b> A → conservative; B1 → ORIF (caution transverse fractures at stem tip — heal less reliably; consider revision); B2 → usually revision long stem/endoprosthesis, but polished tapered cemented stems may allow reconstructing bone–cement interfaces then reinserting the stem ± fresh cement skim; B3 → long stem + structural graft or proximal femoral replacement into intact distal canal; C → cannot nail past the stem — avoid [[kissing|kissing implants]] (stress riser); plate must overlap the stem proximally.</p>
+<p><b>ORIF craft (Fig. 17.40):</b> lateral incision incorporating old scar (avoid tramline necrosis); sub-vastus approach (vastus lateralis femoral nerve / biceps sciatic); ligate perforators. Clear soft tissue/cement debris; anatomically reduce — especially medial cortex and [[calcar|calcar]] (load-bearer). [[barrelstave|Barrel-staved]] multifragmentary patterns: cerclage wires/cables then lateral plate (4.5 mm broad AO or locking/cable hybrids); proximal screws through cement beside the stem when possible; cables linked to plate so they do not slip. Full WB when possible; protect if medial cortex deficient. Outpatient: weeks 2/6/12 films; average time to union = 40 weeks (p. 382).</p>
+${FIG('omh-vancouver')}
+${FIG('omh-vancouver-fix')}
+<div class="bookref">📖 <b>Open McRae Fig 17.39, p. 379:</b> Vancouver AG/AL, B1–B3, C map.</div>
+<div class="bookref">📖 <b>Open McRae Fig 17.40, p. 383:</b> B2 barrel-stave fixed with cerclage, plate and screws — bone–cement interface preserved.</div>
+<div data-widget="pickset" data-set="omhvanc"></div>
+<div class="hint">💡 <b>"Stem stable? Bone stock? If C, plate and overlap — never kiss a nail to a stem."</b></div>
+<div class="exam"><b>🎓 For exams:</b> Vancouver table; polished-taper B2 exception; kissing implants; calcar restoration; union ~40 weeks.</div>
+<details class="chk"><summary>✅ Checkpoint: why avoid an intramedullary nail for Vancouver C?</summary><p>The femoral stem already occupies the proximal canal; a second implant nearby creates kissing implants and a stress riser — plate and overlap instead (p. 381).</p></details>`,recap:['Vancouver = location + stem stability + bone stock.', 'B2/B3 usually revise.', 'C → overlapping plate.'],quiz:[{q:'Vancouver B1 usual plan?',o:['Open reduction and internal fixation around a well-fixed stem', 'Ignore the fracture'],a:0,e:'Table 17.1.'},{q:'Average union time McRae quotes after periprosthetic fixation?',o:['About 40 weeks', 'About 40 hours'],a:0,e:'p. 382.'}]},{id:'mh14b',title:'Atypical hip fractures (pages 383–384)',min:11,goal:1,obj:['List atypical features and management including contralateral care'],html:`
+<div class="scene"><b>The scene:</b> Months of thigh pain on bisphosphonates, then a low-energy transverse subtrochanteric snap with a lateral cortical beak. McRae nails it — and asks about the other femur.</div>
+<p>About 5% of subtrochanteric fractures are [[atypff|atypical]] (Fig. 17.41). Features: long-term bisphosphonate therapy in 80%; [[prodromal|prodromal thigh pain]] in 30%; expanded thickened cortex with [[beaking|beaking]] at the fracture; low-energy; transverse or short oblique; linear non-comminuted; healing typically delayed/incomplete. May present complete or subacute with unilateral/bilateral pain and cortical thickening. Mechanism thought: impaired microfracture healing from reduced osteoclast activity. Among patients prescribed bisphosphonates the absolute risk of atypical fracture is considered very small compared with overall fracture-risk benefits of therapy.</p>
+<p><b>Management:</b> complete fracture → [[cephalonail|cephalomedullary nail]]; incomplete or painful radiographic abnormality → usually also nail prophylactically. Rheumatology advice: stop bisphosphonate; continue calcium and vitamin D; consider [[teriparat|teriparatide]] to stimulate healing. Extended follow-up until union and to monitor the contralateral femur.</p>
+${FIG('omh-atypical')}
+<div class="bookref">📖 <b>Open McRae Fig 17.41, p. 384:</b> atypical subtrochanteric fracture with lateral cortical thickening; fixed with a cephalomedullary nail.</div>
+<div data-widget="sortset" data-set="omhatyp"></div>
+<div class="hint">💡 <b>"Beak + bisphosphonate + prodromal pain → atypical. Nail both the break and the threatening opposite side when indicated."</b></div>
+<div class="exam"><b>🎓 For exams:</b> 5% of subtrochs; 80% bisphosphonate; 30% prodromal pain; nail ± prophylactic contralateral; stop BP, consider teriparatide.</div>
+<div class="corr">📝 End of McRae chapter 17. Femur general principles begin chapter 18 (p. 385) — covered in ${XL('o7i','L7.9')} / ${XL('o7j','L7.10')}, not duplicated here.</div>
+<details class="chk"><summary>✅ Checkpoint: incomplete painful atypical lesion — McRae plan?</summary><p>Usually prophylactic cephalomedullary nailing, plus metabolic/rheumatology measures and contralateral surveillance (pp 383–384).</p></details>`,recap:['Atypical feature cluster.', 'Nail complete and incomplete painful lesions.', 'Stop BP; watch the other femur.'],quiz:[{q:'Share of subtrochanteric fractures that are atypical (McRae)?',o:['Around 5%', 'Around 95%'],a:0,e:'p. 383.'},{q:'Incomplete painful atypical femoral lesion?',o:['Usually nail prophylactically', 'Never operate'],a:0,e:'p. 383.'}]}],
+cases:[{id:'mh14k1',title:'Case: Stem and beak',steps:[{t:`Fall onto a THR; fracture around stem; stem spins in the canal; bone stock OK.`,q:'Vancouver + plan?',o:['B2 — revision arthroplasty (unless special polished-taper reconstruction applies)', 'A — always conservative'],a:0,e:'Table 17.1.'},{t:`Opposite femur shows lateral cortical thickening and thigh pain on bisphosphonates.`,q:'Add?',o:['Discuss prophylactic nailing and rheumatology review', 'Ignore the opposite side'],a:0,e:'pp 383–384.'}],take:['Stability for periprosthetic; both femurs for atypical.']}],
+flash:[['Vancouver B1 vs B2', 'Stem fixed vs loose.'], ['Kissing implants', 'Stress riser — avoid.'], ['Atypical 80/30', 'Bisphosphonate / prodromal %.'], ['Prophylactic nail', 'Incomplete painful lesion.']],
+exam:['Vancouver table.', 'ORIF pearls.', 'Atypical cluster + dual-femur care.'],
+finalHtml:`<div data-widget="spot" data-set="omh14"></div><div data-widget="termdeck" data-set="omh14"></div><div class="exam" style="border-color:var(--ok)"><b>✅ McRae Ch. 17 Hip deep-dive complete</b><br>Return to Lecture 7 for the slide companion, or reopen any MH subsection from the Orthopaedics hub.<br><button class="pri" style="margin-top:8px" onclick="showModule('o7a')">→ Lecture 7 map</button> <button class="pri" style="margin-top:8px" onclick="showModule('omh1')">→ Restart MH.1</button></div>`,
+sources:'Sources: McRae 3rd edition chapter 17 Periprosthetic fractures around the hip (book pages 379–382, Table 17.1, Figs 17.39–17.40) and Atypical hip fractures (book pages 383–384, Fig. 17.41). Teaching questions by MedLearn.',
+casesHead:"🏥 Cases",casesIntro:"Answer to reveal the next part."};
+LESSONS.omh14=OMH14;
+
 /* ===== publish7: labelled figures from PR #16 (first-review redos: neck ultrasound, steroid forms, incidentaloma scan). Inserted into existing steps by anchor text, like zz_figs6.js. ===== */
 Object.assign(FIGS,{
 usnod16:{f:"t2-neck-ultrasound-labelled.jpg",w:1400,h:577,alt:"Labelled illustration of a clothed woman lying with her head tilted back while a doctor holds an ultrasound probe across the front of her lower neck; the screen shows both thyroid lobes beside the windpipe and a small dark nodule in the left lobe",
@@ -9014,7 +9713,30 @@ const REL=[
 ["o7j","o8i","Distal periprosthetic femur meets tibial periprosthetic maps at the knee"],
 ["o7j","okr7","Distal femur around a knee replacement cross-links to knee-replacement complications"],
 ["o7a","o8a","Hip–femur lecture sits beside knee–leg anatomy in Orthopaedics"],
-["o7d","okr1","Trauma arthroplasty decisions differ from elective osteoarthritis pathways"]
+["o7d","okr1","Trauma arthroplasty decisions differ from elective osteoarthritis pathways"],
+["omh1","omh2","Assessment leads into epidemiology and blood-supply logic"],
+["omh2","omh3","Blood supply makes Garden displacement matter"],
+["omh3","omh4","Classifications meet extracapsular types and the ED pathway"],
+["omh4","omh5","Occult cleared, Box 17.1 chooses the implant"],
+["omh5","omh6","Undisplaced fixation sits beside elderly displaced arthroplasty"],
+["omh6","omh7","Hemi versus total choice then hemi technique"],
+["omh6","omh8","Elderly replace pathway contrasts with young fix pathway"],
+["omh8","omh9","Young neck fixation sits beside extracapsular pattern choice"],
+["omh9","omh10","Pattern choice becomes DHS or nail technique"],
+["omh10","omh11","Technique then follow-up and complications"],
+["omh11","omh12","Fracture complications sit beside native dislocation"],
+["omh12","omh13","Dislocation often brings Pipkin head fragments"],
+["omh13","omh14","Head fractures sit beside periprosthetic and atypical cracks"],
+["omh1","o7a","Book assessment deep-dive beside Lecture 7 proximal map"],
+["omh2","o7a","McRae blood supply enriches Lecture 7 capsule map"],
+["omh3","o7c","Garden and Pauwels book pages beside Lecture 7 neck class"],
+["omh5","o7d","Box 17.1 and screws beside Lecture 7 neck treatment"],
+["omh6","o7d","Elderly arthroplasty choice mirrors Lecture 7 fix-versus-replace"],
+["omh9","o7e","Evans/DHS/nail beside Lecture 7 intertrochanteric"],
+["omh9","o7f","Subtrochanteric and atypical cross to Lecture 7"],
+["omh12","o7g","Dislocation book deep-dive beside Lecture 7 dislocation"],
+["omh13","o7b","Pipkin book page beside Lecture 7 head fractures"],
+["omh14","o7h","Vancouver and atypical beside Lecture 7 periprosthetic"]
 ];
 const RELMAP={};REL.forEach(([a,b,w])=>{(RELMAP[a]=RELMAP[a]||[]).push([b,w]);(RELMAP[b]=RELMAP[b]||[]).push([a,w])});
 function relatedCard(id){const R=(RELMAP[id]||[]).filter(([b])=>OK(b));if(!R.length)return "";const m=MOD(id);

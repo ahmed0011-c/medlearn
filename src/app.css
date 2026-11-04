@@ -25,6 +25,7 @@ button:hover{border-color:var(--acc)}button.pri{background:var(--acc);color:#fff
 body.focus .card{opacity:.22}body.focus .card.active{opacity:1;box-shadow:0 0 0 3px var(--acc)}
 .scene{border-left:5px solid var(--c-hormone);background:color-mix(in srgb,var(--c-hormone) 9%,transparent);padding:10px 16px;border-radius:0 10px 10px 0;margin:12px 0}
 .hint{background:color-mix(in srgb,#f5c518 18%,transparent);border-radius:10px;padding:10px 14px;margin:12px 0}
+.bookref{background:color-mix(in srgb,#6b8cae 12%,transparent);border-left:4px solid #6b8cae;border-radius:0 10px 10px 0;padding:10px 14px;margin:12px 0;font-size:15px;line-height:1.45}
 .corr{background:color-mix(in srgb,var(--c-disease) 10%,transparent);border:1px dashed var(--c-disease);border-radius:10px;padding:10px 14px;margin:12px 0;font-size:15px}
 .exam{background:color-mix(in srgb,var(--acc) 12%,transparent);border:2px solid var(--acc);border-radius:12px;padding:12px 18px;margin:14px 0}
 .recap{background:color-mix(in srgb,var(--ok) 10%,transparent);border-radius:10px;padding:8px 16px;margin:12px 0;display:none}.recap.show{display:block}

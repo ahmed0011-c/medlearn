@@ -609,3 +609,123 @@ Same rules as the Lecture 8 / knee-replacement batches: atlas-style realistic me
   - **Used in:** L7.10 card hj2.
   - **Prompt:** Atlas-style illustration of a periprosthetic distal femoral fracture just above a total knee femoral component, mild displacement, plain background. No text, letters, numbers, arrows or labels.
 
+# McRae Ch.17 Hip deep-dive illustration requests (Orthopaedics, added November 2026)
+Same rules as Lecture 7 / 8 batches: atlas-style realistic medical illustration, fully clothed people where scenes are shown, calm respectful mood, **no text, letters, numbers, logos or labels in any image**. Save each under `images/` and tick the box. Imaging-style plates must be schematic teaching illustrations, not real patient scans. Book figures are referenced in-card as “Open McRae Fig …” — these AI plates are teaching redraws, not scans of the copyrighted book art.
+- [ ] **id:** `omh-assess-posture`
+  - **Save as:** `images/omh-assess-posture.png`
+  - **Used in:** McRae Ch.17 Hip deep-dive module cards that call FIG('omh-assess-posture').
+  - **Prompt:** Two-panel calm clinical illustration, fully clothed older adults on plain background: left, supine with one lower limb shortened and externally rotated after a fall (hip-fracture posture); right, another adult with the hip flexed, shortened and internally rotated (posterior dislocation posture). Soft even light, no faces in distress, no blood. No text, letters, numbers or labels.
+- [ ] **id:** `omh-shenton`
+  - **Save as:** `images/omh-shenton.png`
+  - **Used in:** McRae Ch.17 Hip deep-dive module cards that call FIG('omh-shenton').
+  - **Prompt:** Clean grayscale illustration in the style of an anteroposterior pelvis teaching radiograph (not a real patient scan): smooth Shenton arc on the left hip; right hip shows a subtle intracapsular neck crack breaking the arc. Calm schematic educational plate. No text, letters, numbers or labels.
+- [ ] **id:** `omh-blood-supply`
+  - **Save as:** `images/omh-blood-supply.png`
+  - **Used in:** McRae Ch.17 Hip deep-dive module cards that call FIG('omh-blood-supply').
+  - **Prompt:** Atlas-style illustration of adult femoral head and neck blood supply on plain off-white background: medial and lateral circumflex femoral arteries forming a capsular vascular ring, ascending retinacular vessels along the neck into the head, faint ligamentum teres vessel. Educational, space for later labels. No text, letters, numbers, arrows or labels.
+- [ ] **id:** `omh-prox-regions`
+  - **Save as:** `images/omh-prox-regions.png`
+  - **Used in:** McRae Ch.17 Hip deep-dive module cards that call FIG('omh-prox-regions').
+  - **Prompt:** Atlas-style proximal femur on plain background showing head, neck, basicervical zone, intertrochanteric region and subtrochanteric zone about five centimetres below the lesser trochanter, with a subtle capsule outline around head and neck only. Restrained bone colour. No text, letters, numbers or labels.
+- [ ] **id:** `omh-garden`
+  - **Save as:** `images/omh-garden.png`
+  - **Used in:** McRae Ch.17 Hip deep-dive module cards that call FIG('omh-garden').
+  - **Prompt:** Four-panel atlas schematic of femoral neck fractures on identical anteroposterior views: valgus-impacted incomplete pattern; complete undisplaced with aligned trabeculae; moderately displaced with trabecular tilt; fully displaced head. Plain background. No text, letters, numbers or labels.
+- [ ] **id:** `omh-pauwels`
+  - **Save as:** `images/omh-pauwels.png`
+  - **Used in:** McRae Ch.17 Hip deep-dive module cards that call FIG('omh-pauwels').
+  - **Prompt:** Three-panel atlas schematic of femoral neck fracture lines at progressively steeper angles to the horizontal (shallow, mid, near-vertical), identical viewing angle, plain background. No protractors, no degree numbers, no text or labels in the image.
+- [ ] **id:** `omh-screws`
+  - **Save as:** `images/omh-screws.png`
+  - **Used in:** McRae Ch.17 Hip deep-dive module cards that call FIG('omh-screws').
+  - **Prompt:** Atlas illustration of three cannulated screws in a femoral neck: inferior screw just above the calcar, posterior screw near posterior cortex, anterosuperior third screw; small cross-section inset of the neck showing screw positions. Plain background. No text, letters, numbers or labels.
+- [ ] **id:** `omh-arthroplasty`
+  - **Save as:** `images/omh-arthroplasty.png`
+  - **Used in:** McRae Ch.17 Hip deep-dive module cards that call FIG('omh-arthroplasty').
+  - **Prompt:** Three-panel implant schematic on plain background: cemented total hip replacement with cup and head; unipolar hemiarthroplasty head on a stem; bipolar hemiarthroplasty with inner small head and outer shell. No brand logos, no text or labels.
+- [ ] **id:** `omh-hemi-setup`
+  - **Save as:** `images/omh-hemi-setup.png`
+  - **Used in:** McRae Ch.17 Hip deep-dive module cards that call FIG('omh-hemi-setup').
+  - **Prompt:** Calm schematic of a patient in lateral position on an operating table with pelvic supports at sacrum and front of pelvis, operated limb free to flex into an anterior leg bag. Fully draped concept, respectful, no faces. No text, letters, numbers or labels.
+- [ ] **id:** `omh-anterolateral`
+  - **Save as:** `images/omh-anterolateral.png`
+  - **Used in:** McRae Ch.17 Hip deep-dive module cards that call FIG('omh-anterolateral').
+  - **Prompt:** Atlas layered anatomy of anterolateral hip approach: skin incision over greater trochanter, fascia lata, vastogluteal sling split between anterior third and posterior two-thirds, capsule opened to acetabular rim exposing femoral head. Calm, non-graphic. No text or labels.
+- [ ] **id:** `omh-cement`
+  - **Save as:** `images/omh-cement.png`
+  - **Used in:** McRae Ch.17 Hip deep-dive module cards that call FIG('omh-cement').
+  - **Prompt:** Clean educational diagram of a femoral canal being filled with bone cement in three moments: rapid retrograde fill from deep to shallow; pressurisation phase; stem with centralizer descending into cement. Plain background, no brand names, no text or numbers in the image.
+- [ ] **id:** `omh-young-fix`
+  - **Save as:** `images/omh-young-fix.png`
+  - **Used in:** McRae Ch.17 Hip deep-dive module cards that call FIG('omh-young-fix').
+  - **Prompt:** Four-panel atlas schematic: displaced vertical femoral neck fracture in a young adult; open anterior exposure with two joystick wires in the head; reduction achieved; fixed-angle dynamic hip screw plus anti-rotation screw. Plain background. No text or labels.
+- [ ] **id:** `omh-evans`
+  - **Save as:** `images/omh-evans.png`
+  - **Used in:** McRae Ch.17 Hip deep-dive module cards that call FIG('omh-evans').
+  - **Prompt:** Five-panel atlas schematic of extracapsular proximal femoral fracture patterns: basicervical; simple intertrochanteric; comminuted intertrochanteric; reverse oblique; subtrochanteric. Identical viewing angle. No text or labels.
+- [ ] **id:** `omh-dhs`
+  - **Save as:** `images/omh-dhs.png`
+  - **Used in:** McRae Ch.17 Hip deep-dive module cards that call FIG('omh-dhs').
+  - **Prompt:** Atlas illustration of a dynamic hip screw construct: lag screw in the femoral head and neck, barrel, and side-plate fixed to the lateral femoral shaft with screws. Plain background. No text, letters, numbers or labels.
+- [ ] **id:** `omh-tad`
+  - **Save as:** `images/omh-tad.png`
+  - **Used in:** McRae Ch.17 Hip deep-dive module cards that call FIG('omh-tad').
+  - **Prompt:** Two-panel schematic teaching plate showing a lag screw tip near the femoral head apex on an anteroposterior view and on a lateral view, implying measurement from tip to apex. Calm educational style. No numerals, letters or labels in the image.
+- [ ] **id:** `omh-nail-vs-dhs`
+  - **Save as:** `images/omh-nail-vs-dhs.png`
+  - **Used in:** McRae Ch.17 Hip deep-dive module cards that call FIG('omh-nail-vs-dhs').
+  - **Prompt:** Side-by-side atlas comparison: left a dynamic hip screw with a long side-plate lever arm; right a cephalomedullary nail with shorter lever arm and lag screw into the head. Plain background. No text or labels.
+- [ ] **id:** `omh-traction-setup`
+  - **Save as:** `images/omh-traction-setup.png`
+  - **Used in:** McRae Ch.17 Hip deep-dive module cards that call FIG('omh-traction-setup').
+  - **Prompt:** Calm schematic of a radiolucent traction table: injured foot in a traction boot, opposite leg flexed and abducted out of the X-ray beam, trunk slightly banana-bent away from the hip for nail access. Clothed concept, respectful. No text or labels.
+- [ ] **id:** `omh-true-lateral`
+  - **Save as:** `images/omh-true-lateral.png`
+  - **Used in:** McRae Ch.17 Hip deep-dive module cards that call FIG('omh-true-lateral').
+  - **Prompt:** Educational illustration of a C-arm taking a true lateral hip image with the greater trochanter superimposed on the femoral neck; screen concept without readable numbers. No brand logos, no text or labels.
+- [ ] **id:** `omh-subtroch-forces`
+  - **Save as:** `images/omh-subtroch-forces.png`
+  - **Used in:** McRae Ch.17 Hip deep-dive module cards that call FIG('omh-subtroch-forces').
+  - **Prompt:** Atlas proximal femur with a subtrochanteric crack and three force ideas shown as soft shaded muscle pull directions: abduction of the proximal fragment, flexion-external rotation, and medial translation with shortening of the shaft. No arrows with writing, no text or labels.
+- [ ] **id:** `omh-nail-start`
+  - **Save as:** `images/omh-nail-start.png`
+  - **Used in:** McRae Ch.17 Hip deep-dive module cards that call FIG('omh-nail-start').
+  - **Prompt:** Three-panel atlas schematic of cephalomedullary nail entry: correct tip-of-trochanter start; too-lateral start producing varus; posterior start missing a proximal fragment. Plain background. No text or labels.
+- [ ] **id:** `omh-dashboard`
+  - **Save as:** `images/omh-dashboard.png`
+  - **Used in:** McRae Ch.17 Hip deep-dive module cards that call FIG('omh-dashboard').
+  - **Prompt:** Calm non-graphic force-chain diagram of a seated clothed occupant: impact at the knee transmitting to femoral shaft, hip, posterior acetabular wall, with the sciatic nerve indicated only as a soft pale cord behind the hip. No blood, no crash drama. No text or labels.
+- [ ] **id:** `omh-dislocate`
+  - **Save as:** `images/omh-dislocate.png`
+  - **Used in:** McRae Ch.17 Hip deep-dive module cards that call FIG('omh-dislocate').
+  - **Prompt:** Two-panel teaching set: clothed adult with shortened flexed internally rotated hip; and a schematic anteroposterior pelvis teaching plate where the femoral head sits overlapping the acetabular roof and appears relatively small. Not a real patient scan. No text or labels.
+- [ ] **id:** `omh-reduce`
+  - **Save as:** `images/omh-reduce.png`
+  - **Used in:** McRae Ch.17 Hip deep-dive module cards that call FIG('omh-reduce').
+  - **Prompt:** Respectful clinical illustration of closed reduction of a posterior hip dislocation: assistant stabilising the pelvis, operator lifting the flexed hip with the ankle under the arm, calm emergency-theatre mood, fully clothed patient. No facial distress close-ups, no text or labels.
+- [ ] **id:** `omh-pipkin`
+  - **Save as:** `images/omh-pipkin.png`
+  - **Used in:** McRae Ch.17 Hip deep-dive module cards that call FIG('omh-pipkin').
+  - **Prompt:** Four-panel atlas schematic of femoral head fractures: fragment below the fovea; fragment through the weight-bearing dome above the fovea; head fracture plus neck fracture; head fracture plus acetabular wall fracture. Identical viewing angle. No text or labels.
+- [ ] **id:** `omh-vancouver`
+  - **Save as:** `images/omh-vancouver.png`
+  - **Used in:** McRae Ch.17 Hip deep-dive module cards that call FIG('omh-vancouver').
+  - **Prompt:** Multi-panel atlas schematic of periprosthetic fractures around a cemented hip stem: greater-trochanter crack; lesser-trochanter crack; fracture around a still-fixed stem; fracture around a loose stem; fracture around a loose stem with poor bone; fracture well below a stable stem. No brand logos, no text or labels.
+- [ ] **id:** `omh-vancouver-fix`
+  - **Save as:** `images/omh-vancouver-fix.png`
+  - **Used in:** McRae Ch.17 Hip deep-dive module cards that call FIG('omh-vancouver-fix').
+  - **Prompt:** Atlas illustration of a barrel-staved fracture around a hip stem fixed with several cerclage wires and a lateral plate with screws around the stem. Calm construct drawing. No text or labels.
+- [ ] **id:** `omh-atypical`
+  - **Save as:** `images/omh-atypical.png`
+  - **Used in:** McRae Ch.17 Hip deep-dive module cards that call FIG('omh-atypical').
+  - **Prompt:** Two-panel atlas schematic: incomplete then complete transverse subtrochanteric fracture with focal lateral cortical thickening (beaking); second panel shows a cephalomedullary nail spanning the lesion. Plain background. No text or labels.
+
+- [ ] **id:** `omh-clinical-signs`
+  - **Save as:** `images/omh-clinical-signs.png`
+  - **Used in:** MH.4 emergency clinical signs card.
+  - **Prompt:** Clean labelled medical teaching illustration of three bedside hip-fracture signs on an older adult: (a) shortened externally rotated leg, (b) finger pointing to groin tenderness, (c) examiner gently rotating the hip eliciting pain — McRae Fig 17.8 style, white background, no text clutter, no logos.
+
+- [ ] **id:** `omh-extracapsular`
+  - **Save as:** `images/omh-extracapsular.png`
+  - **Used in:** MH.4 extracapsular types card.
+  - **Prompt:** Clean coronal proximal-femur diagram highlighting basicervical, intertrochanteric and subtrochanteric extracapsular zones with a soft bracket labelled outside the capsule; educational flat style, white background, no logos, no watermark.

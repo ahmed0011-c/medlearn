@@ -1,0 +1,45 @@
+XSTEP.omhed={t:"Emergency pathway for suspected hip fracture",dim:.1,svg:`<svg viewBox="0 0 700 280" style="width:100%" role="img">
+<g data-k="clin"><rect x="20" y="30" width="150" height="70" rx="10" fill="#e8f0fb" stroke="#2f6db3"/><text x="95" y="70" text-anchor="middle" font-size="13" font-weight="700">Clinical</text></g>
+<g data-k="xr"><rect x="190" y="30" width="150" height="70" rx="10" fill="#fff3cd" stroke="#d9730d"/><text x="265" y="70" text-anchor="middle" font-size="13" font-weight="700">X-rays</text></g>
+<g data-k="occ"><rect x="360" y="30" width="150" height="70" rx="10" fill="#fde2ea" stroke="#b3476d"/><text x="435" y="70" text-anchor="middle" font-size="13" font-weight="700">Occult?</text></g>
+<g data-k="opt"><rect x="530" y="30" width="150" height="70" rx="10" fill="#e8f6ee" stroke="#1f9d55"/><text x="605" y="70" text-anchor="middle" font-size="13" font-weight="700">Optimise</text></g>
+<g data-k="box"><rect x="200" y="160" width="300" height="70" rx="10" fill="#efe8fb" stroke="#6b4cae"/><text x="350" y="200" text-anchor="middle" font-size="13" font-weight="700">Box 17.1 theatre plan</text></g>
+</svg>`,
+steps:[["Clinical","Standing-height fall (~5% without fall); short+ER; groin pain; cannot SLR; pain on rotation/axial load.",["clin"]],["X-rays","AP pelvis + lateral; coned IR view if uncertain; full femur if pathology/nailing.",["clin","xr"]],["Occult","Cannot walk + normal films → MRI or CT; bone scan insensitive first 3 days.",["clin","xr","occ"]],["Optimise + plan","Medical work-up (p. 35); operate when safe; Box 17.1 chooses implant.",["clin","xr","occ","opt","box"]]]};
+XSORT.omhoccult={t:"Occult pathway decisions",labels:["Further imaging now","May observe / other path"],items:[
+["Non-ambulant from pain, normal X-rays",0,"Occult fracture until proven otherwise."],
+["Ambulant, mild pain, normal films, clear advice given",1,"May go home with return advice (p. 351–356)."],
+["Suspected psoas abscess as pain mimic",0,"MRI helps soft-tissue mimics too."],
+["Day-0 bone scan as first occult test",1,"Insensitive in first 3 days — prefer MRI/CT."]]};
+
+XS.omh4=["Spot the error",[["About 5% of hip fractures occur without a fall.",1],["Formal traction is required for every neck fracture.",0,"Wrong: no formal immobilisation for most (p. 355)."],["Bone scanning is insensitive in the first 3 days.",1],["Non-ambulant patients with normal X-rays still need further imaging.",1]]];
+XT.omh4='occulthip,conedap,dhs,extracap,atypical,box171';
+const OMH4={
+meta:'Orthopaedics › McRae Ch. 17: Hip › MH.4 · Book pages 354–356 · ⏱ about 20 minutes in 2 steps',
+intro:`<p>Finish the extracapsular map, then run the emergency-department pathway: clinical signs, films, immobilisation, occult fracture rules, and medical optimisation before the Box 17.1 theatre plan.</p>`,
+goals:['Distinguish basicervical, intertrochanteric and subtrochanteric', 'Run ED assessment and occult-fracture pathway'],
+cards:[{id:'mh4a',title:'Extracapsular types in detail (page 354)',min:9,goal:0,obj:['Define basicervical, IT/pertrochanteric, subtrochanteric', 'Note Evans comes later'],html:`
+<div class="scene"><b>The scene:</b> Three extracapsular films. One sits at the neck base, one zigzags the trochanters, one starts below the lesser trochanter — same “outside capsule” club, different mechanics.</div>
+<p><b>Basicervical:</b> base of femoral neck, extracapsular, does not impair head blood supply. <b>Intertrochanteric:</b> most common. “Intertrochanteric” (transverse between trochanters) and “pertrochanteric” (oblique trochanter-to-trochanter) have subtle differences but are often used interchangeably (p. 354). <b>Subtrochanteric:</b> originate in the 5 cm distal to the lesser trochanter; only ~<b>5%</b> of extracapsular fractures but separate biomechanics; metastases love this region; some low-energy cracks are [[atypical|atypical fractures]] (p. 383). Fixation depends on pattern stability — Evans modifications appear on p. 364 (MH.9). Cross-link ${XL('o7e','L7.5')} and ${XL('o7f','L7.6')}.</p>
+${FIG('omh-extracapsular')}
+<div class="bookref">📖 <b>Open McRae Fig 17.5, p. 353:</b> map basicervical / intertrochanteric / subtrochanteric again with extracapsular bracket.</div>
+<div class="hint">💡 <b>"Outside the capsule you fix bone. Pattern tells you plate versus nail."</b></div>
+<div class="exam"><b>🎓 For exams:</b> basicervical = extracapsular; IT most common; subtrochanteric = 5 cm zone, ~5%, metastasis + atypical overlap.</div>
+<details class="chk"><summary>✅ Checkpoint: why separate subtrochanteric fractures?</summary><p>Different biomechanics; metastasis predilection; atypical-fracture link (p. 354, 383).</p></details>`,recap:['Basicervical spares head supply.', 'IT commonest.', 'Subtroch ~5% but special.'],quiz:[{q:'Basicervical fractures impair head blood supply?',o:['No — extracapsular', 'Yes — always AVN'],a:0,e:'p. 354.'},{q:'Subtrochanteric share of extracapsular fractures?',o:['About 5%', 'About 50%'],a:0,e:'p. 354.'}]},{id:'mh4b',title:'Emergency department and occult fracture (pages 354–356)',min:11,goal:1,obj:['List clinical features and films', 'Apply occult and immobilisation rules'],html:`
+<div class="scene"><b>The scene:</b> Night shift. Frail faller cannot walk; AP “normal”. Do you send her home or open the occult pathway?</div>
+<p><b>ED management:</b> most hip fractures follow a simple fall in a frail elder with comorbidities — thorough medical assessment for cause of fall and remediable problems (p. 35). Young high-energy → full primary/secondary survey (p. 350). Clinical: standing-height fall (although <b>5%</b> occur without a fall); shortened externally rotated limb (Fig. 17.8); groin/hip pain; inability to straight-leg raise; pain on gentle rotation and axial loading (helps separate hip fracture from pubic ramus crack). Films: AP pelvis + lateral hip; if limb ER, repeat [[conedap|coned AP]] in internal rotation; AP/lateral femur if pathological lesion or nailing planned. Immobilisation: no formal traction for most; rare extensive subtrochanteric may need temporary traction for soft tissues (p. 355). <b>Occult:</b> non-ambulant from pain with normal films → MRI or CT; MRI also shows soft-tissue mimics (psoas abscess); bone scan insensitive first <b>3 days</b>. Ambulant + normal films may go home with return advice. Aim for surgery within 24–48 hours that allows immediate weight-bearing when medically ready — technique from Box 17.1 (next subsection).</p>
+${FIG('omh-clinical-signs')}
+<div class="bookref">📖 <b>Open McRae Fig 17.8, p. 355:</b> short + ER (a), groin tenderness (b), pain on passive rotation (c).</div>
+<div data-widget="stepsvg" data-set="omhed"></div>
+<div data-widget="sortset" data-set="omhoccult"></div>
+<div class="hint">💡 <b>"Cannot walk + quiet films = occult until MRI/CT says otherwise."</b></div>
+<div class="exam"><b>🎓 For exams:</b> 5% without fall; coned IR view; no routine traction; occult → MRI/CT; bone scan weak first 3 days; operate 24–48 h when safe.</div>
+<div class="corr">📝 Cross-link ${XL('o7c','L7.3')} occult ladder; edition note — 3rd-ed pages here.</div>
+<details class="chk"><summary>✅ Checkpoint: when is formal traction indicated?</summary><p>Usually never; occasionally extensive subtrochanteric fractures with soft-tissue compromise (p. 355).</p></details>`,recap:['Medical + trauma survey as needed.', 'AP + lateral ± coned IR.', 'Occult pathway.', '24–48 h target.'],quiz:[{q:'Bone scan early after occult suspicion?',o:['Insensitive in the first 3 days — prefer MRI/CT', 'Always first-line day 0'],a:0,e:'pp 355–356.'},{q:'Share of hip fractures without a fall (McRae)?',o:['About 5%', 'About 50%'],a:0,e:'p. 355.'}]}],
+cases:[{id:'mh4k1',title:'Case: Quiet films, loud limp',steps:[{t:`84-year-old, cannot walk after fall; AP and lateral reported normal.`,q:'Next?',o:['MRI or CT for occult hip fracture', 'Discharge without imaging or advice'],a:0,e:'Occult pathway.'},{t:`Film later shows reverse-oblique pertrochanteric pattern.`,q:'Box 17.1 headline implant?',o:['Nail', 'Always hemiarthroplasty'],a:0,e:'Reverse oblique → nail (Box 17.1).'}],take:['ED clarity prevents missed occult and wrong implant family.']}],
+flash:[['5% no fall', 'Still can be hip fracture.'], ['Coned IR view', 'When ER obscures the neck.'], ['Occult', 'Cannot walk + normal XR → MRI/CT.'], ['24–48 h', 'Operate when medically ready.']],
+exam:['Extracapsular triad.', 'ED clinical + films.', 'Occult rules.', 'No routine traction.'],
+finalHtml:`<div data-widget="spot" data-set="omh4"></div><div data-widget="termdeck" data-set="omh4"></div><div class="exam" style="border-color:var(--ok)"><b>➡️ Next</b><br><b>MH.5 Box 17.1 and cannulated screw fixation.</b><br><button class="pri" style="margin-top:8px" onclick="showModule('omh5')">→ Open</button></div>`,
+sources:'Sources: McRae 3rd edition chapter 17 (book pages 354–356), Fig. 17.8, into Box 17.1. Teaching questions by MedLearn.',
+casesHead:"🏥 Cases",casesIntro:"Answer to reveal the next part."};
+LESSONS.omh4=OMH4;
