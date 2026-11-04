@@ -17,7 +17,7 @@ XS.o7j=["Spot the error",[["Hoffa fractures are often invisible on plain X-ray a
 XT.o7j="hoffa,imnail,felix,vancouver";
 const O7J={
 meta:"Orthopaedics › Hip and femur › Lecture 7 › Subsection L7.10 · Lecture pages 67–79 · ⏱ about 18 minutes in 2 steps",
-intro:`<p>Near the knee the femur flares into condyles. High energy shears a [[hoffa|Hoffa]] flake you will miss without CT; low energy snaps osteoporotic bone above a knee replacement. McRae distal femoral fractures (book pages ~410–413) including the ‘broomstick in a bucket’ peri-prosthetic warning.</p>`,
+intro:`<p>Near the knee the femur flares into condyles. High energy shears a [[hoffa|Hoffa]] flake you will miss without CT; low energy snaps osteoporotic bone above a knee replacement. McRae distal femoral fractures (book pages 410–417) including the ‘broomstick in a bucket’ peri-prosthetic warning.</p>`,
 goals:["Map AO A/B/C and Hoffa","Choose nail, plate, screws, replacement, or peri-prosthetic logic"],
 cards:[
 {id:"hj1",title:"Facts, classification, Hoffa, clinical (pages 67–72)",min:9,goal:0,obj:["Respect CT for Hoffa; check pulses"],html:`
@@ -48,6 +48,6 @@ cases:[{id:"hjk1",title:"Case: Hidden Hoffa",steps:[{t:`High-energy knee swellin
 flash:[["AO A/B/C","Extra / partial / complete articular."],["Hoffa","Coronal condyle shear; CT."],["Gastrocnemius","Extends distal fragment."],["Broomstick in a bucket","Nail solid, metaphysis fails."]],
 exam:["Classifications.","Hoffa imaging.","Periprosthetic logic."],
 finalHtml:`<div data-widget="spot" data-set="o7j"></div><div data-widget="termdeck" data-set="o7j"></div><div class="exam" style="border-color:var(--ok)"><b>➡️ Done with Lecture 7.</b><br>Return to the Orthopaedics hub or continue to Lecture 8 knee and leg.<br><button class="pri" style="margin-top:8px" onclick="showModule('o8a')">→ Lecture 8.1</button></div>`,
-sources:"Sources: Lecture 7 pages 67–79; McRae's Orthopaedic Trauma and Emergency Fracture Management, 3rd edition (White, Mackenzie, Gray, 2016), distal femoral fractures (book pages ~410–413). Lecture incidence/mortality/Hoffa percentages cited as lecture data. Teaching questions by MedLearn.",
+sources:"Sources: Lecture 7 pages 67–79; McRae's Orthopaedic Trauma and Emergency Fracture Management, 3rd edition (White, Mackenzie, Gray, 2016), distal femoral fractures (book pages 410–417). Lecture incidence/mortality/Hoffa percentages cited as lecture data. Teaching questions by MedLearn.",
 casesHead:"🏥 Cases",casesIntro:"Answer to reveal the next part."};
 LESSONS.o7j=O7J;

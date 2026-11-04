@@ -17,13 +17,12 @@ XS.o7d=["Spot the error",[["Tip–apex distance under 25 mm lowers cut-out risk 
 XT.o7d="dhs,tad,hemiarthro,thr,avn,garden";
 const O7D={
 meta:"Orthopaedics › Hip and femur › Lecture 7 › Subsection L7.4 · Lecture pages 17–21 · ⏱ about 17 minutes in 2 steps",
-intro:`<p>Once Garden has spoken, theatre asks: save the head or replace it? Then, if you fix, park the lag screw like a dart in the bullseye — that is [[tad|tip–apex distance]]. McRae Box 17.1 and tip–apex teaching (book pages ~356 and 369–371).</p>`,
+intro:`<p>Once Garden has spoken, theatre asks: save the head or replace it? Then, if you fix, park the lag screw like a dart in the bullseye — that is [[tad|tip–apex distance]]. McRae Box 17.1 and tip–apex teaching (book pages 356 and 369–371).</p>`,
 goals:["Apply Box 17.1 pathways","Explain tip–apex distance and cut-out"],
 cards:[
 {id:"hd1",title:"Conservative versus operative pathways (pages 17–18)",min:9,goal:0,obj:["Match patient + displacement to fix / hemi / total"],html:`
 <div class="scene"><b>The scene:</b> Three necks on one list. A quiet Garden I in a 60-year-old. A Garden IV in a nursing-home elder who walked only to the toilet. A Garden IV in a still-working 71-year-old who takes the stairs two at a time.</div>
 <p>Non-operative care is rare — reserved for patients who would not survive anaesthesia (lecture page 17 shows delayed mobilisation consequences). Operative menu (page 18): closed reduction and internal fixation with cannulated screws, [[dhs|dynamic hip screw]], or occasionally a proximal femoral nail; prosthetic replacement in older adults — lecture: often considered around &gt;70 years for displaced (and sometimes undisplaced) necks; [[hemiarthro|bipolar hemiarthroplasty]] if not very mobile; [[thr|total hip arthroplasty]] if healthy and self-caring. Young patient whose Garden III/IV will not reduce closed → open reduction through an anterior or anterolateral approach.</p>
-${FIG('o7-neck-screws')}
 ${FIG('o7-hemi-thr')}
 <div data-widget="stepsvg" data-set="neckpath"></div>
 <div data-widget="pickset" data-set="neckrx"></div>
@@ -46,6 +45,6 @@ cases:[{id:"hdk1",title:"Case: Three necks",steps:[{t:`Garden IV in a 70-year-ol
 flash:[["Box 17.1","Fix / hemi / total / DHS / nail map."],["Tip–apex distance","Xap+Xlat &lt;25 mm."],["Cut-out","Screw exits the head."],["Hemi vs total","Low vs high demand."]],
 exam:["Box 17.1.","Tip–apex number.","Cut-out."],
 finalHtml:`<div data-widget="spot" data-set="o7d"></div><div data-widget="termdeck" data-set="o7d"></div><div class="exam" style="border-color:var(--ok)"><b>➡️ Next</b><br><b>L7.5 Intertrochanteric fractures.</b><br><button class="pri" style="margin-top:8px" onclick="showModule('o7e')">→ Open</button></div>`,
-sources:"Sources: Lecture 7 pages 17–21; McRae's Orthopaedic Trauma and Emergency Fracture Management, 3rd edition (White, Mackenzie, Gray, 2016), chapter 17 (Box 17.1 ~page 356; tip–apex pages 369–371). Teaching questions by MedLearn.",
+sources:"Sources: Lecture 7 pages 17–21; McRae's Orthopaedic Trauma and Emergency Fracture Management, 3rd edition (White, Mackenzie, Gray, 2016), chapter 17 (Box 17.1 page 356; tip–apex pages 369–371). Teaching questions by MedLearn.",
 casesHead:"🏥 Cases",casesIntro:"Answer to reveal the next part."};
 LESSONS.o7d=O7D;

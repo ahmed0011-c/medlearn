@@ -154,6 +154,7 @@ Same rules: calm illustrated or atlas style, clothed adults only, no unwell chil
 
   </details>
 - **`m5-salt-wasting-newborn-v2`** (Module 5, step k1, and 2.5): set aside after 2 attempts. The new version still shows no dehydration signs (rosy, plump baby; eyes not sunken; no dry lips or sunken fontanelle). Keep the live `images/m5-salt-wasting-newborn-labelled.jpg` and its existing honest Image check.
+- **`o7-neck-screws`** (files `images/o7-neck-screws.png` and `images/o7-neck-screws-labelled.jpg`; L7.4 card `hd1`): set aside because the screw tips stop at the fracture line. Removed from the lesson embed and from the figure registry. The step text stays, and the other L7.4 figures (`o7-hemi-thr`, `o7-dhs`, `o7-tad`) stay. Do not generate this plate again. The hand-drawn `o7-neck-clinic` diagram is unchanged.
 
 
 ## Done — MedLearn hand diagrams (publish32, November 2026)
@@ -486,9 +487,9 @@ Same rules as the Lecture 8 / knee-replacement batches: atlas-style realistic me
 
 
 - [x] **id:** `o7-neck-screws`
-  - **Redo requested (review of PR #31):** extra screws and a hole are drawn.
+  - **Set aside:** screw tips stop at the fracture line. Removed from L7.4 card `hd1` and from the figure registry. Do not regenerate. See “Set aside” above. `o7-neck-clinic` is the hand-drawn diagram and stays.
   - **Save as:** `images/o7-neck-screws.png`
-  - **Used in:** L7.4 card hd1.
+  - **Used in:** was L7.4 card hd1; no longer embedded.
   - **Prompt:** Atlas-style illustration of three parallel cannulated screws fixing an undisplaced femoral neck fracture, tips short of the joint, plain background, space for labels. No text, letters, numbers, arrows or labels.
 
 - [x] **id:** `o7-dhs`

@@ -15,7 +15,7 @@ XS.o7i=["Spot the error",[["Adult femoral shafts can hide &gt;1 litre of blood i
 XT.o7i="imnail,floatingk,gustilo,compsyn";
 const O7I={
 meta:"Orthopaedics › Hip and femur › Lecture 7 › Subsection L7.9 · Lecture pages 55–65 · ⏱ about 17 minutes in 2 steps",
-intro:`<p>The femoral shaft is a fire hose of force and blood. Young adults meet high energy; older adults meet torsion. Miss the neck fracture living upstairs and you inherit two problems. McRae femoral shaft chapter (book pages ~388–405).</p>`,
+intro:`<p>The femoral shaft is a fire hose of force and blood. Young adults meet high energy; older adults meet torsion. Miss the neck fracture living upstairs and you inherit two problems. McRae femoral shaft chapter (book pages 388–410).</p>`,
 goals:["Read pattern, bleeding, associated neck/floating knee","Choose nail vs damage-control vs plate"],
 cards:[
 {id:"hi1",title:"Facts, patterns, clinical traps (pages 55–61)",min:9,goal:0,obj:["List associated injuries and soft-tissue grades"],html:`
@@ -45,6 +45,6 @@ cases:[{id:"hik1",title:"Case: Missed upstairs neighbour",steps:[{t:`Shaft naile
 flash:[["Spiral","Twist / planted foot."],["Neck tag-along","Lecture 1–9% / ~10%."],["Floating knee","Femur + tibia shafts."],["Nail","Default adult fixation."]],
 exam:["Patterns.","Associated neck.","Nail vs frame."],
 finalHtml:`<div data-widget="spot" data-set="o7i"></div><div data-widget="termdeck" data-set="o7i"></div><div class="exam" style="border-color:var(--ok)"><b>➡️ Next</b><br><b>L7.10 Distal femoral fractures, Hoffa and distal periprosthetic breaks.</b><br><button class="pri" style="margin-top:8px" onclick="showModule('o7j')">→ Open</button></div>`,
-sources:"Sources: Lecture 7 pages 55–65; McRae's Orthopaedic Trauma and Emergency Fracture Management, 3rd edition (White, Mackenzie, Gray, 2016), femoral shaft fractures (book pages ~388–405). Lecture epidemiology and infection figures cited as lecture data. Teaching questions by MedLearn.",
+sources:"Sources: Lecture 7 pages 55–65; McRae's Orthopaedic Trauma and Emergency Fracture Management, 3rd edition (White, Mackenzie, Gray, 2016), femoral shaft fractures (book pages 388–410). Lecture epidemiology and infection figures cited as lecture data. Teaching questions by MedLearn.",
 casesHead:"🏥 Cases",casesIntro:"Answer to reveal the next part."};
 LESSONS.o7i=O7I;
