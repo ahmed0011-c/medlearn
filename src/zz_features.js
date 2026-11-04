@@ -163,7 +163,25 @@ const REL=[
 ["okr7","o8a","Extensor failure after replacement is an extensor-chain problem"],
 ["o8c","okr7","Patella fractures around implants link back to knee-replacement complications"],
 ["o8i","okr7","Tibial periprosthetic fractures link back to knee-replacement complications"],
-["o8i","okr1","Plateau arthritis and failed coronal stability may lead to later knee replacement (McRae <5%)"]
+["o8i","okr1","Plateau arthritis and failed coronal stability may lead to later knee replacement (McRae <5%)"],
+["o7a","o7b","Head fractures sit on the intracapsular map"],
+["o7a","o7c","Neck fractures are the classic intracapsular blood-supply problem"],
+["o7a","o7e","Trochanteric breaks are the extracapsular twin of neck fractures"],
+["o7a","o7d","Box 17.1 pathways grow from the capsule map"],
+["o7b","o7g","Pipkin chips usually ride with hip dislocation"],
+["o7c","o7d","Garden grade becomes fix versus replace"],
+["o7d","o7e","Tip–apex craft also matters when a DHS is used for trochanteric breaks"],
+["o7e","o7f","Unstable and reverse-oblique patterns neighbour the subtrochanteric zone"],
+["o7f","o7i","Subtrochanteric nails sit next to shaft-nailing principles"],
+["o7g","o7b","After reduction, hunt Pipkin and wall fragments"],
+["o7h","o7d","Periprosthetic thinking starts from knowing why the stem was put in"],
+["o7h","o7i","Vancouver C shaft breaks below a stem still need whole-femur logic"],
+["o7i","o7c","Always clear the neck when you nail a shaft"],
+["o7i","o7j","Force travels from shaft into the distal femur"],
+["o7j","o8i","Distal periprosthetic femur meets tibial periprosthetic maps at the knee"],
+["o7j","okr7","Distal femur around a knee replacement cross-links to knee-replacement complications"],
+["o7a","o8a","Hip–femur lecture sits beside knee–leg anatomy in Orthopaedics"],
+["o7d","okr1","Trauma arthroplasty decisions differ from elective osteoarthritis pathways"]
 ];
 const RELMAP={};REL.forEach(([a,b,w])=>{(RELMAP[a]=RELMAP[a]||[]).push([b,w]);(RELMAP[b]=RELMAP[b]||[]).push([a,w])});
 function relatedCard(id){const R=(RELMAP[id]||[]).filter(([b])=>OK(b));if(!R.length)return "";const m=MOD(id);
