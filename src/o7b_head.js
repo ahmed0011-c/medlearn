@@ -21,9 +21,7 @@ cards:[
 {id:"hb1",title:"Story, Pipkin map, imaging (pages 4–7)",min:8,goal:0,obj:["Link dashboard trauma to Pipkin types"],html:`
 <div class="scene"><b>The scene:</b> Jonas, 24, was the belted driver in a head-on crash. His right hip screams; the knee that hit the dash is bruised. The leg sits flexed and internally rotated. You reduce the hip in theatre — and the head’s contour still looks wrong.</div>
 <p>Picture the femoral head as a polished globe. [[hipdisloc|Dislocation]] yanks it out the back door; a shear plane slices cartilage and bone. [[pipkin|Pipkin I]] cuts below the fovea — often a non-weight-bearing chip. [[pipkin|Pipkin II]] cuts above the fovea through the roof you stand on. [[pipkin|Pipkin III]] adds a neck fracture. [[pipkin|Pipkin IV]] adds an acetabular break. Imaging (lecture page 7): X-ray first, then computed tomography before you celebrate.</p>
-${FIG('o7-pipkin')}
 ${FIG('o7-pipkin-xray')}
-${FIG('o7-pipkin-ct')}
 <div data-widget="stepsvg" data-set="pipkin"></div>
 <div class="hint">💡 <b>"Dashboard → posterior hip out → ask: head chip? neck crack? back wall missing? sciatic nerve?"</b></div>
 <div class="exam"><b>🎓 For exams:</b> Pipkin I–IV; CT after reduction; link to posterior dislocation.</div>
@@ -33,7 +31,6 @@ quiz:[{q:"Pipkin II is…",o:["Suprafoveal / weight-bearing head fracture","Only
 {id:"hb2",title:"Treatment and complications (pages 8–9)",min:8,goal:1,obj:["Match fragment personality to remove vs fix"],html:`
 <div class="scene"><b>The scene:</b> CT shows a large Pipkin II fragment still tilted in the joint. The foot dorsiflexes weakly.</div>
 <p>Urgent reduction of the hip; stability test; then negotiate with the chip. Small debris can be removed; large weight-bearing pieces are reduced and fixed with buried screws (McRae book page 378). Pipkin III respects the neck; Pipkin IV pulls the acetabulum onto the same list. Complications (lecture page 9 — lecture figures): osteoarthritis ≈50%; osteonecrosis ≈20%; [[sciaticn|sciatic]] palsy; malreduction; secondary dislocation; non-union; heterotopic ossification 6–46%.</p>
-${FIG('o7-pipkin-fix')}
 <div data-widget="pickset" data-set="pipkinrx"></div>
 <div class="hint">💡 <b>"Reduce like a fire drill. Junk gets binned; the roof gets bolted."</b></div>
 <div class="exam"><b>🎓 For exams:</b> lecture complication percentages; fix weight-bearing fragments; new palsy after reduction raises entrapment concern (McRae).</div>

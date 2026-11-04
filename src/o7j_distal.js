@@ -23,8 +23,6 @@ cards:[
 {id:"hj1",title:"Facts, classification, Hoffa, clinical (pages 67–72)",min:9,goal:0,obj:["Respect CT for Hoffa; check pulses"],html:`
 <div class="scene"><b>The scene:</b> After a fall from a scaffold, the knee is ballooned with haemarthrosis. Plain films look ‘only metaphyseal’. CT then draws a coronal crack through the lateral condyle — a Hoffa you nearly sent to the ward.</div>
 <p>Facts (pages 67–68, lecture figures): incidence quotes 4.5/10,000 and age-split 5.2 vs 47.3/100,000; 1% of all fractures; 3–9% of femoral fractures; periprosthetic distal femoral incidence 0.2–3.9%; mortality 21% overall and 35% if &gt;60 years. AO/OTA A/B/C (page 69). [[hoffa|Hoffa]] (pages 70–71): 8.9–13% of distal femoral fractures; high energy; Letenneur subtypes on slides; CT mandatory. Clinical (page 72): haemarthrosis ± blistering; check popliteal pulse; high-energy ATLS mindset; low-energy geriatric work-up like a hip fracture. Imaging: X-ray, CT, MRI if ligaments doubted.</p>
-${FIG('o7-distal-ao')}
-${FIG('o7-hoffa')}
 ${FIG('o7-hoffa-ct')}
 <div data-widget="stepsvg" data-set="distmap"></div>
 <div class="hint">💡 <b>"Swollen knee after energy + ‘funny’ condyle outline = CT before you shrug."</b></div>
