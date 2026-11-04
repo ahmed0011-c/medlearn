@@ -23,7 +23,6 @@ cards:[
 <div class="scene"><b>The scene:</b> After a motorway pile-up, a driver’s right hip is locked. The knee that kissed the dash is swollen. The leg is short, flexed and turned in. He cannot feel the top of his foot well.</div>
 <p>Native hip (pages 40–41; McRae 375): usually posterior, high energy — dashboard force may also break patella, femoral shaft, hip, posterior acetabular wall, and bruise the [[sciaticn|sciatic nerve]]. Anterior dislocation follows abduction force — watch femoral vessels/nerve. Prosthetic hips: instability from sitting, low-energy falls, or high energy. Clinical (page 42): severe pain, refuses passive motion; posture may be masked if the femur is also broken. Imaging: X-ray then CT after reduction.</p>
 ${FIG('o7-dislocate')}
-${FIG('o7-dislocate-clinic')}
 <div data-widget="stepsvg" data-set="dashchain"></div>
 <div class="hint">💡 <b>"Neck fracture = foot points out. Posterior dislocation = foot points in. Always check the nerve before you pull."</b></div>
 <div class="exam"><b>🎓 For exams:</b> posterior posture; dashboard associated injuries; sciatic vs femoral nerve by direction.</div>
@@ -34,7 +33,6 @@ quiz:[{q:"Classic posterior dislocation posture?",o:["Short, flexed, internally 
 <div class="scene"><b>The scene:</b> Sixty minutes after arrival the hip is still out. CT later shows a Pipkin chip and a posterior wall fragment.</div>
 <p>Treat (page 43): closed reduction and stability test; open reduction if closed fails or fragments block; treat Pipkin/acetabular companions; revision surgery for failed arthroplasty. Complications (page 45): sciatic palsy in ~10% of native dislocations — about one-third recover fully, one-third partially, one-third permanent (lecture); [[avn|avascular necrosis]] up to ~10%, reduced by reduction within 6 hours; osteoarthritis ~25% within 8 years (lecture).</p>
 ${FIG('o7-reduce-hip')}
-${FIG('o7-pipkin')}
 <div data-widget="pickset" data-set="disrx"></div>
 <div class="hint">💡 <b>"Six-hour golden window for the head’s blood — reduce, then CT for hitchhikers."</b></div>
 <div class="exam"><b>🎓 For exams:</b> reduce &lt;6 h; sciatic 10% with 1/3–1/3–1/3 recovery; AVN ≤10%; OA ~25%/8 years (lecture figures).</div>
