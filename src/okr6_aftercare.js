@@ -13,6 +13,7 @@ goals:["Apply NG89 venous thromboembolism options after elective knee replacemen
 cards:[
 {id:"kr6a",title:"Enhanced recovery and venous thromboembolism prevention",min:7,goal:0,obj:["Choose an NG89 option and start early mobility"],html:`
 <div class="scene"><b>The scene:</b> Six hours after a cemented total knee replacement, Mrs Patel sits on the bed edge feeling dizzy. The nurse asks whether she is "allowed" to stand.</div>
+${FIG('okr-vte-walk')}
 <p><b>Enhanced recovery.</b> Multimodal analgesia (including the local infiltration already placed), anti-emetics, early oral intake, and mobilisation. NG157 1.10.1: a physiotherapist or occupational therapist should offer rehabilitation <b>on the day of surgery if possible and no more than 24 hours after</b>, including advice on daily activities, a home exercise programme, and mobilisation after knee replacement.</p>
 <p><b>Venous thromboembolism — NICE NG89 1.11.8.</b> If clot risk outweighs bleeding risk after elective knee replacement, choose <b>one</b> of: aspirin 75 mg or 150 mg for 14 days; or low-molecular-weight heparin for 14 days combined with anti-embolism stockings until discharge; or rivaroxaban as in technology appraisal guidance (TA170) for 14 days. If those cannot be used, consider apixaban or dabigatran (1.11.9). If drugs are contraindicated, consider intermittent pneumatic compression until the person is mobile (1.11.10). Encourage mobility and avoid dehydration (NG89 general measures).</p>
 <div data-widget="pickset" data-set="krvte"></div>

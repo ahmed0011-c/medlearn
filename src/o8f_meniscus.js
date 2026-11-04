@@ -24,6 +24,7 @@ quiz:[{q:"First imaging step?",o:["Plain X-ray to exclude fracture","Immediate a
 <div class="scene"><b>The scene:</b> Two patients have meniscal tears on magnetic resonance imaging. A: 22-year-old peripheral red–red tear, otherwise healthy knee. B: 68-year-old with established osteoarthritis and a degenerate body tear, mild symptoms.</div>
 <p>Non-operative (page 58): mild symptoms; exclusion of a severe tear; elderly with osteoarthritis — lecture: no effect of meniscal operation. Repair when the tear is in the [[redzone|red–red]] (and selected red–white) zones. White–white symptomatic flaps are trimmed, sparing as much meniscus as possible. McRae: preserve meniscus when repair is realistic.</p>
 <div data-widget="stepsvg" data-set="menzones"></div>
+${FIG('o8-meniscus-zones')}
 <div class="hint">💡 <b>"Blood heals. No blood → do not promise repair. Arthritis + mild symptoms → leave the saw in the drawer."</b></div>
 <div class="exam"><b>🎓 For exams:</b> red–red repairable; osteoarthritis + elderly + mild symptoms → non-operative (lecture).</div>
 <details class="chk"><summary>✅ Checkpoint: answer the scene.</summary><p>A: aim to repair. B: non-operative — surgery will not help the arthritis story.</p></details>`,

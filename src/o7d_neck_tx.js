@@ -23,7 +23,6 @@ cards:[
 {id:"hd1",title:"Conservative versus operative pathways (pages 17–18)",min:9,goal:0,obj:["Match patient + displacement to fix / hemi / total"],html:`
 <div class="scene"><b>The scene:</b> Three necks on one list. A quiet Garden I in a 60-year-old. A Garden IV in a nursing-home elder who walked only to the toilet. A Garden IV in a still-working 71-year-old who takes the stairs two at a time.</div>
 <p>Non-operative care is rare — reserved for patients who would not survive anaesthesia (lecture page 17 shows delayed mobilisation consequences). Operative menu (page 18): closed reduction and internal fixation with cannulated screws, [[dhs|dynamic hip screw]], or occasionally a proximal femoral nail; prosthetic replacement in older adults — lecture: often considered around &gt;70 years for displaced (and sometimes undisplaced) necks; [[hemiarthro|bipolar hemiarthroplasty]] if not very mobile; [[thr|total hip arthroplasty]] if healthy and self-caring. Young patient whose Garden III/IV will not reduce closed → open reduction through an anterior or anterolateral approach.</p>
-${FIG('o7-neck-screws')}
 ${FIG('o7-hemi-thr')}
 <div data-widget="stepsvg" data-set="neckpath"></div>
 <div data-widget="pickset" data-set="neckrx"></div>

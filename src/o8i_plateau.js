@@ -25,6 +25,8 @@ cards:[
 <p>Mechanism (page 74): fall or lateral blow; high energy damages the soft-tissue envelope. Imaging (page 75): X-ray; computed tomography for depression/comminution (± angio-computed tomography); magnetic resonance imaging for occult fracture/ligaments. [[lipohaem|Lipohaemarthrosis]] = intra-articular fracture (McRae). [[schatzker|Schatzker]] I–VI (page 76); AO/OTA classification (Arbeitsgemeinschaft für Osteosynthesefragen / Orthopaedic Trauma Association) and column / 10-segment maps also appear (pages 77–78).</p>
 <div class="corr">📝 <b>Slide check (page 75):</b> the heading is typed "Imiging" — the correct word is <b>imaging</b>.</div>
 <div data-widget="stepsvg" data-set="schatzker"></div>
+${FIG('o8-schatzker')}
+${FIG('o8-schatzker-ct')}
 <div class="hint">💡 <b>"Fat–fluid level = the joint is broken inside. computed tomography tells the surgeon how to climb it."</b></div>
 <div class="exam"><b>🎓 For exams:</b> Schatzker I–VI in order; lipohaemarthrosis meaning; computed tomography for planning.</div>
 <details class="chk"><summary>✅ Checkpoint: answer the scene.</summary><p>Schatzker II (split-depression) pattern — soft-tissue and neurovascular check, then surgical planning if displaced.</p></details>`,

@@ -32,6 +32,7 @@ quiz:[{q:"Which ligament stops the tibia sliding forwards on the femur?",o:["Ant
 <div class="scene"><b>The scene:</b> Mr Hoffmann, 68, with long-standing diabetes, misses the last stair. He feels a tear above the kneecap and cannot straighten the leg to walk. Where is the break?</div>
 <p>The [[extmech|extensor mechanism]] is a chain (lecture pages 8–9): quadriceps muscle → quadriceps tendon → [[sesamoid|patella]] → patellar tendon → tibial tubercle, completed by the medial and lateral [[retinac|retinacula]]. Mechanism of injury: sudden resisted extension, or sudden passive flexion while the quadriceps is contracting. Age pattern (page 9): adolescents — tibial tubercle avulsion or patellar tendon tear; middle age — patella fracture; older / steroids / chronic illness — [[quadrupt|quadriceps tendon rupture]].</p>
 <div data-widget="stepsvg" data-set="extchain"></div>
+${FIG('o8-extensor-chain')}
 <div data-widget="sortset" data-set="breakchain"></div>
 <div class="hint">💡 <b>"One chain, five links: muscle, tendon above, bone, tendon below, tubercle — plus the side straps."</b></div>
 <div class="exam"><b>🎓 For exams:</b> inability to perform an active straight-leg raise localises to the extensor chain; next ask where the gap and the patella sit.</div>

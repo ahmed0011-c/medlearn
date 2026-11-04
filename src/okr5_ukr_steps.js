@@ -24,6 +24,8 @@ cards:[
 <p>After re-confirming [[amoa|anteromedial osteoarthritis]] findings, use a limited medial arthrotomy. Remove medial osteophytes. Tibial resection is conservative — aim to under-correct slightly rather than create valgus. Femoral preparation matches the chosen implant (spherical Oxford femoral component versus fixed-bearing geometries).</p>
 <p>The Oxford mobile bearing is designed to move with the femoral component on a flat tibial tray, keeping congruent contact. That demands accurate flexion–extension gap balance: too loose risks bearing dislocation (spin-out); too tight risks pain and limited motion. Fixed-bearing partials avoid spin-out but still fail if indicated poorly or aligned aggressively.</p>
 <div data-widget="stepsvg" data-set="ukrsteps"></div>
+${FIG('okr-ukr-medial')}
+${FIG('okr-ukr-xray')}
 <div class="hint">💡 <b>"Replace only what is destroyed. Do not turn a varus knee into an iatrogenic valgus knee."</b></div>
 <div class="exam"><b>🎓 For exams:</b> limited medial approach; avoid over-correction; mobile-bearing dislocation risk; convert if indication fails indoors.</div>
 <details class="chk"><summary>✅ Checkpoint: name one Oxford-specific risk.</summary><p>Bearing dislocation if the gaps are unbalanced — a reason meticulous gap control and experience matter.</p></details>`,
