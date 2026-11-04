@@ -32,7 +32,9 @@ quiz:[{q:"Which statement is true?",o:["Distal pulse can still be present in com
 {id:"ok2",title:"Pressures, ΔP, four compartments (pages 101–104; McRae)",min:7,goal:1,obj:["Interpret ΔP and name the four releases"],html:`
 <div class="scene"><b>The scene:</b> An intubated patient has a tibial fracture. Compartment pressure reads 45 mmHg; diastolic blood pressure is 70 mmHg.</div>
 <p>Pressure monitoring (McRae): useful in obtunded patients; [[deltap|ΔP]] = diastolic − compartment pressure; keep ΔP &gt; 30 mmHg. Here ΔP = 25 mmHg → supports fasciotomy. Operative care: release <b>all four</b> leg compartments (anterior, lateral, superficial posterior, deep posterior) through adequate medial and lateral incisions; inspect muscle; debride dead tissue (lecture pages 101–104; McRae figures).</p>
+${FIG('o8-fasciotomy-leg')}
 <div data-widget="stepsvg" data-set="fourcomp"></div>
+${FIG('o8-four-compartments')}
 <div data-widget="pickset" data-set="compact"></div>
 <div class="hint">💡 <b>"ΔP = diastolic − compartment. Under 30 mmHg is a red flag in McRae's teaching."</b></div>
 <div class="exam"><b>🎓 For exams:</b> ΔP &gt; 30 mmHg target; four compartments; two-incision release concept.</div>
