@@ -41,7 +41,7 @@ body.focus .card{opacity:.22}body.focus .card.active{opacity:1;box-shadow:0 0 0 
 .fb{font-size:15px;margin:6px 0;padding:6px 10px;border-radius:8px;background:var(--bg)}
 .done-badge{float:right;font-size:14px;color:var(--ok);font-weight:700}
 figure{margin:14px 0}figure img,figure svg{max-width:100%;border-radius:10px;border:1px solid var(--line);background:#fff}
-figcaption{font-size:14px;color:var(--mute);margin-top:4px}.ai{display:inline-block;background:#222;color:#fff;font-size:11px;border-radius:5px;padding:1px 6px;margin-right:6px}
+figcaption{font-size:14px;color:var(--mute);margin-top:4px}.ai{display:inline-block;background:#222;color:#fff;font-size:11px;border-radius:5px;padding:1px 6px;margin-right:6px}.ai.diag{background:#1b4d3e}
 .svgwrap{overflow-x:auto}.svgwrap svg{min-width:640px}
 .ctrl{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}.ctrl button.on{background:var(--acc);color:#fff}
 .info{background:var(--bg);border-radius:10px;padding:10px 14px;min-height:48px;font-size:15px}

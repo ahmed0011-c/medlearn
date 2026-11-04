@@ -32,6 +32,7 @@ quiz:[{q:"Reverse oblique usually needs…",o:["Intramedullary nail","Cup of tea
 <div class="scene"><b>The scene:</b> Night shift: femoral nerve block eases Frau Berger’s pain, fluids run, theatre is booked before dawn. Which metal?</div>
 <p>Initial care (page 28): analgesia including femoral nerve block; optimise with intravenous fluid; non-operative only if surgery would not be survived. Operative (page 29): [[dhs|dynamic hip screw]] (extramedullary); proximal femoral nail (intramedullary); rarely endoprosthesis. Respect tip–apex rules when a lag screw enters the head. Early complications (page 32): infection low for screws/nails but up to 5% for arthroplasty (lecture); fixation failure from technique or bad bone; fat embolism with arthroplasty/nailing. Late (pages 33–34): metalwork irritation from collapse/back-out; AVN figures on the page refer mainly to neck-fracture context in the McRae excerpt used on slides — keep AVN linked to intracapsular injury when you explain; non-union; osteoarthritis; arthroplasty dislocation; mortality ~10% perioperative and up to ~30% in the first year (lecture page 34).</p>
 ${FIG('o7-dhs')}
+${FIG('o7-pfn')}
 <div data-widget="pickset" data-set="itrox"></div>
 <div class="hint">💡 <b>"Block the pain, fill the tank, fix before frailty wins — DHS if simple, nail if hostile."</b></div>
 <div class="exam"><b>🎓 For exams:</b> DHS vs nail indications; mortality lecture figures; infection rates as lecture quotes.</div>
