@@ -30,6 +30,7 @@ quiz:[{q:"Classic rotational deformity of a displaced neck fracture?",o:["Extern
 {id:"hc2",title:"Garden and Pauwels (pages 13–15)",min:8,goal:1,obj:["Separate undisplaced from displaced; respect steep shear"],html:`
 <div class="scene"><b>The scene:</b> Two neck films. One head is punched into valgus like a cork in a bottle. The other head has fallen off into varus with broken trabecular lines. Same bone — opposite futures.</div>
 <p>[[garden|Garden]] (McRae book pages 353–354; lecture page 14): I valgus-impacted; II complete undisplaced; III partially displaced; IV fully displaced. McRae’s practical merge: I–II undisplaced, III–IV displaced. [[pauwels|Pauwels]] (lecture page 13) asks how steep the fracture roof is — a shallow tile sits; a vertical tile avalanches under shear. AO/OTA typing also appears (page 15). Blood-supply story from L7.1 still rules the room.</p>
+${FIG('o7-garden')}
 ${FIG('o7-pauwels')}
 <div data-widget="stepsvg" data-set="garden"></div>
 <div data-widget="sortset" data-set="pauwelsort"></div>
