@@ -15,7 +15,7 @@ XS.o7c=["Spot the error",[["Most elderly hip fractures follow a standing-height 
 XT.o7c="garden,pauwels,intracap,retinacv,avn";
 const O7C={
 meta:"Orthopaedics › Hip and femur › Lecture 7 › Subsection L7.3 · Lecture pages 11–16 · ⏱ about 16 minutes in 2 steps",
-intro:`<p>The femoral neck is a high narrow bridge. Crack it inside the capsule and every step becomes a negotiation with blood supply. Clinical picture first, then [[garden|Garden]] and [[pauwels|Pauwels]]. McRae chapter 17 Hip fractures (book pages 352–355).</p>`,
+intro:`<p>The femoral neck is a high narrow bridge. Crack it inside the capsule and every step becomes a negotiation with blood supply. Clinical picture first, then [[garden|Garden]] and [[pauwels|Pauwels]]. McRae chapter 17 Hip fractures (book pages 352–355).</p><p>📖 <b>Classifications guide:</b> <a href="classifications/pauwels.html" target="_blank" rel="noopener">Femoral neck (Pauwels)</a>.</p>`,
 goals:["Recognise the clinical hip-fracture picture","Use Garden and Pauwels thoughtfully"],
 cards:[
 {id:"hc1",title:"Clinical findings and imaging (pages 11–12, 16)",min:8,goal:0,obj:["Describe posture, bedside signs, imaging ladder"],html:`
