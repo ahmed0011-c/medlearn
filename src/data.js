@@ -64,7 +64,7 @@ const CATS={enzyme:"Enzymes",hormone:"Hormones and steroid molecules",cell:"Cell
 /* ===== SPECIALTIES: hub tiles on the front page. Add a new specialty here + tag its first module with area2 belonging to one of its areas. ===== */
 const SPECIALTIES=[
 {id:"endo",label:"Endocrinology",emoji:"🩺",blurb:"Adrenal gland, thyroid gland, hypothalamus and pituitary.",areas:["🫘 Adrenal gland","🦋 Thyroid gland","🧠 Hypothalamus and pituitary gland"]},
-{id:"ortho",label:"Orthopaedics",emoji:"🦴",blurb:"Hip and femur (Lecture 7), McRae Ch. 17 hip deep-dive, knee and leg (Lecture 8), and knee replacement.",areas:["🦴 Orthopaedics · Hip and femur","🦴 Orthopaedics · McRae Ch. 17: Hip","🦴 Orthopaedics · Knee and leg","🦴 Orthopaedics · Knee replacement"]},
+{id:"ortho",label:"Orthopaedics",emoji:"🦴",blurb:"Hip and femur (Lecture 7), McRae Ch. 17 hip deep-dive, knee and leg (Lecture 8), knee replacement, and hand and wrist injuries.",areas:["🦴 Orthopaedics · Hip and femur","🦴 Orthopaedics · McRae Ch. 17: Hip","🦴 Orthopaedics · Knee and leg","🦴 Orthopaedics · Knee replacement","🦴 Orthopaedics · Hand and wrist"]},
 {id:"gsurg",label:"General Surgery",emoji:"🏥",blurb:"Coming soon — lectures will land here.",comingSoon:true,areas:[]}
 ];
 
@@ -187,4 +187,6 @@ modules:[
 {id:"omh12",n:"MH.12",grp:"McRae Ch. 17: Hip (book deep-dive)",title:"Hip dislocation",summary:"Posterior dashboard pattern, reduction urgency, sciatic nerve and post-reduction imaging.",pages:"book pages 375–377",built:true},
 {id:"omh13",n:"MH.13",grp:"McRae Ch. 17: Hip (book deep-dive)",title:"Femoral head (Pipkin) fractures",summary:"Pipkin I–IV with dislocation, CT after reduction, fixation versus excision.",pages:"book page 378",built:true},
 {id:"omh14",n:"MH.14",grp:"McRae Ch. 17: Hip (book deep-dive)",title:"Periprosthetic Vancouver and atypical hip fractures",summary:"Vancouver A–C around a stem, and bisphosphonate-related atypical patterns.",pages:"book pages 379–384",built:true}
+,
+{id:"ohw1",n:"HW.1",grp:"Hand and wrist injuries",area2:"🦴 Orthopaedics · Hand and wrist",lec:"Hand and wrist: thumb-base injuries",teacher:"Evidence-based teaching · AO Surgery Reference and clinical reviews",title:"Bennett fracture: anatomy, recognition and treatment",summary:"Thumb-base anatomy, ligament and muscle forces, Bennett versus Rolando, real imaging, initial care and stable reduction.",built:true}
 ]};

@@ -1,0 +1,13 @@
+/* Hand and wrist: namespaced keys avoid changing existing glossary entries. */
+Object.assign(GLOSSARY,{
+hwcmc:{l:"first carpometacarpal joint",c:"concept",d:"The saddle joint between the trapezium and the base of the thumb's first metacarpal.",w:"Bennett fractures enter this joint; its mobility positions the thumb for pinch and grip.",k:"CMC"},
+hwtrapezium:{l:"trapezium",c:"concept",d:"The carpal bone on the thumb side of the distal carpal row, articulating with the first metacarpal.",w:"Distinguish it from the neighbouring trapezoid. Older atlases call it the greater multangular."},
+hwbeak:{l:"anterior oblique ligament",c:"concept",d:"Also called the volar oblique or beak ligament: it connects the trapezium to the volar-ulnar first metacarpal base.",w:"Its attachment helps retain the small volar-ulnar fragment in a typical Bennett fracture."},
+hwapl:{l:"abductor pollicis longus",c:"concept",d:"A thumb muscle whose tendon inserts at the first metacarpal base.",w:"Its pull contributes to proximal displacement of the larger metacarpal fragment in a Bennett fracture.",k:"APL"},
+hwbennett:{l:"Bennett fracture",c:"disease",d:"A partial intra-articular fracture at the first metacarpal base with a volar-ulnar fragment, typically accompanied by first CMC subluxation or dislocation.",w:"Often unstable: treatment must restore joint alignment and maintain reduction."},
+hwrolando:{l:"Rolando fracture",c:"disease",d:"A comminuted intra-articular fracture at the first metacarpal base, classically with a T- or Y-shaped pattern.",w:"Greater fragmentation distinguishes it from the classic two-part Bennett pattern."},
+hwspica:{l:"thumb spica",c:"concept",d:"A splint or cast supporting the thumb and wrist, with its extent and position selected for the injury.",w:"Protects the thumb base while definitive treatment and follow-up are arranged."},
+hwsublux:{l:"subluxation",c:"concept",d:"Partial loss of normal joint alignment; dislocation means complete loss of normal joint contact.",w:"A small fracture fragment can accompany a clinically important joint displacement."},
+hwcrpp:{l:"closed reduction and percutaneous pinning",c:"concept",d:"Realigning the fracture without opening the fracture site and inserting fixation wires through small skin entry points.",w:"One option for an unstable Bennett fracture when satisfactory closed reduction is achievable.",k:"CRPP"},
+hworif:{l:"open reduction and internal fixation",c:"concept",d:"Surgical exposure to realign the fracture, then stabilisation with internal implants.",w:"May be chosen when closed reduction is inadequate or fracture anatomy favours open fixation.",k:"ORIF"}
+});

@@ -19,6 +19,7 @@ GitHub Pages deploys the `main` branch from the repository root. An empty `.noje
 
 ## Modules
 
+- **HW.1 Bennett fracture: anatomy, recognition and treatment** — Orthopaedics → Hand and wrist. Six descriptive steps, ten zoomable visuals, quizzes, a case and flashcards (`src/ohw0_glossary.js`, `src/ohw1_bennett.js`). Image credits and clinical sources: `images/bennett/README.md`. All ten module images are embedded by `build.py` for offline use. Direct link: `#mod=ohw1`.
 - **CBL 5. Case: Adrenal insufficiency (Schmidt syndrome)** — case-based module (`src/cbl5_glossary.js`, `src/cbl5_steps1.js`, `src/cbl5_steps2.js`, `src/cbl5_data.js`, `src/cbl5_widgets.js`)
 - **2.2 Adrenal insufficiency** — theory module in the Adrenal disorders chapter (`src/d2_glossary.js`, `src/d2_steps1.js`, `src/d2_steps2.js`, `src/d2_data.js`, `src/d2_widgets.js`)
 
@@ -30,6 +31,6 @@ GitHub Pages deploys the `main` branch from the repository root. An empty `.noje
 
 ## Images
 
-`build.py` base64-inlines `adrenal_lab.jpg`, so the built page does not request that file at runtime.
+`build.py` base64-inlines `adrenal_lab.jpg` and the Bennett module's `@@BENNETT:filename@@` assets from `images/bennett/`, so the built page does not request those files at runtime.
 
 New illustrations are listed in `image-requests.md`. For each item: generate the image from its prompt, save it to the given filename under `images/`, commit, and tick the checkbox. Prompts ask for atlas-style realistic medical illustrations with no text in the image.
