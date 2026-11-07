@@ -14,7 +14,7 @@ GitHub Pages deploys the `main` branch from the repository root. An empty `.noje
 - `adrenal_lab.jpg` — illustration source embedded by the build
 - `images/` — place for lesson illustrations (see `image-requests.md`)
 - `image-requests.md` — prompts for Module 5 illustrations
-- `classifications/` — standalone classification guides (e.g. `pipkin.html`) with their images in `classifications/<name>-img/`; linked from the matching module
+- `classifications/` — standalone classification guides (`pipkin.html`, `pauwels.html`) with their images in `classifications/<name>-img/`; linked from the matching module
 - `.nojekyll` — disables Jekyll processing on GitHub Pages
 
 ## Modules
